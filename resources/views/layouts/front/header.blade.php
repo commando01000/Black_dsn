@@ -1,9 +1,9 @@
     <!-- ========== Menu ========== -->
     <header id="site_menu_header" class="site-header  dsn-container d-none dsn-hamburger">
         <div class="main-logo">
-            <a aria-current='page' class='custom-logo-link main-brand effect-ajax' data-dsn-text='Blackdsn' href='index.htm'
+            <a aria-current='page' class='custom-logo-link main-brand effect-ajax' data-dsn-text='Blackdsn' href='{{url('/')}}'
                 rel='home'>
-                <img src= "{{asset('front_asset/assets/img/logo.png')}}" class="custom-logo logo-light" alt="Blackdsn">
+                <img src= "{{asset('front_asset/assets/img/logo-light.png')}}" class="custom-logo logo-light" alt="Blackdsn">
                 <img src= "{{asset('front_asset/assets/img/logo.png')}}" class="custom-logo logo-dark" alt="Blackdsn">
             </a>
         </div>
