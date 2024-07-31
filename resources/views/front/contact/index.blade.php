@@ -1,30 +1,59 @@
-@extends('layouts.front.app')
+<!doctype html>
+<html class="no-js" lang="">
 
-@section('content')
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <link rel="icon" href="{{ asset('assets/front_assets/assets/img/logo-32x32.png') }}" sizes="32x32">
+    <link rel="icon" href="{{ asset('assets/front_assets/assets/img/logo-192x192.png') }}" sizes="32x32">
+
+
+    <title>Contact Us | Blackdsn</title>
+
+    <link href="{{ asset('assets/front_assets/assets/css/plugins.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('assets/front_assets/assets/css/style.css') }}">
+
+</head>
+
+<body class="v-dark dsn-ajax">
+
+
     <div id="dsn_preloader" class="preloader">
+
         <div class="dsnload p-absolute">
             <span class="dsnload__row">
                 <span class="dsnload__img">
-                    <img src="assets/img/logo-light-1.png" class="logo-dark" alt="Blackdsn" decoding="async" loading="lazy">
-                    <img src="assets/img/logo-1.png" class="logo-light" alt="Blackdsn" decoding="async" loading="lazy">
+                    <img src="{{ asset('assets/front_assets/assets/img/logo-light.png') }}" class="logo-dark"
+                        alt="Blackdsn" decoding="async" loading="lazy">
+                    <img src="{{ asset('assets/front_assets/assets/img/logo.png') }}" class="logo-light" alt="Blackdsn"
+                        decoding="async" loading="lazy">
                 </span>
             </span>
             <span class="dsnload__row dsnload__row--sibling">
                 <span class="dsnload__img">
-                    <img src="assets/img/logo-light-1.png" class="logo-dark" alt="Blackdsn" decoding="async" loading="lazy">
-                    <img src="assets/img/logo-1.png" class="logo-light" alt="Blackdsn" decoding="async" loading="lazy">
+                    <img src="{{ asset('assets/front_assets/assets/img/logo-light.png') }}" class="logo-dark"
+                        alt="Blackdsn" decoding="async" loading="lazy">
+                    <img src="{{ asset('assets/front_assets/assets/img/logo.png') }}" class="logo-light" alt="Blackdsn"
+                        decoding="async" loading="lazy">
                 </span>
             </span>
             <span class="dsnload__row dsnload__row--sibling">
                 <span class="dsnload__img">
-                    <img src="assets/img/logo-light-1.png" class="logo-dark" alt="Blackdsn" decoding="async" loading="lazy">
-                    <img src="assets/img/logo-1.png" class="logo-light" alt="Blackdsn" decoding="async" loading="lazy">
+                    <img src="assets/img/logo-light.png" class="logo-dark" alt="Blackdsn" decoding="async"
+                        loading="lazy">
+                    <img src="{{ asset('assets/front_assets/assets/img/logo.png') }}" class="logo-light" alt="Blackdsn"
+                        decoding="async" loading="lazy">
                 </span>
             </span>
             <span class="dsnload__row dsnload__row--sibling">
                 <span class="dsnload__img">
-                    <img src="assets/img/logo-light-1.png" class="logo-dark" alt="Blackdsn" decoding="async" loading="lazy">
-                    <img src="assets/img/logo-1.png" class="logo-light" alt="Blackdsn" decoding="async" loading="lazy">
+                    <img src="assets/img/logo-light.png" class="logo-dark" alt="Blackdsn" decoding="async"
+                        loading="lazy">
+                    <img src="{{ asset('assets/front_assets/assets/img/logo.png') }}" class="logo-light" alt="Blackdsn"
+                        decoding="async" loading="lazy">
                 </span>
             </span>
 
@@ -45,8 +74,8 @@
 
         <span class="loading-text text-uppercase mt-30 dsn-container">Loading ...</span>
         <div class="bg-load background-section d-flex align-items-end">
-            <svg class="dsn-separator-bottom dsn-icon-assistant-color" width="100%" height="100%" viewbox="0 0 100 10"
-                preserveaspectratio="none">
+            <svg class="dsn-separator-bottom dsn-icon-assistant-color" width="100%" height="100%"
+                viewbox="0 0 100 10" preserveaspectratio="none">
                 <path class="path-anim separator__path" data-dsn-to="M 0 0 C 40 0 55 0 100 0 L 0 0 Z"
                     vector-effect="non-scaling-stroke" d="M 0 0 C 40 16 75 10 100 0 L 0 0 Z"></path>
             </svg>
@@ -60,9 +89,11 @@
         <header id="site_menu_header" class="site-header  dsn-container d-none dsn-hamburger">
             <div class="main-logo">
                 <a aria-current='page' class='custom-logo-link main-brand effect-ajax' data-dsn-text='Blackdsn'
-                    href='index-1.htm' rel='home'>
-                    <img src="assets/img/logo-light-1.png" class="custom-logo logo-light" alt="Blackdsn">
-                    <img src="assets/img/logo-1.png" class="custom-logo logo-dark" alt="Blackdsn">
+                    href='index.htm' rel='home'>
+                    <img src="{{ asset('assets/front_assets/assets/img/logo-light.png') }}"
+                        class="custom-logo logo-light" alt="Blackdsn">
+                    <img src="{{ asset('assets/front_assets/assets/img/logo.png') }}" class="custom-logo logo-dark"
+                        alt="Blackdsn">
                 </a>
             </div>
             <nav class="main-navigation ">
@@ -90,42 +121,42 @@
                                 </span>
                             </li>
                             <li class="nav-item ">
-                                <a href='index-1.htm' title='Home'>
+                                <a href='index.htm' title='Home'>
                                     <span class="overflow">Main Demo</span>
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a data-dsn-text='Business' href='business-1.html' title='Business'>
+                                <a data-dsn-text='Business' href='business.html' title='Business'>
                                     <span class="overflow">Business</span>
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a data-dsn-text='Architecture' href='architecture-1.html' title='Architecture'>
+                                <a data-dsn-text='Architecture' href='architecture.html' title='Architecture'>
                                     <span class="overflow">Architecture</span>
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a data-dsn-text='Personal' href='personal-1.html' title='Personal'>
+                                <a data-dsn-text='Personal' href='personal.html' title='Personal'>
                                     <span class="overflow">Personal</span>
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a data-dsn-text='Photographer' href='photographer-1.html' title='Photographer'>
+                                <a data-dsn-text='Photographer' href='photographer.html' title='Photographer'>
                                     <span class="overflow">Photographer</span>
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a data-dsn-text='Resume' href='resume-1.html' title='Resume'>
+                                <a data-dsn-text='Resume' href='resume.html' title='Resume'>
                                     <span class="overflow">Resume</span>
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a data-dsn-text='Our Portfolio' href='metro-portfolio-1-1.html' title='Portfolio'>
+                                <a data-dsn-text='Our Portfolio' href='metro-portfolio-1.html' title='Portfolio'>
                                     <span class="overflow">Metro Portfolio 1</span>
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a data-dsn-text='Our Portfolio' href='metro-portfolio-2-1.html' title='Portfolio'>
+                                <a data-dsn-text='Our Portfolio' href='metro-portfolio-2.html' title='Portfolio'>
                                     <span class="overflow">Metro Portfolio 2</span>
                                 </a>
                             </li>
@@ -174,19 +205,19 @@
                                         </span>
                                     </li>
                                     <li class="nav-item ">
-                                        <a data-dsn-text='Our Portfolio' href='carousel-portfolio-1-1.html'
+                                        <a data-dsn-text='Our Portfolio' href='carousel-portfolio-1.html'
                                             title='Carousel Portfolio 1'>
                                             <span class="overflow">Carousel Portfolio 1</span>
                                         </a>
                                     </li>
                                     <li class="nav-item ">
-                                        <a data-dsn-text='Our Portfolio' href='carousel-portfolio-2-1.html'
+                                        <a data-dsn-text='Our Portfolio' href='carousel-portfolio-2.html'
                                             title='Carousel Portfolio'>
                                             <span class="overflow">Carousel Portfolio 2</span>
                                         </a>
                                     </li>
                                     <li class="nav-item ">
-                                        <a data-dsn-text='Our Portfolio' href='carousel-portfolio-3-1.html'
+                                        <a data-dsn-text='Our Portfolio' href='carousel-portfolio-3.html'
                                             title='Carousel Portfolio 3'>
                                             <span class="overflow">Carousel Portfolio 3</span>
                                         </a>
@@ -222,8 +253,9 @@
                                         <ul class="nav-item">
                                             <li class="dsn-back">
                                                 <span>
-                                                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30px"
-                                                        viewbox="0 0 400.004 400.004" xml:space="preserve">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                                                        width="30px" viewbox="0 0 400.004 400.004"
+                                                        xml:space="preserve">
                                                         <g>
                                                             <path
                                                                 d="M382.688,182.686H59.116l77.209-77.214c6.764-6.76,6.764-17.726,0-24.485c-6.764-6.764-17.73-6.764-24.484,0L5.073,187.757 c-6.764,6.76-6.764,17.727,0,24.485l106.768,106.775c3.381,3.383,7.812,5.072,12.242,5.072c4.43,0,8.861-1.689,12.242-5.072 c6.764-6.76,6.764-17.726,0-24.484l-77.209-77.218h323.572c9.562,0,17.316-7.753,17.316-17.315 C400.004,190.438,392.251,182.686,382.688,182.686z">
@@ -238,14 +270,14 @@
                                             </li>
                                             <li class="nav-item ">
                                                 <a data-dsn-text='Our Portfolio'
-                                                    href='fullscreen-distortion-horizontal-1.html' title='Slider'>
+                                                    href='fullscreen-distortion-horizontal.html' title='Slider'>
                                                     <span class="overflow">Slider Distortion / H</span>
                                                 </a>
                                             </li>
                                             <li class="nav-item">
 
                                                 <a data-dsn-text='Our Portfolio'
-                                                    href='fullscreen-distortion-vertical-1.html' title='Slider'>
+                                                    href='fullscreen-distortion-vertical.html' title='Slider'>
                                                     <span class="overflow">Slider Distortion / V</span>
                                                 </a>
 
@@ -253,7 +285,7 @@
                                             <li class="nav-item">
 
                                                 <a data-dsn-text='Our Portfolio'
-                                                    href='fullscreen-parallax-horizontal-1.html' title='Slider'>
+                                                    href='fullscreen-parallax-horizontal.html' title='Slider'>
                                                     <span class="overflow">Slider Parallax / H</span>
                                                 </a>
 
@@ -261,7 +293,7 @@
                                             <li class="nav-item">
 
                                                 <a data-dsn-text='Our Portfolio'
-                                                    href='fullscreen-parallax-vertical-1.html' title='Slider'>
+                                                    href='fullscreen-parallax-vertical.html' title='Slider'>
                                                     <span class="overflow">Slider Parallax / V</span>
                                                 </a>
                                             </li>
@@ -274,8 +306,9 @@
                                         <ul class="nav-item">
                                             <li class="dsn-back">
                                                 <span>
-                                                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30px"
-                                                        viewbox="0 0 400.004 400.004" xml:space="preserve">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                                                        width="30px" viewbox="0 0 400.004 400.004"
+                                                        xml:space="preserve">
                                                         <g>
                                                             <path
                                                                 d="M382.688,182.686H59.116l77.209-77.214c6.764-6.76,6.764-17.726,0-24.485c-6.764-6.764-17.73-6.764-24.484,0L5.073,187.757 c-6.764,6.76-6.764,17.727,0,24.485l106.768,106.775c3.381,3.383,7.812,5.072,12.242,5.072c4.43,0,8.861-1.689,12.242-5.072 c6.764-6.76,6.764-17.726,0-24.484l-77.209-77.218h323.572c9.562,0,17.316-7.753,17.316-17.315 C400.004,190.438,392.251,182.686,382.688,182.686z">
@@ -290,29 +323,29 @@
                                             </li>
                                             <li class="nav-item ">
                                                 <a data-dsn-text='Our Portfolio'
-                                                    href='padding-distortion-horizontal-1.html' title='Slider'>
+                                                    href='padding-distortion-horizontal.html' title='Slider'>
                                                     <span class="overflow">Slider Distortion / H</span>
                                                 </a>
                                             </li>
                                             <li class="nav-item">
 
-                                                <a data-dsn-text='Our Portfolio' href='padding-distortion-vertical-1.html'
-                                                    title='Slider'>
+                                                <a data-dsn-text='Our Portfolio'
+                                                    href='padding-distortion-vertical.html' title='Slider'>
                                                     <span class="overflow">Slider Distortion / V</span>
                                                 </a>
 
                                             </li>
                                             <li class="nav-item">
 
-                                                <a data-dsn-text='Our Portfolio' href='padding-parallax-horizontal-1.html'
-                                                    title='Slider'>
+                                                <a data-dsn-text='Our Portfolio'
+                                                    href='padding-parallax-horizontal.html' title='Slider'>
                                                     <span class="overflow">Slider Parallax / H</span>
                                                 </a>
 
                                             </li>
                                             <li class="nav-item">
 
-                                                <a data-dsn-text='Our Portfolio' href='padding-parallax-vertical-1.html'
+                                                <a data-dsn-text='Our Portfolio' href='padding-parallax-vertical.html'
                                                     title='Slider'>
                                                     <span class="overflow">Slider Parallax / V</span>
                                                 </a>
@@ -326,8 +359,9 @@
                                         <ul class="nav-item">
                                             <li class="dsn-back">
                                                 <span>
-                                                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30px"
-                                                        viewbox="0 0 400.004 400.004" xml:space="preserve">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                                                        width="30px" viewbox="0 0 400.004 400.004"
+                                                        xml:space="preserve">
                                                         <g>
                                                             <path
                                                                 d="M382.688,182.686H59.116l77.209-77.214c6.764-6.76,6.764-17.726,0-24.485c-6.764-6.764-17.73-6.764-24.484,0L5.073,187.757 c-6.764,6.76-6.764,17.727,0,24.485l106.768,106.775c3.381,3.383,7.812,5.072,12.242,5.072c4.43,0,8.861-1.689,12.242-5.072 c6.764-6.76,6.764-17.726,0-24.484l-77.209-77.218h323.572c9.562,0,17.316-7.753,17.316-17.315 C400.004,190.438,392.251,182.686,382.688,182.686z">
@@ -341,14 +375,14 @@
                                                 </span>
                                             </li>
                                             <li class="nav-item ">
-                                                <a data-dsn-text='Our Portfolio' href='half-distortion-horizontal-1.html'
-                                                    title='Slider'>
+                                                <a data-dsn-text='Our Portfolio'
+                                                    href='half-distortion-horizontal.html' title='Slider'>
                                                     <span class="overflow">Slider Distortion / H</span>
                                                 </a>
                                             </li>
                                             <li class="nav-item">
 
-                                                <a data-dsn-text='Our Portfolio' href='half-distortion-vertical-1.html'
+                                                <a data-dsn-text='Our Portfolio' href='half-distortion-vertical.html'
                                                     title='Slider'>
                                                     <span class="overflow">Slider Distortion / V</span>
                                                 </a>
@@ -356,7 +390,7 @@
                                             </li>
                                             <li class="nav-item">
 
-                                                <a data-dsn-text='Our Portfolio' href='half-parallax-horizontal-1.html'
+                                                <a data-dsn-text='Our Portfolio' href='half-parallax-horizontal.html'
                                                     title='Slider'>
                                                     <span class="overflow">Slider Parallax / H</span>
                                                 </a>
@@ -364,7 +398,7 @@
                                             </li>
                                             <li class="nav-item">
 
-                                                <a data-dsn-text='Our Portfolio' href='half-parallax-vertical-1.html'
+                                                <a data-dsn-text='Our Portfolio' href='half-parallax-vertical.html'
                                                     title='Slider'>
                                                     <span class="overflow">Slider Parallax / V</span>
                                                 </a>
@@ -398,12 +432,12 @@
                                         </span>
                                     </li>
                                     <li class="nav-item ">
-                                        <a data-dsn-text='Our Portfolio' href='work-card-1-1.html' title='work card 1'>
+                                        <a data-dsn-text='Our Portfolio' href='work-card-1.html' title='work card 1'>
                                             <span class="overflow">Work Card 1</span>
                                         </a>
                                     </li>
                                     <li class="nav-item ">
-                                        <a data-dsn-text='Our Portfolio' href='work-card-2-1.html' title='work card 2'>
+                                        <a data-dsn-text='Our Portfolio' href='work-card-2.html' title='work card 2'>
                                             <span class="overflow">Work Card 2</span>
                                         </a>
                                     </li>
@@ -433,13 +467,13 @@
                                         </span>
                                     </li>
                                     <li class="nav-item ">
-                                        <a data-dsn-text='Our Portfolio' href='work-classic-1-1.html'
+                                        <a data-dsn-text='Our Portfolio' href='work-classic-1.html'
                                             title='work classic 1'>
                                             <span class="overflow">Work classic 1</span>
                                         </a>
                                     </li>
                                     <li class="nav-item ">
-                                        <a data-dsn-text='Our Portfolio' href='work-classic-2-1.html'
+                                        <a data-dsn-text='Our Portfolio' href='work-classic-2.html'
                                             title='work classic 2'>
                                             <span class="overflow">Work classic 2</span>
                                         </a>
@@ -470,12 +504,12 @@
                                         </span>
                                     </li>
                                     <li class="nav-item ">
-                                        <a data-dsn-text='Our Portfolio' href='work-list-1-1.html' title='work list 1'>
+                                        <a data-dsn-text='Our Portfolio' href='work-list-1.html' title='work list 1'>
                                             <span class="overflow">Work List 1</span>
                                         </a>
                                     </li>
                                     <li class="nav-item ">
-                                        <a data-dsn-text='Our Portfolio' href='work-list-2-1.html' title='work list 2'>
+                                        <a data-dsn-text='Our Portfolio' href='work-list-2.html' title='work list 2'>
                                             <span class="overflow">Work List 2</span>
                                         </a>
                                     </li>
@@ -505,13 +539,13 @@
                                         </span>
                                     </li>
                                     <li class="nav-item ">
-                                        <a data-dsn-text='Our Portfolio' href='metro-portfolio-1-1.html'
+                                        <a data-dsn-text='Our Portfolio' href='metro-portfolio-1.html'
                                             title='work Metro 1'>
                                             <span class="overflow">Work Metro 1</span>
                                         </a>
                                     </li>
                                     <li class="nav-item ">
-                                        <a data-dsn-text='Our Portfolio' href='metro-portfolio-2-1.html'
+                                        <a data-dsn-text='Our Portfolio' href='metro-portfolio-2.html'
                                             title='work Metro 2'>
                                             <span class="overflow">Work Metro 2</span>
                                         </a>
@@ -543,32 +577,32 @@
                                 </span>
                             </li>
                             <li class="nav-item ">
-                                <a data-dsn-text='VISIONAID' href='project-1-1.html' title='VISIONAID'>
+                                <a data-dsn-text='VISIONAID' href='project-1.html' title='VISIONAID'>
                                     <span class="overflow">VISIONAID</span>
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a data-dsn-text='MEN FASHION' href='project-2-1.html' title='MEN FASHION'>
+                                <a data-dsn-text='MEN FASHION' href='project-2.html' title='MEN FASHION'>
                                     <span class="overflow">MEN FASHION</span>
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a data-dsn-text='AUDI RS' href='project-3-1.html' title='AUDI RS'>
+                                <a data-dsn-text='AUDI RS' href='project-3.html' title='AUDI RS'>
                                     <span class="overflow">AUDI RS</span>
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a data-dsn-text='OPEN RUN' href='project-4-1.html' title='OPEN RUN'>
+                                <a data-dsn-text='OPEN RUN' href='project-4.html' title='OPEN RUN'>
                                     <span class="overflow">OPEN RUN</span>
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a data-dsn-text='DOG CHOW' href='project-5-1.html' title='DOG CHOW'>
+                                <a data-dsn-text='DOG CHOW' href='project-5.html' title='DOG CHOW'>
                                     <span class="overflow">DOG CHOW</span>
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a data-dsn-text='HEADPHONES' href='project-6-1.html' title='HEADPHONES'>
+                                <a data-dsn-text='HEADPHONES' href='project-6.html' title='HEADPHONES'>
                                     <span class="overflow">HEADPHONES</span>
                                 </a>
                             </li>
@@ -597,12 +631,12 @@
                                 </span>
                             </li>
                             <li class="nav-item ">
-                                <a data-dsn-text='Stories' href='stories-1.html' title='Stories'>
+                                <a data-dsn-text='Stories' href='stories.html' title='Stories'>
                                     <span class="overflow">Stories</span>
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a data-dsn-text='Single Post' href='single-post-1.html' title='Single Post'>
+                                <a data-dsn-text='Single Post' href='single-post.html' title='Single Post'>
                                     <span class="overflow">Single Post</span>
                                 </a>
                             </li>
@@ -611,17 +645,17 @@
                         </ul>
                     </li>
                     <li class="nav-item ">
-                        <a href='service-1.html' title='Service'>
+                        <a href='service.html' title='Service'>
                             <span class="overflow">Service</span>
                         </a>
                     </li>
                     <li class="nav-item ">
-                        <a href='about-us-1.html' title='Home'>
+                        <a href='about-us.html' title='Home'>
                             <span class="overflow">About</span>
                         </a>
                     </li>
                     <li class="nav-item ">
-                        <a href='contact-1.html' title='Home'>
+                        <a href='contact.html' title='Home'>
                             <span class="overflow">Contact</span>
                         </a>
                     </li>
@@ -703,12 +737,14 @@
                                     </h1>
                                 </div>
                                 <p class="mt-20 max-w570">
-                                    What if the time has come for you to change? Starting a collaboration is easy! Order a
-                                    free consultation or call back. We are always in touch and happy to cooperate with you
+                                    What if the time has come for you to change? Starting a collaboration is easy! Order
+                                    a
+                                    free consultation or call back. We are always in touch and happy to cooperate with
+                                    you
                                 </p>
                                 <div class="dsn-def-btn dsn-hover-icon dsn-icon-heading-color mt-20 d-flex">
                                     <a class='dsn-btn dsn-border border-color-default  background-section effect-ajax has-icon-left'
-                                        data-dsn-text='OUR PORTFOLIO' href='work-card-1-1.html'>
+                                        data-dsn-text='OUR PORTFOLIO' href='work-card-1.html'>
                                         <span class="dsn-icon dsn-bg-before btn-icon-left heading-color z-index-1">
                                             <i class="fas fa-angle-right" aria-hidden="true"></i>
                                         </span>
@@ -790,8 +826,8 @@
                                 <div class="service-item p-relative grid-item style-box  background-transparent">
 
                                     <div class="service-item-inner number-item h-100">
-                                        <div class="dsn-icon"><i class="fas fa-map-marker-alt" aria-hidden="true"></i>
-                                        </div>
+                                        <div class="dsn-icon"><i class="fas fa-map-marker-alt"
+                                                aria-hidden="true"></i></div>
                                         <div class="service-content p-relative">
                                             <h4 class="service_title  sm-title-block ">Head Office:</h4>
                                             <div class="service_description mt-10 max-w570 dsn-auto">
@@ -819,7 +855,8 @@
                                 <div class="service-item p-relative grid-item style-box  background-transparent">
 
                                     <div class="service-item-inner number-item h-100">
-                                        <div class="dsn-icon"><i class="fas fa-envelope" aria-hidden="true"></i></div>
+                                        <div class="dsn-icon"><i class="fas fa-envelope" aria-hidden="true"></i>
+                                        </div>
                                         <div class="service-content p-relative">
                                             <h4 class="service_title  sm-title-block ">
                                                 Write Us:</h4>
@@ -839,7 +876,8 @@
             </div>
             <!-- ========== End Contact  ========== -->
             <!-- ========== Map  ========== -->
-            <div class="map-custom hv-80" data-dsn-lat="51.5073509" data-dsn-len="-0.1277583" data-dsn-zoom="14"></div>
+            <div class="map-custom hv-80" data-dsn-lat="51.5073509" data-dsn-len="-0.1277583" data-dsn-zoom="14">
+            </div>
             <!-- ========== End Map  ========== -->
 
             <!-- ========== Footer ========== -->
@@ -858,7 +896,7 @@
                         </h2>
                         <div class="dsn-icon-heading-color dsn-def-btn d-flex justify-content-center mt-30">
                             <a class='dsn-btn dsn-border border-color-default  background-section  effect-ajax has-icon-left'
-                                data-dsn-text='OUR PORTFOLIO' href='work-classic-2-1.html'>
+                                data-dsn-text='OUR PORTFOLIO' href='work-classic-2.html'>
                                 <span class="dsn-icon dsn-bg-before btn-icon-left heading-color z-index-1">
                                     <i class="fas fa-angle-right" aria-hidden="true"></i>
                                 </span>
@@ -874,30 +912,32 @@
                                     <div class="main-logo">
                                         <a href="https://dsngrid.com/blackdsn/" data-dsn-text="Blackdsn"
                                             class="custom-logo-link main-brand effect-ajax" rel="home">
-                                            <img class="custom-logo logo-light" src="assets/img/logo-light-1.png"
+                                            <img class="custom-logo logo-light"
+                                                src="{{ asset('assets/front_assets/assets/img/logo-light.png') }}"
                                                 alt="Blackdsn">
-                                            <img class="custom-logo logo-dark" src="assets/img/logo-1.png"
+                                            <img class="custom-logo logo-dark" src="{{ asset('assets/front_assets/assets/img/logo.png') }}"
                                                 alt="Blackdsn">
                                         </a>
                                     </div>
                                 </div>
                                 <ul class="dsn-socials box-social mt-20">
                                     <li><a href="#0" target="_blank" rel="nofollow"
-                                            class="init-color move-circle border-color-default" data-dsn="parallax"><span
-                                                class="dsn-icon"><i
+                                            class="init-color move-circle border-color-default"
+                                            data-dsn="parallax"><span class="dsn-icon"><i
                                                     class="fab fa-facebook-f"></i></span><span>FB</span></a>
                                     </li>
                                     <li><a href="#0" target="_blank" rel="nofollow"
-                                            class="init-color move-circle border-color-default" data-dsn="parallax"><span
-                                                class="dsn-icon"><i class="fab fa-twitter"></i></span><span>TW</span></a>
+                                            class="init-color move-circle border-color-default"
+                                            data-dsn="parallax"><span class="dsn-icon"><i
+                                                    class="fab fa-twitter"></i></span><span>TW</span></a>
                                     </li>
                                     <li><a href="#0" target="_blank" rel="nofollow"
-                                            class="init-color move-circle border-color-default" data-dsn="parallax"><span
-                                                class="dsn-icon"><i
+                                            class="init-color move-circle border-color-default"
+                                            data-dsn="parallax"><span class="dsn-icon"><i
                                                     class="fab fa-linkedin-in"></i></span><span>LN</span></a></li>
                                     <li><a href="#0" target="_blank" rel="nofollow"
-                                            class="init-color move-circle border-color-default" data-dsn="parallax"><span
-                                                class="dsn-icon"><i
+                                            class="init-color move-circle border-color-default"
+                                            data-dsn="parallax"><span class="dsn-icon"><i
                                                     class="fab fa-instagram"></i></span><span>IN</span></a>
                                     </li>
                                 </ul>
@@ -912,16 +952,16 @@
                                             <a href="home.html" class="effect-ajax">HOME</a>
                                         </li>
                                         <li class="menu-item">
-                                            <a class='effect-ajax' href='work-classic-2-1.html'>PORTFOLIO</a>
+                                            <a class='effect-ajax' href='work-classic-2.html'>PORTFOLIO</a>
                                         </li>
                                         <li class="menu-item">
-                                            <a class='effect-ajax' href='stories-1.html'>NEWS</a>
+                                            <a class='effect-ajax' href='stories.html'>NEWS</a>
                                         </li>
                                         <li class="menu-item">
-                                            <a class='effect-ajax' href='about-us-1.html'>ABOUT</a>
+                                            <a class='effect-ajax' href='about-us.html'>ABOUT</a>
                                         </li>
                                         <li class="menu-item">
-                                            <a class='effect-ajax' href='contact-1.html'>CONTACT</a>
+                                            <a class='effect-ajax' href='contact.html'>CONTACT</a>
                                         </li>
 
                                     </ul>
@@ -1013,17 +1053,17 @@
         <div class="night active" data-dsn-theme="dark">
             <svg width="48" height="48" viewbox="0 0 48 48">
                 <rect x="12.3" y="23.5" width="2.6" height="1"></rect>
-                <rect x="16.1" y="15.3" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -6.8871 16.5732)" width="1"
-                    height="2.6"></rect>
+                <rect x="16.1" y="15.3" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -6.8871 16.5732)"
+                    width="1" height="2.6"></rect>
                 <rect x="23.5" y="12.3" width="1" height="2.6"></rect>
-                <rect x="30.1" y="16.1" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -2.5145 27.0538)" width="2.6"
-                    height="1"></rect>
+                <rect x="30.1" y="16.1" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -2.5145 27.0538)"
+                    width="2.6" height="1"></rect>
                 <rect x="33.1" y="23.5" width="2.6" height="1"></rect>
-                <rect x="30.9" y="30.1" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -12.9952 31.4264)" width="1"
-                    height="2.6"></rect>
+                <rect x="30.9" y="30.1" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -12.9952 31.4264)"
+                    width="1" height="2.6"></rect>
                 <rect x="23.5" y="33.1" width="1" height="2.6"></rect>
-                <rect x="15.3" y="30.9" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -17.3677 20.9457)" width="2.6"
-                    height="1"></rect>
+                <rect x="15.3" y="30.9" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -17.3677 20.9457)"
+                    width="2.6" height="1"></rect>
                 <path
                     d="M24,18.7c-2.9,0-5.3,2.4-5.3,5.3s2.4,5.3,5.3,5.3s5.3-2.4,5.3-5.3S26.9,18.7,24,18.7z M24,28.3c-2.4,0-4.3-1.9-4.3-4.3s1.9-4.3,4.3-4.3s4.3,1.9,4.3,4.3S26.4,28.3,24,28.3z">
                 </path>
@@ -1043,4 +1083,18 @@
     <!-- ========== Line BG ========== -->
     <div id="line_head"><span class="container"></span></div>
     <!-- ========== End Line BG ========== -->
-@endsection
+
+
+
+    <script src="{{ asset('assets/front_assets/assets/js/jquery-3.1.1.min.js') }}"></script>
+
+    <script src="{{ asset('assets/front_assets/assets/js/plugins.min.js') }}"></script>
+
+    <script src="{{ asset('assets/front_assets/assets/js/custom.js') }}"></script>
+
+    <script src="{{ asset('assets/front_assets/assets/js/plugins/dsn-grid.min.js') }}"></script>
+
+
+</body>
+
+</html>
