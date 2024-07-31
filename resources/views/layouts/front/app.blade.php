@@ -23,7 +23,6 @@
     @include('layouts.front.cursor')
     <!-- ========== End Cursor ========== -->
 
-
     <!-- ==========  Social ========== -->
     @include('layouts.front.social')
     <!-- ========== End Social ========== -->

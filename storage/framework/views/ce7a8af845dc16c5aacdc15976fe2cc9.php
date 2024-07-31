@@ -23,7 +23,6 @@
     <?php echo $__env->make('layouts.front.cursor', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
     <!-- ========== End Cursor ========== -->
 
-
     <!-- ==========  Social ========== -->
     <?php echo $__env->make('layouts.front.social', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
     <!-- ========== End Social ========== -->
