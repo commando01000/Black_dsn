@@ -1,18 +1,50 @@
+<!doctype html>
+<html class="no-js" lang="">
+
 @include('layouts.front.head')
-@include('layouts.front.header')
-@yield('content')
-@include('layouts.front.footer')
-@yield('js')
-@yield('style')
 
-<script src="{{ asset('assets/front_assets/assets/js/jquery-3.1.1.min-1.js') }}"></script>
-<script src="{{ asset('assets/front_assets/assets/js/jquery-3.1.1.min.js') }}"></script>
-<script src="{{ asset('assets/front_assets/assets/js/plugins.min.js') }}"></script>
-<script src="{{ asset('assets/front_assets/assets/js/plugins.min-1.js') }}"></script>
-<script src="{{ asset('assets/front_assets/assets/js/custom-1.js') }}"></script>
-<script src="{{ asset('assets/front_assets/assets/js/custom.js') }}"></script>
+<body class="v-dark dsn-ajax">
 
-<script src="{{ asset('assets/front_assets/assets/js/home.js') }}"></script>
+    @include('layouts.front.pre-loader')
+
+    <main id="main_root" class="main-root">
+
+        <!-- ========== Menu ========== -->
+        @include('layouts.front.header')
+        <!-- ========== End Menu ========== -->
+        @yield('content')
+        @yield('css')
+        @yield('js')
+
+        @include('layouts.front.footer')
+    </main>
+
+    <!-- ========== Cursor ========== -->
+    @include('layouts.front.cursor')
+    <!-- ========== End Cursor ========== -->
+
+
+    <!-- ==========  Social ========== -->
+    @include('layouts.front.social')
+    <!-- ========== End Social ========== -->
+
+    <!-- ========== Style Option Page ========== -->
+    @include('layouts.front.style-option-page')
+    <!-- ========== End Style Option Page ========== -->
+
+    <!-- ========== Line BG ========== -->
+    @include('layouts.front.line-bg')
+    <!-- ========== End Line BG ========== -->
+
+
+    <script src="{{ asset('front_asset/assets/js/jquery-3.1.1.min.js') }}"></script>
+
+    <script src="{{ asset('front_asset/assets/js/plugins.min.js') }}"></script>
+
+    <script src="{{ asset('front_asset/assets/js/custom.js') }}"></script>
+
+    <script src="{{ asset('front_asset/assets/js/plugins/dsn-grid.min.js') }}"></script>
+
 </body>
 
 </html>

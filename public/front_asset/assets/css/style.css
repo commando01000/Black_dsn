@@ -57,6 +57,10 @@ Template Name: BlackDsn - Ajax Portfolio HTML Template
   --divider-color: var(--border-color);
 }
 
+body {
+  
+}
+
 :root .v-dark, :root .v-dark-head {
   --bg-color: #131313;
   --assistant-color: #191919;

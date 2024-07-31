@@ -1,23 +1,14 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title><?php echo $__env->yieldContent('title'); ?> | <?php echo e(Utility::getsettings('apps_name')); ?></title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
-    <link rel="stylesheet" href="<?php echo e(asset('assets/front_assets/assets/css/global.css')); ?>?v=<?= time() ?>" />
-    <link rel="stylesheet" href="<?php echo e(asset('assets/front_assets/assets/css/global-1.css')); ?>?v=<?= time() ?>" />
-    <link rel="stylesheet" href="<?php echo e(asset('assets/front_assets/assets/css/plugins.css')); ?>?v=<?= time() ?>" />
-    <link rel="stylesheet" href="<?php echo e(asset('assets/front_assets/assets/css/plugins-1.css')); ?>?v=<?= time() ?>" />
-    <link rel="stylesheet" href="<?php echo e(asset('assets/front_assets/assets/css/style-1.css')); ?>?v=<?= time() ?>" />
-    <link rel="stylesheet" href="<?php echo e(asset('assets/front_assets/assets/css/style.css')); ?>?v=<?= time() ?>" />
-    <?php echo $__env->yieldContent('style'); ?>
+    <link rel="icon" href="<?php echo e(asset('front_asset/assets/img/logo-32x32.png')); ?>" sizes="32x32">
+    <link rel="icon" href= "<?php echo e(asset('front_asset/assets/img/logo-192x192.png')); ?>" sizes="192x192">
+
+    <title>Main Home | Blackdsn</title>
+
+    <link href="<?php echo e(asset('front_asset/assets/css/plugins-1.css')); ?>" rel="stylesheet">
+    <link rel="stylesheet" href="<?php echo e(asset('front_asset/assets/css/style-1.css')); ?>">
 </head>
-
-<body>
 <?php /**PATH G:\xampp\htdocs\Black_dsn\resources\views/layouts/front/head.blade.php ENDPATH**/ ?>

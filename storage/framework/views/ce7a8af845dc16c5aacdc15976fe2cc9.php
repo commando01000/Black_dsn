@@ -1,18 +1,50 @@
+<!doctype html>
+<html class="no-js" lang="">
+
 <?php echo $__env->make('layouts.front.head', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
-<?php echo $__env->make('layouts.front.header', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
-<?php echo $__env->yieldContent('content'); ?>
-<?php echo $__env->make('layouts.front.footer', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
-<?php echo $__env->yieldContent('js'); ?>
-<?php echo $__env->yieldContent('style'); ?>
 
-<script src="<?php echo e(asset('assets/front_assets/assets/js/jquery-3.1.1.min-1.js')); ?>"></script>
-<script src="<?php echo e(asset('assets/front_assets/assets/js/jquery-3.1.1.min.js')); ?>"></script>
-<script src="<?php echo e(asset('assets/front_assets/assets/js/plugins.min.js')); ?>"></script>
-<script src="<?php echo e(asset('assets/front_assets/assets/js/plugins.min-1.js')); ?>"></script>
-<script src="<?php echo e(asset('assets/front_assets/assets/js/custom-1.js')); ?>"></script>
-<script src="<?php echo e(asset('assets/front_assets/assets/js/custom.js')); ?>"></script>
+<body class="v-dark dsn-ajax">
 
-<script src="<?php echo e(asset('assets/front_assets/assets/js/home.js')); ?>"></script>
+    <?php echo $__env->make('layouts.front.pre-loader', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+
+    <main id="main_root" class="main-root">
+
+        <!-- ========== Menu ========== -->
+        <?php echo $__env->make('layouts.front.header', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+        <!-- ========== End Menu ========== -->
+        <?php echo $__env->yieldContent('content'); ?>
+        <?php echo $__env->yieldContent('css'); ?>
+        <?php echo $__env->yieldContent('js'); ?>
+
+        <?php echo $__env->make('layouts.front.footer', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+    </main>
+
+    <!-- ========== Cursor ========== -->
+    <?php echo $__env->make('layouts.front.cursor', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+    <!-- ========== End Cursor ========== -->
+
+
+    <!-- ==========  Social ========== -->
+    <?php echo $__env->make('layouts.front.social', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+    <!-- ========== End Social ========== -->
+
+    <!-- ========== Style Option Page ========== -->
+    <?php echo $__env->make('layouts.front.style-option-page', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+    <!-- ========== End Style Option Page ========== -->
+
+    <!-- ========== Line BG ========== -->
+    <?php echo $__env->make('layouts.front.line-bg', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+    <!-- ========== End Line BG ========== -->
+
+
+    <script src="<?php echo e(asset('front_asset/assets/js/jquery-3.1.1.min.js')); ?>"></script>
+
+    <script src="<?php echo e(asset('front_asset/assets/js/plugins.min.js')); ?>"></script>
+
+    <script src="<?php echo e(asset('front_asset/assets/js/custom.js')); ?>"></script>
+
+    <script src="<?php echo e(asset('front_asset/assets/js/plugins/dsn-grid.min.js')); ?>"></script>
+
 </body>
 
 </html>

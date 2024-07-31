@@ -1,226 +1,115 @@
-<div class="stack_one overflow-hidden">
-    <footer class="footer">
-        <div class="footer__stack">
-            <div class="footer__stack__row">
-                <div class="footer__stack__row__eight">
-                    <div class="footer__stack__row__eight__row">
-                        <div class="footer__stack__row__eight__row__column">
-                            <img src="{{ asset('assets/front_assets/images/img_footer_logo.png') }}" alt="footer logo"
-                                class="footer__logo" />
-                            <p class="footer__impact-statement ui text size-texts">
-                                Your final impact statement goes here.<br />Make it
-                                memorable!
-                            </p>
-                            <form chip-view="" id="1:112" class="footer__social-chips">
-                                <label tabindex="0" class="flex-row-center-center footer__social-chip--creative">
-                                    <input type="checkbox" name="selectedChipOptions" value="1" hidden="true" />
-                                    <span> Creative Designs</span>
-                                    <template hidden="">
-                                        <label unselected-styles="" class="dhi-group">
-                                        </label>
-                                        <label selected-styles="" class="dhi-group-1">
-                                        </label>
-                                    </template>
-                                </label>
-                                <label tabindex="0" class="flex-row-center-center footer__social-chip--motion">
-                                    <input type="checkbox" name="selectedChipOptions" value="2" hidden="true" />
-                                    <span> Motion Graphics</span>
-                                    <template hidden="">
-                                        <label unselected-styles="" class="dhi-group">
-                                        </label>
-                                        <label selected-styles="" class="dhi-group-1">
-                                        </label>
-                                    </template>
-                                </label>
-                                <label tabindex="0" class="flex-row-center-center footer__social-chip--uiux">
-                                    <input type="checkbox" name="selectedChipOptions" value="3" hidden="true" />
-                                    <span> UI / UX</span>
-                                    <template hidden="">
-                                        <label unselected-styles="" class="dhi-group">
-                                        </label>
-                                        <label selected-styles="" class="dhi-group-1">
-                                        </label>
-                                    </template>
-                                </label>
-                                <label tabindex="0" class="flex-row-center-center footer__social-chip--video">
-                                    <input type="checkbox" name="selectedChipOptions" value="4" hidden="true" />
-                                    <span> Video Production</span>
-                                    <template hidden="">
-                                        <label unselected-styles="" class="dhi-group">
-                                        </label>
-                                        <label selected-styles="" class="dhi-group-1">
-                                        </label>
-                                    </template>
-                                </label>
-                                <label tabindex="0" class="flex-row-center-center footer__social-chip--marketing">
-                                    <input type="checkbox" name="selectedChipOptions" value="5" hidden="true" />
-                                    <span> Performance Marketing</span>
-                                    <template hidden="">
-                                        <label unselected-styles="" class="dhi-group">
-                                        </label>
-                                        <label selected-styles="" class="dhi-group-1">
-                                        </label>
-                                    </template>
-                                </label>
-                            </form>
-                            <div class="footer__stack__row__eight__row__link-row">
-                                {{-- <span style="line-height: 30px" class="content-section__description fs-6">Social Share :</span> --}}
-                                <a href="{{ Utility::getsettings('contact_facebook') }}"
-                                    class="footer__social-button--facebook">
-                                    <img src="{{ asset('assets/front_assets/images/img_facebook_app_symbol.svg') }}">
-                                </a>
-                                <a href="{{ Utility::getsettings('contact_instagram') }}"
-                                    class="footer__link-button--link">
-                                    <img src="{{ asset('assets/front_assets/images/img_link.svg') }}">
-                                </a>
-                                <a href="{{ Utility::getsettings('contact_twitter') }}"
-                                    class="footer__link-button--link">
-                                    <img src="{{ asset('assets/front_assets/images/img_trash.svg') }}">
-                                </a>
-                            </div>
-                        </div>
-                        <div class="footer__stack__row__eight__column">
-                            <div class="footer__stack__row__eight__column__row">
-                                <div class="footer__stack__row__eight__column__row__quick-links">
-                                    <div class="col-md-6 footer__stack__row__eight__column__row__quick-links__column">
-                                        <p class="footer__quick-link-title ui text size-textxl">
-                                            Quic Link
-                                        </p>
-                                        <ul class="footer__stack__row__eight__column__row__quick-links__column__list">
-                                            <li>
-                                                <a href="{{ route('homepage') }}">
-                                                    <p class="footer__quick-link--home ui text size-texts">
-                                                        Home
-                                                    </p>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="{{ route('about-us') }}">
-                                                    <p class="footer__quick-link--about ui text size-texts">
-                                                        About
-                                                    </p>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="{{ route('services') }}">
-                                                    <p class="footer__quick-link--about ui text size-texts">
-                                                        Service
-                                                    </p>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="{{ route('faqs') }}">
-                                                    <p class="footer__quick-link--about ui text size-texts">
-                                                        FAQ
-                                                    </p>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="{{ route('contact') }}">
-                                                    <p class="footer__quick-link--about ui text size-texts">
-                                                        Contact Us
-                                                    </p>
-                                                </a>
-                                            </li>
+<footer id="dsn_footer" class="dsn-footer p-relative footer-animate svg-animate background-main">
+    <svg class="dsn-separator dsn-separator-up  dsn-icon-assistant-color" width="100%" height="100%" viewbox="0 0 100 10"
+        preserveaspectratio="none">
+        <path class="path-anim separator__path" data-dsn-to="M 0 0 C 40 0 55 0 100 0 L 0 0 Z"
+            vector-effect="non-scaling-stroke" d="M 0 0 C 40 16 75 10 100 0 L 0 0 Z"></path>
+    </svg>
+    <div class="footer-content p-relative mt-section">
 
-                                            <li>
-                                                <a href="{{ route('PrivacyPolicy') }}">
-                                                    <p class="footer__quick-link--about ui text size-texts">
-                                                        Privacy & Policys
-                                                    </p>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-md-6 footer__stack__row__eight__column__row__social-media">
-                                        <p class="footer__quick-link-title ui text size-textxl">
-                                            Social media
-                                        </p>
-                                        <ul class="footer__stack__row__eight__column__row__social-media__column">
-                                            <li>
-                                                <a href="{{ Utility::getsettings('contact_facebook') }}">
-                                                    <p class="footer__quick-link--about ui text size-texts">
-                                                        Facebook
-                                                    </p>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="{{ Utility::getsettings('contact_instagram') }}">
-                                                    <p class="footer__quick-link--about ui text size-texts">
-                                                        instagram
-                                                    </p>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="{{ Utility::getsettings('contact_twitter') }}">
-                                                    <p class="footer__quick-link--about ui text size-texts">
-                                                        twitter
-                                                    </p>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="{{ Utility::getsettings('snapchat') }}">
-                                                    <p class="footer__quick-link--about ui text size-texts">
-                                                        Snapchat
-                                                    </p>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="{{ Utility::getsettings('contact_linkedin') }}">
-                                                    <p class="footer__quick-link--about ui text size-texts">
-                                                        Linkedin
-                                                    </p>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="footer__stack__row__eight__column__row__contact">
-                                    <div class="section__header">
-                                        <p class="footer__contact-title ui text size-textmd">
-                                            Call Us
-                                        </p>
-                                        <h3 class="footer__contact-number ui heading size-headingxs">
-                                            {{ Utility::getsettings('contact_phone1') }}
-                                        </h3>
-                                        <h3 class="footer__contact-number--alternate ui heading size-headingxs">
-                                            {{ Utility::getsettings('contact_phone2') }}
-                                        </h3>
-                                    </div>
-                                    <div class="section__header">
-                                        <p class="footer__contact-title ui text size-textmd">
-                                            Corporate Office
-                                        </p>
-                                        <p class="footer__address-details ui text size-textlg text-center">
-                                            {{ Utility::getsettings('contact_address') }}
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <p class="footer__copyright ui text size-texts">
-                                All copy rights are reserved to Dopiks
-                            </p>
+        <div class="text-center container">
+            <h2 class="title-h2 ">
+                LET'S BUILD SOMETHING
+                <span class="d-block"><b><i>AMAZING </i></b>TOGETHER</span>
+            </h2>
+            <div class="dsn-icon-heading-color dsn-def-btn d-flex justify-content-center mt-30">
+                <a class='dsn-btn dsn-border border-color-default  background-section  effect-ajax has-icon-left'
+                    data-dsn-text='START A PROJECT' href='contact.html'>
+                    <span class="dsn-icon dsn-bg-before btn-icon-left heading-color z-index-1">
+                        <i class="fas fa-angle-right" aria-hidden="true"></i>
+                    </span>
+                    <span class="title-btn p-relative  z-index-1 ">START A PROJECT</span>
+                </a>
+            </div>
+
+        </div>
+        <div class="dsn-container pt-60">
+            <div class="d-grid grid-lg-4 grid-md-2 ">
+                <div class="grid-col-1">
+                    <div class="dsn-logo main-logo">
+                        <div class="main-logo">
+                            <a href="https://dsngrid.com/blackdsn/" data-dsn-text="Blackdsn"
+                                class="custom-logo-link main-brand effect-ajax" rel="home">
+                                <img class="custom-logo logo-light" src= "{{asset('front_asset/assets/img/logo-light.png')}}" alt="Blackdsn">
+                                <img class="custom-logo logo-dark" src= "{{asset('front_asset/assets/img/logo.png')}}" alt="Blackdsn">
+                            </a>
                         </div>
+                    </div>
+                    <ul class="dsn-socials box-social mt-20 dsn-icon-heading-color">
+                        <li><a href="#0" target="_blank" rel="nofollow"
+                                class="init-color move-circle border-color-default" data-dsn="parallax"><span
+                                    class="dsn-icon"><i class="fab fa-facebook-f"></i></span><span>FB</span></a>
+                        </li>
+                        <li><a href="#0" target="_blank" rel="nofollow"
+                                class="init-color move-circle border-color-default" data-dsn="parallax"><span
+                                    class="dsn-icon"><i class="fab fa-twitter"></i></span><span>TW</span></a>
+                        </li>
+                        <li><a href="#0" target="_blank" rel="nofollow"
+                                class="init-color move-circle border-color-default" data-dsn="parallax"><span
+                                    class="dsn-icon"><i class="fab fa-linkedin-in"></i></span><span>LN</span></a></li>
+                        <li><a href="#0" target="_blank" rel="nofollow"
+                                class="init-color move-circle border-color-default" data-dsn="parallax"><span
+                                    class="dsn-icon"><i class="fab fa-instagram"></i></span><span>IN</span></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="grid-col-2">
+                    <h4 class="subtitle p-relative line-shape  line-shape-after "><span
+                            class="background-revere ">NAVIGATION</span>
+                    </h4>
+                    <div class="menu-footer-menu-container">
+                        <ul id="menu-footer-menu" class="menu">
+                            <li class="menu-item">
+                                <a href="home.html" class="effect-ajax">HOME</a>
+                            </li>
+                            <li class="menu-item">
+                                <a class='effect-ajax' href='work-classic-2.html'>PORTFOLIO</a>
+                            </li>
+                            <li class="menu-item">
+                                <a class='effect-ajax' href='stories.html'>NEWS</a>
+                            </li>
+                            <li class="menu-item">
+                                <a class='effect-ajax' href='about-us.html'>ABOUT</a>
+                            </li>
+                            <li class="menu-item">
+                                <a class='effect-ajax' href='contact.html'>CONTACT</a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+                <div class="grid-col-3">
+                    <h4 class="subtitle p-relative line-shape  line-shape-after "><span
+                            class="background-revere ">CONTACT</span>
+                    </h4>
+
+                    <div class="col-contact">
+                        <p><strong>T</strong> : +001 225 3351</p>
+                        <p class="mt-10"><strong>F</strong> :+001 225 3351</p>
+                        <p class="over-hidden mt-10">
+                            <strong>E</strong> : <a class="link-hover" href="#"
+                                data-hover-text="info@dsngrid.com">info@dsngrid.com</a>
+                        </p>
+                    </div>
+
+                </div>
+                <div class="grid-col-4">
+                    <h4 class="subtitle p-relative line-shape  line-shape-after "><span
+                            class="background-revere ">ADDRESS</span>
+                    </h4>
+                    <div class="col-address">
+                        <p>
+                            El-Mahalla El-Kubra 37<br> 1776 Damietta<br>Egypt
+                        </p>
                     </div>
                 </div>
             </div>
-        </div>
-    </footer>
-    <a href="#">
-        <div class="clock">
-            <div class="clock__column">
-                <img src="{{ asset('assets/front_assets/images/img_polygon_1.svg') }}" alt="arrow image"
-                    class="clock__icon--arrow-up" />
-                <img src="{{ asset('assets/front_assets/images/img_border.svg') }}" alt="border image"
-                    class="clock__border" />
+            <div class="footer-bottom mt-60 pt-30 border-top pb-30 text-center">
+                <p class="over-hidden">
+                    © 2022 Digital Agency Designed by
+                    <a href="#0" class="link-hover" data-hover-text="DSN Grid" target="_blank">DSN
+                        Grid</a>
+                </p>
             </div>
         </div>
-    </a>
-</div>
-</div>
-</div>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
-</script>
-<script src="https://cdn-script.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-<script src="{{ asset('assets/front_assets/assets/js/home.js') }}?v=<?= time() ?>"></script>
+    </div>
+</footer>
