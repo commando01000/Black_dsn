@@ -13,13 +13,14 @@ use App\Models\MenuSetting;
 use App\Models\NotificationsSetting;
 use App\Models\User;
 use App\Notifications\NewEnquiryDetails;
+use Illuminate\Support\Facades\App;
 
 class Contact_frontController extends Controller
 {
     public function index()
     {
         $lang = UtilityFacades::getActiveLanguage();
-        \App::setLocale($lang);
+        App::setLocale($lang);
         $footerMainMenus = MenuSetting::where('parent_id', 0)->get();
         return view('front.contact.index', compact('lang', 'footerMainMenus'));
     }

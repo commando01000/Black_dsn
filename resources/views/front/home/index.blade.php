@@ -1,11 +1,12 @@
 @extends('layouts.front.app')
 
+
 @section('content')
     <div id="dsn-scrollbar">
         <!-- ========== Slider Parallax ========== -->
         <header class="v-dark-head dsn-section-padding dsn-header-animation">
             <div class="main-slider v-dark-head-mobile has-horizontal  active-nav-slider dsn-webgl has-paginate"
-                data-dsn-webgl='{"displacement" : {{ asset('front_asset/assets/img/displacement/8.jpg')}}}'
+                data-dsn-webgl='{"displacement" : {{ asset('front_asset/assets/img/displacement/8.jpg') }}}'
                 data-dsn-option='{"direction":"horizontal","allowTouchMove":true,"watchSlidesProgress":true,"grabCursor":true,"mousewheel":false}'>
                 <div class="content-slider slide-inner h-100 over-hidden">
                     <div class="bg-container p-absolute  dsn-hero-parallax-img  w-100 h-100 z-index-1 dsn-hero-parallax-img">
@@ -596,7 +597,8 @@
                         <div class="box-img w-100"
                             data-dsn-animation='{"to":{"y":"120px"},"option":{"scrub":"0","start":"80%","end":"30%"},"responsive":["desktop"]}'>
                             <div class="img-box-parallax h-v-80 before-z-index w-100" data-overlay="1">
-                                <img class="cover-bg-img" src= "{{ asset('front_asset/assets/img/about-3.jpg')}}" alt="">
+                                <img class="cover-bg-img" src= "{{ asset('front_asset/assets/img/about-3.jpg') }}"
+                                    alt="">
                             </div>
                         </div>
                     </div>
@@ -686,7 +688,8 @@
                                                     <div class="box-image-bg before-z-index dsn-swiper-parallax-transform"
                                                         data-overlay="4">
                                                         <img class="cover-bg-img"
-                                                            src= "{{ asset('front_asset/assets/img/portfolio/project6/1.jpg') }}" alt="">
+                                                            src= "{{ asset('front_asset/assets/img/portfolio/project6/1.jpg') }}"
+                                                            alt="">
                                                     </div>
                                                 </a>
                                                 <div class="post-content dsn-bg p-relative z-index-1 d-flex flex-column">
@@ -1564,4 +1567,14 @@
             <!-- ========== End Brand ========== -->
         </div>
     </div>
+@endsection
+
+@section('js')
+    <script src="{{ asset('front_asset/assets/js/jquery-3.1.1.min.js') }}"></script>
+
+    <script src="{{ asset('front_asset/assets/js/plugins.min.js') }}"></script>
+
+    <script src="{{ asset('front_asset/assets/js/plugins/dsn-grid.min.js') }}"></script>h
+
+    <script src="{{ asset('front_asset/assets/js/custom.js') }}"></script>
 @endsection

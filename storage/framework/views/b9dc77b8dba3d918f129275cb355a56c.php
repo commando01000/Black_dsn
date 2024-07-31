@@ -1,5 +1,6 @@
 
 
+
 <?php $__env->startSection('content'); ?>
     <div id="dsn-scrollbar">
         <!-- ========== Slider Parallax ========== -->
@@ -597,7 +598,8 @@
                         <div class="box-img w-100"
                             data-dsn-animation='{"to":{"y":"120px"},"option":{"scrub":"0","start":"80%","end":"30%"},"responsive":["desktop"]}'>
                             <div class="img-box-parallax h-v-80 before-z-index w-100" data-overlay="1">
-                                <img class="cover-bg-img" src= "<?php echo e(asset('front_asset/assets/img/about-3.jpg')); ?>" alt="">
+                                <img class="cover-bg-img" src= "<?php echo e(asset('front_asset/assets/img/about-3.jpg')); ?>"
+                                    alt="">
                             </div>
                         </div>
                     </div>
@@ -687,7 +689,8 @@
                                                     <div class="box-image-bg before-z-index dsn-swiper-parallax-transform"
                                                         data-overlay="4">
                                                         <img class="cover-bg-img"
-                                                            src= "<?php echo e(asset('front_asset/assets/img/portfolio/project6/1.jpg')); ?>" alt="">
+                                                            src= "<?php echo e(asset('front_asset/assets/img/portfolio/project6/1.jpg')); ?>"
+                                                            alt="">
                                                     </div>
                                                 </a>
                                                 <div class="post-content dsn-bg p-relative z-index-1 d-flex flex-column">
@@ -1565,6 +1568,16 @@
             <!-- ========== End Brand ========== -->
         </div>
     </div>
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('js'); ?>
+    <script src="<?php echo e(asset('front_asset/assets/js/jquery-3.1.1.min.js')); ?>"></script>
+
+    <script src="<?php echo e(asset('front_asset/assets/js/plugins.min.js')); ?>"></script>
+
+    <script src="<?php echo e(asset('front_asset/assets/js/plugins/dsn-grid.min.js')); ?>"></script>h
+
+    <script src="<?php echo e(asset('front_asset/assets/js/custom.js')); ?>"></script>
 <?php $__env->stopSection(); ?>
 
 <?php echo $__env->make('layouts.front.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH G:\xampp\htdocs\Black_dsn\resources\views/front/home/index.blade.php ENDPATH**/ ?>

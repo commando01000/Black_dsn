@@ -558,12 +558,12 @@
                     </a>
                 </li>
                 <li class="nav-item ">
-                    <a href='about-us.html' title='Home'>
+                    <a href='{{route('about-us')}}' title='Home'>
                         <span class="overflow">About</span>
                     </a>
                 </li>
                 <li class="nav-item ">
-                    <a href='contact.html' title='Home'>
+                    <a href='{{route('contact')}}' title='Home'>
                         <span class="overflow">Contact</span>
                     </a>
                 </li>

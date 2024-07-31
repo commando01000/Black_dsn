@@ -1084,17 +1084,6 @@
     <div id="line_head"><span class="container"></span></div>
     <!-- ========== End Line BG ========== -->
 
-
-
-    <script src="<?php echo e(asset('assets/front_assets/assets/js/jquery-3.1.1.min.js')); ?>"></script>
-
-    <script src="<?php echo e(asset('assets/front_assets/assets/js/plugins.min.js')); ?>"></script>
-
-    <script src="<?php echo e(asset('assets/front_assets/assets/js/custom.js')); ?>"></script>
-
-    <script src="<?php echo e(asset('assets/front_assets/assets/js/plugins/dsn-grid.min.js')); ?>"></script>
-
-
 </body>
 
 </html>

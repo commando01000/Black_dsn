@@ -19,9 +19,8 @@ class About_frontController extends Controller
         $leaderships = Leadership::get();
         $about = Statistic::where('title', 'about')->first();
         $statistics = Statistic::where('title', 'statistics')->first();
-
         $allBlogs = Blog::take(3)->get();
-        return view('front/about-us.index', compact('lang', 'testimonials', 'leaderships', 'about', 'statistics', 'allBlogs'));
+        return view('front.about-us.index', compact('lang', 'testimonials', 'leaderships', 'about', 'statistics', 'allBlogs'));
     }
     public function team_detail($id)
     {

@@ -1,7 +1,7 @@
-@extends('layouts.front.app')
-@section('title', 'About Us')
 
-@section('content')
+<?php $__env->startSection('title', 'About Us'); ?>
+
+<?php $__env->startSection('content'); ?>
     <!-- ========== Header Normal========== -->
     <header id="dsn_header" class="dsn-header-animation header-normal">
         <div class="background-overlay bg-pattern p-absolute left-0 top-0 w-100 h-100"></div>
@@ -50,7 +50,7 @@
         <div class="box-under-bottom-img mb-section">
             <div class="img-box-parallax before-z-index dsn-animate dsn-effect-down h-v-80" data-dsn-triggerhook="bottom"
                 data-dsn-grid="move-up" data-overlay="0">
-                <img class="has-bigger-scale cover-bg-img has-direction" src= "{{ asset('front_assets/img/about-5.jpg') }}"
+                <img class="has-bigger-scale cover-bg-img has-direction" src= "<?php echo e(asset('front_assets/img/about-5.jpg')); ?>"
                     alt=''>
             </div>
             <div class="p-relative content container background-theme box-padding border-rdu text-center">
@@ -365,7 +365,7 @@
                 <div class="team-item p-relative grid-item box-hover-image">
                     <div class="team-item-inner  background-main">
                         <div class="avatar box-img" data-overlay="4">
-                            <img class="cover-bg-img" src= "{{ asset('front_assets/img/team/3.jpg') }}" alt=''>
+                            <img class="cover-bg-img" src= "<?php echo e(asset('front_assets/img/team/3.jpg')); ?>" alt=''>
                         </div>
                         <div class="team-content border-before text-center">
                             <h4 class="text-name sm-title-block">Ahmed Shawky</h4>
@@ -399,7 +399,7 @@
                 <div class="team-item p-relative grid-item box-hover-image">
                     <div class="team-item-inner  background-main">
                         <div class="avatar box-img" data-overlay="4">
-                            <img class="cover-bg-img" src= "{{ asset('front_assets/img/team/2.jpg') }}" alt=''>
+                            <img class="cover-bg-img" src= "<?php echo e(asset('front_assets/img/team/2.jpg')); ?>" alt=''>
                         </div>
                         <div class="team-content border-before text-center">
                             <h4 class="text-name sm-title-block">Hisham Megahed</h4>
@@ -433,7 +433,7 @@
                 <div class="team-item p-relative grid-item box-hover-image">
                     <div class="team-item-inner  background-main">
                         <div class="avatar box-img" data-overlay="4">
-                            <img class="cover-bg-img" src= "{{ asset('front_assets/img/team/1.jpg') }}" alt=''>
+                            <img class="cover-bg-img" src= "<?php echo e(asset('front_assets/img/team/1.jpg')); ?>" alt=''>
                         </div>
                         <div class="team-content border-before text-center">
                             <h4 class="text-name sm-title-block">Blake Hamilton</h4>
@@ -501,7 +501,7 @@
                                 <div class="swiper-wrapper">
                                     <div class="swiper-slide testimonial-inner-item border-style">
                                         <div class="avatar box-img dsn-auto">
-                                            <img src= "{{ asset('front_assets/img/team/1.jpg') }}" class="cover-bg-img"
+                                            <img src= "<?php echo e(asset('front_assets/img/team/1.jpg')); ?>" class="cover-bg-img"
                                                 alt=''>
                                         </div>
                                         <div class="testimonial-item">
@@ -522,7 +522,7 @@
                                             <div class="content-inner border-top">
                                                 <div class="d-flex align-items-center ">
                                                     <div class="avatar box-img dsn-auto">
-                                                        <img src= "{{ asset('front_assets/img/team/1.jpg') }}"
+                                                        <img src= "<?php echo e(asset('front_assets/img/team/1.jpg')); ?>"
                                                             class="cover-bg-img" alt=''>
                                                     </div>
                                                     <div class="label box-text">
@@ -535,7 +535,7 @@
                                     </div>
                                     <div class="swiper-slide testimonial-inner-item border-style">
                                         <div class="avatar box-img dsn-auto">
-                                            <img src= "{{ asset('front_assets/img/team/2.jpg') }}" class="cover-bg-img"
+                                            <img src= "<?php echo e(asset('front_assets/img/team/2.jpg')); ?>" class="cover-bg-img"
                                                 alt=''>
                                         </div>
                                         <div class="testimonial-item">
@@ -556,7 +556,7 @@
                                             <div class="content-inner border-top">
                                                 <div class="d-flex align-items-center ">
                                                     <div class="avatar box-img dsn-auto">
-                                                        <img src= "{{ asset('front_assets/img/team/2.jpg') }}"
+                                                        <img src= "<?php echo e(asset('front_assets/img/team/2.jpg')); ?>"
                                                             class="cover-bg-img" alt=''>
                                                     </div>
                                                     <div class="label box-text">
@@ -570,7 +570,7 @@
                                     </div>
                                     <div class="swiper-slide testimonial-inner-item border-style">
                                         <div class="avatar box-img dsn-auto">
-                                            <img src= "{{ asset('front_assets/img/team/3.jpg') }}" class="cover-bg-img"
+                                            <img src= "<?php echo e(asset('front_assets/img/team/3.jpg')); ?>" class="cover-bg-img"
                                                 alt=''>
                                         </div>
                                         <div class="testimonial-item">
@@ -591,7 +591,7 @@
                                             <div class="content-inner border-top">
                                                 <div class="d-flex align-items-center ">
                                                     <div class="avatar box-img dsn-auto">
-                                                        <img src= "{{ asset('front_assets/img/team/3.jpg') }}"
+                                                        <img src= "<?php echo e(asset('front_assets/img/team/3.jpg')); ?>"
                                                             class="cover-bg-img" alt=''>
                                                     </div>
                                                     <div class="label box-text">
@@ -605,7 +605,7 @@
                                     </div>
                                     <div class="swiper-slide testimonial-inner-item border-style">
                                         <div class="avatar box-img dsn-auto">
-                                            <img src= "{{ asset('front_assets/img/team/4.jpg') }}" class="cover-bg-img"
+                                            <img src= "<?php echo e(asset('front_assets/img/team/4.jpg')); ?>" class="cover-bg-img"
                                                 alt=''>
                                         </div>
                                         <div class="testimonial-item">
@@ -626,7 +626,7 @@
                                             <div class="content-inner border-top">
                                                 <div class="d-flex align-items-center ">
                                                     <div class="avatar box-img dsn-auto">
-                                                        <img src= "{{ asset('front_assets/img/team/4.jpg') }}"
+                                                        <img src= "<?php echo e(asset('front_assets/img/team/4.jpg')); ?>"
                                                             class="cover-bg-img" alt=''>
                                                     </div>
                                                     <div class="label box-text">
@@ -695,42 +695,42 @@
             <div class="d-grid grid-md-4 grid-sm-2 dsn-brand">
                 <div class="brand-item border-style">
                     <div class="brand-item-inner over-hidden p-relative">
-                        <img src="{{ asset('front_asset/img/team/1.jpg') }}" alt="">
+                        <img src="<?php echo e(asset('front_asset/img/team/1.jpg')); ?>" alt="">
                     </div>
                 </div>
                 <div class="brand-item border-style">
                     <div class="brand-item-inner over-hidden p-relative">
-                        <img src="{{ asset('front_asset/img/team/2.jpg') }}" alt="">
+                        <img src="<?php echo e(asset('front_asset/img/team/2.jpg')); ?>" alt="">
                     </div>
                 </div>
                 <div class="brand-item border-style">
                     <div class="brand-item-inner over-hidden p-relative">
-                        <img src="{{ asset('front_asset/img/team/3.jpg') }}" alt="">
+                        <img src="<?php echo e(asset('front_asset/img/team/3.jpg')); ?>" alt="">
                     </div>
                 </div>
                 <div class="brand-item border-style">
                     <div class="brand-item-inner over-hidden p-relative">
-                        <img src="{{ asset('front_asset/img/team/4.jpg') }}" alt="">
+                        <img src="<?php echo e(asset('front_asset/img/team/4.jpg')); ?>" alt="">
                     </div>
                 </div>
                 <div class="brand-item border-style">
                     <div class="brand-item-inner over-hidden p-relative">
-                        <img src="{{ asset('front_asset/img/team/5.jpg') }}" alt="">
+                        <img src="<?php echo e(asset('front_asset/img/team/5.jpg')); ?>" alt="">
                     </div>
                 </div>
                 <div class="brand-item border-style">
                     <div class="brand-item-inner over-hidden p-relative">
-                        <img src="{{ asset('front_asset/img/team/6.jpg') }}" alt="">
+                        <img src="<?php echo e(asset('front_asset/img/team/6.jpg')); ?>" alt="">
                     </div>
                 </div>
                 <div class="brand-item border-style">
                     <div class="brand-item-inner over-hidden p-relative">
-                        <img src="{{ asset('front_asset/img/team/1.jpg') }}" alt="">
+                        <img src="<?php echo e(asset('front_asset/img/team/1.jpg')); ?>" alt="">
                     </div>
                 </div>
                 <div class="brand-item border-style">
                     <div class="brand-item-inner over-hidden p-relative">
-                        <img src="{{ asset('front_asset/img/team/4.jpg') }}" alt="">
+                        <img src="<?php echo e(asset('front_asset/img/team/4.jpg')); ?>" alt="">
                     </div>
                 </div>
             </div>
@@ -739,4 +739,6 @@
 
     </div>
 
-@endsection
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.front.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH G:\xampp\htdocs\Black_dsn\resources\views/front/about-us/index.blade.php ENDPATH**/ ?>
