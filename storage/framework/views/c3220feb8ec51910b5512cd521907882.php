@@ -1,6 +1,6 @@
-@extends('layouts.front.app')
 
-@section('content')
+
+<?php $__env->startSection('content'); ?>
     <div id="dsn_preloader" class="preloader">
         <div class="dsnload p-absolute">
             <span class="dsnload__row">
@@ -1043,4 +1043,6 @@
     <!-- ========== Line BG ========== -->
     <div id="line_head"><span class="container"></span></div>
     <!-- ========== End Line BG ========== -->
-@endsection
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.front.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH G:\xampp\htdocs\Black_dsn\resources\views/front/contact/index.blade.php ENDPATH**/ ?>

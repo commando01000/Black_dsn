@@ -21,7 +21,7 @@ class Contact_frontController extends Controller
         $lang = UtilityFacades::getActiveLanguage();
         \App::setLocale($lang);
         $footerMainMenus = MenuSetting::where('parent_id', 0)->get();
-        return view('front.contact.contactus', compact('lang', 'footerMainMenus'));
+        return view('front.contact.index', compact('lang', 'footerMainMenus'));
     }
 
     public function store(Request $request)
