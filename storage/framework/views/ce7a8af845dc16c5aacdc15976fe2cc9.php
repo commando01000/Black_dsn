@@ -40,10 +40,9 @@
 
     <script src="<?php echo e(asset('front_asset/assets/js/plugins.min.js')); ?>"></script>
 
-    <script src="<?php echo e(asset('front_asset/assets/js/custom.js')); ?>"></script>
-
     <script src="<?php echo e(asset('front_asset/assets/js/plugins/dsn-grid.min.js')); ?>"></script>
 
+    <script src="<?php echo e(asset('front_asset/assets/js/custom.js')); ?>"></script>
 </body>
 
 </html>

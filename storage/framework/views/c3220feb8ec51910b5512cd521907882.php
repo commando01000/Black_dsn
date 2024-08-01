@@ -1,6 +1,31 @@
 
 <?php $__env->startSection('title', 'Contact Us'); ?>
+<style>
+    .message-container {
+        position: fixed;
+        /* Use fixed positioning */
+        top: 80px;
+        /* Distance from the top */
+        right: 20px;
+        /* Distance from the right */
+        z-index: 1000;
+        /* Ensure it sits above other content */
+    }
+</style>
+<script>
+    setTimeout(function() {
+        document.getElementsByClassName("message-container")[0].style.display = "none";
+    }, 6000);
+</script>
 <?php $__env->startSection('content'); ?>
+    <?php if(session()->has('message')): ?>
+        <div class="message-container">
+            <div style="color: green !important" class="alert alert-success">
+                <?php echo e(session()->get('message')); ?>
+
+            </div>
+        </div>
+    <?php endif; ?>
     <!-- ========== Header Normal========== -->
     <header id="dsn_header" class="dsn-header-animation header-normal v-dark-head">
         <div class="background-overlay bg-pattern p-absolute left-0 top-0 w-100 h-100"></div>
@@ -54,8 +79,8 @@
                     </h2>
                     <p class="mt-10">Fill fields and find approximate your repair</p>
                     <div class="dsn-form mt-20 form-box d-flex flex-column">
-                        <form id="contact-form" class="form w-100" method="post" action="contact.php"
-                            data-toggle="validator">
+                        <form class="form w-100" method="post" action="<?php echo e(route('contact_us.store')); ?>">
+                            <?php echo csrf_field(); ?>
                             <div class="messages"></div>
                             <div class="input__wrap controls">
                                 <div class="d-grid grid-md-2" data-dsn-gap="0px 30px">
@@ -82,17 +107,18 @@
                                 <div class="form-group dsn-up">
                                     <div class="entry-box">
 
-                                        <textarea id="form_message" class="form-control" name="message" rows="7"
+                                        <textarea id="form_message" class="form-control" name="comments" rows="7"
                                             placeholder="Tell us about you and the world" required="required" data-error="Please,leave us a message."></textarea>
                                     </div>
                                     <div class="help-block with-errors"></div>
                                 </div>
 
-                                <div class="d-flex dsn-up">
-                                    <div class="image-zoom move-circle border-color-default border-style border-rdu"
-                                        data-dsn="parallax">
-                                        <input type="submit" value="Send Message">
-                                    </div>
+
+                            </div>
+                            <div class="d-flex dsn-up">
+                                <div class="image-zoom move-circle border-color-default border-style border-rdu"
+                                    data-dsn="parallax">
+                                    <input type="submit" value="Send Message">
                                 </div>
                             </div>
                         </form>
@@ -108,8 +134,7 @@
                                     <div class="service-content p-relative">
                                         <h4 class="service_title  sm-title-block ">Head Office:</h4>
                                         <div class="service_description mt-10 max-w570 dsn-auto">
-                                            <p>El-Mahalla El-Kubra
-                                                37<br>1776 Damietta Egypt</p>
+                                            <p><?php echo e(Utility::getsettings('contact_address2')); ?></p>
                                         </div>
                                     </div>
                                 </div>
@@ -122,8 +147,7 @@
                                         <h4 class="service_title  sm-title-block ">
                                             Phones:</h4>
                                         <div class="service_description mt-10 max-w570 dsn-auto">
-                                            <p>+1 (850) 344 0
-                                                66</p>
+                                            <p><?php echo e(Utility::getsettings('contact_phone1')); ?></p>
                                         </div>
                                     </div>
                                 </div>
@@ -136,7 +160,8 @@
                                         <h4 class="service_title  sm-title-block ">
                                             Write Us:</h4>
                                         <div class="service_description mt-10 max-w570 dsn-auto">
-                                            <p>info@dsngrid.com</p>
+                                            <p><?php echo e(Utility::getsettings('contact_email')); ?></p>
+                                            <p><?php echo e(Utility::getsettings('contact_phone1')); ?></p>
                                         </div>
                                     </div>
                                 </div>

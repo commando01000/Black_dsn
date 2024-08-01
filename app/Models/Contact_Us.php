@@ -10,6 +10,7 @@ class Contact_Us extends Model
     use HasFactory;
     public $table = 'contact_us';
     public $fillable = [
+        'name',
         'firstname',
         'lastname',
         'email',

@@ -29,7 +29,7 @@
                                 <div class="col-sm-12">
                                     <div class="form-group">
                                         {{ Form::label('name', __('Name'), ['class' => 'form-label']) }} *
-                                        {!! Form::text('name', $contact->firstname . ' ' . $contact->lastname, [
+                                        {!! Form::text('name', $contact->name, [
                                             'class' => 'form-control',
                                             'disabled',
                                         ]) !!}

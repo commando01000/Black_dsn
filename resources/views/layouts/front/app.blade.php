@@ -40,10 +40,9 @@
 
     <script src="{{ asset('front_asset/assets/js/plugins.min.js') }}"></script>
 
-    <script src="{{ asset('front_asset/assets/js/custom.js') }}"></script>
-
     <script src="{{ asset('front_asset/assets/js/plugins/dsn-grid.min.js') }}"></script>
 
+    <script src="{{ asset('front_asset/assets/js/custom.js') }}"></script>
 </body>
 
 </html>

@@ -24,6 +24,8 @@ use App\Http\Controllers\Back\ProfileController;
 use App\Http\Controllers\Back\BusinessGrowthController;
 use App\Http\Controllers\Back\ClientCategortController;
 use App\Http\Controllers\Back\CustomerController;
+use App\Http\Controllers\Back\DesignCategoryController;
+use App\Http\Controllers\Back\DesignController;
 use App\Http\Controllers\Back\FeatureController;
 use App\Http\Controllers\Back\SettingsController;
 use App\Http\Controllers\Back\ModuleController;
@@ -108,6 +110,14 @@ Route::group([
         Route::resource('cp/project-category', ProjectCategoryController::class);
         Route::post('cp/projectcategory-status/{id}', [ProjectCategoryController::class, 'projectCategoryStatus'])->name('projectcategory.status');
     });
+
+    //designs
+    Route::group(['middleware' => ['auth', 'Setting', 'verified', '2fa', 'verified_phone', 'Upload']], function () {
+        Route::resource('cp/designs', DesignController::class);
+        Route::resource('cp/design-category', DesignCategoryController::class);
+        // Route::post('cp/projectcategory-status/{id}', [ProjectCategoryController::class, 'projectCategoryStatus'])->name('projectcategory.status');
+    });
+
     //sliders
 
     Route::group(['middleware' => ['auth', 'Setting', 'verified', '2fa', 'verified_phone', 'Upload']], function () {
@@ -384,6 +394,7 @@ Route::group(['prefix' => '2fa'], function () {
     Route::post('/disable2fa', [LoginSecurityController::class, 'disable2fa'])->name('disable2fa');
 });
 
+Route::post('contact/store', [frontContact::class, 'store'])->name('contact_us.store');
 
 Route::group(['middleware' => ['Setting', 'xss', 'Upload']], function () {
     Route::get('blog', [Blog_frontController::class, 'index'])->name('see.all.blogs');
@@ -397,7 +408,6 @@ Route::group(['middleware' => ['Setting', 'xss', 'Upload']], function () {
     Route::get('gallery/{id}', [Gallery_frontController::class, 'view'])->name('view.gallery');
     //contact frontend
     Route::get('contact', [frontContact::class, 'index'])->name('contact');
-    Route::post('contact_us/store', [frontContact::class, 'store'])->name('contact_us.store');
     //end contact frontend
     Route::get('join', [frontContact::class, 'join'])->name('join');
     Route::get('services', [Services_frontController::class, 'seeAllServices'])->name('services');

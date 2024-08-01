@@ -29,17 +29,16 @@ class Contact_frontController extends Controller
     {
 
         $validation = $request->validate([
-            'firstname' => 'required',
-            'lastname' => 'required',
+            'name' => 'required',
             'email' => 'required|email',
-            'subject' => 'required',
             'comments' => 'required'
         ]);
         Contact_Us::create([
+            'name' => $request->name,
             'firstname' => $request->firstname,
             'lastname' => $request->lastname,
             'email' => $request->email,
-            'subject' => $request->subject,
+            'subject' => $request->subject ?? 'Blackdsn',
             'comments' => $request->comments
         ]);
         return redirect()->back()->with('message', "Message sent successfully");

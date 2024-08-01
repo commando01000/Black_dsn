@@ -40,8 +40,7 @@
                                         <tbody>
                                             @foreach ($contact_us as $contact)
                                                 <tr role="row" class="odd">
-                                                    <td class="sorting_1">{{ $contact->firstname }} {{ $contact->lastname }}
-                                                    </td>
+                                                    <td class="sorting_1">{{ $contact->name }} </td>
                                                     <td>{{ $contact->email }}</td>
                                                     <td>{{ $contact->subject }}</td>
                                                     {{-- <td>

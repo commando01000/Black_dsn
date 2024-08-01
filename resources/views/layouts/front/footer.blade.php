@@ -29,24 +29,26 @@
                         <div class="main-logo">
                             <a href="https://dsngrid.com/blackdsn/" data-dsn-text="Blackdsn"
                                 class="custom-logo-link main-brand effect-ajax" rel="home">
-                                <img class="custom-logo logo-light" src= "{{asset('front_asset/assets/img/logo-light.png')}}" alt="Blackdsn">
-                                <img class="custom-logo logo-dark" src= "{{asset('front_asset/assets/img/logo.png')}}" alt="Blackdsn">
+                                <img class="custom-logo logo-light"
+                                    src= "{{ asset('front_asset/assets/img/logo-light.png') }}" alt="Blackdsn">
+                                <img class="custom-logo logo-dark" src= "{{ asset('front_asset/assets/img/logo.png') }}"
+                                    alt="Blackdsn">
                             </a>
                         </div>
                     </div>
                     <ul class="dsn-socials box-social mt-20 dsn-icon-heading-color">
-                        <li><a href="#0" target="_blank" rel="nofollow"
+                        <li><a href="{{ Utility::getsettings('contact_facebook') }}" target="_blank" rel="nofollow"
                                 class="init-color move-circle border-color-default" data-dsn="parallax"><span
                                     class="dsn-icon"><i class="fab fa-facebook-f"></i></span><span>FB</span></a>
                         </li>
-                        <li><a href="#0" target="_blank" rel="nofollow"
+                        <li><a href="{{ Utility::getsettings('contact_twitter') }}" target="_blank" rel="nofollow"
                                 class="init-color move-circle border-color-default" data-dsn="parallax"><span
                                     class="dsn-icon"><i class="fab fa-twitter"></i></span><span>TW</span></a>
                         </li>
-                        <li><a href="#0" target="_blank" rel="nofollow"
+                        <li><a href="{{ Utility::getsettings('contact_linkedin') }}" target="_blank" rel="nofollow"
                                 class="init-color move-circle border-color-default" data-dsn="parallax"><span
                                     class="dsn-icon"><i class="fab fa-linkedin-in"></i></span><span>LN</span></a></li>
-                        <li><a href="#0" target="_blank" rel="nofollow"
+                        <li><a href="{{ Utility::getsettings('contact_instagram') }}" target="_blank" rel="nofollow"
                                 class="init-color move-circle border-color-default" data-dsn="parallax"><span
                                     class="dsn-icon"><i class="fab fa-instagram"></i></span><span>IN</span></a>
                         </li>
@@ -59,7 +61,7 @@
                     <div class="menu-footer-menu-container">
                         <ul id="menu-footer-menu" class="menu">
                             <li class="menu-item">
-                                <a href="home.html" class="effect-ajax">HOME</a>
+                                <a href="{{route('homepage')}}" class="effect-ajax">HOME</a>
                             </li>
                             <li class="menu-item">
                                 <a class='effect-ajax' href='work-classic-2.html'>PORTFOLIO</a>
@@ -68,10 +70,10 @@
                                 <a class='effect-ajax' href='stories.html'>NEWS</a>
                             </li>
                             <li class="menu-item">
-                                <a class='effect-ajax' href='about-us.html'>ABOUT</a>
+                                <a class='effect-ajax' href='{{route('about-us')}}'>ABOUT</a>
                             </li>
                             <li class="menu-item">
-                                <a class='effect-ajax' href='contact.html'>CONTACT</a>
+                                <a class='effect-ajax' href='{{route('contact')}}'>CONTACT</a>
                             </li>
 
                         </ul>
@@ -83,11 +85,11 @@
                     </h4>
 
                     <div class="col-contact">
-                        <p><strong>T</strong> : +001 225 3351</p>
-                        <p class="mt-10"><strong>F</strong> :+001 225 3351</p>
+                        <p><strong>T</strong> : +{{ Utility::getsettings('contact_phone1') }}</p>
+                        <p class="mt-10"><strong>F</strong> :{{ Utility::getsettings('contact_phone1') }}</p>
                         <p class="over-hidden mt-10">
                             <strong>E</strong> : <a class="link-hover" href="#"
-                                data-hover-text="info@dsngrid.com">info@dsngrid.com</a>
+                                data-hover-text="info@dsngrid.com">{{ Utility::getsettings('contact_email') }}</a>
                         </p>
                     </div>
 
@@ -98,7 +100,7 @@
                     </h4>
                     <div class="col-address">
                         <p>
-                            El-Mahalla El-Kubra 37<br> 1776 Damietta<br>Egypt
+                            {{ Utility::getsettings('contact_address2') }}
                         </p>
                     </div>
                 </div>

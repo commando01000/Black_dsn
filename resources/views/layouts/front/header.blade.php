@@ -11,7 +11,7 @@
             <div class="menu-cover-title header-container dsn-container">MENU</div>
             <ul id="dsn-primary-list" class="primary-nav h2">
                 <li class="nav-item has-sub-menu">
-                    <a title="Home" href="#0">
+                    <a title="Home" href="{{route('homepage')}}">
                         <span class="overflow ">Home</span>
                     </a>
                     <ul class="nav-item">
