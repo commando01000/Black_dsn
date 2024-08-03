@@ -18,7 +18,7 @@ class DesignController extends Controller
     {
 
         if (Auth::user()->can('manage-project')) {
-            $designs = Design::paginate(10);
+            $designs = Design::with('details')->paginate(10);
             return view('back/design.index', compact('designs'));
         } else {
             return redirect()->back()->with('failed', __('Permission denied.'));
@@ -58,10 +58,9 @@ class DesignController extends Controller
                     'cover' => 'mimes:jpg,jpeg,png',
                 ]);
                 $path = $request->file('cover')->store('designs');
-                dd($path);
             }
 
-            Design::create([
+            $design = Design::create([
                 'title'                 => $request->title,
                 'slug'                 => $request->title,
                 'description'           => $request->description,
@@ -71,6 +70,19 @@ class DesignController extends Controller
                 'cover'                => $path,
                 'created_by'            => Auth::user()->id,
             ]);
+
+            $details = $request->input('details', []); // Default to empty array if null
+
+            // dd($details);
+            // Iterate over details to store them
+            foreach ($details as $detail) {
+                if (!empty($detail['advantage'])) {
+                    // Store each category and number in your database
+                    $design->details()->create([
+                        'advantage' => $detail['advantage'],
+                    ]);
+                }
+            }
 
             return redirect()->route('designs.index')->with('success', __('Design created successfully.'));
         } else {
@@ -130,7 +142,7 @@ class DesignController extends Controller
             $design->description           = $request->description;
             $design->design_category          = $request->category_id;
 
-            
+
             $design->save();
 
             if (isset($old_cover))

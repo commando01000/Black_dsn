@@ -39,6 +39,24 @@
                                     ]) !!}
                                 </div>
                             </div>
+                            <div class="col-sm-12">
+                                <div class="form-group">
+                                    {{ Form::label('position', __('Position'), ['class' => 'form-label']) }}
+                                    {!! Form::text('position', null, [
+                                        'class' => 'form-control',
+                                        'placeholder' => __('Enter position'),
+                                    ]) !!}
+                                </div>
+                            </div>
+                            <div class="col-sm-12">
+                                <div class="form-group">
+                                    {{ Form::label('description', __('Description'), ['class' => 'form-label']) }}
+                                    {!! Form::text('description', null, [
+                                        'class' => 'form-control',
+                                        'placeholder' => __('Enter description'),
+                                    ]) !!}
+                                </div>
+                            </div>
                             <div class="col-md-12">
                                 <div class="form-group">
                                     {{ Form::label('image', __('Image'), ['class' => 'form-label']) }} *

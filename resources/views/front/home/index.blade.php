@@ -184,10 +184,12 @@
                             <div class="dsn-up service-item p-relative grid-item style-box">
                                 <div class="service-item-inner border-style number-item h-100">
                                     <div class="dsn-icon">
-                                        <img style="width: 80px; height:80px;" src="{{ Storage::url($service->cover) }}" alt="">
+                                        <img style="width: 80px; height:80px;" src="{{ Storage::url($service->cover) }}"
+                                            alt="">
                                     </div>
                                     <div class="service-content p-relative">
-                                        <h4 class="service_title  title-block border-bottom pb-20 mb-20">{{ $service->title }}</h4>
+                                        <h4 class="service_title  title-block border-bottom pb-20 mb-20">
+                                            {{ $service->title }}</h4>
                                         <div class="service_description mt-20 max-w570 dsn-auto">
                                             <p>
                                                 {{ $service->short_description }}
@@ -221,8 +223,7 @@
                         <div class="box-img w-100"
                             data-dsn-animation='{"to":{"y":"120px"},"option":{"scrub":"0","start":"80%","end":"30%"},"responsive":["desktop"]}'>
                             <div class="img-box-parallax h-v-80 before-z-index w-100" data-overlay="1">
-                                <img class="cover-bg-img" src= "{{ asset('front_asset/assets/img/about-3.jpg') }}"
-                                    alt="">
+                                <img class="cover-bg-img" src= " {{ Storage::url($about->cover) }} " alt="">
                             </div>
                         </div>
                     </div>
@@ -230,7 +231,7 @@
                         <div class="section-title d-flex">
                             <div class="sub-section-title">
                                 <p class="description d-inline-block p-relative  circle-before  mb-10">
-                                    <span>TECHNOLOGY</span>
+                                    <span>{{ $about->title }}</span>
                                 </p>
                                 <span
                                     class="title-h2 dsn-heading-title p-relative title-block-lg d-block    heading-color">
@@ -239,26 +240,15 @@
                             </div>
                         </div>
                         <p class="mt-20">
-                            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
-                            laborum. Sed ut perspiciatis unde omnis iste natus sit .
-                            <span class="d-block mt-10"></span>
-                            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+                            {{ $about->description }}
                         </p>
                         <ul class="d-grid dsn-list mt-20" data-dsn-gap="10px 15px">
-                            <li class="list-item d-flex align-items-center background-main">
-                                <span class="dsn-icon mr-15"><i class="fas fa-check" aria-hidden="true"></i></span>
-                                <p class="dsn-heading-title heading-color ">Beautiful and easy to understand UI</p>
-                            </li>
-                            <li class="list-item d-flex align-items-center background-main">
-                                <span class="dsn-icon mr-15"><i class="fas fa-check" aria-hidden="true"></i></span>
-                                <p class="dsn-heading-title heading-color ">Theme advantages are pixel perfect
-                                    design </p>
-                            </li>
-                            <li class="list-item d-flex align-items-center background-main">
-                                <span class="dsn-icon mr-15"><i class="fas fa-check" aria-hidden="true"></i></span>
-                                <p class="dsn-heading-title heading-color ">Present your services with flexible</p>
-                            </li>
-
+                            @foreach ($about->details as $detail)
+                                <li class="list-item d-flex align-items-center background-main">
+                                    <span class="dsn-icon mr-15"><i class="fas fa-check" aria-hidden="true"></i></span>
+                                    <p class="dsn-heading-title heading-color ">{{ $detail->advantage }}</p>
+                                </li>
+                            @endforeach
                         </ul>
                         <div class="dsn-def-btn dsn-icon-heading-color mt-20 d-flex">
                             <a class='dsn-btn dsn-border border-color-default background-main effect-ajax has-icon-left'
@@ -302,308 +292,62 @@
                         <div class="dsn-posts dsn-post-type-classic h-350">
                             <div class="has-parallax-image dsn-swiper p-relative"
                                 data-dsn-option='{"slidesPerView":2.5,"spaceBetween":30,"centeredSlides":false}'>
-                                <div class="swiper-container ">
+                                <div class="swiper-container">
                                     <div class="swiper-wrapper">
-                                        <article
-                                            class="dsn-item-post grid-item over-hidden p-relative box-hover-image swiper-slide">
-                                            <div class="box-content d-flex ">
-                                                <a class='effect-ajax box-image-link bg-shadow' data-dsn-ajax='work'
-                                                    href='project-6.html' title='HEADPHONES'>
-                                                    <div class="box-image-bg before-z-index dsn-swiper-parallax-transform"
-                                                        data-overlay="4">
-                                                        <img class="cover-bg-img"
-                                                            src= "{{ asset('front_asset/assets/img/portfolio/project6/1.jpg') }}"
-                                                            alt="">
-                                                    </div>
-                                                </a>
-                                                <div class="post-content dsn-bg p-relative z-index-1 d-flex flex-column">
-                                                    <div class="post-title-info">
-                                                        <div class="post-meta max-w750">
-                                                            <div
-                                                                class="p-relative d-inline-block dsn-category dsn-bg metas mb-10 entry-meta">
-                                                                <span data-separator="&">Production</span>
+                                        @foreach ($designs as $design)
+                                            <article
+                                                class="dsn-item-post grid-item over-hidden p-relative box-hover-image swiper-slide">
+                                                <div class="box-content d-flex">
+                                                    <a class='effect-ajax box-image-link bg-shadow' data-dsn-ajax='work'
+                                                        href="#" title="{{ $design->title }}">
+                                                        <div class="box-image-bg before-z-index dsn-swiper-parallax-transform"
+                                                            data-overlay="4">
+                                                            <img class="cover-bg-img"
+                                                                src="{{ Storage::url($design->cover) }}"
+                                                                alt="{{ $design->title }}">
+                                                        </div>
+                                                    </a>
+                                                    <div
+                                                        class="post-content dsn-bg p-relative z-index-1 d-flex flex-column">
+                                                        <div class="post-title-info">
+                                                            <div class="post-meta max-w750">
+                                                                <div
+                                                                    class="p-relative d-inline-block dsn-category dsn-bg metas mb-10 entry-meta">
+                                                                    <span
+                                                                        data-separator=" & ">{{ $design->category->name }}</span>
+                                                                </div>
+                                                            </div>
+                                                            <h2 class="post-title title-block">
+                                                                <a class='effect-ajax' data-dsn-ajax='work'
+                                                                    href="#">
+                                                                    {{ $design->title }}
+                                                                </a>
+                                                            </h2>
+                                                        </div>
+
+                                                        <div class="post-description-info">
+                                                            <div class="d-flex mt-20 dsn-def-btn dsn-hover-icon">
+                                                                <a class='effect-ajax dsn-btn dsn-border border-color-default background-section has-icon-left'
+                                                                    data-dsn-ajax='work' href="#">
+                                                                    <span
+                                                                        class="dsn-icon dsn-bg-before btn-icon-left heading-color z-index-1">
+                                                                        <i class="fas fa-angle-right"></i>
+                                                                    </span>
+                                                                    <span
+                                                                        class="title-btn p-relative  z-index-1 heading-color">
+                                                                        View Case
+                                                                    </span>
+                                                                </a>
                                                             </div>
                                                         </div>
-                                                        <h2 class="post-title title-block">
-                                                            <a class='effect-ajax' data-dsn-ajax='work'
-                                                                href='project-6.html'>
-                                                                HEADPHONES
-                                                            </a>
-                                                        </h2>
-                                                    </div>
 
-                                                    <div class="post-description-info ">
-                                                        <div class="d-flex mt-20 dsn-def-btn dsn-hover-icon">
-                                                            <a class='effect-ajax dsn-btn dsn-border border-color-default background-section has-icon-left'
-                                                                data-dsn-ajax='work' href='project-6.html'>
-                                                                <span
-                                                                    class="dsn-icon dsn-bg-before btn-icon-left heading-color z-index-1">
-                                                                    <i class="fas fa-angle-right"></i>
-                                                                </span>
-                                                                <span
-                                                                    class="title-btn p-relative  z-index-1 heading-color">
-                                                                    View Case
-                                                                </span>
-                                                            </a>
-                                                        </div>
                                                     </div>
-
                                                 </div>
-                                            </div>
-
-
-                                        </article>
-                                        <article
-                                            class="dsn-item-post grid-item over-hidden p-relative box-hover-image swiper-slide">
-                                            <div class="box-content d-flex ">
-                                                <a class='effect-ajax box-image-link bg-shadow' data-dsn-ajax='work'
-                                                    href='project-5.html' title='DOG CHOW'>
-                                                    <div class="box-image-bg before-z-index dsn-swiper-parallax-transform"
-                                                        data-overlay="3">
-                                                        <img class="cover-bg-img"
-                                                            src="{{ asset('front_asset/assets/img/portfolio/project5/1.jpg') }}"
-                                                            alt="">
-                                                    </div>
-                                                </a>
-                                                <div class="post-content dsn-bg p-relative z-index-1 d-flex flex-column">
-                                                    <div class="post-title-info">
-                                                        <div class="post-meta max-w750">
-                                                            <div
-                                                                class="p-relative d-inline-block dsn-category dsn-bg metas mb-10 entry-meta">
-                                                                <span data-separator=" & ">Photography</span>
-                                                                <span data-separator=" & ">Production</span>
-                                                            </div>
-                                                        </div>
-                                                        <h2 class="post-title title-block">
-                                                            <a class='effect-ajax' data-dsn-ajax='work'
-                                                                href='project-5.html'>
-                                                                DOG CHOW
-                                                            </a>
-                                                        </h2>
-                                                    </div>
-
-                                                    <div class="post-description-info ">
-                                                        <div class="d-flex mt-20 dsn-def-btn dsn-hover-icon">
-                                                            <a class='effect-ajax dsn-btn dsn-border border-color-default background-section has-icon-left'
-                                                                data-dsn-ajax='work' href='project-5.html'>
-                                                                <span
-                                                                    class="dsn-icon dsn-bg-before btn-icon-left heading-color z-index-1">
-                                                                    <i class="fas fa-angle-right"></i>
-                                                                </span>
-                                                                <span
-                                                                    class="title-btn p-relative  z-index-1 heading-color">
-                                                                    View Case
-                                                                </span>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-
-                                                </div>
-                                            </div>
-
-
-                                        </article>
-                                        <article
-                                            class="dsn-item-post grid-item over-hidden p-relative box-hover-image swiper-slide">
-                                            <div class="box-content d-flex ">
-                                                <a class='effect-ajax box-image-link bg-shadow' data-dsn-ajax='work'
-                                                    href='project-4.html' title='OPEN RUN'>
-                                                    <div class="box-image-bg before-z-index dsn-swiper-parallax-transform"
-                                                        data-overlay="2">
-                                                        <img class="cover-bg-img"
-                                                            src= "{{ asset('front_asset/assets/img/portfolio/project4/1.jpg') }}"
-                                                            alt="">
-                                                    </div>
-                                                </a>
-                                                <div class="post-content dsn-bg p-relative z-index-1 d-flex flex-column">
-                                                    <div class="post-title-info">
-                                                        <div class="post-meta max-w750">
-                                                            <div
-                                                                class="p-relative d-inline-block dsn-category dsn-bg metas mb-10 entry-meta">
-                                                                <span data-separator=" & ">Production</span>
-                                                            </div>
-                                                        </div>
-                                                        <h2 class="post-title title-block">
-                                                            <a class='effect-ajax' data-dsn-ajax='work'
-                                                                href='project-4.html'>
-                                                                OPEN RUN
-                                                            </a>
-                                                        </h2>
-                                                    </div>
-
-                                                    <div class="post-description-info ">
-                                                        <div class="d-flex mt-20 dsn-def-btn dsn-hover-icon">
-                                                            <a class='effect-ajax dsn-btn dsn-border border-color-default background-section has-icon-left'
-                                                                data-dsn-ajax='work' href='project-4.html'>
-                                                                <span
-                                                                    class="dsn-icon dsn-bg-before btn-icon-left heading-color z-index-1">
-                                                                    <i class="fas fa-angle-right"></i>
-                                                                </span>
-                                                                <span
-                                                                    class="title-btn p-relative  z-index-1 heading-color">
-                                                                    View Case
-                                                                </span>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-
-                                                </div>
-                                            </div>
-
-
-                                        </article>
-                                        <article
-                                            class="dsn-item-post grid-item over-hidden p-relative box-hover-image swiper-slide">
-                                            <div class="box-content d-flex ">
-                                                <a class='effect-ajax box-image-link bg-shadow' data-dsn-ajax='work'
-                                                    href='project-3.html' title='AUDI RS'>
-                                                    <div class="box-image-bg before-z-index dsn-swiper-parallax-transform"
-                                                        data-overlay="2">
-                                                        <img class="cover-bg-img"
-                                                            src= "{{ asset('front_asset/assets/img/portfolio/project3/1.jpg') }}"
-                                                            alt="">
-                                                    </div>
-                                                </a>
-                                                <div class="post-content dsn-bg p-relative z-index-1 d-flex flex-column">
-                                                    <div class="post-title-info">
-                                                        <div class="post-meta max-w750">
-                                                            <div
-                                                                class="p-relative d-inline-block dsn-category dsn-bg metas mb-10 entry-meta">
-                                                                <span data-separator=" & ">Photography</span>
-                                                                <span data-separator=" & ">Production</span>
-                                                            </div>
-                                                        </div>
-                                                        <h2 class="post-title title-block">
-                                                            <a class='effect-ajax' data-dsn-ajax='work'
-                                                                href='project-3.html'>
-                                                                AUDI RS
-                                                            </a>
-                                                        </h2>
-                                                    </div>
-
-                                                    <div class="post-description-info ">
-                                                        <div class="d-flex mt-20 dsn-def-btn dsn-hover-icon">
-                                                            <a class='effect-ajax dsn-btn dsn-border border-color-default background-section has-icon-left'
-                                                                data-dsn-ajax='work' href='project-3.html'>
-                                                                <span
-                                                                    class="dsn-icon dsn-bg-before btn-icon-left heading-color z-index-1">
-                                                                    <i class="fas fa-angle-right"></i>
-                                                                </span>
-                                                                <span
-                                                                    class="title-btn p-relative  z-index-1 heading-color">
-                                                                    View Case
-                                                                </span>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-
-                                                </div>
-                                            </div>
-
-
-                                        </article>
-                                        <article
-                                            class="dsn-item-post grid-item over-hidden p-relative box-hover-image swiper-slide">
-                                            <div class="box-content d-flex ">
-                                                <a class='effect-ajax box-image-link bg-shadow' data-dsn-ajax='work'
-                                                    href='project-2.html' title='MEN FASHION'>
-                                                    <div class="box-image-bg before-z-index dsn-swiper-parallax-transform"
-                                                        data-overlay="4">
-                                                        <img class="cover-bg-img"
-                                                            src= "{{ asset('front_asset/assets/img/portfolio/project2/1.jpg') }}"
-                                                            alt="">
-                                                    </div>
-                                                </a>
-                                                <div class="post-content dsn-bg p-relative z-index-1 d-flex flex-column">
-                                                    <div class="post-title-info">
-                                                        <div class="post-meta max-w750">
-                                                            <div
-                                                                class="p-relative d-inline-block dsn-category dsn-bg metas mb-10 entry-meta">
-                                                                <span data-separator=" & ">Photography</span>
-                                                            </div>
-                                                        </div>
-                                                        <h2 class="post-title title-block">
-                                                            <a class='effect-ajax' data-dsn-ajax='work'
-                                                                href='project-2.html'>
-                                                                MEN FASHION
-                                                            </a>
-                                                        </h2>
-                                                    </div>
-
-                                                    <div class="post-description-info ">
-                                                        <div class="d-flex mt-20 dsn-def-btn dsn-hover-icon">
-                                                            <a class='effect-ajax dsn-btn dsn-border border-color-default background-section has-icon-left'
-                                                                data-dsn-ajax='work' href='project-2.html'>
-                                                                <span
-                                                                    class="dsn-icon dsn-bg-before btn-icon-left heading-color z-index-1">
-                                                                    <i class="fas fa-angle-right"></i>
-                                                                </span>
-                                                                <span
-                                                                    class="title-btn p-relative  z-index-1 heading-color">
-                                                                    View Case
-                                                                </span>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-
-                                                </div>
-                                            </div>
-
-
-                                        </article>
-                                        <article
-                                            class="dsn-item-post grid-item over-hidden p-relative box-hover-image swiper-slide">
-                                            <div class="box-content d-flex ">
-                                                <a class='effect-ajax box-image-link bg-shadow' data-dsn-ajax='work'
-                                                    href='project-1.html' title='VISIONAID'>
-                                                    <div class="box-image-bg before-z-index dsn-swiper-parallax-transform"
-                                                        data-overlay="4">
-                                                        <img class="cover-bg-img"
-                                                            src="{{ asset('front_asset/assets/img/portfolio/project1/1.jpg') }}"
-                                                            alt="">
-                                                    </div>
-                                                </a>
-                                                <div class="post-content dsn-bg p-relative z-index-1 d-flex flex-column">
-                                                    <div class="post-title-info">
-                                                        <div class="post-meta max-w750">
-                                                            <div
-                                                                class="p-relative d-inline-block dsn-category dsn-bg metas mb-10 entry-meta">
-                                                                <span data-separator=" & ">Creative</span>
-                                                                <span data-separator=" & ">Photography</span>
-                                                            </div>
-                                                        </div>
-                                                        <h2 class="post-title title-block">
-                                                            <a class='effect-ajax' data-dsn-ajax='work'
-                                                                href='project-1.html'>
-                                                                VISIONAID
-                                                            </a>
-                                                        </h2>
-                                                    </div>
-
-                                                    <div class="post-description-info ">
-                                                        <div class="d-flex mt-20 dsn-def-btn dsn-hover-icon">
-                                                            <a class='effect-ajax dsn-btn dsn-border border-color-default background-section has-icon-left'
-                                                                data-dsn-ajax='work' href='project-1.html'>
-                                                                <span
-                                                                    class="dsn-icon dsn-bg-before btn-icon-left heading-color z-index-1">
-                                                                    <i class="fas fa-angle-right"></i>
-                                                                </span>
-                                                                <span
-                                                                    class="title-btn p-relative  z-index-1 heading-color">
-                                                                    View Case
-                                                                </span>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-
-                                                </div>
-                                            </div>
-
-
-                                        </article>
+                                            </article>
+                                        @endforeach
                                     </div>
                                     <div
-                                        class="dsn-swiper-paginate  d-flex p-relative w-100 h-100 mt-50 align-items-center dsn-container justify-content-between">
+                                        class="dsn-swiper-paginate d-flex p-relative w-100 h-100 mt-50 align-items-center dsn-container justify-content-between">
                                         <div class="swiper-prev">
                                             <div class="prev-container">
                                                 <div class="container-inner">
@@ -618,7 +362,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="swiper-pagination  mr-30 ml-30 heading-color"
+                                        <div class="swiper-pagination mr-30 ml-30 heading-color"
                                             data-dsn-type="progressbar"></div>
                                         <div class="swiper-next">
                                             <div class="next-container">
@@ -640,6 +384,7 @@
                         </div>
                     </div>
                 </div>
+
             </div>
             <!-- ========== End Portfolio ========== -->
 
@@ -685,9 +430,9 @@
             <div class="p-relative section-padding background-section ">
                 <div class="background-overlay bg-1"></div>
                 <div class="container">
-                    <div class="section-title mb-70 d-grid grid-md-2 ">
-                        <div class=" d-flex">
-                            <div class="sub-section-title ">
+                    <div class="section-title mb-70 d-grid grid-md-2">
+                        <div class="d-flex">
+                            <div class="sub-section-title">
                                 <p class="description d-inline-block p-relative circle-before mb-10">
                                     <span>testimonials</span>
                                 </p>
@@ -697,12 +442,12 @@
                             </div>
                         </div>
                         <div class="dsn-def-btn dsn-icon-heading-color align-self-end justify-self-end">
-                            <a class='dsn-btn dsn-border border-color-default  background-main effect-ajax move-circle has-icon-left'
+                            <a class='dsn-btn dsn-border border-color-default background-main effect-ajax move-circle has-icon-left'
                                 data-dsn-text='Contact Us' data-dsn='parallax' href='contact.html'>
                                 <span class="dsn-icon dsn-bg-before btn-icon-left heading-color z-index-1">
                                     <i class="fas fa-angle-right"></i>
                                 </span>
-                                <span class="title-btn p-relative  z-index-1 heading-color">Get Started Now</span>
+                                <span class="title-btn p-relative z-index-1 heading-color">Get Started Now</span>
                             </a>
                         </div>
                     </div>
@@ -726,163 +471,43 @@
                                     </svg>
                                     <div class="swiper-container">
                                         <div class="swiper-wrapper">
-                                            <div class="swiper-slide testimonial-inner-item border-style">
-                                                <div class="avatar box-img dsn-auto">
-                                                    <img src='{{ asset('front_asset/assets/img/team/1.jpg') }}'
-                                                        class="cover-bg-img" alt=''>
-                                                </div>
-                                                <div class="testimonial-item">
-                                                    <div class="testimonial-content mb-25">
-                                                        <div class="quote">
-                                                            <p class="max-w750 testimonial-content p-large">
-                                                                This theme is awesome and the designer is very helpful.
-                                                                I
-                                                                had a
-                                                                few
-                                                                questions
-                                                                purchase. He/She helped me with all the doubts. Also,
-                                                                they
-                                                                provide
-                                                                quick
-                                                                support. Thank you so much for a beautiful theme
-                                                            </p>
-                                                        </div>
+                                            @foreach ($testimonials as $testimonial)
+                                                <div class="swiper-slide testimonial-inner-item border-style">
+                                                    <div class="avatar box-img dsn-auto">
+                                                        <img src='{{ Storage::url($testimonial['image']) }}'
+                                                            class="cover-bg-img" alt='{{ $testimonial['title'] }}'>
                                                     </div>
-                                                    <div class="content-inner border-top">
-                                                        <div class="d-flex align-items-center ">
-                                                            <div class="avatar box-img dsn-auto">
-                                                                <img src='{{ asset('front_asset/assets/img/team/1.jpg') }}'
-                                                                    class="cover-bg-img" alt=''>
+                                                    <div class="testimonial-item">
+                                                        <div class="testimonial-content mb-25">
+                                                            <div class="quote">
+                                                                <p class="max-w750 testimonial-content p-large">
+                                                                    {{ $testimonial['description'] }}
+                                                                </p>
                                                             </div>
-                                                            <div class="label box-text">
-                                                                <h4 class="testimonial-name sm-title-block">MTL
-                                                                    Graphic</h4>
-                                                                <h5 class="testimonial-position">Graphic Design</h5>
+                                                        </div>
+                                                        <div class="content-inner border-top">
+                                                            <div class="d-flex align-items-center">
+                                                                <div class="avatar box-img dsn-auto">
+                                                                    <img src='{{ Storage::url($testimonial['image']) }}'
+                                                                        class="cover-bg-img"
+                                                                        alt='{{ $testimonial['title'] }}'>
+                                                                </div>
+                                                                <div class="label box-text">
+                                                                    <h4 class="testimonial-name sm-title-block">
+                                                                        {{ $testimonial['title'] }}</h4>
+                                                                    <h5 class="testimonial-position">
+                                                                        {{ $testimonial['position'] }}</h5>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <div class="swiper-slide testimonial-inner-item border-style">
-                                                <div class="avatar box-img dsn-auto">
-                                                    <img src='{{ asset('front_asset/assets/img/team/2.jpg') }}'
-                                                        class="cover-bg-img" alt=''>
-                                                </div>
-                                                <div class="testimonial-item">
-                                                    <div class="testimonial-content mb-25">
-                                                        <div class="quote">
-                                                            <p class="max-w750 testimonial-content p-large">
-                                                                This theme is awesome and the designer is very helpful.
-                                                                I
-                                                                had a
-                                                                few
-                                                                questions
-                                                                purchase. He/She helped me with all the doubts. Also,
-                                                                they
-                                                                provide
-                                                                quick
-                                                                support. Thank you so much for a beautiful theme
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                    <div class="content-inner border-top">
-                                                        <div class="d-flex align-items-center ">
-                                                            <div class="avatar box-img dsn-auto">
-                                                                <img src='{{ asset('front_asset/assets/img/team/2.jpg') }}'
-                                                                    class="cover-bg-img" alt=''>
-                                                            </div>
-                                                            <div class="label box-text">
-                                                                <h4 class="testimonial-name sm-title-block">Jeremy
-                                                                    Smith</h4>
-                                                                <h5 class="testimonial-position">Creative Studio
-                                                                    Head</h5>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="swiper-slide testimonial-inner-item border-style">
-                                                <div class="avatar box-img dsn-auto">
-                                                    <img src='{{ asset('front_asset/assets/img/team/3.jpg') }}'
-                                                        class="cover-bg-img" alt=''>
-                                                </div>
-                                                <div class="testimonial-item">
-                                                    <div class="testimonial-content mb-25">
-                                                        <div class="quote">
-                                                            <p class="max-w750 testimonial-content p-large">
-                                                                This theme is awesome and the designer is very helpful.
-                                                                I
-                                                                had a
-                                                                few
-                                                                questions
-                                                                purchase. He/She helped me with all the doubts. Also,
-                                                                they
-                                                                provide
-                                                                quick
-                                                                support. Thank you so much for a beautiful theme
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                    <div class="content-inner border-top">
-                                                        <div class="d-flex align-items-center ">
-                                                            <div class="avatar box-img dsn-auto">
-                                                                <img src='{{ asset('front_asset/assets/img/team/3.jpg') }}'
-                                                                    class="cover-bg-img" alt=''>
-                                                            </div>
-                                                            <div class="label box-text">
-                                                                <h4 class="testimonial-name sm-title-block">Angelo
-                                                                    Walking</h4>
-                                                                <h5 class="testimonial-position">Developer Lead</h5>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="swiper-slide testimonial-inner-item border-style">
-                                                <div class="avatar box-img dsn-auto">
-                                                    <img src='{{ asset('front_asset/assets/img/team/4.jpg') }}'
-                                                        class="cover-bg-img" alt=''>
-                                                </div>
-                                                <div class="testimonial-item">
-                                                    <div class="testimonial-content mb-25">
-                                                        <div class="quote">
-                                                            <p class="max-w750 testimonial-content p-large">
-                                                                This theme is awesome and the designer is very helpful.
-                                                                I
-                                                                had a
-                                                                few
-                                                                questions
-                                                                purchase. He/She helped me with all the doubts. Also,
-                                                                they
-                                                                provide
-                                                                quick
-                                                                support. Thank you so much for a beautiful theme
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                    <div class="content-inner border-top">
-                                                        <div class="d-flex align-items-center ">
-                                                            <div class="avatar box-img dsn-auto">
-                                                                <img src='{{ asset('front_asset/assets/img/team/4.jpg') }}'
-                                                                    class="cover-bg-img" alt=''>
-                                                            </div>
-                                                            <div class="label box-text">
-                                                                <h4 class="testimonial-name sm-title-block">Bill
-                                                                    Gardner</h4>
-                                                                <h5 class="testimonial-position">Web designer</h5>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-
+                                            @endforeach
                                         </div>
                                     </div>
                                 </div>
-
                                 <div
-                                    class="dsn-swiper-paginate  d-flex p-relative w-100 h-100 mt-30 align-items-center container justify-content-between">
+                                    class="dsn-swiper-paginate d-flex p-relative w-100 h-100 mt-30 align-items-center container justify-content-between">
                                     <div class="swiper-prev">
                                         <div class="prev-container">
                                             <div class="container-inner">
@@ -894,21 +519,27 @@
                                                         <circle cx="12" cy="12" r="10.5"></circle>
                                                     </g>
                                                 </svg>
+                                                <svg class="arrow" xmlns="http://www.w3.org/2000/svg"
+                                                    viewbox="0 0 24 24">
+
+                                                </svg>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="swiper-pagination  mr-30 ml-30 heading-color" data-dsn-type="bullets">
-                                    </div>
+                                    <div class="swiper-pagination"></div>
                                     <div class="swiper-next">
                                         <div class="next-container">
                                             <div class="container-inner">
                                                 <div class="triangle"></div>
-                                                <svg class="circle" xmlns="http://www.w3.org/2000/svg" width="24"
-                                                    height="24" viewbox="0 0 24 24">
+                                                <svg class="circle" xmlns="http://www.w3.org/2000/svg"
+                                                    viewbox="0 0 24 24">
                                                     <g class="circle-wrap" fill="none" stroke-width="1"
                                                         stroke-linejoin="round" stroke-miterlimit="10">
                                                         <circle cx="12" cy="12" r="10.5"></circle>
                                                     </g>
+                                                </svg>
+                                                <svg class="arrow" xmlns="http://www.w3.org/2000/svg"
+                                                    viewbox="0 0 24 24">
                                                 </svg>
                                             </div>
                                         </div>
@@ -916,12 +547,21 @@
                                 </div>
                             </div>
 
+                            <div class="dsn-testimonial-background dsn-swiper-parallax-img">
+                                @foreach ($testimonials as $testimonial)
+                                    <div class="dsn-item-testimonial swiper-slide p-relative">
+                                        <div class="cover-bg-img cover-bg-v" data-swiper-parallax="50%"
+                                            data-swiper-parallax-scale="1.2"
+                                            data-dsn-bg="{{ Storage::url($testimonial['image']) }}"></div>
+                                    </div>
+                                @endforeach
+                            </div>
                         </div>
                     </div>
                 </div>
-
             </div>
             <!-- ========== End testimonials ========== -->
+
 
             <!-- ========== Stories ========== -->
             <div class="p-relative section-margin">

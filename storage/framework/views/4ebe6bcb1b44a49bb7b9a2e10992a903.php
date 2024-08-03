@@ -60,6 +60,21 @@
                                     </div>
                                 </div>
 
+
+                                <div class="col-md-12">
+                                    <?php echo e(Form::label('advantage', __('Details'), ['class' => 'form-label'])); ?> *
+                                    <?php $__currentLoopData = $design->details; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $detail): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                        <div class="form-group">
+                                            <?php echo Form::text('advantage', $detail->advantage, [
+                                                'class' => 'form-control',
+                                                'disabled',
+                                            ]); ?>
+
+                                        </div>
+                                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                </div>
+
+
                                 <div class="col-sm-12">
                                     <div class="form-group">
                                         <?php echo e(Form::label('project_date', __('Project Date'), ['class' => 'form-label'])); ?> *

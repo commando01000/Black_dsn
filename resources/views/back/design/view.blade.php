@@ -56,6 +56,20 @@
                                     </div>
                                 </div>
 
+
+                                <div class="col-md-12">
+                                    {{ Form::label('advantage', __('Details'), ['class' => 'form-label']) }} *
+                                    @foreach ($design->details as $detail)
+                                        <div class="form-group">
+                                            {!! Form::text('advantage', $detail->advantage, [
+                                                'class' => 'form-control',
+                                                'disabled',
+                                            ]) !!}
+                                        </div>
+                                    @endforeach
+                                </div>
+
+
                                 <div class="col-sm-12">
                                     <div class="form-group">
                                         {{ Form::label('project_date', __('Project Date'), ['class' => 'form-label']) }} *

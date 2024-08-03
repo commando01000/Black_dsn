@@ -121,7 +121,7 @@ Route::group([
     //sliders
 
     Route::group(['middleware' => ['auth', 'Setting', 'verified', '2fa', 'verified_phone', 'Upload']], function () {
-        Route::resource('cp/sliders', SliderController::class);
+        Route::resource('cp/sliders', TestimonialController::class);
     });
     //services
     Route::group(['middleware' => ['auth', 'Setting', 'verified', '2fa', 'verified_phone', 'Upload']], function () {

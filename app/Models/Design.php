@@ -27,4 +27,8 @@ class Design extends Model
     {
         return $this->belongsTo(DesignCategory::class, "design_category");
     }
+    public function details()
+    {
+        return $this->hasMany(DesignDetails::class);
+    }
 }

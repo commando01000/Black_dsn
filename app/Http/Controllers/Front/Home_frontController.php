@@ -15,22 +15,24 @@ use App\Models\Leadership;
 use App\Models\MenuSetting;
 use App\Models\ProjectCategory;
 use App\Models\Service;
-use App\Models\Slider;
 use App\Models\Statistic;
 use App\Models\Testimonial;
-
-
 
 class Home_frontController extends Controller
 {
     public function index()
     {
         // get last 6 designs designs
-        $designs = Design::latest()->take(6)->get();
+        $designs = Design::first()->take(6)->get();
         // get 3 statistics
         $statistics = Statistic::take(3)->get();
         $services = Service::take(3)->get();
-        return view('front.home.index', compact('designs', 'statistics', 'services'));
+        // get the latest design
+        $about = Design::with('details')->latest()->first();
+        // get testimonial slider data
+        $testimonials = Testimonial::take(6)->latest()->get();
+        // dd($testimonials);
+        return view('front.home.index', compact('designs', 'statistics', 'services', 'about', 'testimonials'));
     }
     public function getProjectsByCategory($categoryId)
     {
