@@ -8,6 +8,7 @@ use App\Models\advertisement;
 use App\Models\Blog;
 use App\Models\Client;
 use App\Models\ClientCategory;
+use App\Models\Design;
 use App\Models\Project;
 use App\Models\Faq;
 use App\Models\Leadership;
@@ -22,13 +23,10 @@ class Home_frontController extends Controller
 {
     public function index()
     {
-        $projects = Project::take(6)->get();
-        $categories = ProjectCategory::with('projects')->take(6)->get();
-        $leaderships = Leadership::orderBy('created_at', 'desc')->take(3)->get();
-        $clients = Client::take(6)->get();
-        $clientCategory = ClientCategory::with('clients')->take(6)->get();
-        $sliders = Slider::all();
-        return view('front.home.index', compact('projects', 'leaderships', 'categories', 'clients', 'clientCategory', 'sliders'));
+        // get last 6 designs designs
+        $designs = Design::latest()->take(6)->get();
+        // dd($designs);
+        return view('front.home.index', compact('designs'));
     }
     public function getProjectsByCategory($categoryId)
     {

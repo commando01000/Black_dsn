@@ -5,276 +5,79 @@
     <div id="dsn-scrollbar">
         <!-- ========== Slider Parallax ========== -->
         <header class="v-dark-head dsn-section-padding dsn-header-animation">
-            <div class="main-slider v-dark-head-mobile has-horizontal  active-nav-slider dsn-webgl has-paginate"
-                data-dsn-webgl='{"displacement" : {{ asset('front_asset/assets/img/displacement/8.jpg') }}}'
+            <div class="main-slider v-dark-head-mobile has-horizontal active-nav-slider dsn-webgl has-paginate"
+                data-dsn-webgl='{"displacement" : "assets/img/displacement/8.jpg"}'
                 data-dsn-option='{"direction":"horizontal","allowTouchMove":true,"watchSlidesProgress":true,"grabCursor":true,"mousewheel":false}'>
+
                 <div class="content-slider slide-inner h-100 over-hidden">
-                    <div class="bg-container p-absolute  dsn-hero-parallax-img  w-100 h-100 z-index-1 dsn-hero-parallax-img">
+                    <div class="bg-container p-absolute dsn-hero-parallax-img w-100 h-100 z-index-1 dsn-hero-parallax-img">
                         <div class="swiper-container h-100">
                             <div class="swiper-wrapper">
-                                <div class="slide-item swiper-slide over-hidden">
-                                    <div class="image-bg cover-bg w-100 h-100 before-z-index" data-overlay="4">
-                                        <img class="cover-bg-img dsn-swiper-parallax-transform"
-                                            src= "{{ asset('front_asset/assets/img/portfolio/project6/1.jpg') }}"
-                                            alt="" data-dsn-position="50% 50%">
-                                    </div>
-                                    <div class="slide-content p-absolute">
-                                        <div
-                                            class="p-relative head-meta swiper-animate-head  d-flex justify-content-between mb-20">
-                                            <div class="circle-before metas mb-10">
-                                                <span>Production</span>
+                                @foreach ($designs as $design)
+                                    <div class="slide-item swiper-slide over-hidden">
+                                        <div class="image-bg cover-bg w-100 h-100 before-z-index" data-overlay="4">
+                                            <img class="cover-bg-img dsn-swiper-parallax-transform"
+                                                src="{{ Storage::url($design->cover) }}" alt="{{ $design->title }}"
+                                                data-dsn-position="50% 50%">
+                                        </div>
+                                        <div class="slide-content p-absolute">
+                                            <div
+                                                class="p-relative head-meta swiper-animate-head d-flex justify-content-between mb-20">
+                                                <div class="circle-before metas mb-10">
+                                                    <span>{{ $design->category->name }}</span>
+                                                </div>
+                                            </div>
+                                            <h2 class="title has-box-mod p-relative">
+                                                <a class='effect-ajax' data-dsn-ajax='slider' data-dsn-split='chars'
+                                                    href='{{ url("project/{$design->id}") }}'>
+                                                    {{ $design->title }}
+                                                </a>
+                                            </h2>
+                                            <p class="description swiper-animate-head max-w570 mt-20">
+                                                {{ $design->description }}
+                                            </p>
+                                            <div class="d-flex mt-20 dsn-def-btn dsn-border-style">
+                                                <a class='mr-15 dsn-btn dsn-border border-color-default background-main has-icon-left'
+                                                    data-dsn-ajax='slider' data-dsn='parallax'
+                                                    href='{{ url("project/{$design->id}") }}'>
+                                                    <span
+                                                        class="dsn-icon dsn-bg-before btn-icon-left heading-color z-index-1">
+                                                        <i class="fas fa-angle-right"></i>
+                                                    </span>
+                                                    <span class="title-btn p-relative z-index-1 heading-color">
+                                                        VIEW CASE
+                                                    </span>
+                                                </a>
                                             </div>
                                         </div>
-                                        <h2 class="title has-box-mod p-relative">
-                                            <a class='effect-ajax' data-dsn-ajax='slider' data-dsn-split='chars'
-                                                href='project-6.html'>
-                                                HEADPHONES
-                                            </a>
-                                        </h2>
-                                        <p class="description swiper-animate-head max-w570 mt-20">
-                                            ABOUT THE PROJECT Mode is an audio range designed to provide optimal
-                                            performance
-                                            and comfort
-                                            for every mode of use. The
-                                        </p>
-                                        <div class="d-flex mt-20 dsn-def-btn dsn-border-style">
-                                            <a class='mr-15 dsn-btn dsn-border border-color-default background-main has-icon-left'
-                                                data-dsn-ajax='slider' data-dsn='parallax' href='project-6.html'>
-                                                <span class="dsn-icon dsn-bg-before btn-icon-left heading-color z-index-1">
-                                                    <i class="fas fa-angle-right"></i>
-                                                </span>
-                                                <span class="title-btn p-relative  z-index-1 heading-color">
-                                                    VIEW CASE
-                                                </span>
-                                            </a>
-                                        </div>
                                     </div>
-                                </div>
-                                <div class="slide-item swiper-slide over-hidden">
-                                    <div class="image-bg cover-bg w-100 h-100 before-z-index" data-overlay="3">
-                                        <img class="cover-bg-img dsn-swiper-parallax-transform"
-                                            src="{{ asset('front_asset/assets/img/portfolio/project5/1.jpg') }}"
-                                            alt="" data-dsn-position="50% 50%">
-                                    </div>
-                                    <div class="slide-content p-absolute">
-                                        <div
-                                            class="p-relative head-meta swiper-animate-head d-flex justify-content-between mb-20">
-                                            <div class="circle-before metas mb-10">
-                                                <span>Photography</span>
-                                                <span> - </span>
-                                                <span>Production</span>
-                                            </div>
-                                        </div>
-                                        <h2 class="title has-box-mod p-relative">
-                                            <a class='effect-ajax' data-dsn-ajax='slider' data-dsn-split='chars'
-                                                href='project-5.html'>
-                                                DOG CHOW
-                                            </a>
-                                        </h2>
-                                        <p class="description swiper-animate-head max-w570 mt-20">
-                                            This optional section is only applicable
-                                            to posts. It is a space for you to write a summary of the post.
-                                        </p>
-                                        <div class="d-flex mt-20 dsn-def-btn dsn-border-style">
-                                            <a class='mr-15 dsn-btn dsn-border border-color-default background-main has-icon-left'
-                                                data-dsn-ajax='slider' data-dsn='parallax' href='project-5.html'>
-                                                <span class="dsn-icon dsn-bg-before btn-icon-left heading-color z-index-1">
-                                                    <i class="fas fa-angle-right"></i>
-                                                </span>
-                                                <span class="title-btn p-relative  z-index-1 heading-color">
-                                                    VIEW CASE
-                                                </span>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="slide-item swiper-slide over-hidden">
-                                    <div class="image-bg cover-bg w-100 h-100 before-z-index" data-overlay="2">
-                                        <img class="cover-bg-img dsn-swiper-parallax-transform"
-                                            src= "{{ asset('front_asset/assets/img/portfolio/project4/1.jpg') }}"
-                                            alt="" data-dsn-position="50% 50%">
-                                    </div>
-                                    <div class="slide-content p-absolute">
-                                        <div
-                                            class="p-relative head-meta swiper-animate-head  d-flex justify-content-between mb-20">
-                                            <div class="circle-before metas mb-10">
-
-                                                <span>Production</span>
-                                            </div>
-                                        </div>
-                                        <h2 class="title has-box-mod p-relative">
-                                            <a class='effect-ajax' data-dsn-ajax='slider' data-dsn-split='chars'
-                                                href='project-4.html'>
-                                                OPEN RUN
-                                            </a>
-                                        </h2>
-                                        <p class="description swiper-animate-head max-w570 mt-20">
-                                            ABOUT THE PROJECT Wondour™ was tasked with creating a pair of electronic
-                                            glasses
-                                            that can
-                                            help legally-blind and low-vision people see
-                                        </p>
-                                        <div class="d-flex mt-20 dsn-def-btn dsn-border-style">
-                                            <a class='mr-15 dsn-btn dsn-border border-color-default background-main has-icon-left'
-                                                data-dsn-ajax='slider' data-dsn='parallax' href='project-4.html'>
-                                                <span class="dsn-icon dsn-bg-before btn-icon-left heading-color z-index-1">
-                                                    <i class="fas fa-angle-right"></i>
-                                                </span>
-                                                <span class="title-btn p-relative  z-index-1 heading-color">
-                                                    VIEW CASE
-                                                </span>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="slide-item swiper-slide over-hidden">
-                                    <div class="image-bg cover-bg w-100 h-100 before-z-index" data-overlay="2">
-                                        <img class="cover-bg-img dsn-swiper-parallax-transform"
-                                            src={{ asset('front_asset/assets/img/portfolio/project3/1.jpg') }}
-                                            alt="" data-dsn-position="50% 50%">
-                                    </div>
-                                    <div class="slide-content p-absolute">
-                                        <div
-                                            class="p-relative head-meta swiper-animate-head  d-flex justify-content-between mb-20">
-                                            <div class="circle-before metas mb-10">
-                                                <span>Photography</span>
-                                                <span> - </span>
-                                                <span>Production</span>
-                                            </div>
-                                        </div>
-                                        <h2 class="title has-box-mod p-relative">
-                                            <a class='effect-ajax' data-dsn-ajax='slider' data-dsn-split='chars'
-                                                href='project-3.html'>
-                                                AUDI RS
-                                            </a>
-                                        </h2>
-                                        <p class="description swiper-animate-head max-w570 mt-20">
-                                            This optional section is only applicable
-                                            to posts. It is a space for you to write a summary of the post.
-                                        </p>
-
-                                        <div class="d-flex mt-20 dsn-def-btn dsn-border-style">
-                                            <a class='mr-15 dsn-btn dsn-border border-color-default background-main has-icon-left'
-                                                data-dsn-ajax='slider' data-dsn='parallax' href='project-3.html'>
-                                                <span class="dsn-icon dsn-bg-before btn-icon-left heading-color z-index-1">
-                                                    <i class="fas fa-angle-right"></i>
-                                                </span>
-                                                <span class="title-btn p-relative  z-index-1 heading-color">
-                                                    VIEW CASE
-                                                </span>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="slide-item swiper-slide over-hidden">
-                                    <div class="image-bg cover-bg w-100 h-100 before-z-index" data-overlay="4">
-                                        <img class="cover-bg-img dsn-swiper-parallax-transform"
-                                            src= "{{ asset('front_asset/assets/img/portfolio/project2/1.jpg') }}"
-                                            alt="" data-dsn-position="50% 50%">
-                                    </div>
-                                    <div class="slide-content p-absolute">
-                                        <div
-                                            class="p-relative head-meta swiper-animate-head  d-flex justify-content-between mb-20">
-                                            <div class="circle-before metas mb-10">
-                                                <span>Photography</span>
-                                            </div>
-                                        </div>
-                                        <h2 class="title has-box-mod p-relative">
-                                            <a class='effect-ajax' data-dsn-ajax='slider' data-dsn-split='chars'
-                                                href='project-2.html'>
-                                                MEN FASHION
-                                            </a>
-                                        </h2>
-                                        <p class="description swiper-animate-head max-w570 mt-20">
-                                            Jaramillo Published June 15th 2022 Caption #1 Caption #2 Caption #3 How is
-                                            your
-                                            visual
-                                            identity? we
-                                        </p>
-
-                                        <div class="d-flex mt-20 dsn-def-btn dsn-border-style">
-                                            <a class='mr-15 dsn-btn dsn-border border-color-default background-main has-icon-left'
-                                                data-dsn-ajax='slider' data-dsn='parallax' href='project-2.html'>
-                                                <span class="dsn-icon dsn-bg-before btn-icon-left heading-color z-index-1">
-                                                    <i class="fas fa-angle-right"></i>
-                                                </span>
-                                                <span class="title-btn p-relative  z-index-1 heading-color">
-                                                    VIEW CASE
-                                                </span>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="slide-item swiper-slide over-hidden">
-                                    <div class="image-bg cover-bg w-100 h-100 before-z-index" data-overlay="4">
-                                        <img class="cover-bg-img dsn-swiper-parallax-transform"
-                                            src= "{{ asset('front_asset/assets/img/portfolio/project1/1.jpg') }}"
-                                            alt="" data-dsn-position="50% 50%">
-                                    </div>
-                                    <div class="slide-content p-absolute">
-                                        <div
-                                            class="p-relative head-meta swiper-animate-head  d-flex justify-content-between mb-20">
-                                            <div class="circle-before metas mb-10">
-                                                <span>CREATIVE</span>
-                                                <span>-</span>
-                                                <span>Photography</span>
-                                            </div>
-                                        </div>
-                                        <h2 class="title has-box-mod p-relative">
-                                            <a class='effect-ajax' data-dsn-ajax='slider' data-dsn-split='chars'
-                                                href='project-1.html'>
-                                                VISIONAID
-                                            </a>
-                                        </h2>
-                                        <p class="description swiper-animate-head max-w570 mt-20">
-                                            Meet VisionAid™. Patents Pending. Wondour™ was tasked with creating a pair
-                                            of
-                                            electronic
-                                            glasses that can help legally-blind and low-vision people
-                                        </p>
-
-                                        <div class="d-flex mt-20 dsn-def-btn dsn-border-style">
-                                            <a class='mr-15 dsn-btn dsn-border border-color-default background-main has-icon-left'
-                                                data-dsn-ajax='slider' data-dsn='parallax' href='project-1.html'>
-                                                <span class="dsn-icon dsn-bg-before btn-icon-left heading-color z-index-1">
-                                                    <i class="fas fa-angle-right"></i>
-                                                </span>
-                                                <span class="title-btn p-relative  z-index-1 heading-color">
-                                                    VIEW CASE
-                                                </span>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
+                                @endforeach
                             </div>
                         </div>
                     </div>
                     <div class="dsn-container d-flex align-items-end dsn-slider-content dsn-hero-parallax-title"></div>
                 </div>
 
-
                 <div class="dsn-swiper-paginate">
                     <div class="swiper-pagination dsn-swiper-circle mr-30 ml-30 heading-color"></div>
                 </div>
 
-                <div class="control-nav w-100  d-flex dsn-container  align-items-center justify-content-between">
-                    <div class="prev-paginate         dsn-paginate-arrow box-shadow"></div>
-
+                <div class="control-nav w-100 d-flex dsn-container align-items-center justify-content-between">
+                    <div class="prev-paginate dsn-paginate-arrow box-shadow"></div>
 
                     <div class="dsn-pagination p-relative d-flex align-items-end">
                         <span class="slider-current-index h2">01</span>
-                        <span class="sm-title-block">/ </span><span class="total sm-title-block"> 6</span>
+                        <span class="sm-title-block">/ </span><span class="total sm-title-block">
+                            {{ $designs->count() }}</span>
                     </div>
 
                     <div class="next-paginate dsn-paginate-arrow box-shadow"></div>
-
-
                 </div>
-
-
             </div>
         </header>
         <!-- ========== End Slider Parallax ========== -->
+
+
 
 
         <div id="page_wrapper" class="wrapper">
@@ -1569,7 +1372,7 @@
     </div>
 @endsection
 
-@section('js')
+{{-- @section('js')
     <script src="{{ asset('front_asset/assets/js/jquery-3.1.1.min.js') }}"></script>
 
     <script src="{{ asset('front_asset/assets/js/plugins.min.js') }}"></script>
@@ -1577,4 +1380,4 @@
     <script src="{{ asset('front_asset/assets/js/plugins/dsn-grid.min.js') }}"></script>h
 
     <script src="{{ asset('front_asset/assets/js/custom.js') }}"></script>
-@endsection
+@endsection --}}

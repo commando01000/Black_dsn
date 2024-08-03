@@ -58,9 +58,10 @@ class DesignController extends Controller
                     'cover' => 'mimes:jpg,jpeg,png',
                 ]);
                 $path = $request->file('cover')->store('designs');
+                dd($path);
             }
 
-            $design =  Design::create([
+            Design::create([
                 'title'                 => $request->title,
                 'slug'                 => $request->title,
                 'description'           => $request->description,
@@ -124,12 +125,12 @@ class DesignController extends Controller
                 $path           = $request->file('cover')->store('designs');
                 $design->cover   = $path;
             }
-
             $design->title                 = $request->title;
             $design->slug                 = $request->title;
             $design->description           = $request->description;
             $design->design_category          = $request->category_id;
 
+            
             $design->save();
 
             if (isset($old_cover))

@@ -101,6 +101,12 @@
                             </div> --}}
                             <div class="col-md-12">
                                 <div class="form-group">
+                                    {{ Form::label('cover', __('Images'), ['class' => 'form-label']) }} *
+                                    {!! Form::file('cover', ['class' => 'form-control']) !!}
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
                                     {{ Form::label('description', __('Short Description'), ['class' => 'form-label']) }}
                                     *
                                     {!! Form::textarea('description', $design->description, [

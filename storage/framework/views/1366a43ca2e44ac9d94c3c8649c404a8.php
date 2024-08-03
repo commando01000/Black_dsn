@@ -93,6 +93,13 @@
                             
                             <div class="col-md-12">
                                 <div class="form-group">
+                                    <?php echo e(Form::label('cover', __('Images'), ['class' => 'form-label'])); ?> *
+                                    <?php echo Form::file('cover', ['class' => 'form-control']); ?>
+
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
                                     <?php echo e(Form::label('description', __('Short Description'), ['class' => 'form-label'])); ?>
 
                                     *

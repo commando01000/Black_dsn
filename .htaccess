@@ -22,3 +22,6 @@
 	RewriteCond %{REQUEST_URI} !^/public/
 	RewriteRule ^(css|js|images|assets|plugins|uploads|vendor|installer)/(.*)$ public/$1/$2 [L,NC]
 </IfModule>
+<IfModule mod_headers.c>
+    Header set Access-Control-Allow-Origin "*"
+</IfModule>
