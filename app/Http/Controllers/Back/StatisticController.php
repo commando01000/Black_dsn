@@ -33,9 +33,17 @@ class StatisticController extends Controller
             'details.*.number' => 'required|numeric'
         ]);
 
+        if ($request->hasFile('cover')) {
+            request()->validate([
+                'cover' => 'mimes:jpg,jpeg,png',
+            ]);
+            $path = $request->file('cover')->store('statistics');
+        }
+
         // Store the main statistic entry
         $statistic = Statistic::create([
             'title' => $request->input('title'),
+            'cover' => $path ?? null,
             'short_description' => $request->input('short_description'),
             'description' => $request->input('description'),
         ]);
@@ -76,6 +84,14 @@ class StatisticController extends Controller
         // Update the description fields
         $statistic->description = $request->input('description');
         $statistic->short_description = $request->input('short_description');
+        if ($request->hasFile('cover')) {
+            request()->validate([
+                'cover' => 'required|image|mimes:jpg,png,jpeg,webp',
+            ]);
+            $old_cover = $statistic->cover;
+            $path           = $request->file('cover')->store('statistics');
+            $statistic->cover   = $path;
+        }
         $statistic->save();
 
         // Get existing details IDs
@@ -114,13 +130,13 @@ class StatisticController extends Controller
 
     // Remove a specific statistic
 
-    // public function destroy($id)
-    // {
-    //     $statistic = Statistic::findOrFail($id);
-    //     $statistic->delete(); // Remove the statistic
-    //     $statistic->details()->delete(); // Remove associated details
+    public function destroy($id)
+    {
+        $statistic = Statistic::findOrFail($id);
+        $statistic->delete(); // Remove the statistic
+        $statistic->details()->delete(); // Remove associated details
 
 
-    //     return redirect()->route('statistics.index')->with('success', 'Statistic deleted successfully.');
-    // }
+        return redirect()->route('statistics.index')->with('success', 'Statistic deleted successfully.');
+    }
 }

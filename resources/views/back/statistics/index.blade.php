@@ -27,9 +27,10 @@
                                 <th>ID</th>
                                 <th>{{ __('Title') }}</th>
                                 <th>{{ __('Description') }}</th>
-                                <th>{{ __('Categories') }}</th>
+                                <th>{{ __('Cover') }}</th>
+                                {{-- <th>{{ __('Categories') }}</th>
                                 <th>{{ __('Numbers') }}</th>
-                                <th>{{ __('Action') }}</th>
+                                <th>{{ __('Action') }}</th> --}}
                             </tr>
                         </thead>
                         <tbody>
@@ -39,29 +40,36 @@
                                     <td>{{ $statistic->title }}</td>
                                     <td>{{ $statistic->short_description }}</td>
                                     <td>
+                                        @if ($statistic->cover && Storage::exists($statistic->cover))
+                                            <img src="{{ Storage::url($statistic->cover) }}" width="50" />
+                                        @else
+                                            <img src="{{ Storage::url('not-exists-data-images/350x250.png') }}" width="50" />
+                                        @endif
+                                    </td>
+                                    {{-- <td>
                                         <ul>
                                             @foreach ($statistic->details as $detail)
                                                 <li>{{ $detail->category }}</li>
                                             @endforeach
                                         </ul>
-                                    </td>
-                                    <td>
+                                    </td> --}}
+                                    {{-- <td>
                                         <ul>
                                             @foreach ($statistic->details as $detail)
                                                 <li>{{ $detail->number }}</li>
                                             @endforeach
                                         </ul>
-                                    </td>
+                                    </td> --}}
                                     <td>
                                         <a href="{{ route('statistics.edit', $statistic->id) }}"
                                             class="btn btn-warning btn-sm">{{ __('Edit') }}</a>
-                                        {{-- {!! Form::open([
+                                        {!! Form::open([
                                             'route' => ['statistics.destroy', $statistic->id],
                                             'method' => 'DELETE',
                                             'style' => 'display:inline-block;',
                                         ]) !!}
                                         {{ Form::button('Delete', ['type' => 'submit', 'class' => 'btn btn-danger btn-sm', 'onclick' => 'return confirm("Are you sure?")']) }}
-                                        {!! Form::close() !!} --}}
+                                        {!! Form::close() !!}
                                     </td>
                                 </tr>
                             @endforeach

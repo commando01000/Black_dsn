@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Statistic extends Model
 {
     use HasFactory;
-    protected $fillable = ['title', 'description','short_description'];
+    protected $fillable = ['title', 'description', 'cover', 'short_description'];
 
     public function details()
     {

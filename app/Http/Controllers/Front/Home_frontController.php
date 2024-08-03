@@ -14,7 +14,9 @@ use App\Models\Faq;
 use App\Models\Leadership;
 use App\Models\MenuSetting;
 use App\Models\ProjectCategory;
+use App\Models\Service;
 use App\Models\Slider;
+use App\Models\Statistic;
 use App\Models\Testimonial;
 
 
@@ -25,8 +27,10 @@ class Home_frontController extends Controller
     {
         // get last 6 designs designs
         $designs = Design::latest()->take(6)->get();
-        // dd($designs);
-        return view('front.home.index', compact('designs'));
+        // get 3 statistics
+        $statistics = Statistic::take(3)->get();
+        $services = Service::take(3)->get();
+        return view('front.home.index', compact('designs', 'statistics', 'services'));
     }
     public function getProjectsByCategory($categoryId)
     {

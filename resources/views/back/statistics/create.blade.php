@@ -27,7 +27,7 @@
                         'data-validate',
                     ]) !!}
 
-                    <div class="container py-4">
+                    {{-- <div class="container py-4">
                         <div class="row">
                             <div class="col-md-12 form_sec_outer_task border">
                                 <div class="row">
@@ -76,7 +76,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
                     <div class="col-md-12 bg-light p-2 mb-3">
                         <div class="row">
                             <div class="col-md-6">
@@ -111,13 +111,19 @@
                             </div>
                             <div class="col-md-12">
                                 <div class="form-group">
+                                    {{ Form::label('images', __('cover'), ['class' => 'form-label']) }} *
+                                    {!! Form::file('cover', ['class' => 'form-control', 'required' => 'required']) !!}
+                                </div>
+                            </div>
+                            {{-- <div class="col-md-12">
+                                <div class="form-group">
                                     {{ Form::label('body', __('Description'), ['class' => 'form-label']) }}
                                     {!! Form::textarea('description', null, [
                                         'class' => 'form-control ',
                                         'placeholder' => __('Enter description'),
                                     ]) !!}
                                 </div>
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
                     <div class="card-footer">

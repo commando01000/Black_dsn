@@ -54,7 +54,7 @@
 
 
 
-                            <div class="col-sm-12">
+                            {{-- <div class="col-sm-12">
                                 <div class="form-group">
                                     {{ Form::label('service_category', __('Service Category'), ['class' => 'form-label']) }}
                                     <select name="category_id" id="" class="form-control" required>
@@ -65,7 +65,7 @@
                                         @endforeach
                                     </select>
                                 </div>
-                            </div>
+                            </div> --}}
                             {{-- <div class="col-sm-12">
                                 <div class="form-group">
                                     {{ Form::label('project_status', __('Project Status'), ['class' => 'form-label']) }}

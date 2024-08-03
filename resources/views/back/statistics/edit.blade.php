@@ -28,7 +28,7 @@
                     ]) !!}
                     <div class="container py-4">
                         <div class="row">
-                            <div class="col-md-12 form_sec_outer_task border">
+                            {{-- <div class="col-md-12 form_sec_outer_task border">
                                 <div class="row">
                                     <div class="col-md-12 bg-light p-2 mb-3">
                                         <div class="row">
@@ -87,7 +87,7 @@
                                                 class="fas fa-plus add_icon"></i> Add New field row</button>
                                     </div>
                                 </div>
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
                     <div class="col-md-12 bg-light p-2 mb-3">
@@ -103,7 +103,15 @@
                     </div>
                     <div class="card-body">
                         <div class="row">
-
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    {{ Form::label('body', __('Title'), ['class' => 'form-label']) }}
+                                    {!! Form::textarea('title', null, [
+                                        'class' => 'form-control ',
+                                        'placeholder' => __('Enter title'),
+                                    ]) !!}
+                                </div>
+                            </div>
                             <div class="col-md-12">
                                 <div class="form-group">
                                     {{ Form::label('body', __('short Description'), ['class' => 'form-label']) }}
@@ -113,13 +121,19 @@
                                     ]) !!}
                                 </div>
                             </div>
-                            <div class="col-md-12">
+                            {{-- <div class="col-md-12">
                                 <div class="form-group">
                                     {{ Form::label('body', __('Description'), ['class' => 'form-label']) }}
                                     {!! Form::textarea('description', null, [
                                         'class' => 'form-control ',
                                         'placeholder' => __('Enter description'),
                                     ]) !!}
+                                </div>
+                            </div> --}}
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    {{ Form::label('images', __('cover'), ['class' => 'form-label']) }} *
+                                    {!! Form::file('cover', ['class' => 'form-control', 'required' => 'required']) !!}
                                 </div>
                             </div>
                         </div>
