@@ -87,43 +87,38 @@
                                     </select>
                                 </div>
                             </div>
-                            <div class="col-md-12 form_sec_outer_task border">
-                                <div class="row">
-                                    <div class="col-md-12 bg-light p-2 mb-3">
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <h4 class="frm_section_n">{{ __('Statistics') }}</h4>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <label>{{ __('advantage') }} *</label>
-                                    </div>
-                                </div>
-                                <div class="col-md-12 p-0">
-                                    <div class="col-md-12 form_field_outer p-0">
+                            <div class="col-md-12 p-0">
+                                <div class="col-md-12 form_field_outer p-0">
+                                    @foreach ($design->details as $index => $detail)
                                         <div class="row form_field_outer_row">
                                             <div class="form-group col-md-6">
-                                                <input type="text" class="form-control w_90" name="details[0][advantage]"
-                                                    id="advantage_1" placeholder="Enter advantage" required />
+                                                <input type="text" class="form-control w_90"
+                                                    name="details[{{ $index }}][category]"
+                                                    id="category_{{ $index }}" placeholder="Enter category"
+                                                    value="{{ old('details.' . $index . '.category', $detail->advantage) }}" />
+                                                @error('details.' . $index . '.category')
+                                                    <div class="text-danger">{{ $message }}</div>
+                                                @enderror
                                             </div>
+                                            <div class="form-group col-md-4">
+                                                <input type="text" class="form-control"
+                                                    name="details[{{ $index }}][number]"
+                                                    id="number_{{ $index }}" placeholder="Enter number"
+                                                    value="{{ old('details.' . $index . '.number', $detail->design_id) }}" />
+                                                @error('details.' . $index . '.number')
+                                                    <div class="text-danger">{{ $message }}</div>
+                                                @enderror
+                                            </div>
+                                            <input type="hidden" name="details[{{ $index }}][id]"
+                                                value="{{ $detail->id }}" />
                                             <div class="form-group col-md-2 add_del_btn_outer">
-                                                <button type="button" class="btn_round add_node_btn_frm_field"
-                                                    title="Copy or clone this row">
-                                                    <i class="fas fa-copy"></i>
-                                                </button>
-                                                <button type="button" class="btn_round remove_node_btn_frm_field" disabled>
+
+                                                <button class="btn_round remove_node_btn_frm_field">
                                                     <i class="fas fa-trash-alt"></i>
                                                 </button>
                                             </div>
                                         </div>
-                                    </div>
-                                </div>
-                                <div class="row ml-0 bg-light mt-3 border py-3">
-                                    <div class="col-md-12">
-                                        <button type="button" class="btn btn-outline-lite py-0 add_new_frm_field_btn"><i
-                                                class="fas fa-plus add_icon"></i>{{ __('Add New field row') }}</button>
-                                    </div>
+                                    @endforeach
                                 </div>
                             </div>
                             {{-- <div class="col-sm-12">

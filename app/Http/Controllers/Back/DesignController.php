@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Back;
 use App\Http\Controllers\Controller;
 use App\Models\Design;
 use App\Models\DesignCategory;
+use App\Models\DesignDetails;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
@@ -111,7 +112,7 @@ class DesignController extends Controller
     {
         if (Auth::user()->can('edit-project')) {
             $categories = DesignCategory::where('status', 1)->get();
-            $design = Design::find($id);
+            $design = Design::with('details')->find($id);
             return view('back.design.edit', compact('design', 'categories'));
         } else {
             return redirect()->back()->with('failed', __('Permission denied.'));
@@ -144,6 +145,29 @@ class DesignController extends Controller
 
 
             $design->save();
+
+            $existingDetailsIds = $design->details->pluck('id')->toArray();
+            $details = $request->input('details', []);
+            $updatedDetailsIds = [];
+            foreach ($details as $detail) {
+                if (isset($detail['id'])) {
+                    // Update existing details
+                    $designDetail = DesignDetails::findOrFail($detail['id']);
+                    $designDetail->advantage = $detail['category'];
+                    $designDetail->design_id = $detail['number'];
+                    $designDetail->save();
+                    $updatedDetailsIds[] = $detail['id'];
+                } else {
+                    // Create new details
+                    $newDetail = $design->details()->create([
+                        'advantage' => $detail['category'],
+                        'design_id' => $detail['number'],
+                    ]);
+                    $updatedDetailsIds[] = $newDetail->id;
+                }
+            }
+            $detailsToDelete = array_diff($existingDetailsIds, $updatedDetailsIds);
+            DesignDetails::destroy($detailsToDelete);
 
             if (isset($old_cover))
                 Storage::delete($old_cover);

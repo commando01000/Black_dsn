@@ -57,16 +57,25 @@
                                 </div>
 
 
-                                <div class="col-md-12">
-                                    {{ Form::label('advantage', __('Details'), ['class' => 'form-label']) }} *
-                                    @foreach ($design->details as $detail)
-                                        <div class="form-group">
-                                            {!! Form::text('advantage', $detail->advantage, [
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        {{ Form::label('categories', __('categories'), ['class' => 'form-label']) }} *
+                                        @foreach ($design->details as $detail)
+                                            {!! Form::text('dribble', $detail->advantage, [
                                                 'class' => 'form-control',
                                                 'disabled',
                                             ]) !!}
-                                        </div>
-                                    @endforeach
+                                        @endforeach
+                                    </div>
+                                </div>
+
+
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        {{ Form::label('cover', __('Cover Photo'), ['class' => 'form-label']) }} *
+                                        <img src="{{ Storage::url($design->cover) }}" class="img-fluid"
+                                            alt="{{ $design->title }}">
+                                    </div>
                                 </div>
 
 
