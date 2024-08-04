@@ -65,6 +65,13 @@
 
                                 </div>
                             </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <?php echo e(Form::label('images', __('cover'), ['class' => 'form-label'])); ?> *
+                                    <?php echo Form::file('cover', ['class' => 'form-control', 'required' => 'required']); ?>
+
+                                </div>
+                            </div>
                             
                         </div>
                     </div>

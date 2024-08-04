@@ -585,153 +585,59 @@
                     </div>
                 </div>
                 <div class="p-relative dsn-style-classic dsn-under-img dsn-container dsn-right-container">
-                    <div class="root-posts ">
+                    <div class="root-posts">
                         <div class="dsn-posts dsn-post-type-classic h-350">
                             <div class="has-parallax-image dsn-swiper p-relative"
                                 data-dsn-option='{"slidesPerView":2.5,"spaceBetween":30,"centeredSlides":false}'>
-                                <div class="swiper-container ">
+                                <div class="swiper-container">
                                     <div class="swiper-wrapper">
-                                        <article
-                                            class="dsn-item-post grid-item over-hidden p-relative box-hover-image v-dark-head background-section swiper-slide">
-                                            <div class="box-content d-flex ">
-                                                <a class='effect-ajax box-image-link bg-shadow'
-                                                    data-dsn-text='Our Stories' href='single-post.html'>
-                                                    <div class="box-image-bg before-z-index dsn-swiper-parallax-transform"
-                                                        data-overlay="4">
-                                                        <img src="{{ asset('front_asset/assets/img/blog/1.jpg') }}"
-                                                            class="cover-bg-img" alt="">
-                                                    </div>
-                                                </a>
-                                                <div class="post-content dsn-bg p-relative z-index-1 d-flex flex-column">
-
-                                                    <div class="post-title-info">
-                                                        <div class="post-meta max-w750">
-                                                            <div class="entry-date d-inline-block entry-meta mb-10">
-                                                                June 12, 2022
-                                                            </div>
-                                                            <span class="mr-5 ml-5 separator-between"> ..</span>
-                                                            <div
-                                                                class="p-relative d-inline-block dsn-category dsn-bg metas mb-10 entry-meta">
-                                                                <span data-separator=" & ">Uncategorized</span>
-                                                            </div>
+                                        @foreach ($blogs as $blog)
+                                            <article
+                                                class="dsn-item-post grid-item over-hidden p-relative box-hover-image v-dark-head background-section swiper-slide">
+                                                <div class="box-content d-flex">
+                                                    <a class='effect-ajax box-image-link bg-shadow'
+                                                        data-dsn-text='{{ $blog->title }}'
+                                                        href='{{ url("blog/{$blog->id}") }}'>
+                                                        <div class="box-image-bg before-z-index dsn-swiper-parallax-transform"
+                                                            data-overlay="4">
+                                                            <img src="{{ Storage::url($blog->images) }}"
+                                                                class="cover-bg-img" alt="{{ $blog->title }}">
                                                         </div>
-                                                        <h2 class="post-title dsn-bg title-block">
-                                                            <a class='effect-ajax' data-dsn-text='Our Stories'
-                                                                href='single-post.html'>
-                                                                Wildlife could be amazing, see why.
-                                                            </a>
-                                                        </h2>
-                                                    </div>
-
-                                                    <div class="post-description-info ">
-                                                        <p class="section_description mt-15 max-w570 ">
-                                                            qProin faucibus nec
-                                                            mauris a sodales, sed elementum mi tincidunt. Sed eget
-                                                            viverra
-                                                            egestas
-                                                        </p>
-                                                    </div>
-
-                                                </div>
-                                            </div>
-
-
-                                        </article>
-                                        <article
-                                            class="dsn-item-post grid-item over-hidden p-relative box-hover-image v-dark-head background-section swiper-slide">
-                                            <div class="box-content d-flex ">
-                                                <a class='effect-ajax box-image-link bg-shadow'
-                                                    data-dsn-text='Our Stories' href='single-post.html'>
-                                                    <div class="box-image-bg before-z-index dsn-swiper-parallax-transform"
-                                                        data-overlay="4">
-                                                        <img src="{{ asset('front_asset/assets/img/blog/2.jpg') }}"
-                                                            class="cover-bg-img" alt="">
-                                                    </div>
-                                                </a>
-                                                <div class="post-content dsn-bg p-relative z-index-1 d-flex flex-column">
-
-                                                    <div class="post-title-info">
-                                                        <div class="post-meta max-w750">
-                                                            <div class="entry-date d-inline-block entry-meta mb-10">
-                                                                Marc 15, 2022
+                                                    </a>
+                                                    <div
+                                                        class="post-content dsn-bg p-relative z-index-1 d-flex flex-column">
+                                                        <div class="post-title-info">
+                                                            <div class="post-meta max-w750">
+                                                                <div class="entry-date d-inline-block entry-meta mb-10">
+                                                                    {{ $blog->created_at->format('F d, Y') }}
+                                                                </div>
+                                                                <span class="mr-5 ml-5 separator-between"> ..</span>
+                                                                <div
+                                                                    class="p-relative d-inline-block dsn-category dsn-bg metas mb-10 entry-meta">
+                                                                    <span
+                                                                        data-separator=" & ">{{ $blog->category->name }}</span>
+                                                                </div>
                                                             </div>
-                                                            <span class="mr-5 ml-5 separator-between"> ..</span>
-                                                            <div
-                                                                class="p-relative d-inline-block dsn-category dsn-bg metas mb-10 entry-meta">
-                                                                <span data-separator=" & ">Editorial</span>
-                                                            </div>
+                                                            <h2 class="post-title dsn-bg title-block">
+                                                                <a class='effect-ajax'
+                                                                    data-dsn-text='{{ $blog->title }}'
+                                                                    href='{{ url("blog/{$blog->id}") }}'>
+                                                                    {{ $blog->title }}
+                                                                </a>
+                                                            </h2>
                                                         </div>
-                                                        <h2 class="post-title dsn-bg title-block">
-                                                            <a class='effect-ajax' data-dsn-text='Our Stories'
-                                                                href='single-post.html'>
-                                                                Quick tips for an effective styled wedding
-                                                            </a>
-                                                        </h2>
-                                                    </div>
-
-                                                    <div class="post-description-info ">
-                                                        <p class="section_description mt-15 max-w570 ">
-                                                            qProin faucibus nec
-                                                            mauris a sodales, sed elementum mi tincidunt. Sed eget
-                                                            viverra
-                                                            egestas
-                                                        </p>
-                                                    </div>
-
-                                                </div>
-                                            </div>
-
-
-                                        </article>
-                                        <article
-                                            class="dsn-item-post grid-item over-hidden p-relative box-hover-image v-dark-head background-section swiper-slide">
-                                            <div class="box-content d-flex ">
-                                                <a class='effect-ajax box-image-link bg-shadow'
-                                                    data-dsn-text='Our Stories' href='single-post.html'>
-                                                    <div class="box-image-bg before-z-index dsn-swiper-parallax-transform"
-                                                        data-overlay="4">
-                                                        <img src="{{ asset('front_asset/assets/img/blog/3.jpg') }}"
-                                                            class="cover-bg-img" alt="">
-                                                    </div>
-                                                </a>
-                                                <div class="post-content dsn-bg p-relative z-index-1 d-flex flex-column">
-
-                                                    <div class="post-title-info">
-                                                        <div class="post-meta max-w750">
-                                                            <div class="entry-date d-inline-block entry-meta mb-10">
-                                                                Oct 23, 2022
-                                                            </div>
-                                                            <span class="mr-5 ml-5 separator-between"> ..</span>
-                                                            <div
-                                                                class="p-relative d-inline-block dsn-category dsn-bg metas mb-10 entry-meta">
-                                                                <span data-separator=" & ">Editorial</span>
-                                                            </div>
+                                                        <div class="post-description-info">
+                                                            <p class="section_description mt-15 max-w570">
+                                                                {{ $blog->short_description }}
+                                                            </p>
                                                         </div>
-                                                        <h2 class="post-title dsn-bg title-block">
-                                                            <a class='effect-ajax' data-dsn-text='Our Stories'
-                                                                href='single-post.html'>
-                                                                Soul Artwork from Lizzy styled wedding
-                                                            </a>
-                                                        </h2>
                                                     </div>
-
-                                                    <div class="post-description-info ">
-                                                        <p class="section_description mt-15 max-w570 ">
-                                                            qProin faucibus nec
-                                                            mauris a sodales, sed elementum mi tincidunt. Sed eget
-                                                            viverra
-                                                            egestas
-                                                        </p>
-                                                    </div>
-
                                                 </div>
-                                            </div>
-
-
-                                        </article>
+                                            </article>
+                                        @endforeach
                                     </div>
                                     <div
-                                        class="dsn-swiper-paginate  d-flex p-relative w-100 h-100 mt-50 align-items-center dsn-container justify-content-between">
+                                        class="dsn-swiper-paginate d-flex p-relative w-100 h-100 mt-50 align-items-center dsn-container justify-content-between">
                                         <div class="swiper-prev">
                                             <div class="prev-container">
                                                 <div class="container-inner">
@@ -746,7 +652,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="swiper-pagination  mr-30 ml-30 heading-color"
+                                        <div class="swiper-pagination mr-30 ml-30 heading-color"
                                             data-dsn-type="progressbar"></div>
                                         <div class="swiper-next">
                                             <div class="next-container">
@@ -768,6 +674,7 @@
                         </div>
                     </div>
                 </div>
+
             </div>
             <!-- ========== End Stories ========== -->
 
@@ -785,47 +692,17 @@
                         </h5>
                     </div>
                     <div class="d-grid grid-sm-4 d-grid-no-space dsn-brand">
-                        <div class="brand-item border-bottom border-right">
-                            <div class="brand-item-inner  over-hidden p-relative ">
-                                <img src="{{ asset('front_asset/assets/img/brand/1.svg') }}" alt="">
+                        @foreach ($brands as $brand)
+                            <div
+                                class="brand-item border-bottom {{ !$loop->last && $loop->index % 4 != 3 ? 'border-right' : '' }}">
+                                <div class="brand-item-inner over-hidden p-relative">
+                                    <img src="{{ Storage::url($brand->cover) }}"
+                                        alt="{{ $brand->name }}">
+                                </div>
                             </div>
-                        </div>
-                        <div class="brand-item border-bottom border-right">
-                            <div class="brand-item-inner  over-hidden p-relative ">
-                                <img src="{{ asset('front_asset/assets/img/brand/2.svg') }}" alt="">
-                            </div>
-                        </div>
-                        <div class="brand-item border-bottom border-right">
-                            <div class="brand-item-inner  over-hidden p-relative ">
-                                <img src="{{ asset('front_asset/assets/img/brand/3.svg') }}" alt="">
-                            </div>
-                        </div>
-                        <div class="brand-item border-bottom">
-                            <div class="brand-item-inner  over-hidden p-relative ">
-                                <img src="{{ asset('front_asset/assets/img/brand/4.svg') }}" alt="">
-                            </div>
-                        </div>
-                        <div class="brand-item border-right">
-                            <div class="brand-item-inner  over-hidden p-relative ">
-                                <img src="{{ asset('front_asset/assets/img/brand/5.svg') }}" alt="">
-                            </div>
-                        </div>
-                        <div class="brand-item border-right">
-                            <div class="brand-item-inner  over-hidden p-relative ">
-                                <img src="{{ asset('front_asset/assets/img/brand/6.svg') }}" alt="">
-                            </div>
-                        </div>
-                        <div class="brand-item border-right">
-                            <div class="brand-item-inner  over-hidden p-relative ">
-                                <img src="{{ asset('front_asset/assets/img/brand/1.svg') }}" alt="">
-                            </div>
-                        </div>
-                        <div class="brand-item">
-                            <div class="brand-item-inner  over-hidden p-relative ">
-                                <img src="{{ asset('front_asset/assets/img/brand/4.svg') }}" alt="">
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
+
                 </div>
             </div>
             <!-- ========== End Brand ========== -->

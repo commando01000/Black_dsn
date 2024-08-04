@@ -78,11 +78,11 @@
                                     <div class="form-group">
                                         {{ Form::label('description', __('Description'), ['class' => 'form-label']) }} *
                                         <?php
-
+                                        
                                         $var = html_entity_decode($blog->description);
-
+                                        
                                         echo $var;
-
+                                        
                                         ?>
                                     </div>
                                 </div>

@@ -35,7 +35,7 @@ class StatisticController extends Controller
 
         if ($request->hasFile('cover')) {
             request()->validate([
-                'cover' => 'mimes:jpg,jpeg,png',
+                'cover' => 'mimes:jpg,jpeg,png,svg',
             ]);
             $path = $request->file('cover')->store('statistics');
         }
@@ -86,7 +86,7 @@ class StatisticController extends Controller
         $statistic->short_description = $request->input('short_description');
         if ($request->hasFile('cover')) {
             request()->validate([
-                'cover' => 'required|image|mimes:jpg,png,jpeg,webp',
+                'cover' => 'required|image|mimes:jpg,png,jpeg,svg,webp',
             ]);
             $old_cover = $statistic->cover;
             $path           = $request->file('cover')->store('statistics');

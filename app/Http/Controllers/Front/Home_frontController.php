@@ -32,7 +32,11 @@ class Home_frontController extends Controller
         // get testimonial slider data
         $testimonials = Testimonial::take(6)->latest()->get();
         // dd($testimonials);
-        return view('front.home.index', compact('designs', 'statistics', 'services', 'about', 'testimonials'));
+        $blogs = Blog::with('category')->latest()->take(6)->get();
+
+        // get brands data
+        $brands = Statistic::take(8)->latest()->get();
+        return view('front.home.index', compact('designs', 'statistics', 'services', 'about', 'testimonials', 'blogs', 'brands'));
     }
     public function getProjectsByCategory($categoryId)
     {
