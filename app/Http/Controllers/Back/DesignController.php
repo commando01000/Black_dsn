@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Design;
 use App\Models\DesignCategory;
 use App\Models\DesignDetails;
+use App\Models\DesignDetailsImages;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
@@ -71,6 +72,22 @@ class DesignController extends Controller
                 'cover'                => $path,
                 'created_by'            => Auth::user()->id,
             ]);
+
+
+            if ($request->hasFile('images')) {
+                foreach ($request->file('images') as $image) {
+                    // Store the image and get the path
+                    $path = $image->store('design_images', 'design_images');
+
+                    // Save the image path in the design_images table
+                    $design_details_image =  DesignDetailsImages::create([
+                        'design_id' => $design->id,
+                        'image' => $path,
+                    ]);
+                    dd($design_details_image);
+                }
+            }
+
 
             $details = $request->input('details', []); // Default to empty array if null
 
@@ -145,6 +162,19 @@ class DesignController extends Controller
 
 
             $design->save();
+
+            if ($request->hasFile('images')) {
+                foreach ($request->file('images') as $image) {
+                    // Store the image and get the path
+                    $path = $image->store('design_images');
+
+                    // Save the image path in the design_images table
+                    $design_details_image =  DesignDetailsImages::create([
+                        'design_id' => $design->id,
+                        'image' => $path,
+                    ]);
+                }
+            }
 
             $existingDetailsIds = $design->details->pluck('id')->toArray();
             $details = $request->input('details', []);

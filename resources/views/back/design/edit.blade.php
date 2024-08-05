@@ -135,8 +135,18 @@
                             </div> --}}
                             <div class="col-md-12">
                                 <div class="form-group">
-                                    {{ Form::label('cover', __('Images'), ['class' => 'form-label']) }} *
-                                    {!! Form::file('cover', ['class' => 'form-control']) !!}
+                                    {{ Form::label('images', __('cover'), ['class' => 'form-label']) }} *
+                                    {!! Form::file('cover', ['class' => 'form-control', 'required' => 'required']) !!}
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    {{ Form::label('images', __('image (s)'), ['class' => 'form-label']) }} *
+                                    <div id="image-upload-container">
+                                        <input type="file" name="images[]" class="form-control" required>
+                                    </div>
+                                    <button type="button" id="add-image-upload" class="btn btn-secondary mt-2">Add More
+                                        Images</button>
                                 </div>
                             </div>
                             <div class="col-md-12">
@@ -238,6 +248,16 @@
                     e.preventDefault();
                     $(this).closest(".form_field_outer_row").remove();
                 });
+            });
+            // handle multiple image input
+            document.getElementById('add-image-upload').addEventListener('click', function() {
+                var container = document.getElementById('image-upload-container');
+                var input = document.createElement('input');
+                input.type = 'file';
+                input.name = 'images[]';
+                input.className = 'form-control mt-2';
+                input.required = true;
+                container.appendChild(input);
             });
         });
     </script>

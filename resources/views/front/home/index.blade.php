@@ -407,7 +407,7 @@
                     </p>
                     <div class="dsn-def-btn d-flex dsn-border-style dsn-icon-heading-color mt-30">
                         <a class='dsn-btn dsn-border border-color-default background-section  move-circle has-icon-left'
-                            data-dsn-text='Contact Us' data-dsn='parallax' href='contact.html'>
+                            data-dsn-text='Contact Us' data-dsn='parallax' href='{{ route('contact') }}'>
                             <span class="dsn-icon dsn-bg-before btn-icon-left heading-color z-index-1">
                                 <i class="far fa-envelope-open"></i>
                             </span>
@@ -443,7 +443,7 @@
                         </div>
                         <div class="dsn-def-btn dsn-icon-heading-color align-self-end justify-self-end">
                             <a class='dsn-btn dsn-border border-color-default background-main effect-ajax move-circle has-icon-left'
-                                data-dsn-text='Contact Us' data-dsn='parallax' href='contact.html'>
+                                data-dsn-text='Contact Us' data-dsn='parallax' href='{{ route('contact') }}'>
                                 <span class="dsn-icon dsn-bg-before btn-icon-left heading-color z-index-1">
                                     <i class="fas fa-angle-right"></i>
                                 </span>
@@ -696,8 +696,7 @@
                             <div
                                 class="brand-item border-bottom {{ !$loop->last && $loop->index % 4 != 3 ? 'border-right' : '' }}">
                                 <div class="brand-item-inner over-hidden p-relative">
-                                    <img src="{{ Storage::url($brand->cover) }}"
-                                        alt="{{ $brand->name }}">
+                                    <img src="{{ Storage::url($brand->cover) }}" alt="{{ $brand->name }}">
                                 </div>
                             </div>
                         @endforeach
