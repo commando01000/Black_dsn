@@ -170,7 +170,7 @@
                     </div>
                     <div class="dsn-def-btn dsn-icon-heading-color align-self-end justify-self-end">
                         <a class="dsn-btn dsn-border border-color-default  background-section effect-ajax effect-ajax  move-circle has-icon-left"
-                            href="https://dsngrid.com/blackdsn/service/" data-dsn-text="Service" data-dsn="parallax">
+                            href="{{ route('services') }}" data-dsn-text="Service" data-dsn="parallax">
                             <span class="dsn-icon dsn-bg-before btn-icon-left heading-color z-index-1"><i
                                     class="fas fa-angle-right"></i></span> <span
                                 class="title-btn p-relative  z-index-1 heading-color">VIEW ALL SERVICES</span> </a>
@@ -252,7 +252,7 @@
                         </ul>
                         <div class="dsn-def-btn dsn-icon-heading-color mt-20 d-flex">
                             <a class='dsn-btn dsn-border border-color-default background-main effect-ajax has-icon-left'
-                                data-dsn-text='HEADPHONES' href='project-6.html'>
+                                data-dsn-text='{{ $about->title }}' href='{{ route('design.show', $about->id) }}'>
                                 <span class="dsn-icon dsn-bg-before btn-icon-left heading-color z-index-1">
                                     <i class="fas fa-angle-right"></i>
                                 </span>

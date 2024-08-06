@@ -77,14 +77,13 @@ class DesignController extends Controller
             if ($request->hasFile('images')) {
                 foreach ($request->file('images') as $image) {
                     // Store the image and get the path
-                    $path = $image->store('design_images', 'design_images');
+                    $path = $image->store('design_images');
 
                     // Save the image path in the design_images table
                     $design_details_image =  DesignDetailsImages::create([
                         'design_id' => $design->id,
                         'image' => $path,
                     ]);
-                    dd($design_details_image);
                 }
             }
 

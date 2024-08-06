@@ -1,17 +1,18 @@
     <!-- ========== Menu ========== -->
     <header id="site_menu_header" class="site-header  dsn-container d-none dsn-hamburger">
         <div class="main-logo">
-            <a aria-current='page' class='custom-logo-link main-brand effect-ajax' data-dsn-text='Blackdsn' href='{{url('/')}}'
-                rel='home'>
-                <img src= "{{asset('front_asset/assets/img/logo-light.png')}}" class="custom-logo logo-light" alt="Blackdsn">
-                <img src= "{{asset('front_asset/assets/img/logo.png')}}" class="custom-logo logo-dark" alt="Blackdsn">
+            <a aria-current='page' class='custom-logo-link main-brand effect-ajax' data-dsn-text='Blackdsn'
+                href='{{ url('/') }}' rel='home'>
+                <img src= "{{ asset('front_asset/assets/img/logo-light.png') }}" class="custom-logo logo-light"
+                    alt="Blackdsn">
+                <img src= "{{ asset('front_asset/assets/img/logo.png') }}" class="custom-logo logo-dark" alt="Blackdsn">
             </a>
         </div>
         <nav class="main-navigation ">
             <div class="menu-cover-title header-container dsn-container">MENU</div>
             <ul id="dsn-primary-list" class="primary-nav h2">
                 <li class="nav-item has-sub-menu">
-                    <a title="Home" href="{{route('homepage')}}">
+                    <a title="Home" href="{{ route('homepage') }}">
                         <span class="overflow ">Home</span>
                     </a>
                     <ul class="nav-item">
@@ -539,7 +540,7 @@
                             </span>
                         </li>
                         <li class="nav-item ">
-                            <a data-dsn-text='Stories' href='stories.html' title='Stories'>
+                            <a data-dsn-text='Stories' href='{{ route('see.all.blogs') }}' title='Stories'>
                                 <span class="overflow">Stories</span>
                             </a>
                         </li>
@@ -558,12 +559,12 @@
                     </a>
                 </li>
                 <li class="nav-item ">
-                    <a href='{{route('about-us')}}' title='Home'>
+                    <a href='{{ route('about-us') }}' title='Home'>
                         <span class="overflow">About</span>
                     </a>
                 </li>
                 <li class="nav-item ">
-                    <a href='{{route('contact')}}' title='Home'>
+                    <a href='{{ route('contact') }}' title='Home'>
                         <span class="overflow">Contact</span>
                     </a>
                 </li>

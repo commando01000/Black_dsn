@@ -31,4 +31,9 @@ class Design extends Model
     {
         return $this->hasMany(DesignDetails::class);
     }
+
+    public function images()
+    {
+        return $this->hasMany(DesignDetailsImages::class, 'design_id');
+    }
 }

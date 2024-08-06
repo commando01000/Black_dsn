@@ -9,6 +9,8 @@ use App\Models\Client;
 use App\Models\ClientCategory;
 use App\Models\ProjectCategory;
 use App\Models\Service;
+use App\Models\Statistic;
+use App\Models\Testimonial;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 
@@ -16,10 +18,14 @@ class Services_frontController extends Controller
 {
     public function seeAllServices(Request $request)
     {
-        $categories = CategoryService::with('services')->get();
-        $clients = Client::take(9)->get();
-        $clientCategory = ClientCategory::with('clients')->take(9)->get();
-        return view('front.services.index', compact('categories', 'clients', 'clientCategory'));
+        // get all services
+        $services = Service::take(6)->get();
+        // get testimonial slider data
+        $testimonials = Testimonial::take(4)->get();
+
+        // get the brands
+        $brands = Statistic::where('id', '>', 29)->get();
+        return view('front.services.index', compact('services', 'testimonials', 'brands'));
     }
 
     public function viewService($slug)

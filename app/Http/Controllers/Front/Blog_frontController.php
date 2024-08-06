@@ -15,9 +15,9 @@ class Blog_frontController extends Controller
 {
     public function index(Request $request)
     {
-        $allBlogs = Blog::paginate(9);
+        $blogs = Blog::paginate(4);
         // dd($allBlogs);
-        return view('front.blog.view-all-blogs', compact('allBlogs'));
+        return view('front.blog.view-all-blogs', compact('blogs'));
     }
     public function view($slug)
     {

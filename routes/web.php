@@ -58,6 +58,7 @@ use App\Http\Controllers\FormValueController;
 use App\Http\Controllers\Front\Client_frontController;
 // use App\Http\Controllers\front\advertisementController as FrontAdvertisementController;
 use App\Http\Controllers\front\ClientsController;
+use App\Http\Controllers\Front\Design_frontController;
 use App\Http\Controllers\Front\LeadershipController;
 use App\Http\Controllers\Front\Services_frontController;
 use App\Http\Controllers\MailTempleteController;
@@ -439,6 +440,7 @@ Route::group(['middleware' => ['Setting', 'xss', 'Upload']], function () {
         return view('front.coming-soon.index');
     })->name('coming-soon');
 
+    Route::get ('design/{id}', [Design_frontController::class, 'show'])->name('design.show');
     Route::get('pages/{slug}', [Pages_frontController::class, 'index']);
     Route::get('projects/{slug}/', [Project_frontController::class, 'viewProject'])->name('view.project');
     Route::get('projects', [Project_frontController::class, 'seeAllProjects'])->name('see.all.projects');

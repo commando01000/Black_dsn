@@ -1,9 +1,10 @@
     <!-- ========== Menu ========== -->
     <header id="site_menu_header" class="site-header  dsn-container d-none dsn-hamburger">
         <div class="main-logo">
-            <a aria-current='page' class='custom-logo-link main-brand effect-ajax' data-dsn-text='Blackdsn' href='<?php echo e(url('/')); ?>'
-                rel='home'>
-                <img src= "<?php echo e(asset('front_asset/assets/img/logo-light.png')); ?>" class="custom-logo logo-light" alt="Blackdsn">
+            <a aria-current='page' class='custom-logo-link main-brand effect-ajax' data-dsn-text='Blackdsn'
+                href='<?php echo e(url('/')); ?>' rel='home'>
+                <img src= "<?php echo e(asset('front_asset/assets/img/logo-light.png')); ?>" class="custom-logo logo-light"
+                    alt="Blackdsn">
                 <img src= "<?php echo e(asset('front_asset/assets/img/logo.png')); ?>" class="custom-logo logo-dark" alt="Blackdsn">
             </a>
         </div>
@@ -539,7 +540,7 @@
                             </span>
                         </li>
                         <li class="nav-item ">
-                            <a data-dsn-text='Stories' href='stories.html' title='Stories'>
+                            <a data-dsn-text='Stories' href='<?php echo e(route('see.all.blogs')); ?>' title='Stories'>
                                 <span class="overflow">Stories</span>
                             </a>
                         </li>
