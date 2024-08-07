@@ -485,37 +485,15 @@
                                 </span>
                             </span>
                         </li>
-                        <li class="nav-item ">
-                            <a data-dsn-text='VISIONAID' href='project-1.html' title='VISIONAID'>
-                                <span class="overflow">VISIONAID</span>
-                            </a>
-                        </li>
-                        <li class="nav-item ">
-                            <a data-dsn-text='MEN FASHION' href='project-2.html' title='MEN FASHION'>
-                                <span class="overflow">MEN FASHION</span>
-                            </a>
-                        </li>
-                        <li class="nav-item ">
-                            <a data-dsn-text='AUDI RS' href='project-3.html' title='AUDI RS'>
-                                <span class="overflow">AUDI RS</span>
-                            </a>
-                        </li>
-                        <li class="nav-item ">
-                            <a data-dsn-text='OPEN RUN' href='project-4.html' title='OPEN RUN'>
-                                <span class="overflow">OPEN RUN</span>
-                            </a>
-                        </li>
-                        <li class="nav-item ">
-                            <a data-dsn-text='DOG CHOW' href='project-5.html' title='DOG CHOW'>
-                                <span class="overflow">DOG CHOW</span>
-                            </a>
-                        </li>
-                        <li class="nav-item ">
-                            <a data-dsn-text='HEADPHONES' href='project-6.html' title='HEADPHONES'>
-                                <span class="overflow">HEADPHONES</span>
-                            </a>
-                        </li>
-
+                        <?php $__currentLoopData = $myDesigns; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $design): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                            <li class="nav-item ">
+                                <a data-dsn-text='<?php echo e($design->title); ?>' href="<?php echo e(route('design.show', $design->id)); ?>"
+                                    title='<?php echo e($design->title); ?>'>
+                                    <span class="overflow"><?php echo e($design->title); ?></span>
+                                </a>
+                            </li>
+                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                        
                     </ul>
                 </li>
                 <li class="nav-item has-sub-menu">
@@ -573,21 +551,21 @@
                 <div class="nav__info">
                     <div class="nav-content">
                         <h5 class="sm-title-block mb-10">Studio</h5>
-                        26-30 New Damietta
-                        El-Mahalla El-Kubra, SK1 66LM
+                        <?php echo e(Utility::getsettings('contact_address2')); ?>
 
                     </div>
                     <div class="nav-content mt-30">
                         <h5 class="sm-title-block mb-10">Contact</h5>
                         <p class="links over-hidden mb-1">
                             <a class="link-hover d-block" href="tel:00201004392260"
-                                data-hover-text="+00 (2)012 3321">+00
-                                (2)01004392260</a>
-                            <a class="link-hover" href="tel:00201024552406" data-hover-text="+00 (2)012 3321">+00
-                                (2)01024552406</a>
+                                data-hover-text="<?php echo e(Utility::getsettings('contact_phone2')); ?>">
+                                <?php echo e(Utility::getsettings('contact_phone2')); ?></a>
+                            <a class="link-hover" href="tel:00201024552406"
+                                data-hover-text="<?php echo e(Utility::getsettings('contact_phone1')); ?>">
+                                <?php echo e(Utility::getsettings('contact_phone1')); ?></a>
                         </p>
                         <p class="links over-hidden"><a class="link-hover" href="mailto:info@dsngrid.com"
-                                data-hover-text="info@dsngrid.com">info@dsngrid.com</a></p>
+                                data-hover-text="info@dsngrid.com"><?php echo e(Utility::getsettings('contact_email')); ?></a></p>
 
                     </div>
                 </div>
@@ -595,14 +573,14 @@
                     <div class="nav-social-inner p-relative">
                         <h5 class="sm-title-block mb-10">Follow us</h5>
                         <ul style="--dsn-li-name: dsn6;">
-                            <li style="--dsn-li-index: 0;"><a href="#0" target="_blank"
-                                    rel="nofollow noopener noreferrer">Dribbble.</a></li>
-                            <li style="--dsn-li-index: 1;"><a href="#0" target="_blank"
-                                    rel="nofollow noopener noreferrer">Behance.</a></li>
-                            <li style="--dsn-li-index: 2;"><a href="#0" target="_blank"
-                                    rel="nofollow noopener noreferrer">Linkedin.</a></li>
-                            <li style="--dsn-li-index: 3;"><a href="#0" target="_blank"
-                                    rel="nofollow noopener noreferrer">Twitter.</a></li>
+                            <li style="--dsn-li-index: 0;"><a href="<?php echo e(Utility::getsettings('contact_dribble')); ?>"
+                                    target="_blank" rel="nofollow noopener noreferrer">Dribble.</a></li>
+                            <li style="--dsn-li-index: 1;"><a href="<?php echo e(Utility::getsettings('contact_behance')); ?>"
+                                    target="_blank" rel="nofollow noopener noreferrer">Behance.</a></li>
+                            <li style="--dsn-li-index: 2;"><a href="<?php echo e(Utility::getsettings('contact_linkedin')); ?>"
+                                    target="_blank" rel="nofollow noopener noreferrer">Linkedin.</a></li>
+                            <li style="--dsn-li-index: 3;"><a href="<?php echo e(Utility::getsettings('contact_twitter')); ?>"
+                                    target="_blank" rel="nofollow noopener noreferrer">Twitter.</a></li>
                         </ul>
                     </div>
                 </div>

@@ -29,7 +29,7 @@
                                             </div>
                                             <h2 class="title has-box-mod p-relative">
                                                 <a class='effect-ajax' data-dsn-ajax='slider' data-dsn-split='chars'
-                                                    href='<?php echo e(url("project/{$design->id}")); ?>'>
+                                                    href='<?php echo e(route('design.show', $design->id)); ?>'>
                                                     <?php echo e($design->title); ?>
 
                                                 </a>
@@ -41,7 +41,7 @@
                                             <div class="d-flex mt-20 dsn-def-btn dsn-border-style">
                                                 <a class='mr-15 dsn-btn dsn-border border-color-default background-main has-icon-left'
                                                     data-dsn-ajax='slider' data-dsn='parallax'
-                                                    href='<?php echo e(url("project/{$design->id}")); ?>'>
+                                                    href='<?php echo e(route('design.show', $design->id)); ?>'>
                                                     <span
                                                         class="dsn-icon dsn-bg-before btn-icon-left heading-color z-index-1">
                                                         <i class="fas fa-angle-right"></i>
@@ -78,7 +78,6 @@
             </div>
         </header>
         <!-- ========== End Slider Parallax ========== -->
-
 
 
         <!-- ========== Service Icon Left ========== -->
@@ -304,7 +303,8 @@
                                                 class="dsn-item-post grid-item over-hidden p-relative box-hover-image swiper-slide">
                                                 <div class="box-content d-flex">
                                                     <a class='effect-ajax box-image-link bg-shadow' data-dsn-ajax='work'
-                                                        href="#" title="<?php echo e($design->title); ?>">
+                                                        href="<?php echo e(route('design.show', $design->id)); ?>"
+                                                        title="<?php echo e($design->title); ?>">
                                                         <div class="box-image-bg before-z-index dsn-swiper-parallax-transform"
                                                             data-overlay="4">
                                                             <img class="cover-bg-img"
@@ -324,7 +324,7 @@
                                                             </div>
                                                             <h2 class="post-title title-block">
                                                                 <a class='effect-ajax' data-dsn-ajax='work'
-                                                                    href="#">
+                                                                    href="<?php echo e(route('design.show', $design->id)); ?>">
                                                                     <?php echo e($design->title); ?>
 
                                                                 </a>
@@ -334,7 +334,8 @@
                                                         <div class="post-description-info">
                                                             <div class="d-flex mt-20 dsn-def-btn dsn-hover-icon">
                                                                 <a class='effect-ajax dsn-btn dsn-border border-color-default background-section has-icon-left'
-                                                                    data-dsn-ajax='work' href="#">
+                                                                    data-dsn-ajax='work'
+                                                                    href="<?php echo e(route('design.show', $design->id)); ?>">
                                                                     <span
                                                                         class="dsn-icon dsn-bg-before btn-icon-left heading-color z-index-1">
                                                                         <i class="fas fa-angle-right"></i>
