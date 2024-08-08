@@ -117,21 +117,9 @@
                                     </span>
                                 </li>
                                 <li class="nav-item ">
-                                    <a data-dsn-text='Our Portfolio' href='carousel-portfolio-1.html'
-                                        title='Carousel Portfolio 1'>
-                                        <span class="overflow">Carousel Portfolio 1</span>
-                                    </a>
-                                </li>
-                                <li class="nav-item ">
-                                    <a data-dsn-text='Our Portfolio' href='carousel-portfolio-2.html'
+                                    <a data-dsn-text='Our Portfolio' href='{{ route('our-portfolio') }}'
                                         title='Carousel Portfolio'>
-                                        <span class="overflow">Carousel Portfolio 2</span>
-                                    </a>
-                                </li>
-                                <li class="nav-item ">
-                                    <a data-dsn-text='Our Portfolio' href='carousel-portfolio-3.html'
-                                        title='Carousel Portfolio 3'>
-                                        <span class="overflow">Carousel Portfolio 3</span>
+                                        <span class="overflow">Our Portfolio</span>
                                     </a>
                                 </li>
                             </ul>

@@ -39,6 +39,7 @@ use App\Http\Controllers\Back\StatisticController;
 use App\Http\Controllers\FormController;
 use App\Http\Controllers\Front\Home_frontController;
 use App\Http\Controllers\Front\Blog_frontController;
+use App\Http\Controllers\Front\Portfolio_frontController;
 use App\Http\Controllers\Front\Project_frontController;
 use App\Http\Controllers\Front\Faqs_frontController;
 use App\Http\Controllers\Front\Pages_frontController;
@@ -429,6 +430,7 @@ Route::group(['middleware' => ['Setting', 'xss', 'Upload']], function () {
     Route::get('team-details/{id}', [About_frontController::class, 'team_detail'])->name('team-details');
 
     Route::get('about-us', [About_frontController::class, 'index'])->name('about-us');
+    Route::get('our-portfolio', [Portfolio_frontController::class, 'index'])->name('our-portfolio');
     Route::get('leadership', [LeadershipController::class, 'index'])->name('front.leadership.index');
     Route::post('join/store', [JoinController::class, 'store'])->name('join.store');
 
@@ -441,6 +443,7 @@ Route::group(['middleware' => ['Setting', 'xss', 'Upload']], function () {
     })->name('coming-soon');
 
     Route::get ('design/{id}', [Design_frontController::class, 'show'])->name('design.show');
+
     Route::get('pages/{slug}', [Pages_frontController::class, 'index']);
     Route::get('projects/{slug}/', [Project_frontController::class, 'viewProject'])->name('view.project');
     Route::get('projects', [Project_frontController::class, 'seeAllProjects'])->name('see.all.projects');
