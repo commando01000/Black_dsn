@@ -544,7 +544,7 @@
                     </ul>
                 </li>
                 <li class="nav-item ">
-                    <a href='service.html' title='Service'>
+                    <a href='{{ route('services') }}' title='Service'>
                         <span class="overflow">Service</span>
                     </a>
                 </li>

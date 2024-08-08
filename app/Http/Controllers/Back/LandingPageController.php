@@ -10,11 +10,40 @@ class LandingPageController extends Controller
 {
     private function updateSettings($input)
     {
+        // dd($input);
         foreach ($input as $key => $value) {
             settings::updateOrCreate(
                 ['key' => $key],
                 ['value' => $value]
             );
+        }
+    }
+    public function homeSetting(Request $request)
+    {
+        return view('back.landing-page.home-setting');
+    }
+    public function HomeSettingStore(Request $request)
+    {
+        // dd($request->all());
+        if ($request->home_setting_enable == 'on') {
+            $request->validate([
+                'title' => 'required',
+                'description' => 'required',
+            ]);
+
+            $data = [
+                'home_setting_enable' => 'on',
+                'landing.home.title' => $request->title,
+                'landing.home.description' => $request->description,
+            ];
+            $this->updateSettings($data);
+            return redirect()->back()->with('success', __('Home setting updated successfully.'));
+        } else {
+            $data = [
+                'home_setting_enable' => 'off',
+            ];
+            $this->updateSettings($data);
+            return redirect()->back()->with('failed', __('Home setting disabled.'));
         }
     }
     public function landingPageSetting(Request $request)

@@ -284,6 +284,7 @@ Route::group([
 
             Route::get('/', [LandingPageController::class, 'landingPageSetting'])->name('landing-page.setting');
             Route::post('app-setting/store', [LandingPageController::class, 'appSettingStore'])->name('landing.app.store');
+
             Route::get('landing-page-section-setting', [LandingPageController::class, 'landingPageSection'])->name('menusetting.index');
             Route::post('landing-page-section1/store', [LandingPageController::class, 'landingPageSection1Store'])->name('landing.section1.store');
             Route::post('landing-page-section2/store', [LandingPageController::class, 'landingPageSection2Store'])->name('landing.section2.store');
@@ -295,7 +296,7 @@ Route::group([
             Route::post('slider-setting-section3/store', [LandingPageController::class, 'SliderSettingSection3Store'])->name('landing.slidersection3.store');
 
 
-
+            Route::post('landing-page-home/store', [LandingPageController::class, 'landingPageHomeSetting'])->name('landing.home.store');
 
 
             Route::get('faq-setting', [LandingPageController::class, 'faqSetting'])->name('landing.faq.index');
@@ -317,6 +318,10 @@ Route::group([
 
             Route::get('team-setting', [LandingPageController::class, 'teamSetting'])->name('landing.team.index');
             Route::post('team-setting/store', [LandingPageController::class, 'teamSettingStore'])->name('landing.team.store');
+
+            Route::get('home-setting', [LandingPageController::class, 'homeSetting'])->name('landing.home.index');
+            Route::post('home-setting/store', [LandingPageController::class, 'homeSettingStore'])->name('landing.home.store');
+
 
             Route::get('project-setting', [LandingPageController::class, 'projectSetting'])->name('landing.project.index');
             Route::post('project-setting/store', [LandingPageController::class, 'projectSettingStore'])->name('landing.project.store');

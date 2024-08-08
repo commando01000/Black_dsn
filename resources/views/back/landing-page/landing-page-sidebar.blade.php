@@ -13,6 +13,14 @@
     </div>
 </a>
 
+<a href="{{ route('landing.home.index') }}"
+    class="list-group-item list-group-item-action border-0 {{ Request::route()->getName() == 'landing.home.index' ? ' active' : '' }}">
+    {{ __('Home Setting') }}
+    <div class="float-end">
+        <i class="ti ti-chevron-right"></i>
+    </div>
+</a>
+
 <a href="{{ route('landing.project.index') }}"
     class="list-group-item list-group-item-action border-0 {{ Request::route()->getName() == 'landing.project.index' ? ' active' : '' }}">
     {{ __('Projects Setting') }}

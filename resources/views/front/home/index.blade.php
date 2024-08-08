@@ -395,16 +395,10 @@
 
                 <div class="container">
                     <h3 class="title-h2">
-                        Need help with professional <br>photography? <b>Let's work together!</b>
+                        {{ Utility::getsettings('landing.home.title') ? Utility::getsettings('landing.home.title') : 'Need help with professional photography Lets work together !' }}
                     </h3>
                     <p class="mt-30 max-w570">
-                        In my work, I try to find the right balance between form and function. From technical drawings,
-                        all
-                        the way to the photographic renders, and the actual representations of my work as a designer, my
-                        philosophy is that of simplicity.
-                        <span class="mb-10 d-block"></span>
-                        At the same time, my style is distinctly mine – uncluttered, with clean shapes and modern
-                        space-saving solutions.
+                        {{ Utility::getsettings('landing.home.description') ? Utility::getsettings('landing.home.description') : '...' }}
                     </p>
                     <div class="dsn-def-btn d-flex dsn-border-style dsn-icon-heading-color mt-30">
                         <a class='dsn-btn dsn-border border-color-default background-section  move-circle has-icon-left'

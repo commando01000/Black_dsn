@@ -23,7 +23,7 @@
                             </p>
                             <div class="dsn-def-btn dsn-hover-icon dsn-icon-heading-color mt-20 d-flex">
                                 <a class='dsn-btn dsn-border border-color-default  background-section effect-ajax has-icon-left'
-                                    data-dsn-text='Contact Us' href='contact.html'>
+                                    data-dsn-text='Contact Us' href='{{ route('contact') }}'>
                                     <span class="dsn-icon dsn-bg-before btn-icon-left heading-color z-index-1">
                                         <i class="fas fa-angle-right" aria-hidden="true"></i>
                                     </span>
