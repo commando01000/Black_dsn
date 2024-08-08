@@ -19,6 +19,41 @@ class LandingPageController extends Controller
             );
         }
     }
+    public function targetSetting()
+    {
+        return view('back.landing-page.our-target-setting');
+    }
+    public function targetSettingStore(Request $request)
+    {
+        // Validate request data
+        $request->validate([
+            'title' => 'required|string|max:255',
+            'our-target-description' => 'nullable|string',
+            'our-target-vision-description' => 'nullable|string',
+            'our-target-goal-description' => 'nullable|string',
+            'our-target-mission-description' => 'nullable|string',
+        ]);
+
+        // Check if 'services_our-target-setting_enable' is set
+        $servicesOurTargetSettingEnable = $request->has('services_our-target-setting_enable') ? 'on' : 'off';
+
+        // Prepare data to be saved
+        $data = [
+            'services_our-target-setting_enable' => $servicesOurTargetSettingEnable,
+            'our-target.title' => $request->title,
+            'our-target.description' => $request->input('our-target-description', ''),
+            'our-target.vision-description' => $request->input('our-target-vision-description', ''),
+            'our-target.goal-description' => $request->input('our-target-goal-description', ''),
+            'our-target.mission-description' => $request->input('our-target-mission-description', ''),
+        ];
+
+        // Update settings
+        $this->updateSettings($data);
+
+        // Redirect with success message
+        return redirect()->back()->with('success', __('Target settings updated successfully.'));
+    }
+
     public function servicesSetting(Request $request)
     {
         return view('back.landing-page.our-services-setting');

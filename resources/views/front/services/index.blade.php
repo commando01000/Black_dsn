@@ -147,10 +147,9 @@
         <div class="container section-margin d-grid grid-md-2" data-dsn-gap="30px 120px">
             <div class="box-left p-relative  pinned-scroll" data-dsn-option='{"end":"250"}'>
                 <div class="section-title  pinned-element">
-                    <h2 class="title-h2 text-upper">We have been doing projects <b>since 2008.</b></h2>
+                    <h2 class="title-h2 text-upper">{{ Utility::getsettings('our-target.title') }}</h2>
                     <p class="max-w570 mt-20">
-                        Founded in 2000, Dsn Grid has become one of the best Digital Agency in ThemeForest. Blue money
-                        going forward, but deploy to production.
+                        {{ Utility::getsettings('our-target.description') }}
                     </p>
                 </div>
             </div>
@@ -165,8 +164,7 @@
                                     Vision</h6>
                             </div>
                             <div class="accordion__answer tab-description active " role="tabpanel" data-tab="0">
-                                <p>Cepteur sint occaecat cupidatat proident, taken possession of my entire soul, like
-                                    these sweet mornings of spring which I enjoy with my whole.</p>
+                                <p>{{ Utility::getsettings('our-target.vision-description') }}</p>
                             </div>
                         </div>
 
@@ -178,8 +176,7 @@
                                     goals</h6>
                             </div>
                             <div class="accordion__answer tab-description  " role="tabpanel" data-tab="1">
-                                <p>Cepteur sint occaecat cupidatat proident, taken possession of my entire soul, like
-                                    these sweet mornings of spring which I enjoy with my whole.</p>
+                                <p>{{ Utility::getsettings('our-target.goal-description') }}</p>
                             </div>
                         </div>
 
@@ -191,8 +188,7 @@
                                     Mission</h6>
                             </div>
                             <div class="accordion__answer tab-description  " role="tabpanel" data-tab="2">
-                                <p>Cepteur sint occaecat cupidatat proident, taken possession of my entire soul, like
-                                    these sweet mornings of spring which I enjoy with my whole.</p>
+                                <p>{{ Utility::getsettings('our-target.mission-description') }}</p>
                             </div>
                         </div>
 

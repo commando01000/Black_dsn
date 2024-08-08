@@ -327,6 +327,9 @@ Route::group([
             Route::get('services-setting', [LandingPageController::class, 'servicesSetting'])->name('landing.our-services.index');
             Route::post('services-setting/store', [LandingPageController::class, 'servicesSettingStore'])->name('landing.our-services.store');
 
+            Route::get('our-target-setting', [LandingPageController::class, 'targetSetting'])->name('landing.our-target.index');
+            Route::post('our-target-setting/store', [LandingPageController::class, 'targetSettingStore'])->name('landing.our-target.store');
+
             Route::get('project-setting', [LandingPageController::class, 'projectSetting'])->name('landing.project.index');
             Route::post('project-setting/store', [LandingPageController::class, 'projectSettingStore'])->name('landing.project.store');
 

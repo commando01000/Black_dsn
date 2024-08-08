@@ -37,6 +37,14 @@
     </div>
 </a>
 
+<a href="{{ route('landing.our-target.index') }}"
+    class="list-group-item list-group-item-action border-0 {{ Request::route()->getName() == 'landing.our-target.index' ? ' active' : '' }}">
+    {{ __('Services Target Setting') }}
+    <div class="float-end">
+        <i class="ti ti-chevron-right"></i>
+    </div>
+</a>
+
 <a href="{{ route('landing.home-about-us.index') }}"
     class="list-group-item list-group-item-action border-0 {{ Request::route()->getName() == 'landing.home-about-us.index' ? ' active' : '' }}">
     {{ __('Home About Us Setting') }}
