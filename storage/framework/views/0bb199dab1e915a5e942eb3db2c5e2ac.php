@@ -24,6 +24,15 @@
     </div>
 </a>
 
+<a href="<?php echo e(route('landing.home-about-us.index')); ?>"
+    class="list-group-item list-group-item-action border-0 <?php echo e(Request::route()->getName() == 'landing.home-about-us.index' ? ' active' : ''); ?>">
+    <?php echo e(__('Home About Us Setting')); ?>
+
+    <div class="float-end">
+        <i class="ti ti-chevron-right"></i>
+    </div>
+</a>
+
 <a href="<?php echo e(route('landing.project.index')); ?>"
     class="list-group-item list-group-item-action border-0 <?php echo e(Request::route()->getName() == 'landing.project.index' ? ' active' : ''); ?>">
     <?php echo e(__('Projects Setting')); ?>

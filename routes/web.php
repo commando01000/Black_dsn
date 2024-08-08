@@ -90,8 +90,7 @@ Route::group([
     });
     //blog
 
-    Route::group(['middleware' => ['Setting', 'Upload', 'auth']], function () {
-    });
+    Route::group(['middleware' => ['Setting', 'Upload', 'auth']], function () {});
 
     Route::group(['middleware' => ['auth', 'Setting', 'verified', '2fa', 'verified_phone', 'Upload']], function () {
         Route::resource('cp/blog', BlogController::class);
@@ -296,9 +295,6 @@ Route::group([
             Route::post('slider-setting-section3/store', [LandingPageController::class, 'SliderSettingSection3Store'])->name('landing.slidersection3.store');
 
 
-            Route::post('landing-page-home/store', [LandingPageController::class, 'landingPageHomeSetting'])->name('landing.home.store');
-
-
             Route::get('faq-setting', [LandingPageController::class, 'faqSetting'])->name('landing.faq.index');
             Route::post('faq-setting/store', [LandingPageController::class, 'faqSettingStore'])->name('landing.faq.store');
 
@@ -322,6 +318,8 @@ Route::group([
             Route::get('home-setting', [LandingPageController::class, 'homeSetting'])->name('landing.home.index');
             Route::post('home-setting/store', [LandingPageController::class, 'homeSettingStore'])->name('landing.home.store');
 
+            Route::get('home-about-us-setting', [LandingPageController::class, 'homeAboutUsSetting'])->name('landing.home-about-us.index');
+            Route::post('home-about-us-setting/store', [LandingPageController::class, 'homeAboutUsStore'])->name('landing.home-about-us.store');
 
             Route::get('project-setting', [LandingPageController::class, 'projectSetting'])->name('landing.project.index');
             Route::post('project-setting/store', [LandingPageController::class, 'projectSettingStore'])->name('landing.project.store');
@@ -447,7 +445,7 @@ Route::group(['middleware' => ['Setting', 'xss', 'Upload']], function () {
         return view('front.coming-soon.index');
     })->name('coming-soon');
 
-    Route::get ('design/{id}', [Design_frontController::class, 'show'])->name('design.show');
+    Route::get('design/{id}', [Design_frontController::class, 'show'])->name('design.show');
 
     Route::get('pages/{slug}', [Pages_frontController::class, 'index']);
     Route::get('projects/{slug}/', [Project_frontController::class, 'viewProject'])->name('view.project');

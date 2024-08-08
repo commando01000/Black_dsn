@@ -112,10 +112,11 @@
                             <h2 class="title">
                                 <span class="letter-stroke d-block"
                                     data-dsn-animation='{"from":{"paddingLeft":"10%"},"to":{"paddingLeft":"20%"},"responsive":["tablet","desktop"]}'>
-                                    WE ARE
+                                    {{ Utility::getsettings('landing.home.about-us.title') }}
                                 </span>
-                                <span>BLACK DSN</span>
-                                <span class="text-right w-100">AGENCY</span>
+                                <span>{{ Utility::getsettings('landing.home.about-us.sub-title') }}</span>
+                                <span
+                                    class="text-right w-100">{{ Utility::getsettings('landing.home.about-us.sub-title_2') }}</span>
                             </h2>
                             <div class="d-grid grid-half-1 align-items-center mt-10">
                                 <div class="dsn-def-btn dsn-hover-icon ">
@@ -130,9 +131,7 @@
                                 </div>
                                 <div class="p-large text-right">
                                     <p class="max-w350">
-                                        We build and activate brands through cultural insight, strategic vision, and the
-                                        power
-                                        of emotion across every element of its expression.
+                                        {{ Utility::getsettings('landing.home.about-us.description') }}
                                     </p>
                                 </div>
                             </div>
@@ -141,11 +140,13 @@
                         </div>
                         <div class="box-img">
                             <img decoding="async" class="cover-bg-img"
-                                src= "{{ asset('front_asset/assets/img/about-1.jpg') }}" title="" alt="">
+                                src= "{{ Storage::url(Utility::getsettings('landing.home.about-us.cover')) }}"
+                                title="" alt="">
                         </div>
                     </div>
                     <div class="p-relative box-img-bottom hv-50">
-                        <img class="cover-bg-img" decoding="async" src="{{ asset('front_asset/assets/img/about-2.jpeg') }}"
+                        <img class="cover-bg-img" decoding="async"
+                            src="{{ Storage::url(Utility::getsettings('landing.home.about-us.background')) }}"
                             title="" alt="">
                     </div>
                 </div>

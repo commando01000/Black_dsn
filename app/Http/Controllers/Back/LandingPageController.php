@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Back;
 
+use App\Facades\Utility;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\settings;
@@ -18,6 +19,57 @@ class LandingPageController extends Controller
             );
         }
     }
+    public function homeAboutUsSetting(Request $request)
+    {
+        return view('back.landing-page.home-about-us-setting');
+    }
+    public function homeAboutUsStore(Request $request)
+    {
+        // Validate request data
+        $request->validate([
+            'title' => 'required|string|max:255',
+            'sub-title' => 'nullable|string|max:255',
+            'sub-title_2' => 'nullable|string|max:255',
+            'cover' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'background' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'home-about-us-description' => 'nullable|string',
+        ]);
+
+        // Check if 'home_about_us_setting_enable' is set
+        $homeAboutUsSettingEnable = $request->has('home_about_us_setting_enable') ? 'on' : 'off';
+        // Instantiate Utility class
+        $Utility = new Utility();
+        // Process and store files if they exist
+        if ($request->hasFile('cover')) {
+            $cover = $request->file('cover')->store('covers');
+        } else {
+            $cover = $Utility->getsettings('landing.home.about-us.cover');
+        }
+
+        if ($request->hasFile('background')) {
+            $background = $request->file('background')->store('backgrounds');
+        } else {
+            $background = $Utility->getsettings('landing.home.about-us.background');
+        }
+
+        // Prepare data to be saved
+        $data = [
+            'home_about_us_setting_enable' => $homeAboutUsSettingEnable,
+            'landing.home.about-us.title' => $request->title,
+            'landing.home.about-us.sub-title' => $request->input('sub-title', ''),
+            'landing.home.about-us.sub-title_2' => $request->input('sub-title_2', ''),
+            'landing.home.about-us.cover' => $cover,
+            'landing.home.about-us.background' => $background,
+            'landing.home.about-us.description' => $request->input('home-about-us-description', ''),
+        ];
+
+        // Update settings
+        $this->updateSettings($data);
+
+        // Redirect with success message
+        return redirect()->back()->with('success', __('Home About Us settings updated successfully.'));
+    }
+
     public function homeSetting(Request $request)
     {
         return view('back.landing-page.home-setting');
