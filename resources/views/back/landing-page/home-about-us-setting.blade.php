@@ -94,7 +94,8 @@
                                         </div>
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                {{ Form::label('background', __('background'), ['class' => 'form-label']) }} *
+                                                {{ Form::label('background', __('background'), ['class' => 'form-label']) }}
+                                                *
                                                 {!! Form::file('background', ['class' => 'form-control', 'required' => 'required']) !!}
                                             </div>
                                         </div>

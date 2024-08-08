@@ -14,12 +14,13 @@
                         <div class="intro-title ">
                             <p class="dsn-heading-title d-inline-block circle-before">OUR SERVICES </p>
                             <div id="hero_title" class="mt-10">
-                                <h1 class="title text-upper">We are delivering beautiful <br>digital products for you.
+                                <h1 class="title text-upper"> <?php echo e(Utility::getsettings('our-services.title')); ?>
+
                                 </h1>
                             </div>
                             <p class="mt-20 max-w570">
-                                If you are looking for an agency to help you create a remarkable presence online, you’ve
-                                come to the right place. We can help you take your business to the next level.
+                                <?php echo e(Utility::getsettings('our-services.description')); ?>
+
                             </p>
                             <div class="dsn-def-btn dsn-hover-icon dsn-icon-heading-color mt-20 d-flex">
                                 <a class='dsn-btn dsn-border border-color-default  background-section effect-ajax has-icon-left'
@@ -114,29 +115,33 @@
                 <div class="d-grid grid-md-2" data-dsn-gap="30px 60px">
                     <div class="left">
                         <h5 class="title-h2 body-font text-upper">
-                            We provide you with the best service <b>in the market</b>
+                            <?php echo e(Utility::getsettings('services.what.we.do.title')); ?>
+
                         </h5>
                         <p class="mt-20">
-                            There are many variations of passages of Lorem Ipsum available, but the majority have
-                            suffered alteration, by injected humour. words
+                            <?php echo e(Utility::getsettings('services.what.we.do.short-description')); ?>
+
                         </p>
                     </div>
                     <div class="right align-self-end">
                         <p>
-                            There are many variations of passages of Lorem Ipsum available, but the majority have
-                            suffered alteration, Injected humour words web page editors now use as their.
+                            <?php echo e(Utility::getsettings('services.what.we.do.main-description')); ?>
+
                         </p>
                         <p class="mt-20">
-                            Default and a search for will uncover many web sites still in their infancy.suffered
-                            alteration, by injected humour words web page.
+                            <?php echo e(Utility::getsettings('services.what.we.do.sub-description')); ?>
+
                         </p>
                     </div>
                 </div>
             </div>
             <div class="p-relative box-img">
                 <div class="p-relative container d-grid grid-1-half mt-50 z-index-2">
-                    <img src="front_asset/assets/img/s1.jpg" alt="">
-                    <img class="d-sm-none" src="front_asset/assets/img/s2.jpg" alt="">
+                    <img src="<?php echo e(Storage::url(Utility::getsettings('services.what.we.do.background_1'))); ?>"
+                        alt="<?php echo e(Utility::getsettings('services.what.we.do.title')); ?>">
+                    <img class="d-sm-none"
+                        src="<?php echo e(Storage::url(Utility::getsettings('services.what.we.do.background_2'))); ?>"
+                        alt="<?php echo e(Utility::getsettings('services.what.we.do.title')); ?>">
                 </div>
 
                 <div class="dsn-bg-mask background-main h-50 bottom-0 z-index-1"></div>
@@ -266,7 +271,8 @@
                 <?php $__currentLoopData = $brands; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $brand): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                     <div class="grid-item">
                         <div class="image-item">
-                            <img class="cover-bg-img" src="<?php echo e(Storage::url($brand->cover)); ?>" alt="<?php echo e($brand->title); ?>">
+                            <img class="cover-bg-img" src="<?php echo e(Storage::url($brand->cover)); ?>"
+                                alt="<?php echo e($brand->title); ?>">
                         </div>
                     </div>
                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>

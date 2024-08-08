@@ -321,6 +321,12 @@ Route::group([
             Route::get('home-about-us-setting', [LandingPageController::class, 'homeAboutUsSetting'])->name('landing.home-about-us.index');
             Route::post('home-about-us-setting/store', [LandingPageController::class, 'homeAboutUsStore'])->name('landing.home-about-us.store');
 
+            Route::get('services-what-we-do-setting', [LandingPageController::class, 'aboutUsSetting'])->name('landing.services-what-we-do.index');
+            Route::post('services-what-we-do-setting/store', [LandingPageController::class, 'aboutUsSettingStore'])->name('landing.services-what-we-do.store');
+
+            Route::get('services-setting', [LandingPageController::class, 'servicesSetting'])->name('landing.our-services.index');
+            Route::post('services-setting/store', [LandingPageController::class, 'servicesSettingStore'])->name('landing.our-services.store');
+
             Route::get('project-setting', [LandingPageController::class, 'projectSetting'])->name('landing.project.index');
             Route::post('project-setting/store', [LandingPageController::class, 'projectSettingStore'])->name('landing.project.store');
 

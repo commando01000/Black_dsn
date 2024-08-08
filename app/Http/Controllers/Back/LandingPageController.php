@@ -19,6 +19,87 @@ class LandingPageController extends Controller
             );
         }
     }
+    public function servicesSetting(Request $request)
+    {
+        return view('back.landing-page.our-services-setting');
+    }
+    public function ServicesSettingStore(Request $request)
+    {
+        // Validate request data
+        $request->validate([
+            'title' => 'required|string|max:255',
+            'description' => 'nullable|string',
+        ]);
+
+        // Check if 'services_our-services-setting_enable' is set
+        $servicesOurServicesSettingEnable = $request->has('services_our-services-setting_enable') ? 'on' : 'off';
+
+        // Prepare data to be saved
+        $data = [
+            'services_our-services-setting_enable' => $servicesOurServicesSettingEnable,
+            'our-services.title' => $request->title,
+            'our-services.description' => $request->description,
+        ];
+
+        // Update settings
+        $this->updateSettings($data);
+
+        // Redirect with success message
+        return redirect()->back()->with('success', __('Services Header settings updated successfully.'));
+    }
+
+    public function aboutUsSetting(Request $request)
+    {
+        return view('back.landing-page.services-what-we-do-setting');
+    }
+    public function aboutUsSettingStore(Request $request)
+    {
+        // Validate request data
+        $request->validate([
+            'title' => 'required|string|max:255',
+            'background_1' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'background_2' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'services_what-we-do-short-description' => 'nullable|string',
+            'services_what-we-do-main-description' => 'nullable|string',
+            'services_what-we-do-sub-description' => 'nullable|string',
+        ]);
+
+        // Check if 'services_what-we-do-setting_enable' is set
+        $servicesWhatWeDoSettingEnable = $request->has('services_what-we-do-setting_enable') ? 'on' : 'off';
+
+        // Instantiate Utility class
+        $utility = new Utility();
+
+        // Process and store files if they exist
+        if ($request->hasFile('background_1')) {
+            $background1 = $request->file('background_1')->store('backgrounds');
+        } else {
+            $background1 = $utility->getsettings('services.what.we.do.background_1');
+        }
+
+        if ($request->hasFile('background_2')) {
+            $background2 = $request->file('background_2')->store('backgrounds');
+        } else {
+            $background2 = $utility->getsettings('services.what.we.do.background_2');
+        }
+
+        // Prepare data to be saved
+        $data = [
+            'services_what-we-do-setting_enable' => $servicesWhatWeDoSettingEnable,
+            'services.what.we.do.title' => $request->title,
+            'services.what.we.do.background_1' => $background1,
+            'services.what.we.do.background_2' => $background2,
+            'services.what.we.do.short-description' => $request->input('services_what-we-do-short-description', ''),
+            'services.what.we.do.main-description' => $request->input('services_what-we-do-main-description', ''),
+            'services.what.we.do.sub-description' => $request->input('services_what-we-do-sub-description', ''),
+        ];
+
+        // Update settings
+        $this->updateSettings($data);
+
+        // Redirect with success message
+        return redirect()->back()->with('success', __('Services What We Do settings updated successfully.'));
+    }
     public function homeAboutUsSetting(Request $request)
     {
         return view('back.landing-page.home-about-us-setting');

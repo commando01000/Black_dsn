@@ -103,7 +103,9 @@
                                         </div>
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                <?php echo e(Form::label('background', __('background'), ['class' => 'form-label'])); ?> *
+                                                <?php echo e(Form::label('background', __('background'), ['class' => 'form-label'])); ?>
+
+                                                *
                                                 <?php echo Form::file('background', ['class' => 'form-control', 'required' => 'required']); ?>
 
                                             </div>
