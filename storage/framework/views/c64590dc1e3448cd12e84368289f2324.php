@@ -15,11 +15,11 @@
                         <div class="intro-title ">
 
                             <div id="hero_title" class="mt-20">
-                                <h1 class="title text-upper">Digital Agency That <br>Thrives on Your Success</h1>
+                                <h1 class="title text-upper"><?php echo e(Utility::getsettings('about-us.title')); ?></h1>
                             </div>
                             <p class="mt-20 max-w570">
-                                If you are looking for an agency to help you create a remarkable presence online, you’ve
-                                come to the right place. We can help you take your business to the next level.
+                                <?php echo e(Utility::getsettings('about-us.description')); ?>
+
                             </p>
                             <div class="dsn-def-btn dsn-hover-icon dsn-icon-heading-color mt-20 d-flex">
                                 <a class='dsn-btn dsn-border border-color-default  background-section effect-ajax has-icon-left'
@@ -54,12 +54,10 @@
                     src= "<?php echo e(asset('front_asset/assets/img/about-5.jpg')); ?>" alt=''>
             </div>
             <div class="p-relative content container background-theme box-padding border-rdu text-center">
-                <h3 class="title-block-lg text-upper">Help Millions To Bring <br>There Creative Projects To Life </h3>
+                <h3 class="title-block-lg text-upper"> <?php echo e(Utility::getsettings('about-us.content.title')); ?> </h3>
                 <p class="dsn-heading-title mt-20 max-w750">
-                    e were thoughtful about presenting these in a way where we could also tell the story of the
-                    individual.. It is a long established fact that a reader will be distracted by the readable content
-                    of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less
-                    normal distribution of letters.
+                    <?php echo e(Utility::getsettings('about-us.content.description')); ?>
+
                 </p>
             </div>
         </div>

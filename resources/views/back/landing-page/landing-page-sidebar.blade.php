@@ -15,7 +15,7 @@
 
 <a href="{{ route('landing.home.index') }}"
     class="list-group-item list-group-item-action border-0 {{ Request::route()->getName() == 'landing.home.index' ? ' active' : '' }}">
-    {{ __('Home Setting') }}
+    {{ __('Home Contact Setting') }}
     <div class="float-end">
         <i class="ti ti-chevron-right"></i>
     </div>
@@ -40,6 +40,14 @@
 <a href="{{ route('landing.our-target.index') }}"
     class="list-group-item list-group-item-action border-0 {{ Request::route()->getName() == 'landing.our-target.index' ? ' active' : '' }}">
     {{ __('Services Target Setting') }}
+    <div class="float-end">
+        <i class="ti ti-chevron-right"></i>
+    </div>
+</a>
+
+<a href="{{ route('landing.about-us.index') }}"
+    class="list-group-item list-group-item-action border-0 {{ Request::route()->getName() == 'landing.about-us.index' ? ' active' : '' }}">
+    {{ __('About Us Setting') }}
     <div class="float-end">
         <i class="ti ti-chevron-right"></i>
     </div>

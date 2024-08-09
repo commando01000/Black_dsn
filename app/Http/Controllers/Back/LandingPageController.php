@@ -19,6 +19,41 @@ class LandingPageController extends Controller
             );
         }
     }
+    public function aboutUsPageSetting()
+    {
+        return view('back.landing-page.about-us-setting');
+    }
+
+    public function aboutUsSettingPageStore(Request $request)
+    {
+        // Validate request data
+        $request->validate([
+            'title' => 'required|string|max:255',
+            'description' => 'nullable|string',
+            'content_title' => 'required|string|max:255',
+            'content_description' => 'nullable|string',
+        ]);
+
+        // Check if 'about-us_setting_enable' is set
+        $aboutUsSettingEnable = $request->has('about-us_setting_enable') ? 'on' : 'off';
+
+        // Prepare data to be saved
+        $data = [
+            'about-us_setting_enable' => $aboutUsSettingEnable,
+            'about-us.title' => $request->title,
+            'about-us.description' => $request->input('description', ''),
+            'about-us.content.title' => $request->input('content_title', ''),
+            'about-us.content.description' => $request->input('content_description', ''),
+        ];
+
+        // Update settings
+        $this->updateSettings($data);
+
+        // Redirect with success message
+        return redirect()->back()->with('success', __('About Us settings updated successfully.'));
+    }
+
+
     public function targetSetting()
     {
         return view('back.landing-page.our-target-setting');

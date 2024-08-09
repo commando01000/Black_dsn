@@ -17,7 +17,7 @@
 
 <a href="<?php echo e(route('landing.home.index')); ?>"
     class="list-group-item list-group-item-action border-0 <?php echo e(Request::route()->getName() == 'landing.home.index' ? ' active' : ''); ?>">
-    <?php echo e(__('Home Setting')); ?>
+    <?php echo e(__('Home Contact Setting')); ?>
 
     <div class="float-end">
         <i class="ti ti-chevron-right"></i>
@@ -45,6 +45,15 @@
 <a href="<?php echo e(route('landing.our-target.index')); ?>"
     class="list-group-item list-group-item-action border-0 <?php echo e(Request::route()->getName() == 'landing.our-target.index' ? ' active' : ''); ?>">
     <?php echo e(__('Services Target Setting')); ?>
+
+    <div class="float-end">
+        <i class="ti ti-chevron-right"></i>
+    </div>
+</a>
+
+<a href="<?php echo e(route('landing.about-us.index')); ?>"
+    class="list-group-item list-group-item-action border-0 <?php echo e(Request::route()->getName() == 'landing.about-us.index' ? ' active' : ''); ?>">
+    <?php echo e(__('About Us Setting')); ?>
 
     <div class="float-end">
         <i class="ti ti-chevron-right"></i>

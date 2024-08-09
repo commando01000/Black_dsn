@@ -330,6 +330,9 @@ Route::group([
             Route::get('our-target-setting', [LandingPageController::class, 'targetSetting'])->name('landing.our-target.index');
             Route::post('our-target-setting/store', [LandingPageController::class, 'targetSettingStore'])->name('landing.our-target.store');
 
+            Route::get('about-us-setting', [LandingPageController::class, 'aboutUsPageSetting'])->name('landing.about-us.index');
+            Route::post('about-us-setting/store', [LandingPageController::class, 'aboutUsSettingPageStore'])->name('landing.about-us.store');
+
             Route::get('project-setting', [LandingPageController::class, 'projectSetting'])->name('landing.project.index');
             Route::post('project-setting/store', [LandingPageController::class, 'projectSettingStore'])->name('landing.project.store');
 
