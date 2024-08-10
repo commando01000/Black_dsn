@@ -418,6 +418,7 @@ Route::group(['middleware' => ['Setting', 'xss', 'Upload']], function () {
     Route::get('blog', [Blog_frontController::class, 'index'])->name('see.all.blogs');
     Route::get('blog/{slug}', [Blog_frontController::class, 'view'])->name('view.blog');
     Route::post('blog/comments/store/{id}', [BlogComment_frontController::class, 'store'])->name('blog.comments.store');
+    Route::post('blog/comments/reply/{id}', [BlogComment_frontController::class, 'addReply'])->name('blog.comments.replies.store');
     // Route::get('blog-details', [Blog_frontController::class, 'view'] )->name('blog-details');
     // Route::get('/', [homeController::class, 'getHomeProjects'])->name('home-projects');
     Route::get('faqs', [\App\Http\Controllers\Front\FaqController::class, 'index'])->name('faqs');

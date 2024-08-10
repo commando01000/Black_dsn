@@ -10,7 +10,7 @@ class BlogCommentsReplies extends Model
     use HasFactory;
     public $fillable = [
         'comment_id',
-        'name',
+        // 'name',
         'comment',
     ];
     public function blogComments()

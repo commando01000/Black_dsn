@@ -147,12 +147,12 @@
                                                 class="mb-5">NEXT</span>
                                             <h4 class="title-block word-wrap"><?php echo e($nextBlog->title); ?></h4>
                                         </a></div>
-                                        <div class="icon p-20 border-right border-left">
-                                            <a class="h-100 heading-color"
-                                                href="<?php echo e(route('view.blog', ['slug' => $nextBlog->slug])); ?>">
-                                                <i class="fas fa-th-large" aria-hidden="true"></i>
-                                            </a>
-                                        </div>
+                                    <div class="icon p-20 border-right border-left">
+                                        <a class="h-100 heading-color"
+                                            href="<?php echo e(route('view.blog', ['slug' => $nextBlog->slug])); ?>">
+                                            <i class="fas fa-th-large" aria-hidden="true"></i>
+                                        </a>
+                                    </div>
                                 <?php endif; ?>
                             </div>
 
@@ -163,7 +163,6 @@
                                             <span class="line-bg-right">Comments</span>
                                         </h4>
                                     </div>
-
                                     <ol class="comment-list">
                                         <?php $__currentLoopData = $blog->comments; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $comment): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                             <li class="comment">
@@ -177,50 +176,100 @@
                                                             <h6 class="comment-name"><?php echo e($comment->name); ?></h6>
                                                         </div>
                                                         <div class="comment-date">
-                                                            <?php echo e($comment->created_at->format('F d, Y')); ?></div>
+                                                            <?php echo e($comment->created_at->format('F d, Y')); ?>
+
+                                                        </div>
                                                         <div class="text-holder">
                                                             <p><?php echo e($comment->comment); ?></p>
                                                         </div>
-                                                        <a class="comment-reply-link" href="#"><i
-                                                                class="fas fa-reply"></i> reply</a>
+                                                        <a class="comment-reply-link" href="#"
+                                                            data-target="#reply-form-<?php echo e($comment->id); ?>">
+                                                            <i class="fas fa-reply"></i> reply
+                                                        </a>
+                                                        <div class="reply-form-container form-group dsn-up"
+                                                            id="reply-form-<?php echo e($comment->id); ?>" style="display:none;">
+                                                            <form class="reply-form"
+                                                                action="<?php echo e(route('blog.comments.replies.store', $comment->id)); ?>"
+                                                                method="POST">
+                                                                <?php echo csrf_field(); ?>
+                                                                <div class="entry-box">
+                                                                    <input type="text" name="name"
+                                                                        placeholder="Your Name" required="required">
+                                                                    <textarea class="reply-textarea" name="reply" placeholder="Write your reply..." required="required"
+                                                                        data-error="reply is required."></textarea>
+                                                                </div>
+                                                                <button type="submit"
+                                                                    class="reply-submit-btn">Submit</button>
+                                                                <div class="help-block with-errors"></div>
+                                                            </form>
+                                                        </div>
+
+                                                        
+                                                        <?php if($comment->replies->count()): ?>
+                                                            <button class="toggle-replies-btn"
+                                                                data-target="#replies-<?php echo e($comment->id); ?>">
+                                                                View Replies
+                                                            </button>
+                                                            <ul class="children" id="replies-<?php echo e($comment->id); ?>"
+                                                                style="display:none;">
+                                                                <?php $__currentLoopData = $comment->replies; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $reply): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                                                    <li class="comment">
+                                                                        <div class="comment-body">
+                                                                            <div class="comment-author">
+                                                                                <img alt="<?php echo e($reply->name); ?>"
+                                                                                    src="<?php echo e(asset('front_asset/assets/img/team/1.jpg')); ?>">
+                                                                            </div>
+                                                                            <div class="comment-text">
+                                                                                <div class="comment-info">
+                                                                                    <h6 class="comment-name">
+                                                                                        <?php echo e($reply->name); ?></h6>
+                                                                                </div>
+                                                                                <div class="comment-date">
+                                                                                    <?php echo e($reply->created_at->format('F d, Y')); ?>
+
+                                                                                </div>
+                                                                                <div class="text-holder">
+                                                                                    <p><?php echo e($reply->comment); ?></p>
+                                                                                </div>
+                                                                                <a class="comment-reply-link"
+                                                                                    href="#"
+                                                                                    data-target="#reply-form-<?php echo e($reply->id); ?>">
+                                                                                    <i class="fas fa-reply"></i> reply
+                                                                                </a>
+                                                                                <div class="reply-form-container form-group dsn-up"
+                                                                                    id="reply-form-<?php echo e($reply->id); ?>"
+                                                                                    style="display:none;">
+                                                                                    <form class="reply-form"
+                                                                                        action="<?php echo e(route('blog.comments.replies.store', $comment->id)); ?>"
+                                                                                        method="POST">
+                                                                                        <?php echo csrf_field(); ?>
+                                                                                        <div class="entry-box">
+                                                                                            <input type="text"
+                                                                                                name="name"
+                                                                                                placeholder="Your Name"
+                                                                                                required="required">
+                                                                                            <textarea class="reply-textarea" name="reply" placeholder="Write your reply..." required="required"
+                                                                                                data-error="reply is required."></textarea>
+                                                                                        </div>
+                                                                                        <button type="submit"
+                                                                                            class="reply-submit-btn">Submit</button>
+                                                                                        <div
+                                                                                            class="help-block with-errors">
+                                                                                        </div>
+                                                                                    </form>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </li>
+                                                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                                            </ul>
+                                                        <?php endif; ?>
                                                     </div>
                                                 </div>
-
-                                                <?php if($comment->replies): ?>
-                                                    <ul class="children">
-                                                        <?php $__currentLoopData = $comment->replies; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $reply): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                                            <li class="comment">
-                                                                <div class="comment-body">
-                                                                    <div class="comment-author">
-                                                                        <img alt="<?php echo e($reply->name); ?>"
-                                                                            src="<?php echo e(asset('front_asset/assets/img/team/1.jpg')); ?>">
-                                                                    </div>
-                                                                    <div class="comment-text">
-                                                                        <div class="comment-info">
-                                                                            <h6 class="comment-name"><?php echo e($reply->name); ?>
-
-                                                                            </h6>
-                                                                        </div>
-                                                                        <div class="comment-date">
-                                                                            <?php echo e($reply->created_at->format('F d, Y')); ?>
-
-                                                                        </div>
-                                                                        <div class="text-holder">
-                                                                            <p><?php echo e($reply->comment); ?></p>
-                                                                        </div>
-                                                                        <a class="comment-reply-link" href="#"><i
-                                                                                class="fas fa-reply"></i> reply</a>
-                                                                    </div>
-                                                                </div>
-                                                            </li>
-                                                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                                                    </ul>
-                                                <?php endif; ?>
                                             </li>
                                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                     </ol>
                                 </div>
-
 
                                 <div class="comments-form dsn-form ">
                                     <div class="comments-title">
@@ -280,6 +329,77 @@
             </div>
         </div>
     </div>
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('css'); ?>
+    <style>
+        .reply-form-container {
+            margin-top: 10px;
+        }
+
+        .reply-textarea,
+        .entry-box input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            resize: vertical;
+        }
+
+        .reply-submit-btn {
+            display: block;
+            margin-top: 10px;
+            padding: 10px 20px;
+            color: white;
+            background-color: #007bff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .reply-submit-btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('js'); ?>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Function to toggle visibility of elements
+            function toggleVisibility(element) {
+                if (element.style.display === 'none' || element.style.display === '') {
+                    element.style.display = 'block';
+                } else {
+                    element.style.display = 'none';
+                }
+            }
+
+            // Event delegation for reply form toggling
+            document.body.addEventListener('click', function(event) {
+                if (event.target.matches('.comment-reply-link')) {
+                    event.preventDefault();
+                    const targetId = event.target.getAttribute('data-target');
+                    const replyForm = document.querySelector(targetId);
+                    if (replyForm) {
+                        toggleVisibility(replyForm);
+                    }
+                }
+
+                // Event delegation for toggling replies visibility
+                if (event.target.matches('.toggle-replies-btn')) {
+                    event.preventDefault();
+                    const targetId = event.target.getAttribute('data-target');
+                    const repliesList = document.querySelector(targetId);
+                    if (repliesList) {
+                        toggleVisibility(repliesList);
+                        event.target.textContent = repliesList.style.display === 'none' ? 'View Replies' :
+                            'Hide Replies';
+                    }
+                }
+            });
+        });
+    </script>
 <?php $__env->stopSection(); ?>
 
 <?php echo $__env->make('layouts.front.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH G:\xampp\htdocs\Black_dsn\resources\views/front/blog/view-blog.blade.php ENDPATH**/ ?>
