@@ -163,6 +163,7 @@
                                             <span class="line-bg-right">Comments</span>
                                         </h4>
                                     </div>
+
                                     <ol class="comment-list">
                                         <?php $__currentLoopData = $blog->comments; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $comment): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                             <li class="comment">
@@ -213,6 +214,7 @@
                                                             <ul class="children" id="replies-<?php echo e($comment->id); ?>"
                                                                 style="display:none;">
                                                                 <?php $__currentLoopData = $comment->replies; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $reply): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                                                    
                                                                     <li class="comment">
                                                                         <div class="comment-body">
                                                                             <div class="comment-author">
@@ -269,6 +271,7 @@
                                             </li>
                                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                     </ol>
+
                                 </div>
 
                                 <div class="comments-form dsn-form ">
@@ -375,28 +378,36 @@
                 }
             }
 
-            // Event delegation for reply form toggling
-            document.body.addEventListener('click', function(event) {
-                if (event.target.matches('.comment-reply-link')) {
+            // Get all reply links and bind click events
+            const replyLinks = document.querySelectorAll('.comment-reply-link');
+            console.log("replyLinks: ", replyLinks);
+
+            replyLinks.forEach(link => {
+                link.addEventListener('click', function(event) {
                     event.preventDefault();
-                    const targetId = event.target.getAttribute('data-target');
+                    const targetId = link.getAttribute('data-target');
+                    console.log("targetId: ", targetId);
                     const replyForm = document.querySelector(targetId);
+                    console.log("replyForm: ", replyForm);
                     if (replyForm) {
                         toggleVisibility(replyForm);
                     }
-                }
+                });
+            });
 
-                // Event delegation for toggling replies visibility
-                if (event.target.matches('.toggle-replies-btn')) {
+            // Get all toggle replies buttons and bind click events
+            const toggleButtons = document.querySelectorAll('.toggle-replies-btn');
+            toggleButtons.forEach(button => {
+                button.addEventListener('click', function(event) {
                     event.preventDefault();
-                    const targetId = event.target.getAttribute('data-target');
+                    const targetId = button.getAttribute('data-target');
                     const repliesList = document.querySelector(targetId);
                     if (repliesList) {
                         toggleVisibility(repliesList);
-                        event.target.textContent = repliesList.style.display === 'none' ? 'View Replies' :
+                        button.textContent = repliesList.style.display === 'none' ? 'View Replies' :
                             'Hide Replies';
                     }
-                }
+                });
             });
         });
     </script>
