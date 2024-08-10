@@ -175,10 +175,24 @@
                                                         <div class="text-holder">
                                                             <p>{{ $comment->comment }}</p>
                                                         </div>
-                                                        <a class="comment-reply-link" href="#"
-                                                            data-target="#reply-form-{{ $comment->id }}">
-                                                            <i class="fas fa-reply"></i> reply
-                                                        </a>
+
+                                                        {{-- Wrap Reply and View Replies in a flex container --}}
+                                                        <div class="d-flex dsn-up align-items-center">
+                                                            <a class="comment-reply-link" href="#"
+                                                                data-target="#reply-form-{{ $comment->id }}">
+                                                                <i class="fas fa-reply"></i> Reply
+                                                            </a>
+                                                            @if ($comment->replies->count())
+                                                                <div class="image-zoom move-circle border-color-default border-style border-rdu"
+                                                                    data-dsn="parallax" style="margin-left: 15px;">
+                                                                    <input type="button" style="color: #fff"
+                                                                        class="toggle-replies-btn" value="View Replies"
+                                                                        data-target="#replies-{{ $comment->id }}">
+                                                                </div>
+                                                            @endif
+                                                        </div>
+
+                                                        {{-- Reply Form --}}
                                                         <div class="reply-form-container form-group dsn-up"
                                                             id="reply-form-{{ $comment->id }}" style="display:none;">
                                                             <form class="reply-form"
@@ -191,22 +205,22 @@
                                                                     <textarea class="reply-textarea" name="reply" placeholder="Write your reply..." required="required"
                                                                         data-error="reply is required."></textarea>
                                                                 </div>
-                                                                <button type="submit"
-                                                                    class="reply-submit-btn">Submit</button>
-                                                                <div class="help-block with-errors"></div>
+                                                                <div class="d-flex dsn-up">
+                                                                    <div class="image-zoom move-circle border-color-default border-style border-rdu"
+                                                                        data-dsn="parallax">
+                                                                        <input type="submit" class="reply-submit-btn"
+                                                                            value="Reply">
+                                                                        <div class="help-block with-errors"></div>
+                                                                    </div>
+                                                                </div>
                                                             </form>
                                                         </div>
 
                                                         {{-- Display Replies --}}
                                                         @if ($comment->replies->count())
-                                                            <button class="toggle-replies-btn"
-                                                                data-target="#replies-{{ $comment->id }}">
-                                                                View Replies
-                                                            </button>
                                                             <ul class="children" id="replies-{{ $comment->id }}"
                                                                 style="display:none;">
                                                                 @foreach ($comment->replies as $reply)
-                                                                    
                                                                     <li class="comment">
                                                                         <div class="comment-body">
                                                                             <div class="comment-author">
@@ -227,7 +241,7 @@
                                                                                 <a class="comment-reply-link"
                                                                                     href="#"
                                                                                     data-target="#reply-form-{{ $reply->id }}">
-                                                                                    <i class="fas fa-reply"></i> reply
+                                                                                    <i class="fas fa-reply"></i> Reply
                                                                                 </a>
                                                                                 <div class="reply-form-container form-group dsn-up"
                                                                                     id="reply-form-{{ $reply->id }}"
@@ -244,10 +258,16 @@
                                                                                             <textarea class="reply-textarea" name="reply" placeholder="Write your reply..." required="required"
                                                                                                 data-error="reply is required."></textarea>
                                                                                         </div>
-                                                                                        <button type="submit"
-                                                                                            class="reply-submit-btn">Submit</button>
-                                                                                        <div
-                                                                                            class="help-block with-errors">
+                                                                                        <div class="d-flex dsn-up">
+                                                                                            <div class="image-zoom move-circle border-color-default border-style border-rdu"
+                                                                                                data-dsn="parallax">
+                                                                                                <input type="submit"
+                                                                                                    class="reply-submit-btn"
+                                                                                                    value="Post Comment">
+                                                                                                <div
+                                                                                                    class="help-block with-errors">
+                                                                                                </div>
+                                                                                            </div>
                                                                                         </div>
                                                                                     </form>
                                                                                 </div>
@@ -262,6 +282,7 @@
                                             </li>
                                         @endforeach
                                     </ol>
+
 
                                 </div>
 
@@ -344,16 +365,13 @@
             display: block;
             margin-top: 10px;
             padding: 10px 20px;
-            color: white;
-            background-color: #007bff;
+            color: white !important;
             border: none;
             border-radius: 4px;
             cursor: pointer;
         }
 
-        .reply-submit-btn:hover {
-            background-color: #0056b3;
-        }
+        .reply-submit-btn:hover {}
     </style>
 @endsection
 
