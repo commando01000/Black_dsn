@@ -64,10 +64,10 @@
                                 <a href="<?php echo e(route('homepage')); ?>" class="effect-ajax">HOME</a>
                             </li>
                             <li class="menu-item">
-                                <a class='effect-ajax' href='work-classic-2.html'>PORTFOLIO</a>
+                                <a class='effect-ajax' href='<?php echo e(route('our-portfolio')); ?>'>PORTFOLIO</a>
                             </li>
                             <li class="menu-item">
-                                <a class='effect-ajax' href='stories.html'>NEWS</a>
+                                <a class='effect-ajax' href='<?php echo e(route('see.all.blogs')); ?>'>NEWS</a>
                             </li>
                             <li class="menu-item">
                                 <a class='effect-ajax' href='<?php echo e(route('about-us')); ?>'>ABOUT</a>
@@ -75,7 +75,6 @@
                             <li class="menu-item">
                                 <a class='effect-ajax' href='<?php echo e(route('contact')); ?>'>CONTACT</a>
                             </li>
-
                         </ul>
                     </div>
                 </div>

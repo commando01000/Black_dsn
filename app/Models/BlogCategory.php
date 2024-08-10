@@ -17,4 +17,9 @@ class BlogCategory extends Model
     ];
     use HasTranslations;
     public $translatable = ['name'];
+
+    public function blogs()
+    {
+        return $this->hasMany(Blog::class, 'category_id');
+    }
 }

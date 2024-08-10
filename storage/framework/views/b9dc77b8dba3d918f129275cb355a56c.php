@@ -585,7 +585,7 @@
                     </div>
                     <div class="dsn-def-btn dsn-icon-heading-color align-self-end justify-self-end">
                         <a class='dsn-btn dsn-border border-color-default  background-section effect-ajax effect-ajax  move-circle has-icon-left'
-                            data-dsn-text='Our Stories' data-dsn='parallax' href='stories.html'> <span
+                            data-dsn-text='Our Stories' data-dsn='parallax' href='<?php echo e(route('see.all.blogs')); ?>'> <span
                                 class="dsn-icon dsn-bg-before btn-icon-left heading-color z-index-1"><i
                                     class="fas fa-angle-right"></i></span> <span
                                 class="title-btn p-relative  z-index-1 heading-color">VIEW ALL NEWS</span> </a>
@@ -604,7 +604,7 @@
                                                 <div class="box-content d-flex">
                                                     <a class='effect-ajax box-image-link bg-shadow'
                                                         data-dsn-text='<?php echo e($blog->title); ?>'
-                                                        href='<?php echo e(url("blog/{$blog->id}")); ?>'>
+                                                        href='<?php echo e(route('view.blog', ['slug' => $blog->slug])); ?>'>
                                                         <div class="box-image-bg before-z-index dsn-swiper-parallax-transform"
                                                             data-overlay="4">
                                                             <img src="<?php echo e(Storage::url($blog->images)); ?>"
@@ -629,7 +629,7 @@
                                                             <h2 class="post-title dsn-bg title-block">
                                                                 <a class='effect-ajax'
                                                                     data-dsn-text='<?php echo e($blog->title); ?>'
-                                                                    href='<?php echo e(url("blog/{$blog->id}")); ?>'>
+                                                                    href='<?php echo e(route('view.blog', ['slug' => $blog->slug])); ?>'>
                                                                     <?php echo e($blog->title); ?>
 
                                                                 </a>

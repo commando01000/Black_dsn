@@ -67,7 +67,7 @@
                                 <a class='effect-ajax' href='{{ route('our-portfolio') }}'>PORTFOLIO</a>
                             </li>
                             <li class="menu-item">
-                                <a class='effect-ajax' href='stories.html'>NEWS</a>
+                                <a class='effect-ajax' href='{{ route('see.all.blogs') }}'>NEWS</a>
                             </li>
                             <li class="menu-item">
                                 <a class='effect-ajax' href='{{ route('about-us') }}'>ABOUT</a>
