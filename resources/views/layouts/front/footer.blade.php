@@ -61,21 +61,20 @@
                     <div class="menu-footer-menu-container">
                         <ul id="menu-footer-menu" class="menu">
                             <li class="menu-item">
-                                <a href="{{route('homepage')}}" class="effect-ajax">HOME</a>
+                                <a href="{{ route('homepage') }}" class="effect-ajax">HOME</a>
                             </li>
                             <li class="menu-item">
-                                <a class='effect-ajax' href='work-classic-2.html'>PORTFOLIO</a>
+                                <a class='effect-ajax' href='{{ route('our-portfolio') }}'>PORTFOLIO</a>
                             </li>
                             <li class="menu-item">
                                 <a class='effect-ajax' href='stories.html'>NEWS</a>
                             </li>
                             <li class="menu-item">
-                                <a class='effect-ajax' href='{{route('about-us')}}'>ABOUT</a>
+                                <a class='effect-ajax' href='{{ route('about-us') }}'>ABOUT</a>
                             </li>
                             <li class="menu-item">
-                                <a class='effect-ajax' href='{{route('contact')}}'>CONTACT</a>
+                                <a class='effect-ajax' href='{{ route('contact') }}'>CONTACT</a>
                             </li>
-
                         </ul>
                     </div>
                 </div>
