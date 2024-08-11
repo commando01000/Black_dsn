@@ -96,7 +96,7 @@
                         {{ $services->links('front.pagination.custom-pagination') }}
                     </div>
                 </div>
-                
+
             </div>
         </div>
         <!-- ========== End Service ========== -->
@@ -283,28 +283,75 @@
         </div>
         <!-- ========== End testimonials ========== -->
 
-        <!-- ========== Brand ========== -->
+        <!-- ========== Brand Slider ========== -->
         <div class="p-relative container section-margin">
             <div class="section-title d-flex justify-content-center mb-70">
                 <div class="sub-section-title text-center">
-                    <p class="description d-inline-block circle-before mb-10">Testimonials</p>
+                    <p class="description d-inline-block circle-before mb-10">Our Partners</p>
                     <h2 class="title-h2 dsn-heading-title p-relative title-block-lg d-block heading-color">
-                        What People are Saying
+                        Partners of Success
                     </h2>
                 </div>
             </div>
-            <div class="d-grid grid-md-4 grid-sm-2 dsn-brand">
-                @foreach ($brands as $brand)
-                    <div class="brand-item border-style">
-                        <div class="brand-item-inner over-hidden p-relative">
-                            <img src="{{ Storage::url($brand->cover) }}" alt="{{ $brand->title }}">
+            <div class="dsn-style-classic dsn-container dsn-center-container">
+                <div class="root-posts">
+                    <div class="dsn-posts dsn-post-type-classic h-350">
+                        <div class="has-parallax-image dsn-swiper p-relative"
+                            data-dsn-option='{"slidesPerView":2.5,"spaceBetween":30,"centeredSlides":false, "autoplay": {"delay": 5000, "disableOnInteraction": false}}'>
+                            <div class="swiper-container">
+                                <div class="swiper-wrapper">
+                                    @foreach ($brands as $brand)
+                                        <div
+                                            class="dsn-item-post grid-item over-hidden p-relative box-hover-image swiper-slide">
+                                            <div class="box-content d-flex">
+                                                <div class="brand-item-inner over-hidden p-relative">
+                                                    <img src="{{ Storage::url($brand->cover) }}"
+                                                        alt="{{ $brand->title }}">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    @endforeach
+                                </div>
+                                <div
+                                    class="dsn-swiper-paginate d-flex p-relative w-100 h-100 mt-50 align-items-center dsn-container justify-content-between">
+                                    <div class="swiper-prev">
+                                        <div class="prev-container">
+                                            <div class="container-inner">
+                                                <div class="triangle"></div>
+                                                <svg class="circle" xmlns="http://www.w3.org/2000/svg"
+                                                    viewBox="0 0 24 24">
+                                                    <g class="circle-wrap" fill="none" stroke-width="1"
+                                                        stroke-linejoin="round" stroke-miterlimit="10">
+                                                        <circle cx="12" cy="12" r="10.5"></circle>
+                                                    </g>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-pagination mr-30 ml-30 heading-color" data-dsn-type="progressbar">
+                                    </div>
+                                    <div class="swiper-next">
+                                        <div class="next-container">
+                                            <div class="container-inner">
+                                                <div class="triangle"></div>
+                                                <svg class="circle" xmlns="http://www.w3.org/2000/svg"
+                                                    viewBox="0 0 24 24">
+                                                    <g class="circle-wrap" fill="none" stroke-width="1"
+                                                        stroke-linejoin="round" stroke-miterlimit="10">
+                                                        <circle cx="12" cy="12" r="10.5"></circle>
+                                                    </g>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                @endforeach
+                </div>
             </div>
         </div>
-        <!-- ========== End Brand ========== -->
-
+        <!-- ========== End Brand Slider ========== -->
 
     </div>
 
