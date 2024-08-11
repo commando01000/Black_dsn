@@ -93,9 +93,14 @@
                         </div>
                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                 </div>
+                <div style="border-top: 0px !important" class="type-p-nav">
+                    <div class="dsn-pagination p-relative d-flex align-items-center">
+                        <?php echo e($services->links('front.pagination.custom-pagination')); ?>
+
+                    </div>
+                </div>
+                
             </div>
-
-
         </div>
         <!-- ========== End Service ========== -->
 

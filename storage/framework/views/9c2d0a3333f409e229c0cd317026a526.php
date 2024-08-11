@@ -57,7 +57,6 @@
                 </div>
             </article>
         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-
         <div class="type-p-nav">
             <div class="dsn-pagination p-relative d-flex align-items-center">
                 <?php echo e($blogs->links('front.pagination.custom-pagination')); ?>

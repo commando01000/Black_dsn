@@ -104,7 +104,7 @@
 
                                 </p>
 
-                                <img class="w-100" src="<?php echo e(Storage::url($blog->images)); ?>" alt="<?php echo e($blog->title); ?>">
+                                
 
                                 <p>
                                     <a href="#">As a leading UX design agency,</a>
@@ -169,7 +169,8 @@
                                             <li class="comment">
                                                 <div class="comment-body">
                                                     <div class="comment-author">
-                                                        <img alt="<?php echo e($comment->name); ?>" src="<?php echo e(asset('front_asset/assets/img/team/1.jpg')); ?>">
+                                                        <img alt="<?php echo e($comment->name); ?>"
+                                                            src="<?php echo e(asset('front_asset/assets/img/team/1.jpg')); ?>">
                                                     </div>
                                                     <div class="comment-text">
                                                         <div class="comment-info">
@@ -182,48 +183,62 @@
                                                         <div class="text-holder">
                                                             <p><?php echo e($comment->comment); ?></p>
                                                         </div>
-                                    
+
                                                         
                                                         <div class="d-flex dsn-up align-items-center">
-                                                            <a class="comment-reply-link" href="#" data-target="#reply-form-<?php echo e($comment->id); ?>">
+                                                            <a class="comment-reply-link" href="#"
+                                                                data-target="#reply-form-<?php echo e($comment->id); ?>">
                                                                 <i class="fas fa-reply"></i> Reply
                                                             </a>
                                                             <?php if($comment->replies->count()): ?>
-                                                                <div class="image-zoom move-circle border-color-default border-style border-rdu" data-dsn="parallax" style="margin-left: 15px;">
-                                                                    <input type="button" style="color: #fff" class="toggle-replies-btn" value="View Replies" data-target="#replies-<?php echo e($comment->id); ?>">
+                                                                <div class="image-zoom move-circle border-color-default border-style border-rdu"
+                                                                    data-dsn="parallax" style="margin-left: 15px;">
+                                                                    <input type="button" style="color: #fff"
+                                                                        class="toggle-replies-btn" value="View Replies"
+                                                                        data-target="#replies-<?php echo e($comment->id); ?>">
                                                                 </div>
                                                             <?php endif; ?>
                                                         </div>
-                                    
+
                                                         
-                                                        <div class="reply-form-container form-group dsn-up" id="reply-form-<?php echo e($comment->id); ?>" style="display:none;">
-                                                            <form class="reply-form" action="<?php echo e(route('blog.comments.replies.store', $comment->id)); ?>" method="POST">
+                                                        <div class="reply-form-container form-group dsn-up"
+                                                            id="reply-form-<?php echo e($comment->id); ?>" style="display:none;">
+                                                            <form class="reply-form"
+                                                                action="<?php echo e(route('blog.comments.replies.store', $comment->id)); ?>"
+                                                                method="POST">
                                                                 <?php echo csrf_field(); ?>
                                                                 <div class="entry-box">
-                                                                    <input type="text" name="name" placeholder="Your Name" required="required">
-                                                                    <textarea class="reply-textarea" name="reply" placeholder="Write your reply..." required="required" data-error="reply is required."></textarea>
+                                                                    <input type="text" name="name"
+                                                                        placeholder="Your Name" required="required">
+                                                                    <textarea class="reply-textarea" name="reply" placeholder="Write your reply..." required="required"
+                                                                        data-error="reply is required."></textarea>
                                                                 </div>
                                                                 <div class="d-flex dsn-up">
-                                                                    <div class="image-zoom move-circle border-color-default border-style border-rdu" data-dsn="parallax">
-                                                                        <input type="submit" class="reply-submit-btn" value="Reply">
+                                                                    <div class="image-zoom move-circle border-color-default border-style border-rdu"
+                                                                        data-dsn="parallax">
+                                                                        <input type="submit" class="reply-submit-btn"
+                                                                            value="Reply">
                                                                         <div class="help-block with-errors"></div>
                                                                     </div>
                                                                 </div>
                                                             </form>
                                                         </div>
-                                    
+
                                                         
                                                         <?php if($comment->replies->count()): ?>
-                                                            <ul class="children" id="replies-<?php echo e($comment->id); ?>" style="display:none;">
+                                                            <ul class="children" id="replies-<?php echo e($comment->id); ?>"
+                                                                style="display:none;">
                                                                 <?php $__currentLoopData = $comment->replies; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $reply): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                                                     <li class="comment">
                                                                         <div class="comment-body">
                                                                             <div class="comment-author">
-                                                                                <img alt="<?php echo e($reply->name); ?>" src="<?php echo e(asset('front_asset/assets/img/team/1.jpg')); ?>">
+                                                                                <img alt="<?php echo e($reply->name); ?>"
+                                                                                    src="<?php echo e(asset('front_asset/assets/img/team/1.jpg')); ?>">
                                                                             </div>
                                                                             <div class="comment-text">
                                                                                 <div class="comment-info">
-                                                                                    <h6 class="comment-name"><?php echo e($reply->name); ?></h6>
+                                                                                    <h6 class="comment-name">
+                                                                                        <?php echo e($reply->name); ?></h6>
                                                                                 </div>
                                                                                 <div class="comment-date">
                                                                                     <?php echo e($reply->created_at->format('F d, Y')); ?>
@@ -232,20 +247,35 @@
                                                                                 <div class="text-holder">
                                                                                     <p><?php echo e($reply->comment); ?></p>
                                                                                 </div>
-                                                                                <a class="comment-reply-link" href="#" data-target="#reply-form-<?php echo e($reply->id); ?>">
+                                                                                <a class="comment-reply-link"
+                                                                                    href="#"
+                                                                                    data-target="#reply-form-<?php echo e($reply->id); ?>">
                                                                                     <i class="fas fa-reply"></i> Reply
                                                                                 </a>
-                                                                                <div class="reply-form-container form-group dsn-up" id="reply-form-<?php echo e($reply->id); ?>" style="display:none;">
-                                                                                    <form class="reply-form" action="<?php echo e(route('blog.comments.replies.store', $comment->id)); ?>" method="POST">
+                                                                                <div class="reply-form-container form-group dsn-up"
+                                                                                    id="reply-form-<?php echo e($reply->id); ?>"
+                                                                                    style="display:none;">
+                                                                                    <form class="reply-form"
+                                                                                        action="<?php echo e(route('blog.comments.replies.store', $comment->id)); ?>"
+                                                                                        method="POST">
                                                                                         <?php echo csrf_field(); ?>
                                                                                         <div class="entry-box">
-                                                                                            <input type="text" name="name" placeholder="Your Name" required="required">
-                                                                                            <textarea class="reply-textarea" name="reply" placeholder="Write your reply..." required="required" data-error="reply is required."></textarea>
+                                                                                            <input type="text"
+                                                                                                name="name"
+                                                                                                placeholder="Your Name"
+                                                                                                required="required">
+                                                                                            <textarea class="reply-textarea" name="reply" placeholder="Write your reply..." required="required"
+                                                                                                data-error="reply is required."></textarea>
                                                                                         </div>
                                                                                         <div class="d-flex dsn-up">
-                                                                                            <div class="image-zoom move-circle border-color-default border-style border-rdu" data-dsn="parallax">
-                                                                                                <input type="submit" class="reply-submit-btn" value="Post Comment">
-                                                                                                <div class="help-block with-errors"></div>
+                                                                                            <div class="image-zoom move-circle border-color-default border-style border-rdu"
+                                                                                                data-dsn="parallax">
+                                                                                                <input type="submit"
+                                                                                                    class="reply-submit-btn"
+                                                                                                    value="Post Comment">
+                                                                                                <div
+                                                                                                    class="help-block with-errors">
+                                                                                                </div>
                                                                                             </div>
                                                                                         </div>
                                                                                     </form>
@@ -261,7 +291,7 @@
                                             </li>
                                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                     </ol>
-                                    
+
 
                                 </div>
 

@@ -7,7 +7,7 @@
         <header class="v-dark-head dsn-section-padding dsn-header-animation">
             <div class="main-slider v-dark-head-mobile has-horizontal active-nav-slider dsn-webgl has-paginate"
                 data-dsn-webgl='{"displacement" : "assets/img/displacement/8.jpg"}'
-                data-dsn-option='{"direction":"horizontal","allowTouchMove":true,"watchSlidesProgress":true,"grabCursor":true,"mousewheel":false}'>
+                data-dsn-option='{"direction":"horizontal","allowTouchMove":true,"watchSlidesProgress":true,"grabCursor":true,"mousewheel":false, "autoplay": {"delay": 5000, "disableOnInteraction": false}}'>
 
                 <div class="content-slider slide-inner h-100 over-hidden">
                     <div class="bg-container p-absolute dsn-hero-parallax-img w-100 h-100 z-index-1 dsn-hero-parallax-img">
@@ -80,6 +80,7 @@
         <!-- ========== End Slider Parallax ========== -->
 
 
+
         <!-- ========== Service Icon Left ========== -->
         <div id="page_wrapper" class="wrapper">
             <div class="container icon-left pt-30 pb-30">
@@ -120,7 +121,7 @@
                                 </span>
                                 <span><?php echo e(Utility::getsettings('landing.home.about-us.sub-title')); ?></span>
                                 <span
-                                    class="text-right w-100"><?php echo e(Utility::getsettings('landing.home.about-us.sub-title_2')); ?></span>
+                                    class="text-left w-100"><?php echo e(Utility::getsettings('landing.home.about-us.sub-title_2')); ?></span>
                             </h2>
                             <div class="d-grid grid-half-1 align-items-center mt-10">
                                 <div class="dsn-def-btn dsn-hover-icon ">
@@ -134,7 +135,7 @@
                                     </a>
                                 </div>
                                 <div class="p-large text-right">
-                                    <p class="max-w350">
+                                    <p class="max-w350 text-left">
                                         <?php echo e(Utility::getsettings('landing.home.about-us.description')); ?>
 
                                     </p>
@@ -223,52 +224,7 @@
             <!-- ========== End Service ========== -->
 
             <!-- ========== About Section One ========== -->
-            <div class="container  section-margin">
-                <div class="d-grid grid-lg-2 d-grid-no-space">
-                    <div class="left-box-image mb-section">
-                        <div class="box-img w-100"
-                            data-dsn-animation='{"to":{"y":"120px"},"option":{"scrub":"0","start":"80%","end":"30%"},"responsive":["desktop"]}'>
-                            <div class="img-box-parallax h-v-80 before-z-index w-100" data-overlay="1">
-                                <img class="cover-bg-img" src= " <?php echo e(Storage::url($about->cover)); ?> " alt="">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="box-info background-section p-80 mt-section">
-                        <div class="section-title d-flex">
-                            <div class="sub-section-title">
-                                <p class="description d-inline-block p-relative  circle-before  mb-10">
-                                    <span><?php echo e($about->title); ?></span>
-                                </p>
-                                <span
-                                    class="title-h2 dsn-heading-title p-relative title-block-lg d-block    heading-color">
-                                    <span>How is your <br>visual <b>identity?</b></span>
-                                </span>
-                            </div>
-                        </div>
-                        <p class="mt-20">
-                            <?php echo e($about->description); ?>
-
-                        </p>
-                        <ul class="d-grid dsn-list mt-20" data-dsn-gap="10px 15px">
-                            <?php $__currentLoopData = $about->details; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $detail): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                <li class="list-item d-flex align-items-center background-main">
-                                    <span class="dsn-icon mr-15"><i class="fas fa-check" aria-hidden="true"></i></span>
-                                    <p class="dsn-heading-title heading-color "><?php echo e($detail->advantage); ?></p>
-                                </li>
-                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                        </ul>
-                        <div class="dsn-def-btn dsn-icon-heading-color mt-20 d-flex">
-                            <a class='dsn-btn dsn-border border-color-default background-main effect-ajax has-icon-left'
-                                data-dsn-text='<?php echo e($about->title); ?>' href='<?php echo e(route('design.show', $about->id)); ?>'>
-                                <span class="dsn-icon dsn-bg-before btn-icon-left heading-color z-index-1">
-                                    <i class="fas fa-angle-right"></i>
-                                </span>
-                                <span class="title-btn p-relative  z-index-1 ">LEARN MORE</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            
             <!-- ========== End About Section One ========== -->
 
 
@@ -298,7 +254,7 @@
                     <div class="root-posts">
                         <div class="dsn-posts dsn-post-type-classic h-350">
                             <div class="has-parallax-image dsn-swiper p-relative"
-                                data-dsn-option='{"slidesPerView":2.5,"spaceBetween":30,"centeredSlides":false}'>
+                                data-dsn-option='{"slidesPerView":2.5,"spaceBetween":30,"centeredSlides":false, "autoplay": {"delay": 5000, "disableOnInteraction": false}}'>
                                 <div class="swiper-container">
                                     <div class="swiper-wrapper">
                                         <?php $__currentLoopData = $designs; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $design): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
@@ -401,34 +357,33 @@
 
             <!-- ========== background Box Image ========== -->
             <div class="p-relative section-padding v-dark-head">
-
                 <div class="container">
                     <h3 class="title-h2">
                         <?php echo e(Utility::getsettings('landing.home.title') ? Utility::getsettings('landing.home.title') : 'Need help with professional photography Lets work together !'); ?>
 
                     </h3>
-                    <p class="mt-30 max-w570">
+                    <p class="mt-30 max-w570 text-left" style="text-align: justify;">
                         <?php echo e(Utility::getsettings('landing.home.description') ? Utility::getsettings('landing.home.description') : '...'); ?>
 
                     </p>
                     <div class="dsn-def-btn d-flex dsn-border-style dsn-icon-heading-color mt-30">
-                        <a class='dsn-btn dsn-border border-color-default background-section  move-circle has-icon-left'
+                        <a class='dsn-btn dsn-border border-color-default background-section move-circle has-icon-left'
                             data-dsn-text='Contact Us' data-dsn='parallax' href='<?php echo e(route('contact')); ?>'>
                             <span class="dsn-icon dsn-bg-before btn-icon-left heading-color z-index-1">
                                 <i class="far fa-envelope-open"></i>
                             </span>
-                            <span class="title-btn p-relative  z-index-1 ">CONTACT US</span>
+                            <span class="title-btn p-relative z-index-1 ">CONTACT US</span>
                         </a>
                     </div>
                 </div>
                 <div class="dsn-bg-section p-absolute w-100 h-100 over-hidden top-0 left-0" style="z-index: -1;">
-                    <div class="h-100 img-box-parallax before-z-index " data-dsn-grid="move-up" data-overlay="4">
-                        <img src= "<?php echo e(asset('front_asset/assets/img/about-4.jpg')); ?>" class="cover-bg-img has-direction"
+                    <div class="h-100 img-box-parallax before-z-index" data-dsn-grid="move-up" data-overlay="4">
+                        <img src="<?php echo e(asset('front_asset/assets/img/about-4.jpg')); ?>" class="cover-bg-img has-direction"
                             alt="">
                     </div>
-
                 </div>
             </div>
+
             <!-- ========== End background Box Image ========== -->
 
 
@@ -595,7 +550,7 @@
                     <div class="root-posts">
                         <div class="dsn-posts dsn-post-type-classic h-350">
                             <div class="has-parallax-image dsn-swiper p-relative"
-                                data-dsn-option='{"slidesPerView":2.5,"spaceBetween":30,"centeredSlides":false}'>
+                                data-dsn-option='{"slidesPerView":2.5,"spaceBetween":30,"centeredSlides":false, "autoplay": {"delay": 5000, "disableOnInteraction": false}}'>
                                 <div class="swiper-container">
                                     <div class="swiper-wrapper">
                                         <?php $__currentLoopData = $blogs; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $blog): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>

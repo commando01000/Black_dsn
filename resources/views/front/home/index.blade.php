@@ -7,7 +7,7 @@
         <header class="v-dark-head dsn-section-padding dsn-header-animation">
             <div class="main-slider v-dark-head-mobile has-horizontal active-nav-slider dsn-webgl has-paginate"
                 data-dsn-webgl='{"displacement" : "assets/img/displacement/8.jpg"}'
-                data-dsn-option='{"direction":"horizontal","allowTouchMove":true,"watchSlidesProgress":true,"grabCursor":true,"mousewheel":false}'>
+                data-dsn-option='{"direction":"horizontal","allowTouchMove":true,"watchSlidesProgress":true,"grabCursor":true,"mousewheel":false, "autoplay": {"delay": 5000, "disableOnInteraction": false}}'>
 
                 <div class="content-slider slide-inner h-100 over-hidden">
                     <div class="bg-container p-absolute dsn-hero-parallax-img w-100 h-100 z-index-1 dsn-hero-parallax-img">
@@ -78,6 +78,7 @@
         <!-- ========== End Slider Parallax ========== -->
 
 
+
         <!-- ========== Service Icon Left ========== -->
         <div id="page_wrapper" class="wrapper">
             <div class="container icon-left pt-30 pb-30">
@@ -116,7 +117,7 @@
                                 </span>
                                 <span>{{ Utility::getsettings('landing.home.about-us.sub-title') }}</span>
                                 <span
-                                    class="text-right w-100">{{ Utility::getsettings('landing.home.about-us.sub-title_2') }}</span>
+                                    class="text-left w-100">{{ Utility::getsettings('landing.home.about-us.sub-title_2') }}</span>
                             </h2>
                             <div class="d-grid grid-half-1 align-items-center mt-10">
                                 <div class="dsn-def-btn dsn-hover-icon ">
@@ -130,7 +131,7 @@
                                     </a>
                                 </div>
                                 <div class="p-large text-right">
-                                    <p class="max-w350">
+                                    <p class="max-w350 text-left">
                                         {{ Utility::getsettings('landing.home.about-us.description') }}
                                     </p>
                                 </div>
@@ -217,7 +218,7 @@
             <!-- ========== End Service ========== -->
 
             <!-- ========== About Section One ========== -->
-            <div class="container  section-margin">
+            {{-- <div class="container section-margin">
                 <div class="d-grid grid-lg-2 d-grid-no-space">
                     <div class="left-box-image mb-section">
                         <div class="box-img w-100"
@@ -261,7 +262,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> --}}
             <!-- ========== End About Section One ========== -->
 
 
@@ -291,7 +292,7 @@
                     <div class="root-posts">
                         <div class="dsn-posts dsn-post-type-classic h-350">
                             <div class="has-parallax-image dsn-swiper p-relative"
-                                data-dsn-option='{"slidesPerView":2.5,"spaceBetween":30,"centeredSlides":false}'>
+                                data-dsn-option='{"slidesPerView":2.5,"spaceBetween":30,"centeredSlides":false, "autoplay": {"delay": 5000, "disableOnInteraction": false}}'>
                                 <div class="swiper-container">
                                     <div class="swiper-wrapper">
                                         @foreach ($designs as $design)
@@ -393,32 +394,31 @@
 
             <!-- ========== background Box Image ========== -->
             <div class="p-relative section-padding v-dark-head">
-
                 <div class="container">
                     <h3 class="title-h2">
                         {{ Utility::getsettings('landing.home.title') ? Utility::getsettings('landing.home.title') : 'Need help with professional photography Lets work together !' }}
                     </h3>
-                    <p class="mt-30 max-w570">
+                    <p class="mt-30 max-w570 text-left" style="text-align: justify;">
                         {{ Utility::getsettings('landing.home.description') ? Utility::getsettings('landing.home.description') : '...' }}
                     </p>
                     <div class="dsn-def-btn d-flex dsn-border-style dsn-icon-heading-color mt-30">
-                        <a class='dsn-btn dsn-border border-color-default background-section  move-circle has-icon-left'
+                        <a class='dsn-btn dsn-border border-color-default background-section move-circle has-icon-left'
                             data-dsn-text='Contact Us' data-dsn='parallax' href='{{ route('contact') }}'>
                             <span class="dsn-icon dsn-bg-before btn-icon-left heading-color z-index-1">
                                 <i class="far fa-envelope-open"></i>
                             </span>
-                            <span class="title-btn p-relative  z-index-1 ">CONTACT US</span>
+                            <span class="title-btn p-relative z-index-1 ">CONTACT US</span>
                         </a>
                     </div>
                 </div>
                 <div class="dsn-bg-section p-absolute w-100 h-100 over-hidden top-0 left-0" style="z-index: -1;">
-                    <div class="h-100 img-box-parallax before-z-index " data-dsn-grid="move-up" data-overlay="4">
-                        <img src= "{{ asset('front_asset/assets/img/about-4.jpg') }}" class="cover-bg-img has-direction"
+                    <div class="h-100 img-box-parallax before-z-index" data-dsn-grid="move-up" data-overlay="4">
+                        <img src="{{ asset('front_asset/assets/img/about-4.jpg') }}" class="cover-bg-img has-direction"
                             alt="">
                     </div>
-
                 </div>
             </div>
+
             <!-- ========== End background Box Image ========== -->
 
 
@@ -584,7 +584,7 @@
                     <div class="root-posts">
                         <div class="dsn-posts dsn-post-type-classic h-350">
                             <div class="has-parallax-image dsn-swiper p-relative"
-                                data-dsn-option='{"slidesPerView":2.5,"spaceBetween":30,"centeredSlides":false}'>
+                                data-dsn-option='{"slidesPerView":2.5,"spaceBetween":30,"centeredSlides":false, "autoplay": {"delay": 5000, "disableOnInteraction": false}}'>
                                 <div class="swiper-container">
                                     <div class="swiper-wrapper">
                                         @foreach ($blogs as $blog)

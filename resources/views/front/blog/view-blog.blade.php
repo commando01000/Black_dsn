@@ -97,7 +97,7 @@
                                     {{ $blog->normal_description }}
                                 </p>
 
-                                <img class="w-100" src="{{ Storage::url($blog->images) }}" alt="{{ $blog->title }}">
+                                {{-- <img class="w-100" src="{{ Storage::url($blog->images) }}" alt="{{ $blog->title }}"> --}}
 
                                 <p>
                                     <a href="#">As a leading UX design agency,</a>

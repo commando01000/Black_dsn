@@ -100,7 +100,6 @@
                 </div>
             </article>
         @endforeach
-
         <div class="type-p-nav">
             <div class="dsn-pagination p-relative d-flex align-items-center">
                 {{ $blogs->links('front.pagination.custom-pagination') }}
