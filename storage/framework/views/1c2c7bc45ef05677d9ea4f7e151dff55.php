@@ -118,17 +118,17 @@
                             <?php echo e(Utility::getsettings('services.what.we.do.title')); ?>
 
                         </h5>
-                        <p class="mt-20">
+                        <p class="mt-20 text-left justified-text">
                             <?php echo e(Utility::getsettings('services.what.we.do.short-description')); ?>
 
                         </p>
                     </div>
                     <div class="right align-self-end">
-                        <p>
+                        <p class="justified-text">
                             <?php echo e(Utility::getsettings('services.what.we.do.main-description')); ?>
 
                         </p>
-                        <p class="mt-20">
+                        <p class="mt-20 justified-text">
                             <?php echo e(Utility::getsettings('services.what.we.do.sub-description')); ?>
 
                         </p>
@@ -154,7 +154,7 @@
             <div class="box-left p-relative  pinned-scroll" data-dsn-option='{"end":"250"}'>
                 <div class="section-title  pinned-element">
                     <h2 class="title-h2 text-upper"><?php echo e(Utility::getsettings('our-target.title')); ?></h2>
-                    <p class="max-w570 mt-20">
+                    <p class="max-w570 mt-20 justified-text">
                         <?php echo e(Utility::getsettings('our-target.description')); ?>
 
                     </p>
@@ -170,8 +170,9 @@
                                 <h6 class="sm-title-block tab-title heading-color" role="tab" data-tab="0">Our
                                     Vision</h6>
                             </div>
-                            <div class="accordion__answer tab-description active " role="tabpanel" data-tab="0">
-                                <p><?php echo e(Utility::getsettings('our-target.vision-description')); ?></p>
+                            <div class="accordion__answer tab-description active" role="tabpanel" data-tab="0">
+                                <p class="text-left justified-text">
+                                    <?php echo e(Utility::getsettings('our-target.vision-description')); ?></p>
                             </div>
                         </div>
 
@@ -182,8 +183,9 @@
                                 <h6 class="sm-title-block tab-title heading-color" role="tab" data-tab="1">Our
                                     goals</h6>
                             </div>
-                            <div class="accordion__answer tab-description  " role="tabpanel" data-tab="1">
-                                <p><?php echo e(Utility::getsettings('our-target.goal-description')); ?></p>
+                            <div class="accordion__answer tab-description" role="tabpanel" data-tab="1">
+                                <p class="text-left justified-text">
+                                    <?php echo e(Utility::getsettings('our-target.goal-description')); ?></p>
                             </div>
                         </div>
 
@@ -194,8 +196,9 @@
                                 <h6 class="sm-title-block tab-title heading-color" role="tab" data-tab="2">Our
                                     Mission</h6>
                             </div>
-                            <div class="accordion__answer tab-description  " role="tabpanel" data-tab="2">
-                                <p><?php echo e(Utility::getsettings('our-target.mission-description')); ?></p>
+                            <div class="accordion__answer tab-description" role="tabpanel" data-tab="2">
+                                <p class="text-left justified-text">
+                                    <?php echo e(Utility::getsettings('our-target.mission-description')); ?></p>
                             </div>
                         </div>
 
@@ -317,7 +320,7 @@
                                                 <div class="testimonial-item">
                                                     <div class="testimonial-content mb-25">
                                                         <div class="quote">
-                                                            <p class="max-w750 testimonial-content p-large">
+                                                            <p class="max-w750 testimonial-content p-large justified-text">
                                                                 <?php echo e($testimonial->description); ?>
 
                                                             </p>

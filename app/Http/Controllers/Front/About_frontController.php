@@ -25,14 +25,10 @@ class About_frontController extends Controller
         $allBlogs = Blog::take(3)->get();
         $services = Service::paginate(9);
         $brands = Statistic::all()->skip(3);
-        if ($request->ajax()) {
-            return view('front.about-us.partials.services', compact('services'))->render();
-        }
         return view('front.about-us.index', compact('lang', 'testimonials', 'leaderships', 'about', 'statistics', 'allBlogs', 'services', 'brands'));
     }
     public function team_detail($id)
     {
-
         $teamMember = Leadership::where('id', $id)->first();
         return view('front.team-details.index', compact('teamMember'));
     }

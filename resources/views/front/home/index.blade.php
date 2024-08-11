@@ -398,7 +398,7 @@
                     <h3 class="title-h2">
                         {{ Utility::getsettings('landing.home.title') ? Utility::getsettings('landing.home.title') : 'Need help with professional photography Lets work together !' }}
                     </h3>
-                    <p class="mt-30 max-w570 text-left" style="text-align: justify;">
+                    <p class="mt-30 max-w570 text-left justified-text">
                         {{ Utility::getsettings('landing.home.description') ? Utility::getsettings('landing.home.description') : '...' }}
                     </p>
                     <div class="dsn-def-btn d-flex dsn-border-style dsn-icon-heading-color mt-30">
@@ -476,7 +476,7 @@
                                                     <div class="testimonial-item">
                                                         <div class="testimonial-content mb-25">
                                                             <div class="quote">
-                                                                <p class="max-w750 testimonial-content p-large">
+                                                                <p class="max-w750 testimonial-content p-large justified-text">
                                                                     {{ $testimonial['description'] }}
                                                                 </p>
                                                             </div>
