@@ -23,7 +23,7 @@ class About_frontController extends Controller
         $about = Statistic::where('title', 'about')->first();
         $statistics = Statistic::where('title', 'statistics')->first();
         $allBlogs = Blog::take(3)->get();
-        $services = Service::paginate(2);
+        $services = Service::paginate(9);
         $brands = Statistic::take(8)->latest()->get();
         if ($request->ajax()) {
             return view('front.about-us.partials.services', compact('services'))->render();
