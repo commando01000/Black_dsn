@@ -7471,6 +7471,6 @@ body.tax-product_cat #dsn_header {
 .justified-text {
     text-align: justify;
     text-align-last: left;
-    word-spacing: 0.1em;
+    word-spacing: 0.05em;
 }
 /*# sourceMappingURL=style.css.map */
