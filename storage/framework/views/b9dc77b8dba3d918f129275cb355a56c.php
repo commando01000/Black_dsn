@@ -435,7 +435,8 @@
                                                     <div class="testimonial-item">
                                                         <div class="testimonial-content mb-25">
                                                             <div class="quote">
-                                                                <p class="max-w750 testimonial-content p-large justified-text">
+                                                                <p
+                                                                    class="max-w750 testimonial-content p-large justified-text">
                                                                     <?php echo e($testimonial['description']); ?>
 
                                                                 </p>
@@ -658,7 +659,13 @@
                             </div>
                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                     </div>
-
+                    <div class="dsn-def-btn dsn-icon-heading-color align-self-end justify-self-end">
+                        <a class="dsn-btn dsn-border border-color-default  background-section effect-ajax effect-ajax  move-circle has-icon-left"
+                            href="<?php echo e(route('about-us')); ?>" data-dsn-text="Client" data-dsn="parallax">
+                            <span class="dsn-icon dsn-bg-before btn-icon-left heading-color z-index-1"><i
+                                    class="fas fa-angle-right"></i></span> <span
+                                class="title-btn p-relative  z-index-1 heading-color">VIEW ALL CLIENTS</span> </a>
+                    </div>
                 </div>
             </div>
             <!-- ========== End Brand ========== -->
