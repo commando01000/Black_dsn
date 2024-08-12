@@ -38,7 +38,8 @@
             <article class="blog-item p-relative pt-50 pb-50 border-bottom">
                 <div class="blog-item-inner p-relative">
                     <div class="left-box">
-                        <a href="<?php echo e(route('blog.show', $blog->id)); ?>" class="effect-ajax word-wrap" rel="bookmark">
+                        <a href='<?php echo e(route('view.blog', ['slug' => $blog->slug])); ?>' class="effect-ajax word-wrap"
+                            rel="bookmark">
                             <h4 class="title-block"><?php echo e($blog->title); ?></h4>
                         </a>
                         <div class="link mt-15">

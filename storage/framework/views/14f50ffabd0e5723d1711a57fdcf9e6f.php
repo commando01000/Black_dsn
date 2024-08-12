@@ -1,11 +1,12 @@
     <!-- ========== Menu ========== -->
     <header id="site_menu_header" class="site-header  dsn-container d-none dsn-hamburger">
         <div class="main-logo">
-            <a aria-current='page' class='custom-logo-link main-brand effect-ajax' data-dsn-text='Blackdsn'
+            <a aria-current='page' class='custom-logo-link main-brand effect-ajax' data-dsn-text='Digital Media Factory'
                 href='<?php echo e(url('/')); ?>' rel='home'>
-                <img src= "<?php echo e(asset('front_asset/assets/img/logo-light.png')); ?>" class="custom-logo logo-light"
-                    alt="Blackdsn">
-                <img src= "<?php echo e(asset('front_asset/assets/img/logo.png')); ?>" class="custom-logo logo-dark" alt="Blackdsn">
+                <img style="width:120px;" src= "<?php echo e(asset('front_asset/assets/img/DMF Logos/logo-white.png')); ?>"
+                    class="custom-logo logo-light" alt="Digital Media Factory">
+                <img style="width:120px;" src= "<?php echo e(asset('front_asset/assets/img/DMF Logos/logo-dark.png')); ?>" class="custom-logo logo-dark"
+                    alt="Digital Media Factory">
             </a>
         </div>
         <nav class="main-navigation ">

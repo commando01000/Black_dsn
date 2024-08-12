@@ -305,7 +305,8 @@
                                             class="dsn-item-post grid-item over-hidden p-relative box-hover-image swiper-slide">
                                             <div class="box-content d-flex">
                                                 <div class="brand-item-inner over-hidden p-relative">
-                                                    <img src="{{ Storage::url($brand->cover) }}"
+                                                    <img style="max-width: 400px;max-height: 200px;"
+                                                        class="object-fit-cover" src="{{ Storage::url($brand->cover) }}"
                                                         alt="{{ $brand->title }}">
                                                 </div>
                                             </div>
