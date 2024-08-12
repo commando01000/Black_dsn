@@ -5,8 +5,8 @@
                 href='<?php echo e(url('/')); ?>' rel='home'>
                 <img style="width:120px;" src= "<?php echo e(asset('front_asset/assets/img/DMF Logos/logo-white.png')); ?>"
                     class="custom-logo logo-light" alt="Digital Media Factory">
-                <img style="width:120px;" src= "<?php echo e(asset('front_asset/assets/img/DMF Logos/logo-dark.png')); ?>" class="custom-logo logo-dark"
-                    alt="Digital Media Factory">
+                <img style="width:120px;" src= "<?php echo e(asset('front_asset/assets/img/DMF Logos/logo-dark.png')); ?>"
+                    class="custom-logo logo-dark" alt="Digital Media Factory">
             </a>
         </div>
         <nav class="main-navigation ">
@@ -98,7 +98,7 @@
                         </li>
                         <li class="nav-item has-sub-menu">
                             <a title="Carousel" href="#0" data-dsn-text="Business">
-                                <span class="overflow">Carousel</span>
+                                <span class="overflow">Designs</span>
                             </a>
                             <ul class="nav-item">
                                 <li class="dsn-back">
@@ -112,7 +112,7 @@
                                             </g>
                                         </svg>
                                         <span class="text-toggle-back">
-                                            <span class="text-name">Carousel</span>
+                                            <span class="text-name">Designs</span>
                                             <span class="text-back">Back</span>
                                         </span>
                                     </span>
@@ -126,331 +126,7 @@
                             </ul>
                         </li>
 
-                        <li class="nav-item has-sub-menu">
-                            <a title="Carousel" href="#0" data-dsn-text="Business">
-                                <span class="overflow">Sliders</span>
-                            </a>
-                            <ul class="nav-item">
-                                <li class="dsn-back">
-                                    <span>
-                                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30px"
-                                            viewbox="0 0 400.004 400.004" xml:space="preserve">
-                                            <g>
-                                                <path
-                                                    d="M382.688,182.686H59.116l77.209-77.214c6.764-6.76,6.764-17.726,0-24.485c-6.764-6.764-17.73-6.764-24.484,0L5.073,187.757 c-6.764,6.76-6.764,17.727,0,24.485l106.768,106.775c3.381,3.383,7.812,5.072,12.242,5.072c4.43,0,8.861-1.689,12.242-5.072 c6.764-6.76,6.764-17.726,0-24.484l-77.209-77.218h323.572c9.562,0,17.316-7.753,17.316-17.315 C400.004,190.438,392.251,182.686,382.688,182.686z">
-                                                </path>
-                                            </g>
-                                        </svg>
-                                        <span class="text-toggle-back">
-                                            <span class="text-name">Sliders</span>
-                                            <span class="text-back">Back</span>
-                                        </span>
-                                    </span>
-                                </li>
-                                <li class="nav-item has-sub-menu">
-                                    <a title="Slider" href="#0" data-dsn-text="Our Portfolio">
-                                        <span class="overflow">Fullscreen</span>
-                                    </a>
-                                    <ul class="nav-item">
-                                        <li class="dsn-back">
-                                            <span>
-                                                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30px"
-                                                    viewbox="0 0 400.004 400.004" xml:space="preserve">
-                                                    <g>
-                                                        <path
-                                                            d="M382.688,182.686H59.116l77.209-77.214c6.764-6.76,6.764-17.726,0-24.485c-6.764-6.764-17.73-6.764-24.484,0L5.073,187.757 c-6.764,6.76-6.764,17.727,0,24.485l106.768,106.775c3.381,3.383,7.812,5.072,12.242,5.072c4.43,0,8.861-1.689,12.242-5.072 c6.764-6.76,6.764-17.726,0-24.484l-77.209-77.218h323.572c9.562,0,17.316-7.753,17.316-17.315 C400.004,190.438,392.251,182.686,382.688,182.686z">
-                                                        </path>
-                                                    </g>
-                                                </svg>
-                                                <span class="text-toggle-back">
-                                                    <span class="text-name">Fullscreen</span>
-                                                    <span class="text-back">Back</span>
-                                                </span>
-                                            </span>
-                                        </li>
-                                        <li class="nav-item ">
-                                            <a data-dsn-text='Our Portfolio'
-                                                href='fullscreen-distortion-horizontal.html' title='Slider'>
-                                                <span class="overflow">Slider Distortion / H</span>
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-
-                                            <a data-dsn-text='Our Portfolio'
-                                                href='fullscreen-distortion-vertical.html' title='Slider'>
-                                                <span class="overflow">Slider Distortion / V</span>
-                                            </a>
-
-                                        </li>
-                                        <li class="nav-item">
-
-                                            <a data-dsn-text='Our Portfolio'
-                                                href='fullscreen-parallax-horizontal.html' title='Slider'>
-                                                <span class="overflow">Slider Parallax / H</span>
-                                            </a>
-
-                                        </li>
-                                        <li class="nav-item">
-
-                                            <a data-dsn-text='Our Portfolio' href='fullscreen-parallax-vertical.html'
-                                                title='Slider'>
-                                                <span class="overflow">Slider Parallax / V</span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="nav-item has-sub-menu">
-                                    <a title="Slider" href="#0" data-dsn-text="Our Portfolio">
-                                        <span class="overflow">Padding</span>
-                                    </a>
-                                    <ul class="nav-item">
-                                        <li class="dsn-back">
-                                            <span>
-                                                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30px"
-                                                    viewbox="0 0 400.004 400.004" xml:space="preserve">
-                                                    <g>
-                                                        <path
-                                                            d="M382.688,182.686H59.116l77.209-77.214c6.764-6.76,6.764-17.726,0-24.485c-6.764-6.764-17.73-6.764-24.484,0L5.073,187.757 c-6.764,6.76-6.764,17.727,0,24.485l106.768,106.775c3.381,3.383,7.812,5.072,12.242,5.072c4.43,0,8.861-1.689,12.242-5.072 c6.764-6.76,6.764-17.726,0-24.484l-77.209-77.218h323.572c9.562,0,17.316-7.753,17.316-17.315 C400.004,190.438,392.251,182.686,382.688,182.686z">
-                                                        </path>
-                                                    </g>
-                                                </svg>
-                                                <span class="text-toggle-back">
-                                                    <span class="text-name">Padding</span>
-                                                    <span class="text-back">Back</span>
-                                                </span>
-                                            </span>
-                                        </li>
-                                        <li class="nav-item ">
-                                            <a data-dsn-text='Our Portfolio' href='padding-distortion-horizontal.html'
-                                                title='Slider'>
-                                                <span class="overflow">Slider Distortion / H</span>
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-
-                                            <a data-dsn-text='Our Portfolio' href='padding-distortion-vertical.html'
-                                                title='Slider'>
-                                                <span class="overflow">Slider Distortion / V</span>
-                                            </a>
-
-                                        </li>
-                                        <li class="nav-item">
-
-                                            <a data-dsn-text='Our Portfolio' href='padding-parallax-horizontal.html'
-                                                title='Slider'>
-                                                <span class="overflow">Slider Parallax / H</span>
-                                            </a>
-
-                                        </li>
-                                        <li class="nav-item">
-
-                                            <a data-dsn-text='Our Portfolio' href='padding-parallax-vertical.html'
-                                                title='Slider'>
-                                                <span class="overflow">Slider Parallax / V</span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="nav-item has-sub-menu">
-                                    <a title="Slider" href="#0" data-dsn-text="Our Portfolio">
-                                        <span class="overflow">Halfscreen</span>
-                                    </a>
-                                    <ul class="nav-item">
-                                        <li class="dsn-back">
-                                            <span>
-                                                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30px"
-                                                    viewbox="0 0 400.004 400.004" xml:space="preserve">
-                                                    <g>
-                                                        <path
-                                                            d="M382.688,182.686H59.116l77.209-77.214c6.764-6.76,6.764-17.726,0-24.485c-6.764-6.764-17.73-6.764-24.484,0L5.073,187.757 c-6.764,6.76-6.764,17.727,0,24.485l106.768,106.775c3.381,3.383,7.812,5.072,12.242,5.072c4.43,0,8.861-1.689,12.242-5.072 c6.764-6.76,6.764-17.726,0-24.484l-77.209-77.218h323.572c9.562,0,17.316-7.753,17.316-17.315 C400.004,190.438,392.251,182.686,382.688,182.686z">
-                                                        </path>
-                                                    </g>
-                                                </svg>
-                                                <span class="text-toggle-back">
-                                                    <span class="text-name">Halfscreen</span>
-                                                    <span class="text-back">Back</span>
-                                                </span>
-                                            </span>
-                                        </li>
-                                        <li class="nav-item ">
-                                            <a data-dsn-text='Our Portfolio' href='half-distortion-horizontal.html'
-                                                title='Slider'>
-                                                <span class="overflow">Slider Distortion / H</span>
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-
-                                            <a data-dsn-text='Our Portfolio' href='half-distortion-vertical.html'
-                                                title='Slider'>
-                                                <span class="overflow">Slider Distortion / V</span>
-                                            </a>
-
-                                        </li>
-                                        <li class="nav-item">
-
-                                            <a data-dsn-text='Our Portfolio' href='half-parallax-horizontal.html'
-                                                title='Slider'>
-                                                <span class="overflow">Slider Parallax / H</span>
-                                            </a>
-
-                                        </li>
-                                        <li class="nav-item">
-
-                                            <a data-dsn-text='Our Portfolio' href='half-parallax-vertical.html'
-                                                title='Slider'>
-                                                <span class="overflow">Slider Parallax / V</span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ul>
-
-
-                        </li>
-
-                        <li class="nav-item has-sub-menu">
-                            <a title="Card" href="#0" data-dsn-text="Portfolio">
-                                <span class="overflow">Card</span>
-                            </a>
-                            <ul class="nav-item">
-                                <li class="dsn-back">
-                                    <span>
-                                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30px"
-                                            viewbox="0 0 400.004 400.004" xml:space="preserve">
-                                            <g>
-                                                <path
-                                                    d="M382.688,182.686H59.116l77.209-77.214c6.764-6.76,6.764-17.726,0-24.485c-6.764-6.764-17.73-6.764-24.484,0L5.073,187.757 c-6.764,6.76-6.764,17.727,0,24.485l106.768,106.775c3.381,3.383,7.812,5.072,12.242,5.072c4.43,0,8.861-1.689,12.242-5.072 c6.764-6.76,6.764-17.726,0-24.484l-77.209-77.218h323.572c9.562,0,17.316-7.753,17.316-17.315 C400.004,190.438,392.251,182.686,382.688,182.686z">
-                                                </path>
-                                            </g>
-                                        </svg>
-                                        <span class="text-toggle-back">
-                                            <span class="text-name">Card</span>
-                                            <span class="text-back">Back</span>
-                                        </span>
-                                    </span>
-                                </li>
-                                <li class="nav-item ">
-                                    <a data-dsn-text='Our Portfolio' href='work-card-1.html' title='work card 1'>
-                                        <span class="overflow">Work Card 1</span>
-                                    </a>
-                                </li>
-                                <li class="nav-item ">
-                                    <a data-dsn-text='Our Portfolio' href='work-card-2.html' title='work card 2'>
-                                        <span class="overflow">Work Card 2</span>
-                                    </a>
-                                </li>
-
-                            </ul>
-                        </li>
-
-                        <li class="nav-item has-sub-menu">
-                            <a title="Card" href="#0" data-dsn-text="Portfolio">
-                                <span class="overflow">Classic</span>
-                            </a>
-                            <ul class="nav-item">
-                                <li class="dsn-back">
-                                    <span>
-                                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30px"
-                                            viewbox="0 0 400.004 400.004" xml:space="preserve">
-                                            <g>
-                                                <path
-                                                    d="M382.688,182.686H59.116l77.209-77.214c6.764-6.76,6.764-17.726,0-24.485c-6.764-6.764-17.73-6.764-24.484,0L5.073,187.757 c-6.764,6.76-6.764,17.727,0,24.485l106.768,106.775c3.381,3.383,7.812,5.072,12.242,5.072c4.43,0,8.861-1.689,12.242-5.072 c6.764-6.76,6.764-17.726,0-24.484l-77.209-77.218h323.572c9.562,0,17.316-7.753,17.316-17.315 C400.004,190.438,392.251,182.686,382.688,182.686z">
-                                                </path>
-                                            </g>
-                                        </svg>
-                                        <span class="text-toggle-back">
-                                            <span class="text-name">Classic</span>
-                                            <span class="text-back">Back</span>
-                                        </span>
-                                    </span>
-                                </li>
-                                <li class="nav-item ">
-                                    <a data-dsn-text='Our Portfolio' href='work-classic-1.html'
-                                        title='work classic 1'>
-                                        <span class="overflow">Work classic 1</span>
-                                    </a>
-                                </li>
-                                <li class="nav-item ">
-                                    <a data-dsn-text='Our Portfolio' href='work-classic-2.html'
-                                        title='work classic 2'>
-                                        <span class="overflow">Work classic 2</span>
-                                    </a>
-                                </li>
-
-                            </ul>
-                        </li>
-
-                        <li class="nav-item has-sub-menu">
-                            <a title="List" href="#0" data-dsn-text="Portfolio">
-                                <span class="overflow">List</span>
-                            </a>
-                            <ul class="nav-item">
-                                <li class="dsn-back">
-                                    <span>
-                                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30px"
-                                            viewbox="0 0 400.004 400.004" xml:space="preserve">
-                                            <g>
-                                                <path
-                                                    d="M382.688,182.686H59.116l77.209-77.214c6.764-6.76,6.764-17.726,0-24.485c-6.764-6.764-17.73-6.764-24.484,0L5.073,187.757 c-6.764,6.76-6.764,17.727,0,24.485l106.768,106.775c3.381,3.383,7.812,5.072,12.242,5.072c4.43,0,8.861-1.689,12.242-5.072 c6.764-6.76,6.764-17.726,0-24.484l-77.209-77.218h323.572c9.562,0,17.316-7.753,17.316-17.315 C400.004,190.438,392.251,182.686,382.688,182.686z">
-                                                </path>
-                                            </g>
-                                        </svg>
-                                        <span class="text-toggle-back">
-                                            <span class="text-name">List</span>
-                                            <span class="text-back">Back</span>
-                                        </span>
-                                    </span>
-                                </li>
-                                <li class="nav-item ">
-                                    <a data-dsn-text='Our Portfolio' href='work-list-1.html' title='work list 1'>
-                                        <span class="overflow">Work List 1</span>
-                                    </a>
-                                </li>
-                                <li class="nav-item ">
-                                    <a data-dsn-text='Our Portfolio' href='work-list-2.html' title='work list 2'>
-                                        <span class="overflow">Work List 2</span>
-                                    </a>
-                                </li>
-
-                            </ul>
-                        </li>
-
-                        <li class="nav-item has-sub-menu">
-                            <a title="Metro" href="#0" data-dsn-text="Portfolio">
-                                <span class="overflow">Metro</span>
-                            </a>
-                            <ul class="nav-item">
-                                <li class="dsn-back">
-                                    <span>
-                                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30px"
-                                            viewbox="0 0 400.004 400.004" xml:space="preserve">
-                                            <g>
-                                                <path
-                                                    d="M382.688,182.686H59.116l77.209-77.214c6.764-6.76,6.764-17.726,0-24.485c-6.764-6.764-17.73-6.764-24.484,0L5.073,187.757 c-6.764,6.76-6.764,17.727,0,24.485l106.768,106.775c3.381,3.383,7.812,5.072,12.242,5.072c4.43,0,8.861-1.689,12.242-5.072 c6.764-6.76,6.764-17.726,0-24.484l-77.209-77.218h323.572c9.562,0,17.316-7.753,17.316-17.315 C400.004,190.438,392.251,182.686,382.688,182.686z">
-                                                </path>
-                                            </g>
-                                        </svg>
-                                        <span class="text-toggle-back">
-                                            <span class="text-name">Metro</span>
-                                            <span class="text-back">Back</span>
-                                        </span>
-                                    </span>
-                                </li>
-                                <li class="nav-item ">
-                                    <a data-dsn-text='Our Portfolio' href='metro-portfolio-1.html'
-                                        title='work Metro 1'>
-                                        <span class="overflow">Work Metro 1</span>
-                                    </a>
-                                </li>
-                                <li class="nav-item ">
-                                    <a data-dsn-text='Our Portfolio' href='metro-portfolio-2.html'
-                                        title='work Metro 2'>
-                                        <span class="overflow">Work Metro 2</span>
-                                    </a>
-                                </li>
-
-                            </ul>
-                        </li>
+                        
                     </ul>
                 </li>
                 <li class="nav-item has-sub-menu">
@@ -511,18 +187,12 @@
                                 <span class="overflow">Stories</span>
                             </a>
                         </li>
-                        <li class="nav-item ">
-                            <a data-dsn-text='Single Post' href='single-post.html' title='Single Post'>
-                                <span class="overflow">Single Post</span>
-                            </a>
-                        </li>
-
-
+                        
                     </ul>
                 </li>
                 <li class="nav-item ">
-                    <a href='<?php echo e(route('services')); ?>' title='Service'>
-                        <span class="overflow">Service</span>
+                    <a href='<?php echo e(route('services')); ?>' title='Services'>
+                        <span class="overflow">Services</span>
                     </a>
                 </li>
                 <li class="nav-item ">

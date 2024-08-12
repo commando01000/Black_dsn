@@ -5,8 +5,8 @@
                 href='{{ url('/') }}' rel='home'>
                 <img style="width:120px;" src= "{{ asset('front_asset/assets/img/DMF Logos/logo-white.png') }}"
                     class="custom-logo logo-light" alt="Digital Media Factory">
-                <img style="width:120px;" src= "{{ asset('front_asset/assets/img/DMF Logos/logo-dark.png') }}" class="custom-logo logo-dark"
-                    alt="Digital Media Factory">
+                <img style="width:120px;" src= "{{ asset('front_asset/assets/img/DMF Logos/logo-dark.png') }}"
+                    class="custom-logo logo-dark" alt="Digital Media Factory">
             </a>
         </div>
         <nav class="main-navigation ">
@@ -98,7 +98,7 @@
                         </li>
                         <li class="nav-item has-sub-menu">
                             <a title="Carousel" href="#0" data-dsn-text="Business">
-                                <span class="overflow">Carousel</span>
+                                <span class="overflow">Designs</span>
                             </a>
                             <ul class="nav-item">
                                 <li class="dsn-back">
@@ -112,7 +112,7 @@
                                             </g>
                                         </svg>
                                         <span class="text-toggle-back">
-                                            <span class="text-name">Carousel</span>
+                                            <span class="text-name">Designs</span>
                                             <span class="text-back">Back</span>
                                         </span>
                                     </span>
@@ -126,7 +126,7 @@
                             </ul>
                         </li>
 
-                        <li class="nav-item has-sub-menu">
+                        {{-- <li class="nav-item has-sub-menu">
                             <a title="Carousel" href="#0" data-dsn-text="Business">
                                 <span class="overflow">Sliders</span>
                             </a>
@@ -450,7 +450,7 @@
                                 </li>
 
                             </ul>
-                        </li>
+                        </li> --}}
                     </ul>
                 </li>
                 <li class="nav-item has-sub-menu">
@@ -535,18 +535,16 @@
                                 <span class="overflow">Stories</span>
                             </a>
                         </li>
-                        <li class="nav-item ">
+                        {{-- <li class="nav-item ">
                             <a data-dsn-text='Single Post' href='single-post.html' title='Single Post'>
                                 <span class="overflow">Single Post</span>
                             </a>
-                        </li>
-
-
+                        </li> --}}
                     </ul>
                 </li>
                 <li class="nav-item ">
-                    <a href='{{ route('services') }}' title='Service'>
-                        <span class="overflow">Service</span>
+                    <a href='{{ route('services') }}' title='Services'>
+                        <span class="overflow">Services</span>
                     </a>
                 </li>
                 <li class="nav-item ">
