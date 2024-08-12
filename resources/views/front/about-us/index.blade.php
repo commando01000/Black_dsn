@@ -299,7 +299,7 @@
                         <div class="has-parallax-image dsn-swiper p-relative"
                             data-dsn-option='{"slidesPerView":2.5,"spaceBetween":30,"centeredSlides":false, "autoplay": {"delay": 5000, "disableOnInteraction": false}}'>
                             <div class="swiper-container">
-                                <div class="swiper-wrapper">
+                                <div class="swiper-wrapper text-center">
                                     @foreach ($brands as $brand)
                                         <div
                                             class="dsn-item-post grid-item over-hidden p-relative box-hover-image swiper-slide">
