@@ -79,8 +79,6 @@
         </header>
         <!-- ========== End Slider Parallax ========== -->
 
-
-
         <!-- ========== Service Icon Left ========== -->
         <div id="page_wrapper" class="wrapper">
             <div class="container icon-left pt-30 pb-30">
@@ -105,7 +103,6 @@
                 </div>
             </div>
             <!-- ========== End Service Icon Left ========== -->
-
 
             <!-- ========== About Section One ========== -->
             <section class="about-section about-one p-relative section-padding background-section">
@@ -226,7 +223,6 @@
             <!-- ========== About Section One ========== -->
             
             <!-- ========== End About Section One ========== -->
-
 
             <!-- ========== Portfolio ========== -->
             <div class="p-relative mt-section background-section section-padding">
@@ -354,7 +350,6 @@
             </div>
             <!-- ========== End Portfolio ========== -->
 
-
             <!-- ========== background Box Image ========== -->
             <div class="p-relative section-padding v-dark-head">
                 <div class="container">
@@ -385,7 +380,6 @@
             </div>
 
             <!-- ========== End background Box Image ========== -->
-
 
             <!-- ========== testimonials ========== -->
             <div class="p-relative section-padding background-section ">
@@ -524,7 +518,6 @@
             </div>
             <!-- ========== End testimonials ========== -->
 
-
             <!-- ========== Stories ========== -->
             <div class="p-relative section-margin">
                 <div class="container section-title mb-70 d-grid grid-md-2 ">
@@ -642,7 +635,6 @@
 
             </div>
             <!-- ========== End Stories ========== -->
-
 
             <!-- ========== Brand ========== -->
             <div class="p-relative  background-section section-padding">

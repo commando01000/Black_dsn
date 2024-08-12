@@ -11,7 +11,7 @@
             <div class="root-posts">
                 <div class="dsn-posts dsn-post-type-cards box-image-normal">
                     <div class="has-parallax-image dsn-swiper p-relative"
-                        data-dsn-option='{"slidesPerView":1.5,"spaceBetween":60 , "mousewheel":true}'>
+                        data-dsn-option='{"slidesPerView":1.5,"spaceBetween":60 , "mousewheel":true, "allowTouchMove":true,"watchSlidesProgress":true,"grabCursor":true,"mousewheel":false, "autoplay": {"delay": 5000, "disableOnInteraction": false}}'>
                         <div class="swiper-container">
                             <div class="swiper-wrapper v-dark-head">
                                 @foreach ($designs as $design)
