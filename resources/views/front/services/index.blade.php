@@ -258,7 +258,7 @@
 
         <!-- ========== Brand ========== -->
         <div class="dsn-brand over-hidden mt-80 mb-80">
-            <div class="dsn-grid-layout dsn-grid section-image section-move-image use-horizontal-scroll-image"
+            <div class="dsn-grid-layout dsn-grid section-image section-move-image align-items-center use-horizontal-scroll-image"
                 data-dsn-option='{"start":"100%","end":"0%","pin":false}'>
 
                 @foreach ($brands as $brand)
