@@ -30,9 +30,9 @@
                             <a href="https://dsngrid.com/blackdsn/" data-dsn-text="Blackdsn"
                                 class="custom-logo-link main-brand effect-ajax" rel="home">
                                 <img class="custom-logo logo-light"
-                                    src= "{{ asset('front_asset/assets/img/logo-light.png') }}" alt="Blackdsn">
+                                    src= "{{ asset('front_asset/assets/img/logo-light.png') }}" alt="Digital Media Factory">
                                 <img class="custom-logo logo-dark" src= "{{ asset('front_asset/assets/img/logo.png') }}"
-                                    alt="Blackdsn">
+                                    alt="Digital Media Factory">
                             </a>
                         </div>
                     </div>

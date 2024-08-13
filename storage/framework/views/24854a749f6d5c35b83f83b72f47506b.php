@@ -6,7 +6,7 @@
     <link rel="icon" href="<?php echo e(asset('front_asset/assets/img/logo-32x32.png')); ?>" sizes="32x32">
     <link rel="icon" href= "<?php echo e(asset('front_asset/assets/img/logo-192x192.png')); ?>" sizes="192x192">
 
-    <title>Main Home | Blackdsn</title>
+    <title>Main Home | DMF</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
     <link href="<?php echo e(asset('front_asset/assets/css/plugins.css')); ?>" rel="stylesheet">

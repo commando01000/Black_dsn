@@ -175,7 +175,7 @@
                     </div>
                 </div>
                 <div class="list-with-number icon-top dsn-icon-theme-color">
-                    <div class="dsn-service d-grid grid-lg-3 grid-sm-2 dsn-masonry-grid dsn-masonry-grid-2 dsn-isotope "
+                    <div class="dsn-service d-grid grid-lg-3 grid-sm-2 dsn-masonry-grid dsn-masonry-grid-2 dsn-isotope"
                         data-dsn-iconsize="80px">
 
                         @foreach ($services as $service)
@@ -187,7 +187,7 @@
                                     </div>
                                     <div class="service-content p-relative">
                                         <h4 class="service_title  title-block border-bottom pb-20 mb-20">
-                                            {{ $service->title }}</h4>
+                                            {{ $service->category->name }}</h4>
                                         <div class="service_description mt-20 max-w570 dsn-auto">
                                             <p>
                                                 {{ $service->short_description }}
@@ -195,7 +195,7 @@
                                         </div>
                                         <div class="d-flex mt-20 dsn-def-btn dsn-hover-icon">
                                             <a class='effect-ajax dsn-btn dsn-border border-color-default background-section has-icon-right'
-                                                href='service.html'>
+                                                href='{{ route('services') }}'>
                                                 <span class="title-btn p-relative  z-index-1 heading-color">LEARN
                                                     MORE</span>
                                                 <span
@@ -413,7 +413,6 @@
                     </div>
                 </div>
             </div>
-
             <!-- ========== End background Box Image ========== -->
 
             <!-- ========== testimonials ========== -->
@@ -815,45 +814,49 @@
                     <div class="root-posts">
                         <div class="dsn-posts dsn-post-type-classic h-350">
                             <div class="has-parallax-image dsn-swiper p-relative"
-                                data-dsn-option='{"slidesPerView":4,"spaceBetween":5,"centeredSlides":false,"allowTouchMove": false'>
+                                data-dsn-option='{"slidesPerView":4,"spaceBetween":5,"centeredSlides":false, "autoplay": {"delay": 5000, "disableOnInteraction": false}}'>
                                 <div class="swiper-container">
                                     <div class="swiper-wrapper">
                                         @foreach ($OurTeam as $team_member)
-                                        <article class="dsn-item-post grid-item over-hidden p-relative box-hover-image swiper-slide">
-                                            <div class="box-content team-item-inner background-main d-flex">
-                                                <div class="box-image-bg before-z-index dsn-swiper-parallax-transform" data-overlay="0">
-                                                    <img class="cover-bg-img team-member-img"
-                                                        src="{{ Storage::url($team_member->image) }}"
-                                                        alt="{{ $team_member->title }}">
+                                            <article
+                                                class="dsn-item-post grid-item over-hidden p-relative box-hover-image swiper-slide">
+                                                <div class="box-content team-item-inner background-main d-flex">
+                                                    <div class="box-image-bg before-z-index dsn-swiper-parallax-transform"
+                                                        data-overlay="0">
+                                                        <img class="cover-bg-img team-member-img"
+                                                            src="{{ Storage::url($team_member->image) }}"
+                                                            alt="{{ $team_member->title }}">
+                                                    </div>
+                                                    <div class="team-content border-before text-center">
+                                                        <h4 class="text-name sm-title-block">{{ $team_member->title }}
+                                                        </h4>
+                                                        <span class="text-position">{{ $team_member->position }}</span>
+                                                        <ul style="z-index: 99999"
+                                                            class="team-socials dsn-socials box-social">
+                                                            <li>
+                                                                <a href="#0" target="_blank" rel="nofollow">
+                                                                    <i class="fab fa-facebook-f"></i>
+                                                                    <span>Facebook</span>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#0" target="_blank" rel="nofollow">
+                                                                    <i class="fab fa-instagram"></i>
+                                                                    <span>Instagram</span>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#0" target="_blank" rel="nofollow">
+                                                                    <i class="fab fa-linkedin-in"></i>
+                                                                    <span>LinkedIn</span>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
                                                 </div>
-                                                <div class="team-content border-before text-center">
-                                                    <h4 class="text-name sm-title-block">{{ $team_member->title }}</h4>
-                                                    <span class="text-position">{{ $team_member->position }}</span>
-                                                    <ul style="z-index: 99999" class="team-socials dsn-socials box-social">
-                                                        <li>
-                                                            <a href="#0" target="_blank" rel="nofollow">
-                                                                <i class="fab fa-facebook-f"></i>
-                                                                <span>Facebook</span>
-                                                            </a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="#0" target="_blank" rel="nofollow">
-                                                                <i class="fab fa-instagram"></i>
-                                                                <span>Instagram</span>
-                                                            </a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="#0" target="_blank" rel="nofollow">
-                                                                <i class="fab fa-linkedin-in"></i>
-                                                                <span>LinkedIn</span>
-                                                            </a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </article>
+                                            </article>
                                         @endforeach
-                                        
+
                                     </div>
                                     <div
                                         class="dsn-swiper-paginate d-flex p-relative w-100 h-100 mt-50 align-items-center dsn-container justify-content-between">

@@ -19,13 +19,14 @@ class Services_frontController extends Controller
     public function seeAllServices(Request $request)
     {
         // get all services
-        $services = Service::take(6)->get();
+        $services = Service::with('category')->get();
+        $categories = CategoryService::with('services')->get();
         // get testimonial slider data
         $testimonials = Testimonial::take(4)->get();
 
         // get the brands
         $brands = Statistic::where('id', '>', 29)->get();
-        return view('front.services.index', compact('services', 'testimonials', 'brands'));
+        return view('front.services.index', compact('services', 'testimonials', 'brands', 'categories'));
     }
 
     public function viewService($slug)

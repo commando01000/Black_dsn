@@ -36,6 +36,22 @@
                             'data-trigger',
                         ]) !!}
                     </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            {{ Form::label('description', __('Short Description'), ['class' => 'form-label']) }}
+                            *
+                            {!! Form::textarea('description', null, [
+                                'class' => 'form-control ',
+                                'placeholder' => __('Enter short description'),
+                            ]) !!}
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            {{ Form::label('images', __('cover'), ['class' => 'form-label']) }} *
+                            {!! Form::file('cover', ['class' => 'form-control', 'required' => 'required']) !!}
+                        </div>
+                    </div>
                 </div>
                 <div class="card-footer">
                     <div class="text-end">

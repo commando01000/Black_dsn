@@ -36,9 +36,17 @@ class ServiceCategoryController extends Controller
                 'name'   => 'required|max:191|unique:blog_categories',
                 'status' => 'required',
             ]);
+            if ($request->hasFile('cover')) {
+                request()->validate([
+                    'cover' => 'mimes:jpg,jpeg,png,gif',
+                ]);
+                $path = $request->file('cover')->store('services');
+            }
             CategoryService::create([
                 'name'   => $request->name,
-                'status' => $request->status
+                'description' => $request->description,
+                'status' => $request->status,
+                'cover' => $path
             ]);
             return redirect()->route('service-category.index')->with('success', __('Category created successfully.'));
         } else {

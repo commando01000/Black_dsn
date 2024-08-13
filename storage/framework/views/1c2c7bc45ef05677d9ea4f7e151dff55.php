@@ -56,10 +56,10 @@
                         Let’s Check <b>Our Services</b>
                     </h3>
                     <ul class="d-grid grid-sm-2 mt-30 dsn-list">
-                        <?php $__currentLoopData = $services; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $service): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                        <?php $__currentLoopData = $categories; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $category): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                             <li class="list-item grid-item d-flex align-items-center">
                                 <span class="dsn-icon mr-15"><i class="far fa-circle" aria-hidden="true"></i></span>
-                                <p class="dsn-heading-title  "><?php echo e($service->title); ?></p>
+                                <p class="dsn-heading-title  "><?php echo e($category->name); ?></p>
                             </li>
                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                     </ul>
@@ -108,159 +108,108 @@
         </div>
         <!-- ========== End About Section ========== -->
 
-
         <!-- ========== Info Service ========== -->
-        <div class="pt-section mb-section background-section">
-            <div class="container">
-                <div class="d-grid grid-md-2" data-dsn-gap="30px 60px">
-                    <div class="left">
-                        <h5 class="title-h2 body-font text-upper">
-                            <?php echo e(Utility::getsettings('services.what.we.do.title')); ?>
-
-                        </h5>
-                        <p class="mt-20 text-left justified-text">
-                            <?php echo e(Utility::getsettings('services.what.we.do.short-description')); ?>
-
-                        </p>
-                    </div>
-                    <div class="right align-self-end">
-                        <p class="justified-text">
-                            <?php echo e(Utility::getsettings('services.what.we.do.main-description')); ?>
-
-                        </p>
-                        <p class="mt-20 justified-text">
-                            <?php echo e(Utility::getsettings('services.what.we.do.sub-description')); ?>
-
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="p-relative box-img">
-                <div class="p-relative container d-grid grid-1-half mt-50 z-index-2">
-                    <img src="<?php echo e(Storage::url(Utility::getsettings('services.what.we.do.background_1'))); ?>"
-                        alt="<?php echo e(Utility::getsettings('services.what.we.do.title')); ?>">
-                    <img class="d-sm-none"
-                        src="<?php echo e(Storage::url(Utility::getsettings('services.what.we.do.background_2'))); ?>"
-                        alt="<?php echo e(Utility::getsettings('services.what.we.do.title')); ?>">
-                </div>
-
-                <div class="dsn-bg-mask background-main h-50 bottom-0 z-index-1"></div>
-            </div>
-        </div>
+        
         <!-- ========== End Info Service ========== -->
 
         <!-- ==========  According ========== -->
-        <div class="container section-margin d-grid grid-md-2" data-dsn-gap="30px 120px">
-            <div class="box-left p-relative  pinned-scroll" data-dsn-option='{"end":"250"}'>
-                <div class="section-title  pinned-element">
-                    <h2 class="title-h2 text-upper"><?php echo e(Utility::getsettings('our-target.title')); ?></h2>
-                    <p class="max-w570 mt-20 justified-text">
-                        <?php echo e(Utility::getsettings('our-target.description')); ?>
-
-                    </p>
-                </div>
-            </div>
-            <div class="box-right">
-                <div class="dsn-accordion" role="tablist">
-                    <div class="accordion__wrapper">
-
-                        <div class="accordion__item  active">
-                            <div class="accordion__question user-no-selection expanded d-flex align-items-center  ">
-                                <span class="number background-theme h6">1</span>
-                                <h6 class="sm-title-block tab-title heading-color" role="tab" data-tab="0">Our
-                                    Vision</h6>
-                            </div>
-                            <div class="accordion__answer tab-description active" role="tabpanel" data-tab="0">
-                                <p class="text-left justified-text">
-                                    <?php echo e(Utility::getsettings('our-target.vision-description')); ?></p>
-                            </div>
-                        </div>
-
-
-                        <div class="accordion__item  ">
-                            <div class="accordion__question user-no-selection  d-flex align-items-center  ">
-                                <span class="number background-theme h6">2</span>
-                                <h6 class="sm-title-block tab-title heading-color" role="tab" data-tab="1">Our
-                                    goals</h6>
-                            </div>
-                            <div class="accordion__answer tab-description" role="tabpanel" data-tab="1">
-                                <p class="text-left justified-text">
-                                    <?php echo e(Utility::getsettings('our-target.goal-description')); ?></p>
-                            </div>
-                        </div>
-
-
-                        <div class="accordion__item  ">
-                            <div class="accordion__question user-no-selection  d-flex align-items-center  ">
-                                <span class="number background-theme h6">3</span>
-                                <h6 class="sm-title-block tab-title heading-color" role="tab" data-tab="2">Our
-                                    Mission</h6>
-                            </div>
-                            <div class="accordion__answer tab-description" role="tabpanel" data-tab="2">
-                                <p class="text-left justified-text">
-                                    <?php echo e(Utility::getsettings('our-target.mission-description')); ?></p>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
+        
         <!-- ========== End According ========== -->
 
-        <!-- ========== Team ========== -->
-        <div class="dsn-container over-hidden background-section section-padding ">
-            <div class="section-title container d-flex  mb-70">
-                <div class="sub-section-title">
-                    <p class="description d-inline-block  circle-before mb-10">Our Team </p>
-                    <h2 class="title-h2 dsn-heading-title p-relative title-block-lg d-block    heading-color">
-                        The best team ever!
-                    </h2>
+
+        <!-- ========== Service ========== -->
+        <div class="container section-margin">
+            <div class="section-title mb-70 d-grid grid-md-2 ">
+                <div class=" d-flex">
+                    <div class="sub-section-title ">
+                        <p class="description d-inline-block p-relative circle-before mb-10">
+                            <span>advantages</span>
+                        </p>
+                        <span class="title-h2 title-block-lg d-block heading-color">
+                            <span>Let’s Check <b>Our Services</b></span>
+                        </span>
+                    </div>
                 </div>
             </div>
-            <div class="d-grid grid-lg-4 grid-sm-2 dsn-team v-dark-head">
-                <?php $__currentLoopData = $testimonials; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $testimonial): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                    <div class="team-item p-relative grid-item box-hover-image">
-                        <div class="team-item-inner background-main">
-                            <div class="avatar box-img" data-overlay="4">
-                                <img class="cover-bg-img" src="<?php echo e(Storage::url($testimonial->image)); ?>"
-                                    alt="<?php echo e($testimonial->title); ?>">
+
+            <div class="list-with-number dsn-swiper icon-top dsn-container dsn-icon-theme-color"
+                data-dsn-option='{"slidesPerView":1,"spaceBetween":0,"centeredSlides":false,"loop":true,"autoplay":{"delay":5000,"disableOnInteraction":false}}'>
+                <div class="dsn-service swiper-container">
+                    <div class="swiper-wrapper">
+                        <?php $__currentLoopData = $categories; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $category): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                            <div class="swiper-slide">
+                                <div class="dsn-up service-item p-relative style-box">
+                                    <div class="service-item-inner border-style number-item h-100">
+                                        <div class="dsn-icon">
+                                            <img style="width: 80px; height:80px;"
+                                                src="<?php echo e(Storage::url($category->cover)); ?>" alt="<?php echo e($category->name); ?>">
+                                        </div>
+                                        <div class="service-content p-relative">
+                                            <h4 class="service_title title-block border-bottom pb-20 mb-20">
+                                                <?php echo e($category->name); ?></h4>
+                                            <div class="service_description mt-20 max-w570 dsn-auto">
+                                                <p><?php echo e($category->description); ?></p>
+                                            </div>
+                                            <div class="d-flex mt-20 dsn-def-btn dsn-hover-icon">
+                                                <a class='effect-ajax dsn-btn dsn-border border-color-default background-section has-icon-right'
+                                                    href='#'>
+                                                    <span class="title-btn p-relative z-index-1 heading-color">LEARN
+                                                        MORE</span>
+                                                    <span
+                                                        class="dsn-icon dsn-bg-before btn-icon-right heading-color z-index-1">
+                                                        <i class="fas fa-angle-right"></i>
+                                                    </span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="team-content border-before text-center">
-                                <h4 class="text-name sm-title-block"><?php echo e($testimonial->title); ?></h4>
-                                <span class="text-position"><?php echo e($testimonial->position); ?></span>
-                                <ul class="team-socials dsn-socials box-social">
-                                    <?php if($testimonial->facebook): ?>
-                                        <li>
-                                            <a href="#" target="_blank" rel="nofollow">
-                                                <i class="fab fa-facebook-f"></i>
-                                                <span>Facebook</span>
-                                            </a>
-                                        </li>
-                                    <?php endif; ?>
-                                    <?php if($testimonial->instagram): ?>
-                                        <li>
-                                            <a href="#" target="_blank" rel="nofollow">
-                                                <i class="fab fa-instagram"></i>
-                                                <span>Instagram</span>
-                                            </a>
-                                        </li>
-                                    <?php endif; ?>
-                                    <?php if($testimonial->linkedin): ?>
-                                        <li>
-                                            <a href="#" target="_blank" rel="nofollow">
-                                                <i class="fab fa-linkedin-in"></i>
-                                                <span>LinkedIn</span>
-                                            </a>
-                                        </li>
-                                    <?php endif; ?>
-                                </ul>
+                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                    </div>
+
+                    <!-- Swiper Pagination and Navigation -->
+                    <div
+                        class="dsn-swiper-paginate d-flex p-relative w-100 h-100 mt-50 align-items-center dsn-container justify-content-between">
+                        <div class="swiper-prev">
+                            <div class="prev-container">
+                                <div class="container-inner">
+                                    <div class="triangle"></div>
+                                    <svg class="circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <g class="circle-wrap" fill="none" stroke-width="1" stroke-linejoin="round"
+                                            stroke-miterlimit="10">
+                                            <circle cx="12" cy="12" r="10.5"></circle>
+                                        </g>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-pagination mr-30 ml-30 heading-color" data-dsn-type="progressbar"></div>
+                        <div class="swiper-next">
+                            <div class="next-container">
+                                <div class="container-inner">
+                                    <div class="triangle"></div>
+                                    <svg class="circle" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                        viewBox="0 0 24 24">
+                                        <g class="circle-wrap" fill="none" stroke-width="1" stroke-linejoin="round"
+                                            stroke-miterlimit="10">
+                                            <circle cx="12" cy="12" r="10.5"></circle>
+                                        </g>
+                                    </svg>
+                                </div>
                             </div>
                         </div>
                     </div>
-                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                </div>
             </div>
         </div>
+        <!-- ========== End Service ========== -->
+
+
+
+
+        <!-- ========== Team ========== -->
+        
         <!-- ========== End Team ========== -->
 
         <!-- ========== Brand ========== -->
@@ -271,8 +220,7 @@
                 <?php $__currentLoopData = $brands; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $brand): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                     <div class="grid-item">
                         <div class="image-item">
-                            <img class="cover-bg-img" src="<?php echo e(Storage::url($brand->cover)); ?>"
-                                alt="<?php echo e($brand->title); ?>">
+                            <img class="cover-bg-img" src="<?php echo e(Storage::url($brand->cover)); ?>" alt="<?php echo e($brand->title); ?>">
                         </div>
                     </div>
                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>

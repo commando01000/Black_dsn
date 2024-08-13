@@ -54,10 +54,10 @@
                         Let’s Check <b>Our Services</b>
                     </h3>
                     <ul class="d-grid grid-sm-2 mt-30 dsn-list">
-                        @foreach ($services as $service)
+                        @foreach ($categories as $category)
                             <li class="list-item grid-item d-flex align-items-center">
                                 <span class="dsn-icon mr-15"><i class="far fa-circle" aria-hidden="true"></i></span>
-                                <p class="dsn-heading-title  ">{{ $service->title }}</p>
+                                <p class="dsn-heading-title  ">{{ $category->name }}</p>
                             </li>
                         @endforeach
                     </ul>
@@ -106,9 +106,8 @@
         </div>
         <!-- ========== End About Section ========== -->
 
-
         <!-- ========== Info Service ========== -->
-        <div class="pt-section mb-section background-section">
+        {{-- <div class="pt-section mb-section background-section">
             <div class="container">
                 <div class="d-grid grid-md-2" data-dsn-gap="30px 60px">
                     <div class="left">
@@ -140,11 +139,11 @@
 
                 <div class="dsn-bg-mask background-main h-50 bottom-0 z-index-1"></div>
             </div>
-        </div>
+        </div> --}}
         <!-- ========== End Info Service ========== -->
 
         <!-- ==========  According ========== -->
-        <div class="container section-margin d-grid grid-md-2" data-dsn-gap="30px 120px">
+        {{-- <div class="container section-margin d-grid grid-md-2" data-dsn-gap="30px 120px">
             <div class="box-left p-relative  pinned-scroll" data-dsn-option='{"end":"250"}'>
                 <div class="section-title  pinned-element">
                     <h2 class="title-h2 text-upper">{{ Utility::getsettings('our-target.title') }}</h2>
@@ -198,11 +197,103 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
         <!-- ========== End According ========== -->
 
+
+        <!-- ========== Service ========== -->
+        <div class="container section-margin">
+            <div class="section-title mb-70 d-grid grid-md-2 ">
+                <div class=" d-flex">
+                    <div class="sub-section-title ">
+                        <p class="description d-inline-block p-relative circle-before mb-10">
+                            <span>advantages</span>
+                        </p>
+                        <span class="title-h2 title-block-lg d-block heading-color">
+                            <span>Let’s Check <b>Our Services</b></span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="list-with-number dsn-swiper icon-top dsn-container dsn-icon-theme-color"
+                data-dsn-option='{"slidesPerView":1,"spaceBetween":0,"centeredSlides":false,"loop":true,"autoplay":{"delay":5000,"disableOnInteraction":false}}'>
+                <div class="dsn-service swiper-container">
+                    <div class="swiper-wrapper">
+                        @foreach ($categories as $category)
+                            <div class="swiper-slide">
+                                <div class="dsn-up service-item p-relative style-box">
+                                    <div class="service-item-inner border-style number-item h-100">
+                                        <div class="dsn-icon">
+                                            <img style="width: 80px; height:80px;"
+                                                src="{{ Storage::url($category->cover) }}" alt="{{ $category->name }}">
+                                        </div>
+                                        <div class="service-content p-relative">
+                                            <h4 class="service_title title-block border-bottom pb-20 mb-20">
+                                                {{ $category->name }}</h4>
+                                            <div class="service_description mt-20 max-w570 dsn-auto">
+                                                <p>{{ $category->description }}</p>
+                                            </div>
+                                            <div class="d-flex mt-20 dsn-def-btn dsn-hover-icon">
+                                                <a class='effect-ajax dsn-btn dsn-border border-color-default background-section has-icon-right'
+                                                    href='#'>
+                                                    <span class="title-btn p-relative z-index-1 heading-color">LEARN
+                                                        MORE</span>
+                                                    <span
+                                                        class="dsn-icon dsn-bg-before btn-icon-right heading-color z-index-1">
+                                                        <i class="fas fa-angle-right"></i>
+                                                    </span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
+
+                    <!-- Swiper Pagination and Navigation -->
+                    <div
+                        class="dsn-swiper-paginate d-flex p-relative w-100 h-100 mt-50 align-items-center dsn-container justify-content-between">
+                        <div class="swiper-prev">
+                            <div class="prev-container">
+                                <div class="container-inner">
+                                    <div class="triangle"></div>
+                                    <svg class="circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <g class="circle-wrap" fill="none" stroke-width="1" stroke-linejoin="round"
+                                            stroke-miterlimit="10">
+                                            <circle cx="12" cy="12" r="10.5"></circle>
+                                        </g>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-pagination mr-30 ml-30 heading-color" data-dsn-type="progressbar"></div>
+                        <div class="swiper-next">
+                            <div class="next-container">
+                                <div class="container-inner">
+                                    <div class="triangle"></div>
+                                    <svg class="circle" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                        viewBox="0 0 24 24">
+                                        <g class="circle-wrap" fill="none" stroke-width="1" stroke-linejoin="round"
+                                            stroke-miterlimit="10">
+                                            <circle cx="12" cy="12" r="10.5"></circle>
+                                        </g>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ========== End Service ========== -->
+
+
+
+
         <!-- ========== Team ========== -->
-        <div class="dsn-container over-hidden background-section section-padding ">
+        {{-- <div class="dsn-container over-hidden background-section section-padding ">
             <div class="section-title container d-flex  mb-70">
                 <div class="sub-section-title">
                     <p class="description d-inline-block  circle-before mb-10">Our Team </p>
@@ -253,7 +344,7 @@
                     </div>
                 @endforeach
             </div>
-        </div>
+        </div> --}}
         <!-- ========== End Team ========== -->
 
         <!-- ========== Brand ========== -->
@@ -264,8 +355,7 @@
                 @foreach ($brands as $brand)
                     <div class="grid-item">
                         <div class="image-item">
-                            <img class="cover-bg-img" src="{{ Storage::url($brand->cover) }}"
-                                alt="{{ $brand->title }}">
+                            <img class="cover-bg-img" src="{{ Storage::url($brand->cover) }}" alt="{{ $brand->title }}">
                         </div>
                     </div>
                 @endforeach

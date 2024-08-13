@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Facades\UtilityFacades;
 use App\Models\advertisement;
 use App\Models\Blog;
+use App\Models\CategoryService;
 use App\Models\Client;
 use App\Models\ClientCategory;
 use App\Models\Design;
@@ -26,7 +27,7 @@ class Home_frontController extends Controller
         $designs = Design::first()->take(6)->get();
         // get 3 statistics
         $statistics = Statistic::take(3)->get();
-        $services = Service::take(3)->get();
+        $services = Service::with('category')->take(3)->get();
         // get the one before the latest design
         $latestDesign = Design::latest()->first();
         $about = Design::where('id', '<', $latestDesign->id)->latest()->first();
