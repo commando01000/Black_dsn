@@ -263,7 +263,7 @@
             <!-- ========== End About Section One ========== -->
 
             <!-- ========== Portfolio ========== -->
-            <div class="p-relative mt-section background-section section-padding">
+            {{-- <div class="p-relative mt-section background-section section-padding">
                 <div class="background-overlay bg-1"></div>
                 <div class="container section-title mb-70 d-grid grid-md-2 ">
                     <div class=" d-flex">
@@ -384,7 +384,7 @@
                     </div>
                 </div>
 
-            </div>
+            </div> --}}
             <!-- ========== End Portfolio ========== -->
 
             <!-- ========== background Box Image ========== -->
@@ -815,33 +815,45 @@
                     <div class="root-posts">
                         <div class="dsn-posts dsn-post-type-classic h-350">
                             <div class="has-parallax-image dsn-swiper p-relative"
-                                data-dsn-option='{"slidesPerView":2.5,"spaceBetween":30,"centeredSlides":false, "autoplay": {"delay": 5000, "disableOnInteraction": false}}'>
+                                data-dsn-option='{"slidesPerView":4,"spaceBetween":5,"centeredSlides":false,"allowTouchMove": false'>
                                 <div class="swiper-container">
                                     <div class="swiper-wrapper">
                                         @foreach ($OurTeam as $team_member)
-                                            <article
-                                                class="dsn-item-post grid-item over-hidden p-relative box-hover-image swiper-slide">
-                                                <div class="box-content d-flex">
-                                                    <div class="box-image-bg before-z-index dsn-swiper-parallax-transform"
-                                                        data-overlay="4">
-                                                        <img class="cover-bg-img"
-                                                            src="{{ Storage::url($team_member->image) }}"
-                                                            alt="{{ $team_member->name }}">
-                                                    </div>
-                                                    <div
-                                                        class="post-content dsn-bg p-relative z-index-1 d-flex flex-column">
-                                                        <div class="post-title-info">
-                                                            <h5 class="post-title title-block">
-                                                                {{ $team_member->title }}
-                                                            </h5>
-                                                            <p class="post-meta">
-                                                                {{ $team_member->position }}
-                                                            </p>
-                                                        </div>
-                                                    </div>
+                                        <article class="dsn-item-post grid-item over-hidden p-relative box-hover-image swiper-slide">
+                                            <div class="box-content team-item-inner background-main d-flex">
+                                                <div class="box-image-bg before-z-index dsn-swiper-parallax-transform" data-overlay="0">
+                                                    <img class="cover-bg-img team-member-img"
+                                                        src="{{ Storage::url($team_member->image) }}"
+                                                        alt="{{ $team_member->title }}">
                                                 </div>
-                                            </article>
+                                                <div class="team-content border-before text-center">
+                                                    <h4 class="text-name sm-title-block">{{ $team_member->title }}</h4>
+                                                    <span class="text-position">{{ $team_member->position }}</span>
+                                                    <ul style="z-index: 99999" class="team-socials dsn-socials box-social">
+                                                        <li>
+                                                            <a href="#0" target="_blank" rel="nofollow">
+                                                                <i class="fab fa-facebook-f"></i>
+                                                                <span>Facebook</span>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#0" target="_blank" rel="nofollow">
+                                                                <i class="fab fa-instagram"></i>
+                                                                <span>Instagram</span>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#0" target="_blank" rel="nofollow">
+                                                                <i class="fab fa-linkedin-in"></i>
+                                                                <span>LinkedIn</span>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </article>
                                         @endforeach
+                                        
                                     </div>
                                     <div
                                         class="dsn-swiper-paginate d-flex p-relative w-100 h-100 mt-50 align-items-center dsn-container justify-content-between">

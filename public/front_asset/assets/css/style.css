@@ -7473,4 +7473,95 @@ body.tax-product_cat #dsn_header {
     text-align-last: left;
     word-spacing: 0.05em;
 }
+/* General Styles */
+.swiper-slide {
+    padding: 0 2px; /* Minimal padding to reduce the gap between slides */
+    margin: 0; /* Remove margin */
+    width: auto; /* Ensure the width is automatically adjusted */
+    flex-shrink: 0; /* Prevent shrinking of slides */
+}
+
+.team-member-img {
+    width: 100%; /* Ensure the image takes up the full width of the container */
+    height: 400px; /* Keep the height consistent */
+    object-fit: cover; /* Ensure the images cover the container without distortion */
+}
+
+.box-content {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.team-item-inner {
+    position: relative;
+    overflow: hidden;
+    background-color: #000;
+    border-radius: 8px; /* Smaller border radius for rounded corners */
+    cursor: default; /* Default cursor */
+}
+
+.team-content {
+    position: absolute;
+    bottom: 0px; /* Adjust bottom to be inside the border */
+    left: 10px; /* Adjust left to be inside the border */
+    right: 10px; /* Adjust right to be inside the border */
+    background-color: rgba(
+        0,
+        0,
+        0,
+        0.7
+    ); /* Semi-transparent black background */
+    color: white;
+    padding: 5px; /* Padding around content */
+    text-align: center;
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.3s ease; /* Smooth transition on hover */
+    border-radius: 8px; /* Match the border radius */
+}
+
+.team-item-inner:hover .team-content {
+    opacity: 1; /* Show on hover */
+    cursor: pointer !important;
+}
+
+/* Cool Hover Effect on Social Icons */
+.team-content .team-socials li {
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.team-content .team-socials a {
+    color: white;
+    margin: 0 5px;
+    margin-top: 10px;
+    font-size: 16px;
+    cursor: pointer; /* Keep pointer cursor for social icons */
+    text-decoration: none;
+    display: inline-block;
+    z-index: 99999;
+    transition: transform 0.3s ease, color 0.3s ease; /* Smooth transition for transform and color */
+}
+
+.team-content .team-socials a i {
+    margin-top: 20px;
+}
+
+.team-content .team-socials a:hover {
+    transform: scale(1.2) rotate(10deg); /* Scale up and rotate slightly */
+    color: #ddd; /* Lighter color on hover */
+    border: 0; /* Remove border */
+}
+
+.team-content .text-name {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.team-content .text-position {
+    font-size: 14px;
+    color: #ccc;
+}
+
 /*# sourceMappingURL=style.css.map */

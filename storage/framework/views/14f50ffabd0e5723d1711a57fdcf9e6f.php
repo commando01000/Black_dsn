@@ -232,10 +232,10 @@
                     <div class="nav-social-inner p-relative">
                         <h5 class="sm-title-block mb-10">Follow us</h5>
                         <ul style="--dsn-li-name: dsn6;">
-                            <li style="--dsn-li-index: 0;"><a href="<?php echo e(Utility::getsettings('contact_dribble')); ?>"
-                                    target="_blank" rel="nofollow noopener noreferrer">Dribble.</a></li>
-                            <li style="--dsn-li-index: 1;"><a href="<?php echo e(Utility::getsettings('contact_behance')); ?>"
-                                    target="_blank" rel="nofollow noopener noreferrer">Behance.</a></li>
+                            <li style="--dsn-li-index: 0;"><a href="<?php echo e(Utility::getsettings('contact_facebook')); ?>"
+                                    target="_blank" rel="nofollow noopener noreferrer">Facebook.</a></li>
+                            <li style="--dsn-li-index: 1;"><a href="<?php echo e(Utility::getsettings('contact_instagram')); ?>"
+                                    target="_blank" rel="nofollow noopener noreferrer">Instagram.</a></li>
                             <li style="--dsn-li-index: 2;"><a href="<?php echo e(Utility::getsettings('contact_linkedin')); ?>"
                                     target="_blank" rel="nofollow noopener noreferrer">Linkedin.</a></li>
                             <li style="--dsn-li-index: 3;"><a href="<?php echo e(Utility::getsettings('contact_twitter')); ?>"

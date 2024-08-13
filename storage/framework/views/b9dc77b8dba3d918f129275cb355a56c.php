@@ -225,129 +225,7 @@
             <!-- ========== End About Section One ========== -->
 
             <!-- ========== Portfolio ========== -->
-            <div class="p-relative mt-section background-section section-padding">
-                <div class="background-overlay bg-1"></div>
-                <div class="container section-title mb-70 d-grid grid-md-2 ">
-                    <div class=" d-flex">
-                        <div class="sub-section-title ">
-                            <p class="description d-inline-block p-relative circle-before mb-10">
-                                <span>OUR WORK</span>
-                            </p>
-                            <span class="title-h2 title-block-lg d-block heading-color">
-                                <span>Our latest <br><b>AWESOME DESIGNS </b></span>
-                            </span>
-                        </div>
-                    </div>
-                    <div class="dsn-def-btn dsn-icon-heading-color align-self-end justify-self-end">
-                        <a class="dsn-btn dsn-border border-color-default  background-main effect-ajax effect-ajax  move-circle has-icon-left"
-                            href="work-col-3.html" data-dsn-text="Service" data-dsn="parallax"> <span
-                                class="dsn-icon dsn-bg-before btn-icon-left heading-color z-index-1"><i
-                                    class="fas fa-angle-right"></i></span> <span
-                                class="title-btn p-relative  z-index-1 heading-color">VIEW ALL Work</span> </a>
-                    </div>
-                </div>
-                <div class="p-relative dsn-style-classic dsn-container dsn-right-container">
-                    <div class="root-posts">
-                        <div class="dsn-posts dsn-post-type-classic h-350">
-                            <div class="has-parallax-image dsn-swiper p-relative"
-                                data-dsn-option='{"slidesPerView":2.5,"spaceBetween":30,"centeredSlides":false, "autoplay": {"delay": 5000, "disableOnInteraction": false}}'>
-                                <div class="swiper-container">
-                                    <div class="swiper-wrapper">
-                                        <?php $__currentLoopData = $designs; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $design): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                            <article
-                                                class="dsn-item-post grid-item over-hidden p-relative box-hover-image swiper-slide">
-                                                <div class="box-content d-flex">
-                                                    <a class='effect-ajax box-image-link bg-shadow' data-dsn-ajax='work'
-                                                        href="<?php echo e(route('design.show', $design->id)); ?>"
-                                                        title="<?php echo e($design->title); ?>">
-                                                        <div class="box-image-bg before-z-index dsn-swiper-parallax-transform"
-                                                            data-overlay="4">
-                                                            <img class="cover-bg-img"
-                                                                src="<?php echo e(Storage::url($design->cover)); ?>"
-                                                                alt="<?php echo e($design->title); ?>">
-                                                        </div>
-                                                    </a>
-                                                    <div
-                                                        class="post-content dsn-bg p-relative z-index-1 d-flex flex-column">
-                                                        <div class="post-title-info">
-                                                            <div class="post-meta max-w750">
-                                                                <div
-                                                                    class="p-relative d-inline-block dsn-category dsn-bg metas mb-10 entry-meta">
-                                                                    <span
-                                                                        data-separator=" & "><?php echo e($design->category->name); ?></span>
-                                                                </div>
-                                                            </div>
-                                                            <h2 class="post-title title-block">
-                                                                <a class='effect-ajax' data-dsn-ajax='work'
-                                                                    href="<?php echo e(route('design.show', $design->id)); ?>">
-                                                                    <?php echo e($design->title); ?>
-
-                                                                </a>
-                                                            </h2>
-                                                        </div>
-
-                                                        <div class="post-description-info">
-                                                            <div class="d-flex mt-20 dsn-def-btn dsn-hover-icon">
-                                                                <a class='effect-ajax dsn-btn dsn-border border-color-default background-section has-icon-left'
-                                                                    data-dsn-ajax='work'
-                                                                    href="<?php echo e(route('design.show', $design->id)); ?>">
-                                                                    <span
-                                                                        class="dsn-icon dsn-bg-before btn-icon-left heading-color z-index-1">
-                                                                        <i class="fas fa-angle-right"></i>
-                                                                    </span>
-                                                                    <span
-                                                                        class="title-btn p-relative  z-index-1 heading-color">
-                                                                        View Case
-                                                                    </span>
-                                                                </a>
-                                                            </div>
-                                                        </div>
-
-                                                    </div>
-                                                </div>
-                                            </article>
-                                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                                    </div>
-                                    <div
-                                        class="dsn-swiper-paginate d-flex p-relative w-100 h-100 mt-50 align-items-center dsn-container justify-content-between">
-                                        <div class="swiper-prev">
-                                            <div class="prev-container">
-                                                <div class="container-inner">
-                                                    <div class="triangle"></div>
-                                                    <svg class="circle" xmlns="http://www.w3.org/2000/svg"
-                                                        viewbox="0 0 24 24">
-                                                        <g class="circle-wrap" fill="none" stroke-width="1"
-                                                            stroke-linejoin="round" stroke-miterlimit="10">
-                                                            <circle cx="12" cy="12" r="10.5"></circle>
-                                                        </g>
-                                                    </svg>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="swiper-pagination mr-30 ml-30 heading-color"
-                                            data-dsn-type="progressbar"></div>
-                                        <div class="swiper-next">
-                                            <div class="next-container">
-                                                <div class="container-inner">
-                                                    <div class="triangle"></div>
-                                                    <svg class="circle" xmlns="http://www.w3.org/2000/svg" width="24"
-                                                        height="24" viewbox="0 0 24 24">
-                                                        <g class="circle-wrap" fill="none" stroke-width="1"
-                                                            stroke-linejoin="round" stroke-miterlimit="10">
-                                                            <circle cx="12" cy="12" r="10.5"></circle>
-                                                        </g>
-                                                    </svg>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
+            
             <!-- ========== End Portfolio ========== -->
 
             <!-- ========== background Box Image ========== -->
@@ -755,35 +633,45 @@
                     <div class="root-posts">
                         <div class="dsn-posts dsn-post-type-classic h-350">
                             <div class="has-parallax-image dsn-swiper p-relative"
-                                data-dsn-option='{"slidesPerView":2.5,"spaceBetween":30,"centeredSlides":false, "autoplay": {"delay": 5000, "disableOnInteraction": false}}'>
+                                data-dsn-option='{"slidesPerView":4,"spaceBetween":5,"centeredSlides":false,"allowTouchMove": false'>
                                 <div class="swiper-container">
                                     <div class="swiper-wrapper">
                                         <?php $__currentLoopData = $OurTeam; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $team_member): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                            <article
-                                                class="dsn-item-post grid-item over-hidden p-relative box-hover-image swiper-slide">
-                                                <div class="box-content d-flex">
-                                                    <div class="box-image-bg before-z-index dsn-swiper-parallax-transform"
-                                                        data-overlay="4">
-                                                        <img class="cover-bg-img"
-                                                            src="<?php echo e(Storage::url($team_member->image)); ?>"
-                                                            alt="<?php echo e($team_member->name); ?>">
-                                                    </div>
-                                                    <div
-                                                        class="post-content dsn-bg p-relative z-index-1 d-flex flex-column">
-                                                        <div class="post-title-info">
-                                                            <h5 class="post-title title-block">
-                                                                <?php echo e($team_member->title); ?>
-
-                                                            </h5>
-                                                            <p class="post-meta">
-                                                                <?php echo e($team_member->position); ?>
-
-                                                            </p>
-                                                        </div>
-                                                    </div>
+                                        <article class="dsn-item-post grid-item over-hidden p-relative box-hover-image swiper-slide">
+                                            <div class="box-content team-item-inner background-main d-flex">
+                                                <div class="box-image-bg before-z-index dsn-swiper-parallax-transform" data-overlay="0">
+                                                    <img class="cover-bg-img team-member-img"
+                                                        src="<?php echo e(Storage::url($team_member->image)); ?>"
+                                                        alt="<?php echo e($team_member->title); ?>">
                                                 </div>
-                                            </article>
+                                                <div class="team-content border-before text-center">
+                                                    <h4 class="text-name sm-title-block"><?php echo e($team_member->title); ?></h4>
+                                                    <span class="text-position"><?php echo e($team_member->position); ?></span>
+                                                    <ul style="z-index: 99999" class="team-socials dsn-socials box-social">
+                                                        <li>
+                                                            <a href="#0" target="_blank" rel="nofollow">
+                                                                <i class="fab fa-facebook-f"></i>
+                                                                <span>Facebook</span>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#0" target="_blank" rel="nofollow">
+                                                                <i class="fab fa-instagram"></i>
+                                                                <span>Instagram</span>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#0" target="_blank" rel="nofollow">
+                                                                <i class="fab fa-linkedin-in"></i>
+                                                                <span>LinkedIn</span>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </article>
                                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                        
                                     </div>
                                     <div
                                         class="dsn-swiper-paginate d-flex p-relative w-100 h-100 mt-50 align-items-center dsn-container justify-content-between">

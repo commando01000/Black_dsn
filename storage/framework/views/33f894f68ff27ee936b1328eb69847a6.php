@@ -85,7 +85,7 @@
 
                     <div class="col-contact">
                         <p><strong>T</strong> : +<?php echo e(Utility::getsettings('contact_phone1')); ?></p>
-                        <p class="mt-10"><strong>F</strong> :<?php echo e(Utility::getsettings('contact_phone1')); ?></p>
+                        <p class="mt-10"><strong>T</strong> : <?php echo e(Utility::getsettings('contact_phone2')); ?></p>
                         <p class="over-hidden mt-10">
                             <strong>E</strong> : <a class="link-hover" href="#"
                                 data-hover-text="info@dsngrid.com"><?php echo e(Utility::getsettings('contact_email')); ?></a>
