@@ -637,38 +637,195 @@
             </div>
             <!-- ========== End Stories ========== -->
 
-            <!-- ========== Brand ========== -->
-            <div class="p-relative  background-section section-padding">
 
-                <div class="container d-grid grid-half-1 align-items-center">
-                    <div class="experience">
+            <!-- ========== Brand Slider ========== -->
+
+            <!-- ========== Brand Slider with 20+ Years of Experience ========== -->
+            <div class="p-relative container section-margin">
+                <div class="section-title d-flex justify-content-center mb-70">
+                    <div class="experience sub-section-title text-center">
                         <span class="exp-number dsn-animate-number">
-                            <span class="animate-number">25</span>
+                            <span class="animate-number">20+</span>
                         </span>
-                        <h5 class="title-block mt-30">
+                        <h2 class="title-h2 pt-5 dsn-heading-title p-relative title-block-lg d-block heading-color">
                             YEARS OF <br>DIGITAL EXPERIENCE
-                        </h5>
+                        </h2>
                     </div>
-                    <div class="d-grid grid-sm-4 d-grid-no-space dsn-brand">
-                        <?php $__currentLoopData = $brands; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $brand): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                            <div
-                                class="brand-item border-bottom <?php echo e(!$loop->last && $loop->index % 4 != 3 ? 'border-right' : ''); ?>">
-                                <div class="brand-item-inner over-hidden p-relative">
-                                    <img src="<?php echo e(Storage::url($brand->cover)); ?>" alt="<?php echo e($brand->name); ?>">
+                </div>
+                <div class="dsn-style-classic dsn-container dsn-center-container">
+                    <div class="root-posts">
+                        <div class="dsn-posts dsn-post-type-classic h-350">
+                            <div class="has-parallax-image dsn-swiper p-relative"
+                                data-dsn-option='{"slidesPerView":2.5,"spaceBetween":30,"centeredSlides":false, "autoplay": {"delay": 5000, "disableOnInteraction": false}}'>
+                                <div class="swiper-container">
+                                    <div class="swiper-wrapper text-center d-flex align-items-center">
+                                        <?php $__currentLoopData = $brands; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $brand): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                            <div
+                                                class="dsn-item-post grid-item over-hidden p-relative box-hover-image swiper-slide">
+                                                <div class="box-content d-flex">
+                                                    <div class="brand-item-inner over-hidden p-relative">
+                                                        <?php if($brand->cover): ?>
+                                                            <img style="max-width: 400px;max-height: 200px;"
+                                                                class="object-fit-cover"
+                                                                src="<?php echo e(Storage::url($brand->cover)); ?>"
+                                                                alt="<?php echo e($brand->title); ?>">
+                                                        <?php else: ?>
+                                                            <h5 class="testimonial-position">
+                                                                <?php echo e($brand->title); ?></h5>
+                                                        <?php endif; ?>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                    </div>
+                                    <div
+                                        class="dsn-swiper-paginate d-flex p-relative w-100 h-100 mt-50 align-items-center dsn-container justify-content-between">
+                                        <div class="swiper-prev">
+                                            <div class="prev-container">
+                                                <div class="container-inner">
+                                                    <div class="triangle"></div>
+                                                    <svg class="circle" xmlns="http://www.w3.org/2000/svg"
+                                                        viewBox="0 0 24 24">
+                                                        <g class="circle-wrap" fill="none" stroke-width="1"
+                                                            stroke-linejoin="round" stroke-miterlimit="10">
+                                                            <circle cx="12" cy="12" r="10.5"></circle>
+                                                        </g>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-pagination mr-30 ml-30 heading-color"
+                                            data-dsn-type="progressbar">
+                                        </div>
+                                        <div class="swiper-next">
+                                            <div class="next-container">
+                                                <div class="container-inner">
+                                                    <div class="triangle"></div>
+                                                    <svg class="circle" xmlns="http://www.w3.org/2000/svg"
+                                                        viewBox="0 0 24 24">
+                                                        <g class="circle-wrap" fill="none" stroke-width="1"
+                                                            stroke-linejoin="round" stroke-miterlimit="10">
+                                                            <circle cx="12" cy="12" r="10.5"></circle>
+                                                        </g>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                    </div>
-                    <div class="dsn-def-btn dsn-icon-heading-color align-self-end justify-self-end">
-                        <a class="dsn-btn dsn-border border-color-default  background-section effect-ajax effect-ajax  move-circle has-icon-left"
-                            href="<?php echo e(route('about-us')); ?>" data-dsn-text="Client" data-dsn="parallax">
-                            <span class="dsn-icon dsn-bg-before btn-icon-left heading-color z-index-1"><i
-                                    class="fas fa-angle-right"></i></span> <span
-                                class="title-btn p-relative  z-index-1 heading-color">VIEW ALL CLIENTS</span> </a>
+                        </div>
                     </div>
                 </div>
             </div>
+            <!-- ========== End Brand Slider with 20+ Years of Experience ========== -->
+
+            <!-- ========== End Brand Slider ========== -->
+
+
+            <!-- ========== Brand ========== -->
+            
             <!-- ========== End Brand ========== -->
+
+            <!-- ========== Our Team ========== -->
+            <div class="p-relative mt-section background-section section-padding">
+                <div class="background-overlay bg-1"></div>
+                <div class="container section-title mb-70 d-grid grid-md-2">
+                    <div class="d-flex">
+                        <div class="sub-section-title">
+                            <p class="description d-inline-block p-relative circle-before mb-10">
+                                <span>OUR Team</span>
+                            </p>
+                            <span class="title-h2 title-block-lg d-block heading-color">
+                                <span>Our Innovative <br><b>Experienced Team</b></span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="dsn-def-btn dsn-icon-heading-color align-self-end justify-self-end">
+                        <a class="dsn-btn dsn-border border-color-default background-main effect-ajax effect-ajax move-circle has-icon-left"
+                            href="<?php echo e(route('about-us')); ?>" data-dsn-text="Service" data-dsn="parallax">
+                            <span class="dsn-icon dsn-bg-before btn-icon-left heading-color z-index-1">
+                                <i class="fas fa-angle-right"></i>
+                            </span>
+                            <span class="title-btn p-relative z-index-1 heading-color">VIEW ALL TEAM</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="p-relative dsn-style-classic dsn-container dsn-right-container">
+                    <div class="root-posts">
+                        <div class="dsn-posts dsn-post-type-classic h-350">
+                            <div class="has-parallax-image dsn-swiper p-relative"
+                                data-dsn-option='{"slidesPerView":2.5,"spaceBetween":30,"centeredSlides":false, "autoplay": {"delay": 5000, "disableOnInteraction": false}}'>
+                                <div class="swiper-container">
+                                    <div class="swiper-wrapper">
+                                        <?php $__currentLoopData = $OurTeam; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $team_member): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                            <article
+                                                class="dsn-item-post grid-item over-hidden p-relative box-hover-image swiper-slide">
+                                                <div class="box-content d-flex">
+                                                    <div class="box-image-bg before-z-index dsn-swiper-parallax-transform"
+                                                        data-overlay="4">
+                                                        <img class="cover-bg-img"
+                                                            src="<?php echo e(Storage::url($team_member->image)); ?>"
+                                                            alt="<?php echo e($team_member->name); ?>">
+                                                    </div>
+                                                    <div
+                                                        class="post-content dsn-bg p-relative z-index-1 d-flex flex-column">
+                                                        <div class="post-title-info">
+                                                            <h5 class="post-title title-block">
+                                                                <?php echo e($team_member->title); ?>
+
+                                                            </h5>
+                                                            <p class="post-meta">
+                                                                <?php echo e($team_member->position); ?>
+
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </article>
+                                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                    </div>
+                                    <div
+                                        class="dsn-swiper-paginate d-flex p-relative w-100 h-100 mt-50 align-items-center dsn-container justify-content-between">
+                                        <div class="swiper-prev">
+                                            <div class="prev-container">
+                                                <div class="container-inner">
+                                                    <div class="triangle"></div>
+                                                    <svg class="circle" xmlns="http://www.w3.org/2000/svg"
+                                                        viewbox="0 0 24 24">
+                                                        <g class="circle-wrap" fill="none" stroke-width="1"
+                                                            stroke-linejoin="round" stroke-miterlimit="10">
+                                                            <circle cx="12" cy="12" r="10.5"></circle>
+                                                        </g>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-pagination mr-30 ml-30 heading-color"
+                                            data-dsn-type="progressbar"></div>
+                                        <div class="swiper-next">
+                                            <div class="next-container">
+                                                <div class="container-inner">
+                                                    <div class="triangle"></div>
+                                                    <svg class="circle" xmlns="http://www.w3.org/2000/svg" width="24"
+                                                        height="24" viewbox="0 0 24 24">
+                                                        <g class="circle-wrap" fill="none" stroke-width="1"
+                                                            stroke-linejoin="round" stroke-miterlimit="10">
+                                                            <circle cx="12" cy="12" r="10.5"></circle>
+                                                        </g>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ========== End Our Team ========== -->
+
         </div>
     </div>
 <?php $__env->stopSection(); ?>

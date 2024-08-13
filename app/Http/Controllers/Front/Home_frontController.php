@@ -34,10 +34,10 @@ class Home_frontController extends Controller
         $testimonials = Testimonial::take(6)->latest()->get();
         // dd($testimonials);
         $blogs = Blog::with('category')->latest()->take(6)->get();
-
+        $OurTeam = Testimonial::all();
         // get brands data
         $brands = Statistic::take(8)->latest()->get();
-        return view('front.home.index', compact('designs', 'statistics', 'services', 'about', 'testimonials', 'blogs', 'brands'));
+        return view('front.home.index', compact('designs', 'statistics', 'services', 'about', 'testimonials', 'OurTeam', 'blogs', 'brands'));
     }
     public function getProjectsByCategory($categoryId)
     {

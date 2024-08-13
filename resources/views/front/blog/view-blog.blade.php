@@ -282,9 +282,17 @@
                                             </li>
                                         @endforeach
                                     </ol>
-
-
                                 </div>
+
+                                {{-- Show More Button --}}
+                                {{-- @if ($$blog->comments->hasMorePages())
+                                    <div class="text-center mt-3">
+                                        <button id="load-more-comments" class="btn btn-dark"
+                                            data-next-page="{{ $$blog->comments->nextPageUrl() }}">
+                                            Show More Comments
+                                        </button>
+                                    </div>
+                                @endif --}}
 
                                 <div class="comments-form dsn-form ">
                                     <div class="comments-title">
@@ -418,6 +426,36 @@
                     }
                 });
             });
+
+            const loadMoreButton = document.getElementById('load-more-comments');
+
+            if (loadMoreButton) {
+                loadMoreButton.addEventListener('click', function() {
+                    const nextPageUrl = this.getAttribute('data-next-page');
+
+                    if (nextPageUrl) {
+                        fetch(nextPageUrl)
+                            .then(response => response.text())
+                            .then(data => {
+                                const parser = new DOMParser();
+                                const newComments = parser.parseFromString(data, 'text/html')
+                                    .querySelector('.comment-list').innerHTML;
+                                const newButton = parser.parseFromString(data, 'text/html')
+                                    .getElementById('load-more-comments');
+
+                                document.querySelector('.comment-list').innerHTML += newComments;
+
+                                if (newButton) {
+                                    loadMoreButton.setAttribute('data-next-page', newButton
+                                        .getAttribute('data-next-page'));
+                                } else {
+                                    loadMoreButton.remove();
+                                }
+                            })
+                            .catch(error => console.log(error));
+                    }
+                });
+            }
         });
     </script>
 @endsection

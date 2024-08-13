@@ -209,14 +209,14 @@
             <div class="container-content  d-flex flex-column justify-content-center section-margin">
                 <div class="nav__info">
                     <div class="nav-content">
-                        <h5 class="sm-title-block mb-10">Studio</h5>
+                        <h5 class="sm-title-block mb-10">Address</h5>
                         <?php echo e(Utility::getsettings('contact_address2')); ?>
 
                     </div>
                     <div class="nav-content mt-30">
                         <h5 class="sm-title-block mb-10">Contact</h5>
                         <p class="links over-hidden mb-1">
-                            <a class="link-hover d-block" href="tel:00201004392260"
+                            <a class="link-hover d-block" href="<?php echo e(Utility::getsettings('contact_phone2')); ?>"
                                 data-hover-text="<?php echo e(Utility::getsettings('contact_phone2')); ?>">
                                 <?php echo e(Utility::getsettings('contact_phone2')); ?></a>
                             <a class="link-hover" href="tel:00201024552406"

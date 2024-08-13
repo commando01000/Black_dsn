@@ -303,15 +303,21 @@
                         <div class="has-parallax-image dsn-swiper p-relative"
                             data-dsn-option='{"slidesPerView":2.5,"spaceBetween":30,"centeredSlides":false, "autoplay": {"delay": 5000, "disableOnInteraction": false}}'>
                             <div class="swiper-container">
-                                <div class="swiper-wrapper text-center">
+                                <div class="swiper-wrapper text-center d-flex align-items-center">
                                     <?php $__currentLoopData = $brands; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $brand): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                         <div
                                             class="dsn-item-post grid-item over-hidden p-relative box-hover-image swiper-slide">
                                             <div class="box-content d-flex">
                                                 <div class="brand-item-inner over-hidden p-relative">
-                                                    <img style="max-width: 400px;max-height: 200px;"
-                                                        class="object-fit-cover" src="<?php echo e(Storage::url($brand->cover)); ?>"
-                                                        alt="<?php echo e($brand->title); ?>">
+                                                    <?php if($brand->cover): ?>
+                                                        <img style="max-width: 400px;max-height: 200px;"
+                                                            class="object-fit-cover"
+                                                            src="<?php echo e(Storage::url($brand->cover)); ?>"
+                                                            alt="<?php echo e($brand->title); ?>">
+                                                    <?php else: ?>
+                                                        <h5 class="testimonial-position">
+                                                            <?php echo e($brand->title); ?></h5>
+                                                    <?php endif; ?>
                                                 </div>
                                             </div>
                                         </div>

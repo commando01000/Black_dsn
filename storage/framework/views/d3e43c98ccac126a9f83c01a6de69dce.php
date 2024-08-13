@@ -291,9 +291,10 @@
                                             </li>
                                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                     </ol>
-
-
                                 </div>
+
+                                
+                                
 
                                 <div class="comments-form dsn-form ">
                                     <div class="comments-title">
@@ -427,6 +428,36 @@
                     }
                 });
             });
+
+            const loadMoreButton = document.getElementById('load-more-comments');
+
+            if (loadMoreButton) {
+                loadMoreButton.addEventListener('click', function() {
+                    const nextPageUrl = this.getAttribute('data-next-page');
+
+                    if (nextPageUrl) {
+                        fetch(nextPageUrl)
+                            .then(response => response.text())
+                            .then(data => {
+                                const parser = new DOMParser();
+                                const newComments = parser.parseFromString(data, 'text/html')
+                                    .querySelector('.comment-list').innerHTML;
+                                const newButton = parser.parseFromString(data, 'text/html')
+                                    .getElementById('load-more-comments');
+
+                                document.querySelector('.comment-list').innerHTML += newComments;
+
+                                if (newButton) {
+                                    loadMoreButton.setAttribute('data-next-page', newButton
+                                        .getAttribute('data-next-page'));
+                                } else {
+                                    loadMoreButton.remove();
+                                }
+                            })
+                            .catch(error => console.log(error));
+                    }
+                });
+            }
         });
     </script>
 <?php $__env->stopSection(); ?>

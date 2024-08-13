@@ -25,6 +25,7 @@ class Blog_frontController extends Controller
         $blog = Blog::with(['category', 'comments' => function ($query) {
             $query->with('replies');
         }])->where('slug', $slug)->first();
+        // $comments = $blog->comments()->with('replies')->where('slug', $slug)->paginate(5);
         // $blog = Blog::with('category')->where('slug', $slug)->first();
 
         // dd($blog);
