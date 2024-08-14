@@ -41,6 +41,25 @@
                             <option value="2"><?php echo e(__('Deactive')); ?></option>
                         </select>
                     </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <?php echo e(Form::label('description', __('Short Description'), ['class' => 'form-label'])); ?>
+
+                            *
+                            <?php echo Form::textarea('description', null, [
+                                'class' => 'form-control ',
+                                'placeholder' => __('Enter short description'),
+                            ]); ?>
+
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <?php echo e(Form::label('cover', __('cover'), ['class' => 'form-label'])); ?> *
+                            <?php echo Form::file('cover', ['class' => 'form-control', 'required' => 'required']); ?>
+
+                        </div>
+                    </div>
                 </div>
                 <div class="card-footer">
                     <div class="text-end">

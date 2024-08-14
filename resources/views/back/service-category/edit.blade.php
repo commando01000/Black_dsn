@@ -7,7 +7,7 @@
         </div>
         <ul class="breadcrumb">
             <li class="breadcrumb-item">{!! Html::link(route('home'), __('Dashboard'), []) !!}</li>
-            <li class="breadcrumb-item"><a href="{{ route('project-category.index') }}">{{ __('Service Category') }}</a></li>
+            <li class="breadcrumb-item"><a href="{{ route('service-category.index') }}">{{ __('Service Category') }}</a></li>
             <li class="breadcrumb-item active">{{ __('Edit Category') }}</li>
         </ul>
     </div>
@@ -21,6 +21,7 @@
                     {!! Form::model($category, [
                         'route' => ['service-category.update', $category->id],
                         'method' => 'PUT',
+                        'enctype' => 'multipart/form-data',
                         'data-validate',
                     ]) !!}
                 </div>

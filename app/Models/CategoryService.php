@@ -13,6 +13,8 @@ class CategoryService extends Model
     protected $fillable = [
         'name',
         'status',
+        'cover',
+        'description'
     ];
     public function services()
     {

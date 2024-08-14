@@ -217,38 +217,40 @@
             </div>
 
             <div class="list-with-number dsn-swiper icon-top dsn-container dsn-icon-theme-color"
-                data-dsn-option='{"slidesPerView":1,"spaceBetween":0,"centeredSlides":false,"loop":true,"autoplay":{"delay":5000,"disableOnInteraction":false}}'>
+                data-dsn-option='{"slidesPerView":2,"spaceBetween":5,"centeredSlides":false,"autoplay":{"delay":5000,"disableOnInteraction":false},"loop":false}'>
                 <div class="dsn-service swiper-container">
                     <div class="swiper-wrapper">
                         @foreach ($categories as $category)
-                            <div class="swiper-slide">
-                                <div class="dsn-up service-item p-relative style-box">
-                                    <div class="service-item-inner border-style number-item h-100">
-                                        <div class="dsn-icon">
-                                            <img style="width: 80px; height:80px;"
-                                                src="{{ Storage::url($category->cover) }}" alt="{{ $category->name }}">
-                                        </div>
-                                        <div class="service-content p-relative">
-                                            <h4 class="service_title title-block border-bottom pb-20 mb-20">
-                                                {{ $category->name }}</h4>
-                                            <div class="service_description mt-20 max-w570 dsn-auto">
-                                                <p>{{ $category->description }}</p>
+                            @if ($category)
+                                <div style="min-height: 400px; max-height: 400px !important" class="swiper-slide h-100">
+                                    <div style="min-height: 400px; max-height: 400px !important" class="dsn-up service-item p-relative style-box">
+                                        <div style="min-height: 400px; max-height: 400px !important" class="service-item-inner border-style number-item h-100">
+                                            <div class="dsn-icon">
+                                                <img style="width: 80px; height:80px;"
+                                                    src="{{ Storage::url($category->cover) }}" alt="{{ $category->name }}">
                                             </div>
-                                            <div class="d-flex mt-20 dsn-def-btn dsn-hover-icon">
-                                                <a class='effect-ajax dsn-btn dsn-border border-color-default background-section has-icon-right'
-                                                    href='#'>
-                                                    <span class="title-btn p-relative z-index-1 heading-color">LEARN
-                                                        MORE</span>
-                                                    <span
-                                                        class="dsn-icon dsn-bg-before btn-icon-right heading-color z-index-1">
-                                                        <i class="fas fa-angle-right"></i>
-                                                    </span>
-                                                </a>
+                                            <div class="service-content p-relative">
+                                                <h4 class="service_title title-block border-bottom pb-20 mb-20">
+                                                    {{ $category->name }}</h4>
+                                                <div class="service_description mt-20 max-w570 dsn-auto">
+                                                    <p>{{ $category->description }}</p>
+                                                </div>
+                                                <div class="d-flex mt-20 dsn-def-btn dsn-hover-icon">
+                                                    <a class='effect-ajax dsn-btn dsn-border border-color-default background-section has-icon-right'
+                                                        href='#'>
+                                                        <span class="title-btn p-relative z-index-1 heading-color">LEARN
+                                                            MORE</span>
+                                                        <span
+                                                            class="dsn-icon dsn-bg-before btn-icon-right heading-color z-index-1">
+                                                            <i class="fas fa-angle-right"></i>
+                                                        </span>
+                                                    </a>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            @endif
                         @endforeach
                     </div>
 

@@ -36,6 +36,7 @@ class ServiceCategoryController extends Controller
                 'name'   => 'required|max:191|unique:blog_categories',
                 'status' => 'required',
             ]);
+            $path = "";
             if ($request->hasFile('cover')) {
                 request()->validate([
                     'cover' => 'mimes:jpg,jpeg,png,gif',
@@ -77,12 +78,25 @@ class ServiceCategoryController extends Controller
             $category = CategoryService::find($id);
             $category->name = $request->name;
             $category->status = $request->status;
+            $category->description = $request->description;
+            $old_cover = $category->cover;
+            if ($request->hasFile('cover')) {
+                request()->validate([
+                    'cover' => 'image|mimes:jpg,png,jpeg,svg,webp',
+                ]);
+                $path = $request->file('cover')->store('services');
+                $category->cover = $path;
+            } else {
+                $category->cover = $old_cover;
+            }
+
             $category->update();
             return redirect()->route('service-category.index')->with('success', __('Category updated successfully.'));
         } else {
             return redirect()->back()->with('failed', __('Permission denied.'));
         }
     }
+
 
     public function destroy($id)
     {
