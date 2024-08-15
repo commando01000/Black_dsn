@@ -187,10 +187,10 @@
                                     </div>
                                     <div class="service-content p-relative">
                                         <h4 class="service_title  title-block border-bottom pb-20 mb-20">
-                                            {{ $service->category->name }}</h4>
+                                            {{ $service->title }}</h4>
                                         <div class="service_description mt-20 max-w570 dsn-auto">
                                             <p>
-                                                {{ $service->short_description }}
+                                                {{ $service->category->description }}
                                             </p>
                                         </div>
                                         <div class="d-flex mt-20 dsn-def-btn dsn-hover-icon">

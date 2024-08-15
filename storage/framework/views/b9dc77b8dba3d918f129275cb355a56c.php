@@ -192,10 +192,10 @@
                                     </div>
                                     <div class="service-content p-relative">
                                         <h4 class="service_title  title-block border-bottom pb-20 mb-20">
-                                            <?php echo e($service->category->name); ?></h4>
+                                            <?php echo e($service->title); ?></h4>
                                         <div class="service_description mt-20 max-w570 dsn-auto">
                                             <p>
-                                                <?php echo e($service->short_description); ?>
+                                                <?php echo e($service->category->description); ?>
 
                                             </p>
                                         </div>
