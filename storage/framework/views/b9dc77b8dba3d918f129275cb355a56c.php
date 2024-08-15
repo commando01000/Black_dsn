@@ -187,8 +187,8 @@
                             <div class="dsn-up service-item p-relative grid-item style-box">
                                 <div class="service-item-inner border-style number-item h-100">
                                     <div class="dsn-icon">
-                                        <img style="width: 80px; height:80px;" src="<?php echo e(Storage::url($service->category->cover)); ?>"
-                                            alt="">
+                                        <img style="width: 80px; height:80px;"
+                                            src="<?php echo e(Storage::url($service->category->cover)); ?>" alt="">
                                     </div>
                                     <div class="service-content p-relative">
                                         <h4 class="service_title  title-block border-bottom pb-20 mb-20">
@@ -397,121 +397,7 @@
             <!-- ========== End testimonials ========== -->
 
             <!-- ========== Stories ========== -->
-            <div class="p-relative section-margin">
-                <div class="container section-title mb-70 d-grid grid-md-2 ">
-                    <div class=" d-flex">
-                        <div class="sub-section-title ">
-                            <p class="description d-inline-block p-relative circle-before mb-10">
-                                <span>Latest News </span>
-                            </p>
-                            <span class="title-h2 title-block-lg d-block heading-color">
-                                <span>Latest and <b><br>greatest post</b></span>
-                            </span>
-                        </div>
-                    </div>
-                    <div class="dsn-def-btn dsn-icon-heading-color align-self-end justify-self-end">
-                        <a class='dsn-btn dsn-border border-color-default  background-section effect-ajax effect-ajax  move-circle has-icon-left'
-                            data-dsn-text='Our Stories' data-dsn='parallax' href='<?php echo e(route('see.all.blogs')); ?>'> <span
-                                class="dsn-icon dsn-bg-before btn-icon-left heading-color z-index-1"><i
-                                    class="fas fa-angle-right"></i></span> <span
-                                class="title-btn p-relative  z-index-1 heading-color">VIEW ALL NEWS</span> </a>
-                    </div>
-                </div>
-                <div class="p-relative dsn-style-classic dsn-under-img dsn-container dsn-right-container">
-                    <div class="root-posts">
-                        <div class="dsn-posts dsn-post-type-classic h-350">
-                            <div class="has-parallax-image dsn-swiper p-relative"
-                                data-dsn-option='{"slidesPerView":2.5,"spaceBetween":30,"centeredSlides":false, "autoplay": {"delay": 5000, "disableOnInteraction": false}}'>
-                                <div class="swiper-container">
-                                    <div class="swiper-wrapper">
-                                        <?php $__currentLoopData = $blogs; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $blog): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                            <article
-                                                class="dsn-item-post grid-item over-hidden p-relative box-hover-image v-dark-head background-section swiper-slide">
-                                                <div class="box-content d-flex">
-                                                    <a class='effect-ajax box-image-link bg-shadow'
-                                                        data-dsn-text='<?php echo e($blog->title); ?>'
-                                                        href='<?php echo e(route('view.blog', ['slug' => $blog->slug])); ?>'>
-                                                        <div class="box-image-bg before-z-index dsn-swiper-parallax-transform"
-                                                            data-overlay="4">
-                                                            <img src="<?php echo e(Storage::url($blog->images)); ?>"
-                                                                class="cover-bg-img" alt="<?php echo e($blog->title); ?>">
-                                                        </div>
-                                                    </a>
-                                                    <div
-                                                        class="post-content dsn-bg p-relative z-index-1 d-flex flex-column">
-                                                        <div class="post-title-info">
-                                                            <div class="post-meta max-w750">
-                                                                <div class="entry-date d-inline-block entry-meta mb-10">
-                                                                    <?php echo e($blog->created_at->format('F d, Y')); ?>
-
-                                                                </div>
-                                                                <span class="mr-5 ml-5 separator-between"> ..</span>
-                                                                <div
-                                                                    class="p-relative d-inline-block dsn-category dsn-bg metas mb-10 entry-meta">
-                                                                    <span
-                                                                        data-separator=" & "><?php echo e($blog->category->name); ?></span>
-                                                                </div>
-                                                            </div>
-                                                            <h2 class="post-title dsn-bg title-block">
-                                                                <a class='effect-ajax'
-                                                                    data-dsn-text='<?php echo e($blog->title); ?>'
-                                                                    href='<?php echo e(route('view.blog', ['slug' => $blog->slug])); ?>'>
-                                                                    <?php echo e($blog->title); ?>
-
-                                                                </a>
-                                                            </h2>
-                                                        </div>
-                                                        <div class="post-description-info">
-                                                            <p class="section_description mt-15 max-w570">
-                                                                <?php echo e($blog->short_description); ?>
-
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </article>
-                                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                                    </div>
-                                    <div
-                                        class="dsn-swiper-paginate d-flex p-relative w-100 h-100 mt-50 align-items-center dsn-container justify-content-between">
-                                        <div class="swiper-prev">
-                                            <div class="prev-container">
-                                                <div class="container-inner">
-                                                    <div class="triangle"></div>
-                                                    <svg class="circle" xmlns="http://www.w3.org/2000/svg"
-                                                        viewbox="0 0 24 24">
-                                                        <g class="circle-wrap" fill="none" stroke-width="1"
-                                                            stroke-linejoin="round" stroke-miterlimit="10">
-                                                            <circle cx="12" cy="12" r="10.5"></circle>
-                                                        </g>
-                                                    </svg>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="swiper-pagination mr-30 ml-30 heading-color"
-                                            data-dsn-type="progressbar"></div>
-                                        <div class="swiper-next">
-                                            <div class="next-container">
-                                                <div class="container-inner">
-                                                    <div class="triangle"></div>
-                                                    <svg class="circle" xmlns="http://www.w3.org/2000/svg" width="24"
-                                                        height="24" viewbox="0 0 24 24">
-                                                        <g class="circle-wrap" fill="none" stroke-width="1"
-                                                            stroke-linejoin="round" stroke-miterlimit="10">
-                                                            <circle cx="12" cy="12" r="10.5"></circle>
-                                                        </g>
-                                                    </svg>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
+            
             <!-- ========== End Stories ========== -->
 
 
@@ -636,6 +522,10 @@
                                 <div class="swiper-container">
                                     <div class="swiper-wrapper">
                                         <?php $__currentLoopData = $OurTeam; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $team_member): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                            <?php
+                                                // Decode the JSON string to a PHP array
+                                                $socialLinks = json_decode($team_member->social, true);
+                                            ?>
                                             <article
                                                 class="dsn-item-post grid-item over-hidden p-relative box-hover-image swiper-slide">
                                                 <div class="box-content team-item-inner background-main d-flex">
@@ -652,24 +542,33 @@
                                                         <span class="text-position"><?php echo e($team_member->position); ?></span>
                                                         <ul style="z-index: 99999"
                                                             class="team-socials dsn-socials box-social">
-                                                            <li>
-                                                                <a href="#0" target="_blank" rel="nofollow">
-                                                                    <i class="fab fa-facebook-f"></i>
-                                                                    <span>Facebook</span>
-                                                                </a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#0" target="_blank" rel="nofollow">
-                                                                    <i class="fab fa-instagram"></i>
-                                                                    <span>Instagram</span>
-                                                                </a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#0" target="_blank" rel="nofollow">
-                                                                    <i class="fab fa-linkedin-in"></i>
-                                                                    <span>LinkedIn</span>
-                                                                </a>
-                                                            </li>
+                                                            <?php if(isset($socialLinks['facebook'])): ?>
+                                                                <li>
+                                                                    <a href="<?php echo e($socialLinks['facebook']); ?>"
+                                                                        target="_blank" rel="nofollow">
+                                                                        <i class="fab fa-facebook-f"></i>
+                                                                        <span>Facebook</span>
+                                                                    </a>
+                                                                </li>
+                                                            <?php endif; ?>
+                                                            <?php if(isset($socialLinks['instagram'])): ?>
+                                                                <li>
+                                                                    <a href="<?php echo e($socialLinks['instagram']); ?>"
+                                                                        target="_blank" rel="nofollow">
+                                                                        <i class="fab fa-instagram"></i>
+                                                                        <span>Instagram</span>
+                                                                    </a>
+                                                                </li>
+                                                            <?php endif; ?>
+                                                            <?php if(isset($socialLinks['linkedin'])): ?>
+                                                                <li>
+                                                                    <a href="<?php echo e($socialLinks['linkedin']); ?>"
+                                                                        target="_blank" rel="nofollow">
+                                                                        <i class="fab fa-linkedin-in"></i>
+                                                                        <span>LinkedIn</span>
+                                                                    </a>
+                                                                </li>
+                                                            <?php endif; ?>
                                                         </ul>
                                                     </div>
                                                 </div>

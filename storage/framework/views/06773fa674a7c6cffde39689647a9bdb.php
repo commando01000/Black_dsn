@@ -48,6 +48,7 @@
                         <td>
                             <a href="<?php echo e(route('service-category.edit', $category->id)); ?>"
                                 class="btn btn-warning"><?php echo e(__('Edit')); ?></a>
+                                <a class="btn btn-success" href="<?php echo e(route('service-category.show', $category->id)); ?>"><?php echo e(__('View')); ?></a>
                             <form action="<?php echo e(route('service-category.destroy', $category->id)); ?>" method="POST"
                                 style="display:inline;">
                                 <?php echo csrf_field(); ?>
@@ -59,6 +60,9 @@
                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
             </tbody>
         </table>
+        <?php echo e($categories->links()); ?>
+
+
     </div>
 <?php $__env->stopSection(); ?>
 <?php $__env->startPush('style'); ?>

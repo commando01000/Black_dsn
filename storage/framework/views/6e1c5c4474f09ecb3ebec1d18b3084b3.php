@@ -26,6 +26,7 @@
                                 <th>ID</th>
                                 <th><?php echo e(__('Title')); ?></th>
                                 <th><?php echo e(__('Image')); ?></th>
+                                <th><?php echo e(__('Position')); ?></th>
                                 <th><?php echo e(__('Action')); ?></th>
                             </tr>
                         </thead>
@@ -35,6 +36,7 @@
                                     <td><?php echo e($loop->iteration); ?></td>
                                     <td><?php echo e($slider->title); ?></td>
                                     <td> <img src="<?php echo e(Storage::url($slider->image)); ?>" width="100px" height="100px" alt="<?php echo e($slider->title); ?>"></td>
+                                    <td><?php echo e($slider->position); ?></td>
                                     <td>
                                         <a href="<?php echo e(route('sliders.edit', $slider->id)); ?>"
                                             class="btn btn-warning btn-sm"><?php echo e(__('Edit')); ?></a>

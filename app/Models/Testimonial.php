@@ -15,6 +15,7 @@ class Testimonial extends Model
         'image',
         'position',
         'description',
+        'social'
     ];
     protected $guarded = [];
 }

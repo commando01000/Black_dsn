@@ -62,7 +62,33 @@
                                     {!! Form::file('image', ['class' => 'form-control', 'required' => 'required']) !!}
                                 </div>
                             </div>
-
+                            <div class="col-sm-12">
+                                <div class="form-group">
+                                    {{ Form::label('facebook', __('Facebook'), ['class' => 'form-label']) }}
+                                    {!! Form::text('facebook', null, [
+                                        'class' => 'form-control',
+                                        'placeholder' => __('Enter facebook profile link'),
+                                    ]) !!}
+                                </div>
+                            </div>
+                            <div class="col-sm-12">
+                                <div class="form-group">
+                                    {{ Form::label('instagram', __('Instagram'), ['class' => 'form-label']) }}
+                                    {!! Form::text('instagram', null, [
+                                        'class' => 'form-control',
+                                        'placeholder' => __('Enter facebook profile link'),
+                                    ]) !!}
+                                </div>
+                            </div>
+                            <div class="col-sm-12">
+                                <div class="form-group">
+                                    {{ Form::label('linkedin', __('Linkedin'), ['class' => 'form-label']) }}
+                                    {!! Form::text('linkedin', null, [
+                                        'class' => 'form-control',
+                                        'placeholder' => __('Enter linkedin profile link'),
+                                    ]) !!}
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="card-footer">

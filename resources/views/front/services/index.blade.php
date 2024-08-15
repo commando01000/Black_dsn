@@ -357,15 +357,17 @@
                 data-dsn-option='{"start":"100%","end":"0%","pin":false}'>
 
                 @foreach ($brands as $brand)
-                    <div class="grid-item">
-                        <div class="image-item">
-                            <img class="cover-bg-img" src="{{ Storage::url($brand->cover) }}" alt="{{ $brand->title }}">
+                    <div class="grid-item" style="width: 400px; height: 100px;">
+                        <div class="image-item" style="width: 100%; height: 100%;">
+                            <img class="cover-bg-img" src="{{ Storage::url($brand->cover) }}" alt="{{ $brand->title }}"
+                                style="width: 100%; height: 100%; object-fit: contain;">
                         </div>
                     </div>
                 @endforeach
 
             </div>
         </div>
+
         <!-- ========== End Brand ========== -->
 
 

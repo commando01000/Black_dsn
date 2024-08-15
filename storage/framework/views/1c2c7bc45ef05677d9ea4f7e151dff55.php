@@ -222,15 +222,17 @@
                 data-dsn-option='{"start":"100%","end":"0%","pin":false}'>
 
                 <?php $__currentLoopData = $brands; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $brand): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                    <div class="grid-item">
-                        <div class="image-item">
-                            <img class="cover-bg-img" src="<?php echo e(Storage::url($brand->cover)); ?>" alt="<?php echo e($brand->title); ?>">
+                    <div class="grid-item" style="width: 400px; height: 100px;">
+                        <div class="image-item" style="width: 100%; height: 100%;">
+                            <img class="cover-bg-img" src="<?php echo e(Storage::url($brand->cover)); ?>" alt="<?php echo e($brand->title); ?>"
+                                style="width: 100%; height: 100%; object-fit: contain;">
                         </div>
                     </div>
                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
             </div>
         </div>
+
         <!-- ========== End Brand ========== -->
 
 

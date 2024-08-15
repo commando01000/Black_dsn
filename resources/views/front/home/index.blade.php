@@ -182,8 +182,8 @@
                             <div class="dsn-up service-item p-relative grid-item style-box">
                                 <div class="service-item-inner border-style number-item h-100">
                                     <div class="dsn-icon">
-                                        <img style="width: 80px; height:80px;" src="{{ Storage::url($service->category->cover) }}"
-                                            alt="">
+                                        <img style="width: 80px; height:80px;"
+                                            src="{{ Storage::url($service->category->cover) }}" alt="">
                                     </div>
                                     <div class="service-content p-relative">
                                         <h4 class="service_title  title-block border-bottom pb-20 mb-20">
@@ -553,7 +553,7 @@
             <!-- ========== End testimonials ========== -->
 
             <!-- ========== Stories ========== -->
-            <div class="p-relative section-margin">
+            {{-- <div class="p-relative section-margin">
                 <div class="container section-title mb-70 d-grid grid-md-2 ">
                     <div class=" d-flex">
                         <div class="sub-section-title ">
@@ -664,7 +664,7 @@
                     </div>
                 </div>
 
-            </div>
+            </div> --}}
             <!-- ========== End Stories ========== -->
 
 
@@ -818,6 +818,10 @@
                                 <div class="swiper-container">
                                     <div class="swiper-wrapper">
                                         @foreach ($OurTeam as $team_member)
+                                            @php
+                                                // Decode the JSON string to a PHP array
+                                                $socialLinks = json_decode($team_member->social, true);
+                                            @endphp
                                             <article
                                                 class="dsn-item-post grid-item over-hidden p-relative box-hover-image swiper-slide">
                                                 <div class="box-content team-item-inner background-main d-flex">
@@ -833,24 +837,33 @@
                                                         <span class="text-position">{{ $team_member->position }}</span>
                                                         <ul style="z-index: 99999"
                                                             class="team-socials dsn-socials box-social">
-                                                            <li>
-                                                                <a href="#0" target="_blank" rel="nofollow">
-                                                                    <i class="fab fa-facebook-f"></i>
-                                                                    <span>Facebook</span>
-                                                                </a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#0" target="_blank" rel="nofollow">
-                                                                    <i class="fab fa-instagram"></i>
-                                                                    <span>Instagram</span>
-                                                                </a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#0" target="_blank" rel="nofollow">
-                                                                    <i class="fab fa-linkedin-in"></i>
-                                                                    <span>LinkedIn</span>
-                                                                </a>
-                                                            </li>
+                                                            @if (isset($socialLinks['facebook']))
+                                                                <li>
+                                                                    <a href="{{ $socialLinks['facebook'] }}"
+                                                                        target="_blank" rel="nofollow">
+                                                                        <i class="fab fa-facebook-f"></i>
+                                                                        <span>Facebook</span>
+                                                                    </a>
+                                                                </li>
+                                                            @endif
+                                                            @if (isset($socialLinks['instagram']))
+                                                                <li>
+                                                                    <a href="{{ $socialLinks['instagram'] }}"
+                                                                        target="_blank" rel="nofollow">
+                                                                        <i class="fab fa-instagram"></i>
+                                                                        <span>Instagram</span>
+                                                                    </a>
+                                                                </li>
+                                                            @endif
+                                                            @if (isset($socialLinks['linkedin']))
+                                                                <li>
+                                                                    <a href="{{ $socialLinks['linkedin'] }}"
+                                                                        target="_blank" rel="nofollow">
+                                                                        <i class="fab fa-linkedin-in"></i>
+                                                                        <span>LinkedIn</span>
+                                                                    </a>
+                                                                </li>
+                                                            @endif
                                                         </ul>
                                                     </div>
                                                 </div>

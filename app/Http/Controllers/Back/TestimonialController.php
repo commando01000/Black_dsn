@@ -32,11 +32,18 @@ class TestimonialController extends Controller
             $path = $request->file('image')->store('sliders');
         }
 
+        $socialLinks = json_encode([
+            'facebook' => $request->facebook,
+            'instagram' => $request->instagram,
+            'linkedin' => $request->linkedin,
+        ]);
+
         Testimonial::create([
             'title' => $request->title,
             'image' => $path,
             'position' => $request->position,
-            'description' => $request->description
+            'description' => $request->description,
+            'social' => $socialLinks, // Store the social links JSON object
         ]);
         return redirect()->route('sliders.index')->with('success', 'Slider created successfully.');
     }
@@ -44,7 +51,8 @@ class TestimonialController extends Controller
     public function edit($id)
     {
         $slider = Testimonial::find($id);
-        return view('back.slider.edit', compact('slider'));
+        $socialLinks = json_decode($slider->social, true);
+        return view('back.slider.edit', compact('slider', 'socialLinks'));
     }
 
     public function update(Request $request, $id)
@@ -62,12 +70,23 @@ class TestimonialController extends Controller
                 Storage::delete($slider->image);
             }
         }
+        else
+        {
+            $path = $slider->image;
+        }
+
+        $socialLinks = json_encode([
+            'facebook' => $request->facebook,
+            'instagram' => $request->instagram,
+            'linkedin' => $request->linkedin,
+        ]);
 
         $slider->update([
             'title' => $request->title,
             'image' => $path,
             'position' => $request->position,
-            'description' => $request->description
+            'description' => $request->description,
+            'social' => $socialLinks, // Store the social links JSON object
         ]);
         return redirect()->route('sliders.index')->with('success', 'Slider updated successfully.');
     }

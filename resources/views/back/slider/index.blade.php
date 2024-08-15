@@ -26,6 +26,7 @@
                                 <th>ID</th>
                                 <th>{{ __('Title') }}</th>
                                 <th>{{ __('Image') }}</th>
+                                <th>{{ __('Position') }}</th>
                                 <th>{{ __('Action') }}</th>
                             </tr>
                         </thead>
@@ -35,6 +36,7 @@
                                     <td>{{ $loop->iteration }}</td>
                                     <td>{{ $slider->title }}</td>
                                     <td> <img src="{{ Storage::url($slider->image) }}" width="100px" height="100px" alt="{{ $slider->title }}"></td>
+                                    <td>{{ $slider->position }}</td>
                                     <td>
                                         <a href="{{ route('sliders.edit', $slider->id) }}"
                                             class="btn btn-warning btn-sm">{{ __('Edit') }}</a>

@@ -567,15 +567,15 @@
                     <div class="nav-content mt-30">
                         <h5 class="sm-title-block mb-10">Contact</h5>
                         <p class="links over-hidden mb-1">
+                            <a class="link-hover" href="{{ Utility::getsettings('contact_phone1') }}"
+                                data-hover-text="{{ Utility::getsettings('contact_phone1') }}">
+                                Dubai : {{ Utility::getsettings('contact_phone1') }}</a>
                             <a class="link-hover d-block" href="{{ Utility::getsettings('contact_phone2') }}"
                                 data-hover-text="{{ Utility::getsettings('contact_phone2') }}">
-                                {{ Utility::getsettings('contact_phone2') }}</a>
-                            <a class="link-hover" href="tel:00201024552406"
-                                data-hover-text="{{ Utility::getsettings('contact_phone1') }}">
-                                {{ Utility::getsettings('contact_phone1') }}</a>
+                                Egypt : {{ Utility::getsettings('contact_phone2') }}</a>
                         </p>
-                        <p class="links over-hidden"><a class="link-hover" href="mailto:info@dsngrid.com"
-                                data-hover-text="info@dsngrid.com">{{ Utility::getsettings('contact_email') }}</a></p>
+                        <p class="links over-hidden"><a class="link-hover" href="{{ Utility::getsettings('contact_email') }}"
+                                data-hover-text="{{ Utility::getsettings('contact_email') }}">Email : {{ Utility::getsettings('contact_email') }}</a></p>
 
                     </div>
                 </div>

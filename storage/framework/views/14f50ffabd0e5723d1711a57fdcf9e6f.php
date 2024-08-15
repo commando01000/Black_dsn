@@ -216,15 +216,15 @@
                     <div class="nav-content mt-30">
                         <h5 class="sm-title-block mb-10">Contact</h5>
                         <p class="links over-hidden mb-1">
+                            <a class="link-hover" href="<?php echo e(Utility::getsettings('contact_phone1')); ?>"
+                                data-hover-text="<?php echo e(Utility::getsettings('contact_phone1')); ?>">
+                                Dubai : <?php echo e(Utility::getsettings('contact_phone1')); ?></a>
                             <a class="link-hover d-block" href="<?php echo e(Utility::getsettings('contact_phone2')); ?>"
                                 data-hover-text="<?php echo e(Utility::getsettings('contact_phone2')); ?>">
-                                <?php echo e(Utility::getsettings('contact_phone2')); ?></a>
-                            <a class="link-hover" href="tel:00201024552406"
-                                data-hover-text="<?php echo e(Utility::getsettings('contact_phone1')); ?>">
-                                <?php echo e(Utility::getsettings('contact_phone1')); ?></a>
+                                Egypt : <?php echo e(Utility::getsettings('contact_phone2')); ?></a>
                         </p>
-                        <p class="links over-hidden"><a class="link-hover" href="mailto:info@dsngrid.com"
-                                data-hover-text="info@dsngrid.com"><?php echo e(Utility::getsettings('contact_email')); ?></a></p>
+                        <p class="links over-hidden"><a class="link-hover" href="<?php echo e(Utility::getsettings('contact_email')); ?>"
+                                data-hover-text="<?php echo e(Utility::getsettings('contact_email')); ?>">Email : <?php echo e(Utility::getsettings('contact_email')); ?></a></p>
 
                     </div>
                 </div>

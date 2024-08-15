@@ -7503,26 +7503,29 @@ body.tax-product_cat #dsn_header {
 
 .team-content {
     position: absolute;
-    bottom: 0px; /* Adjust bottom to be inside the border */
+    bottom: 0; /* Adjust bottom to be inside the border */
     left: 10px; /* Adjust left to be inside the border */
     right: 10px; /* Adjust right to be inside the border */
-    background-color: rgba(
-        0,
-        0,
-        0,
-        0.7
-    ); /* Semi-transparent black background */
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
     color: white;
     padding: 5px; /* Padding around content */
     text-align: center;
-    opacity: 0; /* Initially hidden */
+    opacity: 1; /* Initially visible */
     transition: opacity 0.3s ease; /* Smooth transition on hover */
     border-radius: 8px; /* Match the border radius */
 }
 
-.team-item-inner:hover .team-content {
-    opacity: 1; /* Show on hover */
-    cursor: pointer !important;
+.team-content .team-socials {
+    display: none; /* Hide social icons by default */
+}
+
+.team-item-inner:hover .team-content .team-socials {
+    display: inline-block; /* Show social icons on hover */
+}
+
+.team-item-inner:hover .text-name,
+.team-item-inner:hover .text-position {
+    display: none; /* Hide name and position on hover */
 }
 
 /* Cool Hover Effect on Social Icons */
@@ -7563,5 +7566,6 @@ body.tax-product_cat #dsn_header {
     font-size: 14px;
     color: #ccc;
 }
+
 
 /*# sourceMappingURL=style.css.map */
