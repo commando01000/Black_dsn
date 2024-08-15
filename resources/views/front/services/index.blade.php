@@ -223,8 +223,10 @@
                         @foreach ($categories as $category)
                             @if ($category)
                                 <div style="min-height: 400px; max-height: 400px !important" class="swiper-slide h-100">
-                                    <div style="min-height: 400px; max-height: 400px !important" class="dsn-up service-item p-relative style-box">
-                                        <div style="min-height: 400px; max-height: 400px !important" class="service-item-inner border-style number-item h-100">
+                                    <div style="min-height: 400px; max-height: 400px !important"
+                                        class="dsn-up service-item p-relative style-box">
+                                        <div style="min-height: 400px; max-height: 400px !important"
+                                            class="service-item-inner border-style number-item h-100">
                                             <div class="dsn-icon">
                                                 <img style="width: 80px; height:80px;"
                                                     src="{{ Storage::url($category->cover) }}" alt="{{ $category->name }}">
