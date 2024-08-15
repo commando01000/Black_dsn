@@ -187,7 +187,7 @@
                             <div class="dsn-up service-item p-relative grid-item style-box">
                                 <div class="service-item-inner border-style number-item h-100">
                                     <div class="dsn-icon">
-                                        <img style="width: 80px; height:80px;" src="<?php echo e(Storage::url($service->cover)); ?>"
+                                        <img style="width: 80px; height:80px;" src="<?php echo e(Storage::url($service->category->cover)); ?>"
                                             alt="">
                                     </div>
                                     <div class="service-content p-relative">
