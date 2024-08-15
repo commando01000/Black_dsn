@@ -1,6 +1,6 @@
 @extends('layouts.back.main')
 
-@section('title', 'Create Project')
+@section('title', 'View Service')
 
 
 @section('content')
@@ -11,7 +11,7 @@
                 <div class="m-auto col-md-8">
                     <div class="card">
                         <div class="card-header">
-                            <h5> {{ __('Edit Project') }}</h5>
+                            <h5> {{ __('View Service') }}</h5>
                         </div>
                         <div class="card-body">
                             <div class="row">
@@ -35,7 +35,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-md-12">
+                                {{-- <div class="col-md-12">
                                     <div class="form-group">
                                         @if ($service->images)
                                             <div>
@@ -45,7 +45,7 @@
                                             </div>
                                         @endif
                                     </div>
-                                </div>
+                                </div> --}}
                                 {{-- <div class="col-sm-12">
                                     <div class="form-group">
                                         {{ Form::label('client', __('client'), ['class' => 'form-label']) }} *
@@ -55,6 +55,15 @@
                                         ]) !!}
                                     </div>
                                 </div> --}}
+                                <div class="col-md-12">
+                                    @if ($service->cover)
+                                        <div class="mt-3">
+                                            <strong>Current Cover Image:</strong><br>
+                                            <img src="{{ Storage::url($service->cover) }}" alt="{{ $service->title }}"
+                                                style="max-width: 100%; height: 80px !important;">
+                                        </div>
+                                    @endif
+                                </div>
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         {{ Form::label('short_description', __('Short Description'), ['class' => 'form-label']) }}

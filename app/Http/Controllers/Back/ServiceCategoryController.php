@@ -11,7 +11,7 @@ class ServiceCategoryController extends Controller
     public function index()
     {
         if (\Auth::user()->can('manage-category')) {
-            $categories = CategoryService::paginate(10);
+            $categories = CategoryService::paginate(5);
             return view('back/service-category.index', compact('categories'));
         } else {
             return redirect()->back()->with('failed', __('Permission denied.'));
@@ -28,7 +28,16 @@ class ServiceCategoryController extends Controller
         }
     }
 
+    public function show(CategoryService $service_category)
+    {
+        if (\Auth::user()->can('edit-project')) {
+            // dd($project);
 
+            return view('back/service-category.view', compact('service_category'));
+        } else {
+            return redirect()->back()->with('failed', __('Permission denied.'));
+        }
+    }
     public function store(Request $request)
     {
         if (\Auth::user()->can('create-category')) {

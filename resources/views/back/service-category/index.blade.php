@@ -47,6 +47,7 @@
                         <td>
                             <a href="{{ route('service-category.edit', $category->id) }}"
                                 class="btn btn-warning">{{ __('Edit') }}</a>
+                                <a class="btn btn-success" href="{{route('service-category.show', $category->id)}}">{{ __('View') }}</a>
                             <form action="{{ route('service-category.destroy', $category->id) }}" method="POST"
                                 style="display:inline;">
                                 @csrf
@@ -58,6 +59,8 @@
                 @endforeach
             </tbody>
         </table>
+        {{ $categories->links() }}
+
     </div>
 @endsection
 @push('style')
