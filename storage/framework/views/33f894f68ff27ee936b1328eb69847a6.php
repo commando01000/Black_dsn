@@ -84,8 +84,8 @@
                     </h4>
 
                     <div class="col-contact">
-                        <p><strong>T</strong> : +<?php echo e(Utility::getsettings('contact_phone1')); ?></p>
-                        <p class="mt-10"><strong>T</strong> : <?php echo e(Utility::getsettings('contact_phone2')); ?></p>
+                        <p><strong>T (Dubai)</strong> : +<?php echo e(Utility::getsettings('contact_phone1')); ?></p>
+                        <p class="mt-10"><strong>T (Egypt)</strong> : <?php echo e(Utility::getsettings('contact_phone2')); ?></p>
                         <p class="over-hidden mt-10">
                             <strong>E</strong> : <a class="link-hover" href="#"
                                 data-hover-text="info@dsngrid.com"><?php echo e(Utility::getsettings('contact_email')); ?></a>
@@ -107,9 +107,8 @@
             </div>
             <div class="footer-bottom mt-60 pt-30 border-top pb-30 text-center">
                 <p class="over-hidden">
-                    © 2022 Digital Agency Designed by
-                    <a href="#0" class="link-hover" data-hover-text="DSN Grid" target="_blank">DSN
-                        Grid</a>
+                    © 2024 Digital Agency Designed by
+                    <a href="#0" class="link-hover" data-hover-text="DSN Grid" target="_blank">Digital Media Factory</a>
                 </p>
             </div>
         </div>
