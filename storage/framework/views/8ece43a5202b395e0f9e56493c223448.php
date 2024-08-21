@@ -89,6 +89,15 @@
                     </a>
                 </li>
 
+                <li class="dash-item dash-hasmenu <?php echo e(request()->is('emails*') ? 'active' : ''); ?>">
+                    <a class="dash-link" href="<?php echo e(route('emails.index')); ?>">
+                        <span class="dash-micon">
+                            <i class="ti ti-world"></i>
+                        </span>
+                        <span class="dash-mtext"><?php echo e(__('Emails')); ?></span>
+                    </a>
+                </li>
+
                 <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->any(['manage-blog'])): ?>
                     <li class="dash-item dash-hasmenu <?php echo e(request()->is('join*') ? 'active' : ''); ?>">
                         <a class="dash-link" href="<?php echo e(route('join.index')); ?>">
@@ -193,8 +202,7 @@
                                 href="<?php echo e(route('design-category.index')); ?>"><?php echo e(__('Design Category')); ?></a>
                         </li>
                         <li class="dash-item">
-                            <a class="dash-link"
-                                href="<?php echo e(route('designs.index')); ?>"><?php echo e(__('designs')); ?></a>
+                            <a class="dash-link" href="<?php echo e(route('designs.index')); ?>"><?php echo e(__('designs')); ?></a>
                         </li>
                         <li class="dash-item ">
                             <a class="dash-link"

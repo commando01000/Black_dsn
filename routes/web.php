@@ -23,6 +23,7 @@ use App\Http\Controllers\Back\LanguageController;
 use App\Http\Controllers\Back\ProfileController;
 use App\Http\Controllers\Back\BusinessGrowthController;
 use App\Http\Controllers\Back\ClientCategortController;
+use App\Http\Controllers\Back\CustomEmailController;
 use App\Http\Controllers\Back\CustomerController;
 use App\Http\Controllers\Back\DesignCategoryController;
 use App\Http\Controllers\Back\DesignController;
@@ -130,6 +131,12 @@ Route::group([
         Route::resource('cp/services', ServiceController::class);
         Route::resource('cp/service-category', ServiceCategoryController::class);
         Route::post('cp/servicecategory-status/{id}', [ServiceCategoryController::class, 'serviceCategoryStatus'])->name('servicecategory.status');
+    });
+
+
+    //emails
+    Route::group(['middleware' => ['auth', 'Setting', 'verified', '2fa', 'verified_phone', 'Upload']], function () {
+        Route::resource('cp/emails', CustomEmailController::class);
     });
 
     //Leadership

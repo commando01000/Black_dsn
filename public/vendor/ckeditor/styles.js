@@ -1,5 +1,5 @@
 ﻿/**
- * Copyright (c) 2003-2021, CKSource - Frederico Knabben. All rights reserved.
+ * Copyright (c) 2003-2023, CKSource Holding sp. z o.o. All rights reserved.
  * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-oss-license
  */
 
@@ -11,7 +11,7 @@
 //
 // If you do not have plugins that depend on this file in your editor build, you can simply
 // ignore it. Otherwise it is strongly recommended to customize this file to match your
-// survey requirements and design properly.
+// website requirements and design properly.
 //
 // For more information refer to: https://ckeditor.com/docs/ckeditor4/latest/guide/dev_styles.html#style-rules
 

@@ -89,6 +89,15 @@
                     </a>
                 </li>
 
+                <li class="dash-item dash-hasmenu {{ request()->is('emails*') ? 'active' : '' }}">
+                    <a class="dash-link" href="{{ route('emails.index') }}">
+                        <span class="dash-micon">
+                            <i class="ti ti-world"></i>
+                        </span>
+                        <span class="dash-mtext">{{ __('Emails') }}</span>
+                    </a>
+                </li>
+
                 @canany(['manage-blog'])
                     <li class="dash-item dash-hasmenu {{ request()->is('join*') ? 'active' : '' }}">
                         <a class="dash-link" href="{{ route('join.index') }}">
@@ -193,8 +202,7 @@
                                 href="{{ route('design-category.index') }}">{{ __('Design Category') }}</a>
                         </li>
                         <li class="dash-item">
-                            <a class="dash-link"
-                                href="{{ route('designs.index') }}">{{ __('designs') }}</a>
+                            <a class="dash-link" href="{{ route('designs.index') }}">{{ __('designs') }}</a>
                         </li>
                         <li class="dash-item ">
                             <a class="dash-link"
