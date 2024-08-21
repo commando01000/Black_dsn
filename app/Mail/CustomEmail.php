@@ -28,7 +28,7 @@ class CustomEmail extends Mailable
     {
         return new Envelope(
             subject: $this->email->subject, // Use the subject from the email model,
-            from: "noreply@DMF.com"
+            from: "info@digitalmediafactory.org"
         );
     }
 
