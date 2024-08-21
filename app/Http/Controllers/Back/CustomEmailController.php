@@ -18,9 +18,9 @@ class CustomEmailController extends Controller
     {
         if (Auth::user()->can('manage-category')) {
             // get all my emails sent
-            $Emails = "";
+            $emails = Email::paginate(10);
             // dd($categories);
-            return view('back.emails.index', compact('Emails'));
+            return view('back.emails.index', compact('emails'));
         } else {
             return redirect()->back()->with('failed', __('Permission denied.'));
         }
@@ -61,7 +61,7 @@ class CustomEmailController extends Controller
         // Send the email using the CustomEmail Mailable class
         Mail::mailer('smtp')->to($request->input('email'))->send(new CustomEmail($email));
         // Redirect with success message
-        return redirect()->back()->with('success', 'Email created and sent successfully.');
+        return view('back.emails.index')->with('success', 'Email created and sent successfully.');
     }
 
     /**
@@ -93,6 +93,7 @@ class CustomEmailController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        Email::find($id)->delete();
+        return redirect()->route('emails.index')->with('success', __('Email deleted successfully.'));
     }
 }
