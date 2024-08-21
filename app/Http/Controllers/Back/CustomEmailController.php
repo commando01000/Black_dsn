@@ -61,7 +61,7 @@ class CustomEmailController extends Controller
         // Send the email using the CustomEmail Mailable class
         Mail::mailer('smtp')->to($request->input('email'))->send(new CustomEmail($email));
         // Redirect with success message
-       // return redirect()->back()->with('success', 'Email created and sent successfully.');
+        return redirect()->back()->with('success', 'Email created and sent successfully.');
     }
 
     /**

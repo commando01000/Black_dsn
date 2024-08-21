@@ -14,9 +14,6 @@
 
         <!-- Message Content -->
         <div>
-            sssssssss
-            <?php echo e($email->name); ?>
-
             <?php echo $email->message; ?>
 
         </div>
