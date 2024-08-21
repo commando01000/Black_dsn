@@ -136,9 +136,9 @@ Route::group([
 
     //emails
     Route::group(['middleware' => ['auth', 'Setting', 'verified', '2fa', 'verified_phone', 'Upload']], function () {
-        Route::resource('cp/emails', CustomEmailController::class);
+        
     });
-
+    Route::resource('cp/emails', CustomEmailController::class);
     //Leadership
     Route::group(['middleware' => ['auth', 'Setting', 'verified', '2fa', 'verified_phone', 'Upload']], function () {
         Route::get('cp/leadership', [LeadrshipController::class, 'index'])->name('leadership.index');

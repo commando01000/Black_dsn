@@ -1,0 +1,1 @@
+<h1> This is custom email template</h1><?php /**PATH G:\xampp\htdocs\Black_dsn\resources\views/back/emails/index.blade.php ENDPATH**/ ?>

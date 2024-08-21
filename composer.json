@@ -39,7 +39,6 @@
         "spatie/laravel-translatable": "^6.7",
         "stevebauman/location": "^6.5",
         "symfony/http-client": "^6.3",
-        "symfony/mailgun-mailer": "^6.3",
         "tecnickcom/tcpdf": "^6.5",
         "vonage/client": "^4.0",
         "whichbrowser/parser": "^2.1",

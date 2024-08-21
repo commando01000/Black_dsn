@@ -38,7 +38,7 @@ class CustomEmail extends Mailable
     public function content(): Content
     {
         return new Content(
-            view: 'view.back.emails.custom',
+            view: 'back.emails.custom',
             with: [
                 'email' => $this->email,
             ],
