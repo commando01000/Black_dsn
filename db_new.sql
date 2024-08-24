@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 06, 2024 at 08:14 PM
+-- Generation Time: Aug 24, 2024 at 11:14 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -105,12 +105,13 @@ CREATE TABLE `assign_forms_users` (
 --
 
 CREATE TABLE `blogs` (
-  `id` bigint(20) UNSIGNED NOT NULL,
+  `id` int(11) UNSIGNED NOT NULL,
   `title` varchar(255) NOT NULL,
   `images` varchar(255) NOT NULL,
   `short_description` text NOT NULL,
-  `description` text NOT NULL,
   `category_id` int(11) NOT NULL,
+  `normal_description` text DEFAULT NULL,
+  `description` text NOT NULL,
   `slug` varchar(255) NOT NULL,
   `created_by` text DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
@@ -121,8 +122,13 @@ CREATE TABLE `blogs` (
 -- Dumping data for table `blogs`
 --
 
-INSERT INTO `blogs` (`id`, `title`, `images`, `short_description`, `description`, `category_id`, `slug`, `created_by`, `created_at`, `updated_at`) VALUES
-(5, '{\"en\":\"October War\",\"ar\":\"حرب اكتوبر\"}', 'blogs/4qh7t5ifx36hcX6BUIjZ6OtSnRsnuosVKkLbkSUQ.jpg', '{\"en\":\"salama\",\"ar\":\"حرب اكتوبر\"}', '{\"en\":\"<p>mousa</p>\",\"ar\":\"حرب اكتوبر\"}', 5, 'october-war', '1', '2024-07-04 17:05:10', '2024-07-06 09:24:38');
+INSERT INTO `blogs` (`id`, `title`, `images`, `short_description`, `category_id`, `normal_description`, `description`, `slug`, `created_by`, `created_at`, `updated_at`) VALUES
+(21, '{\"en\":\"Wild Life Could be amazing, see why\",\"ar\":null}', 'blogs/DwbubFGfpIPWjNzSvRlgrNgpl7WAhzQayjwGmcMI.jpg', '{\"en\":\"qProin faucibus necmauris a sodales, sed elementum mi tincidunt. Sed eget viverra egestas\",\"ar\":null}', 12, '{\"en\":\"qProin faucibus necmauris a sodales, sed elementum mi tincidunt. Sed eget viverra egestas\",\"ar\":null}', '{\"en\":\"<p>asdasd asdasd</p>\",\"ar\":null}', 'wild-life-could-be-amazing-see-why', '1', '2024-08-04 06:32:18', '2024-08-04 06:32:18'),
+(22, '{\"en\":\"Quick tips for an effective style wedding\"}', 'blogs/JBRSrK6hpNYMd0P4LCvyvcDZGAwwmo10Gz9hKNT6.jpg', '{\"en\":\"qProin faucibus necmauris a sodales, sed elementum mi tincidunt. Sed eget viverra egestas\"}', 13, '{\"en\":\"qProin faucibus necmauris a sodales, sed elementum mi tincidunt. Sed eget viverra egestas asd asdasd\",\"ar\":null}', '{\"en\":\"<p><a href=\\\"https://blackbb.netlify.app/dark/single-post#\\\">As a leading UX design agency,</a>&nbsp;we&rsquo;re often asked by prospective clients and fellow designers similar questions: Disrupt is an experience to showcase the agency&#39;s approach to growing brands by building tech. Featured in an FWA Insights article, our team elaborates on the motivation behind the creation of this site.</p>\\r\\n\\r\\n<p><a href=\\\"https://blackbb.netlify.app/dark/single-post#\\\">As a leading UX design agency,</a>&nbsp;we&rsquo;re often asked by prospective clients and fellow designers similar questions: Disrupt is an experience to showcase the agency&#39;s approach to growing brands by building tech. Featured in an FWA Insights article, our team elaborates on the motivation behind the creation of this site.</p>\"}', 'quick-tips-for-an-effective-style-wedding', '1', '2024-08-04 06:39:54', '2024-08-10 06:09:41'),
+(23, '{\"en\":\"Wild Life Could be amazing, see why\",\"ar\":null}', 'blogs/KXUeMJ2VdyRlgVu9Xsx6To7mAYZIPvp1NRu9GLoQ.jpg', '{\"en\":\"qProin faucibus necmauris a sodales, sed elementum mi tincidunt. Sed eget viverra egestas\",\"ar\":null}', 13, '{\"en\":\"qProin faucibus necmauris a sodales, sed elementum mi tincidunt. Sed eget viverra egestas\",\"ar\":null}', '{\"en\":\"<p>asd</p>\",\"ar\":null}', 'wild-life-could-be-amazing-see-why-1', '1', '2024-08-06 10:05:50', '2024-08-06 10:05:50'),
+(24, '{\"en\":\"Quick tips for an effective style wedding\",\"ar\":null}', 'blogs/oSOTD05tJCInh18MBo9dE52aOzDFRXjgq7UYg3ao.jpg', '{\"en\":\"qProin faucibus necmauris a sodales, sed elementum mi tincidunt. Sed eget viverra egestas\",\"ar\":null}', 12, '{\"en\":\"qProin faucibus necmauris a sodales, sed elementum mi tincidunt. Sed eget viverra egestas\",\"ar\":null}', '{\"en\":\"<p>asd</p>\",\"ar\":null}', 'quick-tips-for-an-effective-style-wedding-1', '1', '2024-08-06 10:06:11', '2024-08-06 10:06:11'),
+(25, '{\"en\":\"Wild Life Could be amazing, see why\",\"ar\":null}', 'blogs/SUPip9DsT26THnywAWEik6AavBDHFF0vDj1IoeW8.jpg', '{\"en\":\"qProin faucibus necmauris a sodales, sed elementum mi tincidunt. Sed eget viverra egestas\",\"ar\":null}', 12, '{\"en\":\"qProin faucibus necmauris a sodales, sed elementum mi tincidunt. Sed eget viverra egestas\",\"ar\":null}', '{\"en\":\"<p>sad</p>\",\"ar\":null}', 'wild-life-could-be-amazing-see-why-2', '1', '2024-08-06 10:06:35', '2024-08-06 10:06:35'),
+(26, '{\"en\":\"Quick tips for an effective style wedding\",\"ar\":null}', 'blogs/smFDiW0dbE9NS8jf47HkTMp6Jl1sRka2Ur1j4SGR.jpg', '{\"en\":\"qProin faucibus necmauris a sodales, sed elementum mi tincidunt. Sed eget viverra egestas\",\"ar\":null}', 13, '{\"en\":\"qProin faucibus necmauris a sodales, sed elementum mi tincidunt. Sed eget viverra egestas\",\"ar\":null}', '{\"en\":\"<p>asd</p>\",\"ar\":null}', 'quick-tips-for-an-effective-style-wedding-2', '1', '2024-08-06 10:06:53', '2024-08-06 10:06:53');
 
 -- --------------------------------------------------------
 
@@ -131,7 +137,7 @@ INSERT INTO `blogs` (`id`, `title`, `images`, `short_description`, `description`
 --
 
 CREATE TABLE `blog_categories` (
-  `id` bigint(20) UNSIGNED NOT NULL,
+  `id` int(11) UNSIGNED NOT NULL,
   `name` varchar(255) NOT NULL,
   `status` tinyint(1) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
@@ -143,8 +149,57 @@ CREATE TABLE `blog_categories` (
 --
 
 INSERT INTO `blog_categories` (`id`, `name`, `status`, `created_at`, `updated_at`) VALUES
-(5, '{\"ar\":\"الاخبار\",\"en\":\"Newsletter\"}', 1, '2024-07-04 10:09:07', '2024-07-06 06:59:06'),
-(6, '{\"ar\":\"اخبار جديدة\",\"en\":\"news\"}', 1, '2024-07-06 07:03:05', '2024-07-06 07:03:37');
+(12, '{\"en\":\"Uncategorized\"}', 1, '2024-08-04 06:11:54', '2024-08-04 06:11:54'),
+(13, '{\"en\":\"Editorial\"}', 1, '2024-08-04 06:12:02', '2024-08-04 06:12:02');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `blog_comments`
+--
+
+CREATE TABLE `blog_comments` (
+  `id` int(11) NOT NULL,
+  `blog_id` int(11) NOT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `comment` text NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `blog_comments`
+--
+
+INSERT INTO `blog_comments` (`id`, `blog_id`, `name`, `comment`, `created_at`, `updated_at`) VALUES
+(2, 25, 'Mahmoud Ebrahim', 'Iam going to buy this !', '2024-08-10 07:05:53', '2024-08-10 07:05:53'),
+(3, 25, 'TNT Store', 'Hello There !', '2024-08-10 07:24:14', '2024-08-10 07:24:14'),
+(4, 25, 'Ahmed Khaled', 'i love this world so much man !', '2024-08-10 17:57:30', '2024-08-10 17:57:30');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `blog_comments_replies`
+--
+
+CREATE TABLE `blog_comments_replies` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `comment_id` int(11) NOT NULL,
+  `comment` text NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `blog_comments_replies`
+--
+
+INSERT INTO `blog_comments_replies` (`id`, `name`, `comment_id`, `comment`, `created_at`, `updated_at`) VALUES
+(7, 'Supraa', 3, 'Iam here Guysss !!!', '2024-08-10 16:32:11', '2024-08-10 16:32:11'),
+(8, 'Ahmed Bakry', 2, 'Hello there man !', '2024-08-10 16:46:48', '2024-08-10 16:46:48'),
+(9, 'nested !', 3, 'JJJJJ', '2024-08-10 16:48:17', '2024-08-10 16:48:17'),
+(10, 'Hamada elsayed', 2, 'Hi man how are u doing ?', '2024-08-10 17:56:57', '2024-08-10 17:56:57');
 
 -- --------------------------------------------------------
 
@@ -241,9 +296,9 @@ CREATE TABLE `ch_messages` (
 CREATE TABLE `clients` (
   `id` bigint(20) NOT NULL,
   `name` varchar(400) NOT NULL,
-  `description` text NOT NULL,
+  `description` text DEFAULT NULL,
   `cover` varchar(500) NOT NULL,
-  `builder` varchar(45) NOT NULL,
+  `client_category` bigint(20) UNSIGNED DEFAULT NULL,
   `created_by` bigint(20) NOT NULL,
   `created_at` timestamp NULL DEFAULT current_timestamp(),
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp()
@@ -253,16 +308,247 @@ CREATE TABLE `clients` (
 -- Dumping data for table `clients`
 --
 
-INSERT INTO `clients` (`id`, `name`, `description`, `cover`, `builder`, `created_by`, `created_at`, `updated_at`) VALUES
-(1, 'client100', 'test', 'clients/vtB16XuQ7xVGg6I7Am9dqWIjCZvimuV2IYZmYsJd.png', 'on', 1, '2024-04-22 12:56:49', '2024-04-22 12:57:31'),
-(2, 'client86', 'test\r\n\r\n&nbsp;', 'clients/iOdyuOVnGZDRyp9GmylMegQnrrKMhKkolcqLh4zk.png', 'on', 1, '2024-04-22 12:57:13', '2024-04-22 12:57:13'),
-(3, 'client', 'test', 'clients/cQEzlsacdDFh5NZNl6FqQLtqpVmPQiEyXdfgcqn1.png', 'on', 1, '2024-04-22 12:59:24', '2024-04-22 12:59:36'),
-(4, 'client', 'clien', 'clients/AJbBDgHNVksDuHkkAavvkk2g5xAY2dsMiSL90hN4.png', 'on', 1, '2024-04-22 13:00:04', '2024-04-22 13:00:15'),
-(5, 'client', 'client', 'clients/QGgWuYdiYPbVUqm7MvMPMsfo1mW3ScHD2JJcq0ob.png', 'on', 1, '2024-04-22 13:00:35', '2024-04-22 13:00:44'),
-(6, 'client', 'client', 'clients/ZdM3arvnW9IpIu8pmXWOkASGBjHVgoeyIXgLBDPj.png', 'on', 1, '2024-04-22 13:01:04', '2024-04-22 13:01:04'),
-(7, 'client', 'client description', 'clients/1DiSJSvcMWetbjR0z9uMAdRMTycRNuExVHRlCOsX.png', 'on', 1, '2024-04-22 13:01:31', '2024-04-22 13:01:44'),
-(8, 'client title', 'client description', 'clients/m0TmioKqsam5fGiN3hixkLDUPDaRdHw6epYcrP7C.png', 'off', 1, '2024-04-22 13:02:14', '2024-04-22 13:02:14'),
-(9, 'client', 'client', 'clients/zmkJJO4Kv5JXxU3reoJu0zWhpNJkt1PlTIKg2FRa.png', 'off', 1, '2024-04-22 13:02:35', '2024-04-22 13:02:35');
+INSERT INTO `clients` (`id`, `name`, `description`, `cover`, `client_category`, `created_by`, `created_at`, `updated_at`) VALUES
+(25, 'Mohamed Salama', 'a', 'clients/wSsTVrRCzhGAXR4vW1pig60c4pwzYKOVgq4Mbwy9.jpg', 4, 1, '2024-07-23 06:13:10', '2024-07-23 06:13:10');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `client_categories`
+--
+
+CREATE TABLE `client_categories` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `status` tinyint(1) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `client_categories`
+--
+
+INSERT INTO `client_categories` (`id`, `name`, `status`, `created_at`, `updated_at`) VALUES
+(2, 'ui/ux design2', 1, '2024-07-18 08:20:46', '2024-07-18 08:20:46'),
+(3, 'Event Management', 0, '2024-07-18 08:36:53', '2024-07-23 06:29:21'),
+(4, 'Interior – Luxury Living', 0, '2024-07-18 14:57:29', '2024-07-23 06:29:14'),
+(5, 'Video Shooting', 0, '2024-07-18 14:57:52', '2024-07-23 06:29:16'),
+(6, 'Creative Designs', 0, '2024-07-18 14:58:47', '2024-07-23 06:29:23');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `contact_us`
+--
+
+CREATE TABLE `contact_us` (
+  `id` bigint(20) NOT NULL,
+  `firstname` varchar(255) DEFAULT NULL,
+  `lastname` varchar(255) DEFAULT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `email` varchar(255) NOT NULL,
+  `subject` varchar(255) DEFAULT NULL,
+  `comments` text NOT NULL,
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `contact_us`
+--
+
+INSERT INTO `contact_us` (`id`, `firstname`, `lastname`, `name`, `email`, `subject`, `comments`, `updated_at`, `created_at`) VALUES
+(40, NULL, NULL, 'Mahmoud Ebrahim', 'jfijcc124@gmail.com', 'Blackdsn', 'Hello there supraa testing the contact us', '2024-08-01 07:24:58', '2024-08-01 07:24:58'),
+(41, NULL, NULL, 'Mahmoud Ibrahim', 'tnt.store03@gmail.com', 'Blackdsn', 'Hi Hi Hi', '2024-08-10 06:54:33', '2024-08-10 06:54:33');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `designs`
+--
+
+CREATE TABLE `designs` (
+  `id` int(11) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `slug` varchar(255) NOT NULL,
+  `cover` varchar(255) NOT NULL,
+  `description` text NOT NULL,
+  `design_category` int(11) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `designs`
+--
+
+INSERT INTO `designs` (`id`, `title`, `slug`, `cover`, `description`, `design_category`, `created_at`, `updated_at`) VALUES
+(1, 'Headphones', 'Headphones', 'designs/DH5rVSXb1ZqKhIUvSXxZpvq9rWI9E6Th4NfMRDQp.jpg', 'ABOUT THE PROJECT Mode is an audio range designed to provide optimal performance and comfort for every mode of use. The', 1, '2024-08-01 09:48:07', '2024-08-07 05:34:23'),
+(2, 'Dog Chow', 'Dog Chow', 'designs/9E37bb9TzWwrxxUxgEcp1Hx1cYMv29UfGfOiTcaO.jpg', 'This optional section is only applicable to posts. It is a space for you to write a summary of the post.', 4, '2024-08-01 10:10:31', '2024-08-07 05:35:37'),
+(3, 'AUDI RS', 'AUDI RS', 'designs/RGbZxp6Th6zF64ltXnrfc5QvKmKrHa3EQu33aRa1.jpg', 'This optional section is only applicable to posts. It is a space for you to write a summary of the post.', 4, '2024-08-01 10:12:17', '2024-08-07 05:36:59'),
+(6, 'OPEN RUN', 'OPEN RUN', 'designs/w7AiaVRPkJcVkBuflW0nVizES1Z5ThG2ondZU3Ih.jpg', 'ABOUT THE PROJECT Wondour™ was tasked with creating a pair of electronic glasses that can help legally-blind and low-vision people see', 1, '2024-08-03 06:49:53', '2024-08-07 07:18:31'),
+(7, 'Men Fashion', 'Men Fashion', 'designs/wJJBmcwu1mPlCQHGUpc4n72AQKy086M2UWETvKcq.jpg', 'Jaramillo Published June 15th 2022 Caption #1 Caption #2 Caption #3 How is your visual identity? we', 7, '2024-08-03 06:51:01', '2024-08-08 07:33:57'),
+(13, 'ENERGY DRINK', 'ENERGY DRINK', 'designs/VOoTE6eJxRHciekrtD8yRuxsj2JjJtzA83jrN8yP.jpg', 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit laborum. Sed ut perspiciatis unde omnis iste natus sit .\r\n\r\nExcepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt', 5, '2024-08-03 08:10:04', '2024-08-05 16:47:22'),
+(16, 'VISIONAID', 'VISIONAID', 'designs/w2S13gSB6tASJPE3fGD5Gke2Arv2TZAiLETV9nDU.jpg', 'This optional section is only applicable to posts. It is a space for you to write a summary of the post.\r\nThis optional section is only applicable to posts. It is a space for you to write a summary of the post.', 4, '2024-08-06 07:44:50', '2024-08-06 07:46:53');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `design_categories`
+--
+
+CREATE TABLE `design_categories` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `status` int(11) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `design_categories`
+--
+
+INSERT INTO `design_categories` (`id`, `name`, `status`, `created_at`, `updated_at`) VALUES
+(1, 'Production', 1, '2024-08-01 08:47:37', '2024-08-01 08:47:37'),
+(4, 'Photography & Production', 1, '2024-08-01 08:56:23', '2024-08-01 09:00:23'),
+(5, 'Technology', 1, '2024-08-03 06:43:00', '2024-08-03 06:43:00'),
+(6, 'Creative & Photography', 1, '2024-08-03 06:47:41', '2024-08-03 06:47:41'),
+(7, 'Photography', 1, '2024-08-03 06:50:25', '2024-08-03 06:50:25');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `design_details`
+--
+
+CREATE TABLE `design_details` (
+  `id` int(11) NOT NULL,
+  `design_id` int(11) DEFAULT NULL,
+  `advantage` varchar(255) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `design_details`
+--
+
+INSERT INTO `design_details` (`id`, `design_id`, `advantage`, `created_at`, `updated_at`) VALUES
+(1, 13, 'Beautiful and easy to understand UIUI', '2024-08-03 08:10:04', '2024-08-04 08:40:56'),
+(2, 13, 'Theme advantages are pixel perfect design', '2024-08-03 08:10:04', '2024-08-03 08:10:04'),
+(3, 13, 'Present your services with flexible', '2024-08-03 08:10:04', '2024-08-03 08:10:04'),
+(4, 16, 'Beautiful and easy to understand UI', '2024-08-06 07:44:51', '2024-08-06 07:44:51'),
+(5, 16, 'Theme advantages are pixel perfect design', '2024-08-06 07:44:51', '2024-08-06 07:44:51'),
+(6, 16, 'Present your services with flexible', '2024-08-06 07:44:51', '2024-08-06 07:44:51');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `design_details_images`
+--
+
+CREATE TABLE `design_details_images` (
+  `id` int(11) NOT NULL,
+  `image` varchar(255) NOT NULL,
+  `design_id` int(11) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `design_details_images`
+--
+
+INSERT INTO `design_details_images` (`id`, `image`, `design_id`, `created_at`, `updated_at`) VALUES
+(7, 'design_images/9R0m60S4h8ZP0OE7ZemKPB7ylItzyb3hj9Hunbup.gif', 13, '2024-08-05 16:47:22', '2024-08-05 16:47:22'),
+(8, 'design_images/nV6QoyYkgpMn5GjWJN0YtDrbRA80zeb312NYD2ZX.jpg', 13, '2024-08-05 16:47:22', '2024-08-05 16:47:22'),
+(9, 'design_images/H8JQDI7FYVK7JxOSZ5bzEsIqSyvK5bU4GZTksMkr.jpg', 13, '2024-08-05 16:47:22', '2024-08-05 16:47:22'),
+(10, 'design_images/Pqhb4PXr2vI8RVTewShVDsN1rdRsQ9U7QHWdDJLS.jpg', 13, '2024-08-05 16:47:22', '2024-08-05 16:47:22'),
+(11, 'design_images/LaQ67YGwaAyk75VclJLKw3biDG7eTIiANVt3AiIK.jpg', 13, '2024-08-05 16:47:23', '2024-08-05 16:47:23'),
+(12, 'design_images/ZbvWeawGQsjGnqceSjknjHO6fPtOooH7IZEE2LCt.jpg', 13, '2024-08-05 16:47:23', '2024-08-05 16:47:23'),
+(14, 'design_images/3OdgrHLsEGIit2bivXUDp2bqNwximwGhgjoo8QqG.jpg', 16, '2024-08-06 07:44:51', '2024-08-06 07:44:51'),
+(15, 'design_images/vTcuyPv78jLXUfw7wxEBcheIpdLRY9ad1bDnqssz.jpg', 16, '2024-08-06 07:44:51', '2024-08-06 07:44:51'),
+(16, 'design_images/uxkOD6B56ASAilanVOPLH4mWMsdhxqMACWdp5ixy.jpg', 16, '2024-08-06 07:44:51', '2024-08-06 07:44:51'),
+(17, 'design_images/29KYwOUzuyLZXfovgNFAyM1gnxADJmXcRYROcYm2.jpg', 16, '2024-08-06 07:44:51', '2024-08-06 07:44:51'),
+(18, 'design_images/qJxj3p2NOQ7dWS7T3i6ixXfK6fS4lDS2OSnXYZ3a.jpg', 16, '2024-08-06 07:44:51', '2024-08-06 07:44:51'),
+(19, 'design_images/wYhe6kgmEdt58MIl4B72JQHDq5v1bJ0OQUUMQV78.jpg', 16, '2024-08-06 07:46:53', '2024-08-06 07:46:53'),
+(20, 'design_images/HldgHaXA7nTkp8sqtgMr9YTOhdAAolfUXEZuXKFz.jpg', 16, '2024-08-06 07:46:53', '2024-08-06 07:46:53'),
+(21, 'design_images/fja9Nlb1rbHxoOcmmwpzJ9nps8G3riM49ZpPEbba.jpg', 16, '2024-08-06 07:46:53', '2024-08-06 07:46:53'),
+(22, 'design_images/Z32Jdmvk5DsoXjkvkoNrv4EUDG2WRIkOBwzOFKvS.jpg', 16, '2024-08-06 07:46:53', '2024-08-06 07:46:53'),
+(23, 'design_images/VoctUv8KLveXSJ1tEbTQQ9ZrAuZ6UrdkrzxNRXYc.jpg', 16, '2024-08-06 07:46:53', '2024-08-06 07:46:53'),
+(24, 'design_images/HT6imFqKu9sKEQENc66WbaRWOkdkrAIDZWl7p5Zu.jpg', 16, '2024-08-06 07:46:53', '2024-08-06 07:46:53'),
+(25, 'design_images/T2JiiNfsRjTGQJyLHDBHHL2Juh1DxJiZfRJg0GEF.gif', 1, '2024-08-07 05:34:24', '2024-08-07 05:34:24'),
+(26, 'design_images/HeyYqssXnvPHBBM5yQOdt1jSTxl99y90Yjjgzooo.jpg', 1, '2024-08-07 05:34:24', '2024-08-07 05:34:24'),
+(27, 'design_images/cGpi9VYKORRCPhsRsOgumUsBXgApqa6pBNlIlXa1.jpg', 1, '2024-08-07 05:34:24', '2024-08-07 05:34:24'),
+(28, 'design_images/oZ5tenXrv7C5p3A8kLse7qXMk6CzJZcWvMQYWJP2.jpg', 1, '2024-08-07 05:34:24', '2024-08-07 05:34:24'),
+(29, 'design_images/99trQCCCuaXe4yIYjCHaf88kufxt5V2GsI2lmKbS.jpg', 1, '2024-08-07 05:34:24', '2024-08-07 05:34:24'),
+(30, 'design_images/q22OzW1q2UWKuOcqAVqHfnql9WMHhXqbyaqfAZP4.jpg', 1, '2024-08-07 05:34:24', '2024-08-07 05:34:24'),
+(31, 'design_images/DhtEwZccWINlpHA1hV69hETLsVrB5StHFVdCDbbt.jpg', 2, '2024-08-07 05:35:37', '2024-08-07 05:35:37'),
+(32, 'design_images/YKirsBhONBheGl6qZBNkyApQmBIsuuJ2IzM9Jj7J.jpg', 2, '2024-08-07 05:35:37', '2024-08-07 05:35:37'),
+(33, 'design_images/cjROWup34AI20VY6ATpSeYGcvhgxgEzD97tvMCul.jpg', 2, '2024-08-07 05:35:37', '2024-08-07 05:35:37'),
+(34, 'design_images/v5jhuWQLsO8uGN2GgPkzzcw93PKm6VHSmF4CFUx3.jpg', 2, '2024-08-07 05:35:38', '2024-08-07 05:35:38'),
+(35, 'design_images/71E5esqB3QVPUpCIgPtlR6ZyQMTPJhmXoDDoCzAZ.jpg', 2, '2024-08-07 05:35:38', '2024-08-07 05:35:38'),
+(36, 'design_images/CcChzY8nID7AwS2YoiYeCmqCEvOwhGAK0gleVTdR.jpg', 2, '2024-08-07 05:35:38', '2024-08-07 05:35:38'),
+(37, 'design_images/qA9nEMmERMbsACygy8Xdo63Wx3MOM7yu2on4EicB.jpg', 3, '2024-08-07 05:36:59', '2024-08-07 05:36:59'),
+(38, 'design_images/dYuYqnH5EYlFdtXWcgHYiVsSGP6pOx9oe9eJzvuc.jpg', 3, '2024-08-07 05:36:59', '2024-08-07 05:36:59'),
+(39, 'design_images/oq56Y3tq7I1iLJ0CXH6Dpye2WI5QEBlRnIDglbe9.jpg', 3, '2024-08-07 05:36:59', '2024-08-07 05:36:59'),
+(40, 'design_images/tIVxxkJfkJTlSQuJUpYo20vGHjCboaTNc4O1EP7N.jpg', 3, '2024-08-07 05:36:59', '2024-08-07 05:36:59'),
+(41, 'design_images/evlGKOnOYd4u4V5lsIYh9nNi8FFDrCVir8wLUtaX.jpg', 3, '2024-08-07 05:36:59', '2024-08-07 05:36:59'),
+(42, 'design_images/ofxeg47KIJw2Dc9aDWuUXrpwjhgxguWCcb1CQrHV.jpg', 3, '2024-08-07 05:36:59', '2024-08-07 05:36:59'),
+(43, 'design_images/if3dlKVIrejKXVI6WicbJmwLor3NjCrjqfdN3smU.jpg', 6, '2024-08-07 07:18:31', '2024-08-07 07:18:31'),
+(44, 'design_images/GWwf61UpuwmI0Cb8w137KtKKuGWWytdl1Z7wS2cH.jpg', 6, '2024-08-07 07:18:31', '2024-08-07 07:18:31'),
+(45, 'design_images/MEHgAdZrmu2YEmu5VXX4IhDjlZHj3jmovrFZP8IX.jpg', 6, '2024-08-07 07:18:31', '2024-08-07 07:18:31'),
+(46, 'design_images/NgUqtkIsvv8c8zMeRLaN1ryx74lAKpi9MbYGKuk1.jpg', 6, '2024-08-07 07:18:31', '2024-08-07 07:18:31'),
+(47, 'design_images/DmmTOD29e4i4QI0DEIzySGQwJLH2ZW4tQyLjIKNU.jpg', 6, '2024-08-07 07:18:31', '2024-08-07 07:18:31'),
+(48, 'design_images/FZbPLdrTFLLxUkz8OzKil0GqvemUN4hGupghuntZ.jpg', 6, '2024-08-07 07:18:31', '2024-08-07 07:18:31'),
+(49, 'design_images/HWHDd4n4iiFPoUMiIMAzkgmKSJRobo2eXGOrTb1S.jpg', 7, '2024-08-08 07:33:57', '2024-08-08 07:33:57'),
+(50, 'design_images/CZs0VxwBqnolqAkDWCnbEbjZFamD4pwV4ahNxmPq.jpg', 7, '2024-08-08 07:33:57', '2024-08-08 07:33:57'),
+(51, 'design_images/Jvdfv3R3xhj8mGFhGVwuLS5QQnJhwCVSYesDX3Mq.jpg', 7, '2024-08-08 07:33:57', '2024-08-08 07:33:57'),
+(52, 'design_images/AMXgVsNXLm0dGERmNSm5cYYAWtXXk9ZyO7LxNDeG.jpg', 7, '2024-08-08 07:33:57', '2024-08-08 07:33:57'),
+(53, 'design_images/Rv9ZHc4AgSglQBjOOWW0XMNlZgejBhMrPaUCY4Sh.jpg', 7, '2024-08-08 07:33:57', '2024-08-08 07:33:57'),
+(54, 'design_images/OTk9yO6UDuptRMye6zPgIl58AjY3D4BYDYg9pq9X.jpg', 7, '2024-08-08 07:33:57', '2024-08-08 07:33:57');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `emails`
+--
+
+CREATE TABLE `emails` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `email` text NOT NULL,
+  `subject` text NOT NULL,
+  `message` text NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `emails`
+--
+
+INSERT INTO `emails` (`id`, `name`, `email`, `subject`, `message`, `created_at`, `updated_at`) VALUES
+(33, 'Ahmed Sedky', 'a.12@gmail.com', 'HEHEHEHEHHEHEHEHEHEHE', '<p>Hello there,</p>', '2024-08-21 12:17:22', '2024-08-21 12:17:22'),
+(34, 'Ahmed Sedky', 'a.12@gmail.com', 'HEHEHEHEHHEHEHEHEHEHE', '<p>Hello there,</p>', '2024-08-21 12:18:13', '2024-08-21 12:18:13'),
+(35, 'Ahmed Sedky', 'a.12@gmail.com', 'HEHEHEHEHHEHEHEHEHEHE', '<p>Hello there,</p>', '2024-08-21 12:18:49', '2024-08-21 12:18:49'),
+(36, 'Ahmed Sedky', 'a.12@gmail.com', 'HEHEHEHEHHEHEHEHEHEHE', '<p>Hello there,</p>', '2024-08-21 12:20:04', '2024-08-21 12:20:04'),
+(37, 'Ahmed Sedky', 'a.12@gmail.com', 'HEHEHEHEHHEHEHEHEHEHE', '<p>Hello there,</p>', '2024-08-21 12:20:32', '2024-08-21 12:20:32'),
+(38, 'Mahmoud Ibrahim', 'tnt.store0133@gmail.com', 'Email', '<p>asdasdasdad</p>', '2024-08-21 12:27:08', '2024-08-21 12:27:08'),
+(39, 'Mahmoud Ibrahim', 'tnt.store0133@gmail.com', 'Email', '<p>asdasdasdad</p>', '2024-08-21 12:28:07', '2024-08-21 12:28:07'),
+(40, 'Mahmoud Ibrahim', 'tnt.store0133@gmail.com', 'Email', '<p>asdasdasdad</p>', '2024-08-21 12:28:42', '2024-08-21 12:28:42'),
+(41, 'Mahmoud Ibrahim', 'tnt.store0133@gmail.com', 'Email', '<p>asdasdasdad</p>', '2024-08-21 12:29:11', '2024-08-21 12:29:11'),
+(42, 'Mahmoud Ibrahim', 'tnt.store0133@gmail.com', 'Email', '<p>asdasdasdad</p>', '2024-08-21 12:30:02', '2024-08-21 12:30:02'),
+(43, 'Mahmoud Ibrahim', 'tnt.store0133@gmail.com', 'Email', '<p>asdasdasdad</p>', '2024-08-21 12:30:14', '2024-08-21 12:30:14'),
+(44, 'Mahmoud Ibrahim', 'tnt.store013322@gmail.com', 'Email_HEHE', '<p>SASASASA</p>', '2024-08-21 12:30:45', '2024-08-21 12:30:45'),
+(45, 'TNT Store', 'SUpra@gmail.com', 'HEHEHE123455', '<p><span style=\"background-color:#1abc9c\">asdasdad</span></p>', '2024-08-21 12:35:26', '2024-08-21 12:35:26'),
+(46, 'TNT Store', 'SUpra@gmail.com', 'HEHEHE123455', '<p><span style=\"background-color:#1abc9c\">asdasdad</span></p>', '2024-08-21 12:35:36', '2024-08-21 12:35:36'),
+(47, 'TNT Store', 'SUpra@gmail.com', 'HEHEHE123455', '<p><span style=\"background-color:#1abc9c\">asdasdad</span></p>', '2024-08-21 12:37:02', '2024-08-21 12:37:02'),
+(48, 'sushi123', 'jfijcc1242@gmail.com', 'GAGAGA', '<p>asdasdasd</p>', '2024-08-21 12:37:44', '2024-08-21 12:37:44'),
+(49, 'sushi123', 'jfijcc1242@gmail.com', 'GAGAGA', '<p>asdasdasd</p>', '2024-08-21 12:40:02', '2024-08-21 12:40:02'),
+(50, 'Ahmed Gamal', 'Ahmed0G@gmail.com', 'Task Submission Confirmation', '<p><span style=\"color:#e74c3c\">Hey Bro, remember to submit ur task in time !</span></p>', '2024-08-21 12:44:27', '2024-08-21 12:44:27');
 
 -- --------------------------------------------------------
 
@@ -300,7 +586,8 @@ CREATE TABLE `faqs` (
 --
 
 INSERT INTO `faqs` (`id`, `questions`, `answer`, `order`, `created_at`, `updated_at`) VALUES
-(10, '{\"en\":\"who are you?\",\"ar\":\"كييف حالك\"}', '{\"en\":\"dddddddddddd\",\"ar\":\"الحمد الله\"}', '9', '2024-07-05 16:34:24', '2024-07-05 16:34:24');
+(10, '{\"en\":\"who are you?\",\"ar\":\"كييف حالك\"}', '{\"en\":\"dddddddddddd\",\"ar\":\"الحمد الله\"}', '9', '2024-07-05 16:34:24', '2024-07-05 16:34:24'),
+(11, '{\"en\":\"who are you?\",\"ar\":null}', '{\"en\":\"qqqq\",\"ar\":null}', '2', '2024-07-25 05:32:57', '2024-07-25 05:32:57');
 
 -- --------------------------------------------------------
 
@@ -397,9 +684,35 @@ CREATE TABLE `joins` (
 --
 
 INSERT INTO `joins` (`id`, `name`, `email`, `address`, `phone`, `cv`, `job_title`, `created_at`, `updated_at`) VALUES
-(5, 'Mohamed Salama Mousa Mohamed', 'slamtm609@gmail.com', 'المحلة', '01094182099', 'CVs/2IjUUHwxj6NJabzb8wHqnTTAyYvNpzjnbkWOG9yi.pdf', '', '2024-07-02 12:49:13', '2024-07-02 09:49:13'),
-(6, 'Mohamed Salama Mousa Mohamed', 'slamtm608@gmail.com', 'المحلةsssssssssssssssssssss', '0109418209', 'CVs/3z3qopPbRzTij6VoQmDul0Zryo6O9wyscxYB89LK.pdf', 'typographer', '2024-07-02 12:13:23', '2024-07-02 09:13:23'),
-(8, 'Mahmoud Ebrahim', 'jfijcc124@gmail.com', 'Abu Bakr Al-Siddiq, First 6th of October, Giza Governorate', '01024736219', 'CVs/NEPVLY0voi2b6jdpT7ck6vFZq5QhmjgAHpCM9oDb.jpg', 'senior graphic designer', '2024-07-03 08:18:28', '2024-07-03 08:18:28');
+(5, 'Mohamed Salama Mousa Mohamed', 'slamtm609@gmail.com', 'المحلة', '01094182099', 'CVs/2IjUUHwxj6NJabzb8wHqnTTAyYvNpzjnbkWOG9yi.pdf', '', '2024-07-02 12:49:13', '2024-07-02 09:49:13');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `leaderships`
+--
+
+CREATE TABLE `leaderships` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `position` varchar(255) NOT NULL,
+  `photo` varchar(255) DEFAULT NULL,
+  `facebook` varchar(255) DEFAULT NULL,
+  `bio` text DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `twitter` varchar(255) DEFAULT NULL,
+  `linkedin` varchar(255) DEFAULT NULL,
+  `github` varchar(255) DEFAULT NULL,
+  `dribble` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `leaderships`
+--
+
+INSERT INTO `leaderships` (`id`, `name`, `position`, `photo`, `facebook`, `bio`, `created_at`, `updated_at`, `twitter`, `linkedin`, `github`, `dribble`) VALUES
+(17, 'Mohamed Salama', 'backend', 'leadership/ifjbnDTkK39jFjUVR6nDD3zMGs4TIkcxoiQ5smQ6.jpg', 'https://www.facebook.com/profile.php?id=100018619843475', 'ssssssssssss\r\nsssssssssssss', '2024-07-21 11:11:45', '2024-07-21 11:46:25', 'https://www.facebook.com/profile.php?id=100018619843475', 'https://www.facebook.com/profile.php?id=100018619843475', 'https://www.facebook.com/profile.php?id=100018619843475', 'https://www.facebook.com/profile.php?id=100018619843475');
 
 -- --------------------------------------------------------
 
@@ -932,6 +1245,30 @@ CREATE TABLE `personal_access_tokens` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `progress_to_leadership`
+--
+
+CREATE TABLE `progress_to_leadership` (
+  `id` bigint(20) NOT NULL,
+  `category` varchar(255) NOT NULL,
+  `number` int(11) NOT NULL,
+  `leadership_id` bigint(20) UNSIGNED DEFAULT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `progress_to_leadership`
+--
+
+INSERT INTO `progress_to_leadership` (`id`, `category`, `number`, `leadership_id`, `created_at`, `updated_at`) VALUES
+(3, 'CREATIVE DESIGNS', 100, 17, '2024-07-21 11:11:45', '2024-07-21 11:11:45'),
+(4, 'MOTION GRAPHIC5', 40, 17, '2024-07-21 11:11:45', '2024-07-21 11:11:45'),
+(6, 'Award Achivement', 104, 17, '2024-07-23 06:51:30', '2024-07-23 06:51:30');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `projects`
 --
 
@@ -945,10 +1282,10 @@ CREATE TABLE `projects` (
   `project_date` text DEFAULT NULL,
   `project_timeframe` text DEFAULT NULL,
   `project_location` text DEFAULT NULL,
-  `project_category` bigint(20) DEFAULT 0,
+  `project_category` bigint(20) UNSIGNED DEFAULT 0,
   `project_status` tinyint(4) DEFAULT 0,
-  `body` text NOT NULL,
-  `embed` text NOT NULL,
+  `body` text DEFAULT NULL,
+  `embed` text DEFAULT NULL,
   `components` longtext DEFAULT NULL,
   `styles` longtext DEFAULT NULL,
   `html` longtext DEFAULT NULL,
@@ -964,33 +1301,8 @@ CREATE TABLE `projects` (
 --
 
 INSERT INTO `projects` (`id`, `title`, `cover`, `description`, `client`, `builder`, `project_date`, `project_timeframe`, `project_location`, `project_category`, `project_status`, `body`, `embed`, `components`, `styles`, `html`, `css`, `slug`, `created_by`, `created_at`, `updated_at`) VALUES
-(1, 'assela', 'projects/c9fqvU7jyQ6aG1zYSdpU4siO4lQVHkW0TOM0Uku4.png', 'Asseela is an up and coming Egyptian Furniture brand based in Cairo, Egypt. It has a wide range of unique contemporary pieces, including furniture, home accessories, and lighting units. The brand’s name is inspired by an old store that was considered the origin of ideas and furniture at an old age. Reviving the authenticity of the brand', 'assela', 'on', '21/5/2025', '2', 'location', 1, NULL, 'Asseela is an up and coming Egyptian Furniture brand based in Cairo, Egypt. It has a wide range of unique contemporary pieces, including furniture, home accessories, and lighting units. The brand&rsquo;s name is inspired by an old store that was considered the origin of ideas and furniture at an old age. Reviving the authenticity of the brand', '', NULL, NULL, NULL, NULL, 'assela', '1', '2024-04-22 12:24:22', '2024-04-24 13:34:36'),
-(2, 'balkans', 'projects/fqUehRpq0f5aiCkzNe4f3CHd0aFu9fitMqcdxK2H.png', 'Balkans is a name for southeastern Europe, they are a group of countries that are famous for artists and artistic vision for the pottery.\r\n\r\nIntroducing our local pottery brand from Egypt, where each piece is meticulously handcrafted by skilled artisans, from the shaping of the clay to the intricate hand-painted details, our brand captures the spirit of authenticity and artistry that has been cherished throughout Egyptian history.', 'balkans', 'on', '21/5/2025', '2', 'location', 1, NULL, 'Balkans is a name for southeastern Europe, they are a group of countries that are famous for artists and artistic vision for the pottery. &nbsp; Introducing our local pottery brand from Egypt, where each piece is meticulously handcrafted by skilled artisans, from the shaping of the clay to the intricate hand-painted details, our brand captures the spirit of authenticity and artistry that has been cherished throughout Egyptian history.', '', NULL, NULL, NULL, NULL, 'balkans', '1', '2024-04-22 12:26:23', '2024-04-24 13:33:58'),
-(3, 'cne', 'projects/obtIFbVDcstxPUVDbbsME6VPg7V6E0NkRq7B0qO8.png', 'CNE is a shareholding company established in 1991 by the Egyptian radio & television union (ERTU) in cooperation with private sector shareholders.\r\n\r\nIt distributes encrypted television and radio content, so when they say cipher, you imagine waves of interference, and CNE has expressed it through circles pattern.', 'cne', 'on', '21/5/2025', '3', 'location', 1, NULL, 'CNE is a shareholding company established in 1991 by the Egyptian radio &amp; television union (ERTU) in cooperation with private sector shareholders. It distributes encrypted television and radio content, so when they say cipher, you imagine waves of interference, and CNE has expressed it through circles pattern. &nbsp;', '', NULL, NULL, NULL, NULL, 'cne', '1', '2024-04-22 12:27:51', '2024-04-24 13:32:52'),
-(4, 'Ed-Hub', 'projects/h70zWD6dC2zat94Dv7FeYYiAtiO4zuyj7Ew5Yuoo.png', 'EDHUB offers personalized consultations and tailored programs for students looking to study abroad and also provides individualized guidance to meet each student\'s unique needs.\r\n\r\nThe brand identity is bold as the brand targets the youth with different weights in the logo to create a lively look and feel and to hand in hand with that, the color palette is chosen to be trendy and youthful wide a wide range of colors reflecting the dynamic essence of the brand.', 'Ed-Hub', 'on', '21/5/2025', '3', 'location', 1, NULL, 'EDHUB offers personalized consultations and tailored programs for students looking to study abroad and also provides individualized guidance to meet each student&#39;s unique needs. &nbsp; The brand identity is bold as the brand targets the youth with different weights in the logo to create a lively look and feel and to hand in hand with that, the color palette is chosen to be trendy and youthful wide a wide range of colors reflecting the dynamic essence of the brand.', '', NULL, NULL, NULL, NULL, 'ed-hub', '1', '2024-04-22 12:31:03', '2024-04-24 13:31:04'),
-(5, 'egypt marblex', 'projects/70EfidBBSyAtDx2YiTzv5QoJskq7qgNGVRQeJ3cz.png', 'DS+ has expertly crafted a brand identity for Egypt Marblex that seamlessly combines the expertise of their mother brand with contemporary design elements of the brilliant architect Shady abou Shady. The result is a visually striking and harmonious representation of the brand\'s commitment to tradition and modernity. By incorporating modern aesthetics while honoring its heritage. DSt\'s design work captures the essence of the brand\'s mastery and ensures that Egypt Marblex stands out as a quality-driven and innovative force in the industry.', 'egypt marblex', 'on', '21/5/2025', '3', 'location', 1, NULL, 'DS+ has expertly crafted a brand identity for Egypt Marblex that seamlessly combines the expertise of their mother brand with contemporary design elements of the brilliant architect Shady abou Shady. The result is a visually striking and harmonious representation of the brand&#39;s commitment to tradition and modernity. By incorporating modern aesthetics while honoring its heritage. DSt&#39;s design work captures the essence of the brand&#39;s mastery and ensures that Egypt Marblex stands out as a quality-driven and innovative force in the industry.', '', NULL, NULL, NULL, NULL, 'egypt-marblex', '1', '2024-04-22 12:32:26', '2024-04-24 13:30:39'),
-(6, 'layla yassin', 'projects/j7DqL7AgTJ1bqnTmVy99SbWchrihJtxjJ4JZnddE.png', 'Laila Yassin is a contemporary art studio that focuses on expressing emotions using colors and brush strokes through paining canvas to add elegant yet expressive signature pieces in modern homes, one at a time.', 'layla yassin', 'on', '21/5/2025', '4', 'location', 1, NULL, 'Laila Yassin is a contemporary art studio that focuses on expressing emotions using colors and brush strokes through paining canvas to add elegant yet expressive signature pieces in modern homes, one at a time.', '', NULL, NULL, NULL, NULL, 'layla-yassin', '1', '2024-04-22 12:35:52', '2024-04-24 13:26:16'),
-(7, 'pick a break', 'projects/bIl9O8OpWGi5LmFhOqz98fmn4sBbYVAiYmpPt17q.png', 'Pick a break is a service created to be at events and festivals  where you can take break within the occasion and go grab a drink or snacks.\r\n\r\nBecause our goal is to always create a unique identity for each project we work on, this branding identity\'s main goal was to create a friendly and inviting look and feel, thus the usage of the orange color to trigger hunger and the display typeface denoting friendliness.', 'pick a break', 'on', '21/5/2025', '3', 'location', 1, NULL, 'Pick a break is a service created to be at events and festivals&nbsp; where you can take break within the occasion and go grab a drink or snacks. &nbsp; Because our goal is to always create a unique identity for each project we work on, this branding identity&#39;s main goal was to create a friendly and inviting look and feel, thus the usage of the orange color to trigger hunger and the display typeface denoting friendliness.', '', NULL, NULL, NULL, NULL, 'pick-a-break', '1', '2024-04-22 12:36:44', '2024-04-24 13:22:44'),
-(8, 'second home', 'projects/M7xfrG3xz8DXqK9RR2WNJfWwUPnpYh5iu1ArK1VI.webp', 'Its an Hotel Apartments highest level of service In Rehab city \r\nThe team came up with the brand identity to reflect timelessness and luxury, with the primary usage of the comma in the logo to reflect the mission of the hotel of pausing and taking a break.', 'second home', 'on', '21/5/2025', '3', 'location', 1, NULL, 'Its an Hotel Apartments highest level of service In Rehab city The team came up with the brand identity to reflect timelessness and luxury, with the primary usage of the comma in the logo to reflect the mission of the hotel of pausing and taking a break.', '', NULL, NULL, NULL, NULL, 'second-home', '1', '2024-04-22 12:38:30', '2024-04-24 13:22:22'),
-(9, 'united media academy', 'projects/uH8zv5MzMBQrht41ry49sEczhFMbo0joTRJSiNcb.png', 'Rooted in a commitment to diversity, inclusivity, and ethical journalism, United Media Academy serves as a vibrant hub where individuals from all backgrounds can come together to learn, collaborate, and grow. Our faculty comprises industry experts, seasoned journalists, filmmakers, and media practitioners who are passionate about mentoring the next wave of talent and instilling in them the values of integrity, professionalism, and social responsibility', 'united media academy', 'on', '21/5/2025', '3', 'location', 1, NULL, 'Rooted in a commitment to diversity, inclusivity, and ethical journalism, United Media Academy serves as a vibrant hub where individuals from all backgrounds can come together to learn, collaborate, and grow. Our faculty comprises industry experts, seasoned journalists, filmmakers, and media practitioners who are passionate about mentoring the next wave of talent and instilling in them the values of integrity, professionalism, and social responsibility', '', NULL, NULL, NULL, NULL, 'united-media-academy', '1', '2024-04-22 12:39:28', '2024-04-24 13:20:06'),
-(10, 'zad', 'projects/pkCfc8rzzKQvA7vmIYyXs3LoHSnJnvsEcgQuGIwN.png', 'Zad, an evocative fragrance brand, embarks on a sensory expedition through the realms of scent and emotion. Rooted in the essence of individuality and allure, Zad captures the essence of elegance and charisma in every bottle.\r\n\r\nInspired by the enchanting tapestry of human experiences, Zad seeks to encapsulate the intangible essence of moments through its distinct olfactory compositions', 'zad', 'on', '21/5/2025', '3', 'location', 1, NULL, 'Zad, an evocative fragrance brand, embarks on a sensory expedition through the realms of scent and emotion. Rooted in the essence of individuality and allure, Zad captures the essence of elegance and charisma in every bottle. &nbsp; Inspired by the enchanting tapestry of human experiences, Zad seeks to encapsulate the intangible essence of moments through its distinct olfactory compositions', '', NULL, NULL, NULL, NULL, 'zad', '1', '2024-04-22 12:40:25', '2024-04-24 13:16:51'),
-(19, 'African Shooting Championship', 'projects/vR14atNsKSQMJkzXSIsGmSh9atAI7KVnbZLPqkyA.png', 'The African shooting championship took place in October 2023, and the brief was to announce that this international championship is happening in Egypt. We came up with the creative  as a TV copy.', 'African Shooting Championship', 'on', '21/5/2025', '6', 'location', 2, NULL, 'The African shooting championship took place in October 2023, and the brief was to announce that this international championship is happening in Egypt. We came up with the creative&nbsp; as a TV copy.', 'https://www.instagram.com/reel/CybrB3frOjg/embed/', NULL, NULL, NULL, NULL, 'african-shooting-championship', '1', '2024-04-22 14:56:56', '2024-04-24 13:36:19'),
-(20, 'Criss el masry', 'projects/TEpOdQK3fYk1p0poMAz4vboJ73lb7fBc7NJ3iOZa.png', 'Criss el masry', 'Criss el masry', 'on', '21/5/2025', '6', 'location', 1, NULL, 'Criss el masry', 'https://player.vimeo.com/video/852312220?h=509ce9e794', NULL, NULL, NULL, NULL, 'criss-el-masry', '1', '2024-04-22 14:56:56', '2024-04-24 13:32:00'),
-(21, 'Hayah Karima', 'projects/nVRARPNPMjPEn7miMoenqAXiAY3WuZK9QgigCOCX.png', 'Hayah Karima is a well known organization for charity and donation,\r\n\r\nIn ramadan 2022, the brief was to show to public how this organization build a decent life for people  in countryside.\r\n\r\n \r\n\r\nOur strategy was to grab the attention given that we are in the most competitive month in the year, all brands are coming with TV copies.\r\n\r\nWe decided to take it to up level and produced a song featuring Amir Eid and showing the difference happened because of this charity organization.', 'Hayah Karima', 'on', '21/5/2025', '6', 'location', 2, NULL, 'Hayah Karima is a well known organization for charity and donation, In ramadan 2022, the brief was to show to public how this organization build a decent life for people&nbsp; in countryside. &nbsp; Our strategy was to grab the attention given that we are in the most competitive month in the year, all brands are coming with TV copies. We decided to take it to up level and produced a song featuring Amir Eid and showing the difference happened because of this charity organization.&nbsp;&nbsp;', 'https://player.vimeo.com/video/741436611?h=6cef84291a', NULL, NULL, NULL, NULL, 'hayah-karima', '1', '2024-04-22 14:56:56', '2024-04-24 13:28:45'),
-(22, 'Meat Lovers', 'projects/7g2PTN2Gw1E3ZGNGdz4mv1fALNArc5QmWgkHv7sj.png', 'In this brief Hayah Karima was trying to encourage the audience to donate in feast with their money for the purpose of delivering meat to people who needed.', 'Meat Lovers', 'on', '21/5/2025', '6', 'location', 2, NULL, 'In this brief Hayah Karima was trying to encourage the audience to donate in feast with their money for the purpose of delivering meat to people who needed.', 'https://player.vimeo.com/video/838029333?h=25b40bb323', NULL, NULL, NULL, NULL, 'meat-lovers', '1', '2024-04-22 14:56:56', '2024-04-24 13:25:49'),
-(23, 'New alamien', 'projects/EPgTRP9D4AYSrkEEEfrCrmwxlplryqNfU6G7qCmZ.png', 'New Alamein festival was one of most challenging projects we had, as New Alamein city is one of the new fourth generation cities in Egypt and the brief was mainly to announce the launching of  the city. So we decided to do the announcement but in our own way . We created a line to be the big umbrella for the concept “العالم علمين”\r\n\r\n \r\n\r\nThe line was mainly to address that the whole world is inside the city, as the festival was very inclusive and gathered a lot of different activities from fashion to sports. Because we fell in love with the line, we decided not not just implement it in one copy, but three which were: the main copy, Tazkarti, and for Cris El Masry.', 'New alamien', 'on', '21/5/2025', '6', 'location', 2, NULL, 'New Alamein festival was one of most challenging projects we had, as New Alamein city is one of the new fourth generation cities in Egypt and the brief was mainly to announce the launching of&nbsp; the city. So we decided to do the announcement but in our own way . We created a line to be the big umbrella for the concept &ldquo;العالم علمين&rdquo; &nbsp; The line was mainly to address that the whole world is inside the city, as the festival was very inclusive and gathered a lot of different activities from fashion to sports. Because we fell in love with the line, we decided not not just implement it in one copy, but three which were: the main copy, Tazkarti, and for Cris El Masry.', 'https://player.vimeo.com/video/853727931?h=67ec2eac3a', NULL, NULL, NULL, NULL, 'new-alamien', '1', '2024-04-22 14:56:56', '2024-04-24 13:24:11'),
-(24, 'Tagamal Bel Akhlaa’', 'projects/v8s7VAkLX69xsLo86PfV9cIe2WN4EXjbZZxVnqst.png', 'Hayah Karima is a well known organization for charity and donation,\r\n\r\nIn ramadan 2022, the brief was to show to public how this organization build a decent life for people  in countryside.\r\n\r\n \r\n\r\nOur strategy was to grab the attention given that we are in the most competitive month in the year, all brands are coming with TV copies.\r\n\r\nWe decided to take it to up level and produced a song featuring Amir Eid and showing the difference happened because of this charity organization.', 'Tagamal Bel Akhlaa’', 'on', '21/5/2025', '6', 'location', 2, NULL, 'Hayah Karima is a well known organization for charity and donation, In ramadan 2022, the brief was to show to public how this organization build a decent life for people&nbsp; in countryside. &nbsp; Our strategy was to grab the attention given that we are in the most competitive month in the year, all brands are coming with TV copies. We decided to take it to up level and produced a song featuring Amir Eid and showing the difference happened because of this charity organization.&nbsp;', 'https://player.vimeo.com/video/741436611?h=6cef84291a', NULL, NULL, NULL, NULL, 'tagamal-bel-akhlaa', '1', '2024-04-22 14:56:56', '2024-04-24 13:22:06'),
-(25, 'tazkarti', 'projects/CaScv7UJFRMvDVDwKvjg2stRYkwDW5tdy1it1Oax.png', 'tazkarti', 'tazkarti', 'on', '21/5/2025', '6', 'location', 2, NULL, 'tazkarti', 'https://player.vimeo.com/video/852688900?h=fe9667afc4', NULL, NULL, NULL, NULL, 'tazkarti', '1', '2024-04-22 14:56:56', '2024-04-24 13:21:30'),
-(26, 'World Youth Forum', 'projects/terchPIZBiEW6DDtyWo6PmaGL9QFC2KtARJ1VAlo.png', 'Back Together\r\n\r\nIs an international event that usually takes place every year in Sharm el Sheikh, Egypt, and its main objective is to gather all youth around the world with one goal: to discuss global issues and try to propose solutions.\r\n\r\nIn this event we produced the international main copy.', 'World Youth Forum', 'on', '21/5/2025', '6', 'location', 2, NULL, 'Back Together Is an international event that usually takes place every year in Sharm el Sheikh, Egypt, and its main objective is to gather all youth around the world with one goal: to discuss global issues and try to propose solutions. In this event we produced the international main copy.', 'https://player.vimeo.com/video/741438244?h=07ef45f52a', NULL, NULL, NULL, NULL, 'world-youth-forum', '1', '2024-04-22 14:56:56', '2024-04-24 13:19:17'),
-(29, 'AIIB', 'projects/iVqnFhbxJ0MZiXHU2KbLmIDnGxmLlbddjeZE6C3W.png', 'AIIB Is a multilateral development bank whose mission is financing the Infrastructure with sustainability at its core. AIIB meets clients’ needs by unlocking new capital and investing in infrastructure that is green, technology-enabled and promotes regional connectivity.\r\n\r\nThe brand identity is built with an expandable strategy to be fledged on a wide variety of digital and on-ground visuals and to reflect the identity of the conference.', 'AIIB', 'on', '21/5/2025', '5', 'AIIB', 3, NULL, 'AIIB Is a multilateral development bank whose mission is financing the Infrastructure with sustainability at its core. AIIB meets clients&rsquo; needs by unlocking new capital and investing in infrastructure that is green, technology-enabled and promotes regional connectivity. &nbsp; The brand identity is built with an expandable strategy to be fledged on a wide variety of digital and on-ground visuals and to reflect the identity of the conference.', '', NULL, NULL, NULL, NULL, 'aiib', '1', '2024-04-22 16:30:22', '2024-04-24 13:35:25'),
-(30, 'cairo summit for peace', 'projects/ozVDGt4UuAV1jZyqv6fG0oyPKEQso64ln6wIEYsF.png', 'The Cairo Summit for Peace stands as a beacon of hope and unity, calling upon nations from every corner of the globe to come together in pursuit of a common goal: peace. Rooted in the rich history and cultural tapestry of Cairo, this momentous event symbolizes a collective commitment to fostering understanding, dialogue, and reconciliation.', 'cairo summit for peace', 'on', '21/5/2025', '3', 'location', 1, NULL, 'The Cairo Summit for Peace stands as a beacon of hope and unity, calling upon nations from every corner of the globe to come together in pursuit of a common goal: peace. Rooted in the rich history and cultural tapestry of Cairo, this momentous event symbolizes a collective commitment to fostering understanding, dialogue, and reconciliation. &nbsp;', '', NULL, NULL, NULL, NULL, 'cairo-summit-for-peace', '1', '2024-04-22 16:32:31', '2024-04-24 13:33:39'),
-(31, 'comesa', 'projects/Q9bDSniotrmCayg3WKEqfbK9GXuUMpFQlAUGNRFR.png', 'The 21st Summit of Heads of State of Government of the Common Market for Eastern and Southern Africa (COMESA) was held in November 2021 in the New Administrative Capital witnessing representatives of the 21 member countries.\r\nThe summit was held under the theme \"Building Resilience Through Strategic Digital Economic Integration\" and our branding and art direction aimed to highlight the bountiful resources that Africa possesses. Earthy colours were used inspired by the unique African vibes to give the final outcome.\r\nThe branding and art direction were transformed to elements of outdoor marketing, opening videos and video coverage of the summit.', 'comesa', 'on', '21/5/2025', '3', 'location', 1, NULL, 'The 21st Summit of Heads of State of Government of the Common Market for Eastern and Southern Africa (COMESA) was held in November 2021 in the New Administrative Capital witnessing representatives of the 21 member countries. The summit was held under the theme &quot;Building Resilience Through Strategic Digital Economic Integration&quot; and our branding and art direction aimed to highlight the bountiful resources that Africa possesses. Earthy colours were used inspired by the unique African vibes to give the final outcome. The branding and art direction were transformed to elements of outdoor marketing, opening videos and video coverage of the summit.', '', NULL, NULL, NULL, NULL, 'comesa', '1', '2024-04-22 16:34:21', '2024-04-24 13:32:34'),
-(32, 'entlaq event', 'projects/txPgwiWN2yfPyVQXXMA0KEwvKL83s7PF8pozrjFR.png', 'entlaq event', 'entlaq event', 'on', '21/5/2025', '3', 'location', 1, NULL, 'entlaq event', '', NULL, NULL, NULL, NULL, 'entlaq-event', '1', '2024-04-22 16:35:58', '2024-04-24 13:30:16'),
-(33, 'IMCE', 'projects/4UhruxjbcMuwXTcivzyvuK0eVOjyezMe2AHjulGG.png', 'IMCE  is considered one of the biggest industrial events organized by the Federation of Egyptian Industries. By its 1st edition came celebrating the centenary (100 years) of the FEI during October 2022, and the second edition took place in October 2023. Under the patronage and presence of His Excellency President Abdel Fattah El Sisi.\r\n\r\nThe team uplifted the previous edition’s logo and came up with a dynamic branding to reflect the ever-changing evolvement in industry and to create a flexible identity catering the different media of fledging for instance digital and on-ground visuals.', 'imce', 'on', '21/5/2025', '3', 'location', 3, NULL, 'IMCE&nbsp; is considered one of the biggest industrial events organized by the Federation of Egyptian Industries. By its 1st edition came celebrating the centenary (100 years) of the FEI during October 2022, and the second edition took place in October 2023. Under the patronage and presence of His Excellency President Abdel Fattah El Sisi. &nbsp; The team uplifted the previous edition&rsquo;s logo and came up with a dynamic branding to reflect the ever-changing evolvement in industry and to create a flexible identity catering the different media of fledging for instance digital and on-ground visuals.', '', NULL, NULL, NULL, NULL, 'imce', '1', '2024-04-22 16:37:20', '2024-04-24 13:28:20'),
-(34, 'IPU', 'projects/AsoawVwBxpfupD6AlkXQpTD6fdsdM4D8ARWkHTaV.png', 'IPU serves as a dynamic platform for young parliamentarians to convene, collaborate, and catalyze meaningful action on the pressing issues of our time. From climate change and human rights to social justice and economic empowerment, IPU provides a forum for dialogue, debate, and decisive policymaking.', 'IPU', 'on', '21/5/2025', '3', 'location', 3, NULL, 'IPU serves as a dynamic platform for young parliamentarians to convene, collaborate, and catalyze meaningful action on the pressing issues of our time. From climate change and human rights to social justice and economic empowerment, IPU provides a forum for dialogue, debate, and decisive policymaking.', '', NULL, NULL, NULL, NULL, 'ipu', '1', '2024-04-22 16:38:17', '2024-04-24 13:27:06'),
-(35, 'New Alamien Festival', 'projects/1yqdknkvA8BUnlARZImEkSafIf8LubG3BA3cuDwt.png', 'For its first edition, the team was briefed to create the visuals for the festival, both digital and on-ground. The art direction was created after the logo that was sent and the goal was to create a dynamic identity to match the festival’s lively essence and cater to the wide variety of visuals. The team worked on posters, bridge screen, key visuals for billboards and more.', 'new alamien', 'on', '21/5/2025', '3', 'location', 3, NULL, 'For its first edition, the team was briefed to create the visuals for the festival, both digital and on-ground. The art direction was created after the logo that was sent and the goal was to create a dynamic identity to match the festival&rsquo;s lively essence and cater to the wide variety of visuals. The team worked on posters, bridge screen, key visuals for billboards and more.', '', NULL, NULL, NULL, NULL, 'new-alamien-festival', '1', '2024-04-22 16:40:15', '2024-04-24 13:23:30'),
-(36, 'World youth forum', 'projects/q3tnscjl1lLd8Sw3P4ZUkRKrBbChtYDIESMLIwby.png', 'The World Youth Forum 2021 comes back with a concept and a story after pausing through the pandemic. Connecting time and space, bridging where we were and where will we go. We needed to talk.. and we did.\r\n\r\nWe wanted to see more of you.. and we did We wanted to meet different civilizations.. and we did Suddenly, everything stopped. Facing a new challenge Where the world stood still. Facing the unpredictable.  There was silence.  Now we are back together Together we build Together we lead Together we create  And to innovate BACK TOGETHER', 'World youth forum', 'on', '21/5/2025', '3', 'location', 3, NULL, 'The World Youth Forum 2021 comes back with a concept and a story after pausing through the pandemic. Connecting time and space, bridging where we were and where will we go. We needed to talk.. and we did. &nbsp; We wanted to see more of you.. and we did We wanted to meet different civilizations.. and we did Suddenly, everything stopped. Facing a new challenge Where the world stood still. Facing the unpredictable.&nbsp; There was silence.&nbsp; Now we are back together Together we build Together we lead Together we create&nbsp; And to innovate BACK TOGETHER &nbsp;', '', NULL, NULL, NULL, NULL, 'world-youth-forum-1', '1', '2024-04-22 16:42:02', '2024-04-24 13:17:33'),
-(37, 'hello', 'projects/BKoV42QST2dd7QbTu0xHf1v2DFrovP0rUXLTRRhV.png', 'ييييييييييييييييييييييييييييييي', 'يي', 'off', 'يييييييييييي', 'يييييي', 'ييي', 1, 0, 'ييييييييييييييييييييييي', '', NULL, NULL, NULL, NULL, 'hello', '1', '2024-06-23 08:54:13', '2024-06-23 08:54:13');
+(43, 'hello', 'projects/edb71LeSGcbXLpbLazudEzIuNWdO72osQewt5AiK.jpg', 'sddddddd', 'salama', NULL, 'يييييييييييي', 'd', 'd', 7, NULL, '<p>s</p>', 'd', NULL, NULL, NULL, NULL, 'hello', '1', '2024-07-23 08:32:08', '2024-07-23 08:33:01'),
+(44, 'hello4', 'projects/qwbTfGJLV3gAWvwTdWDPZigqFtfhFLauvtvN6gf3.jpg', 'sssssssssss', 'salama', NULL, 'يييييييييييي', 'd', 'd', 7, NULL, NULL, '', NULL, NULL, NULL, NULL, 'hello4', '1', '2024-07-23 08:45:19', '2024-07-23 08:46:28');
 
 -- --------------------------------------------------------
 
@@ -1142,7 +1454,8 @@ INSERT INTO `projects_images` (`id`, `img`, `project_id`) VALUES
 (139, 'projects/images/DUn1HgqpTG6T0ucDtv56yOgKLcRta1OgwdVuIcuj.jpg', 36),
 (140, 'projects/images/3MZMjmOQtkYXm0yQ5Ue0Ax77rhnoZgx8Dle66Psu.jpg', 36),
 (141, 'projects/images/aRg8M4lQe1ALqW5WqWjbQ4CMd1Bjfcubt1gHkrPd.jpg', 36),
-(142, 'projects/images/TSXqY9NDRzsFU0nIjcCpl1bIUQpUdwBp77jwDhpp.jpg', 36);
+(142, 'projects/images/TSXqY9NDRzsFU0nIjcCpl1bIUQpUdwBp77jwDhpp.jpg', 36),
+(143, 'projects/images/GrIgn7mAjjCFupQcjzTdq9X5VM68cbaVNctE0xBq.png', 38);
 
 -- --------------------------------------------------------
 
@@ -1163,9 +1476,11 @@ CREATE TABLE `project_categories` (
 --
 
 INSERT INTO `project_categories` (`id`, `name`, `status`, `created_at`, `updated_at`) VALUES
-(1, 'Branding Projects', 1, '2024-01-22 22:50:51', '2024-04-22 14:39:26'),
-(2, 'TV ADS', 0, '2024-04-18 09:23:29', '2024-07-06 12:23:03'),
-(3, 'Events', 1, '2024-04-22 14:40:02', '2024-04-22 14:40:02');
+(4, 'Photography & Productionn', 1, '2024-07-14 13:19:26', '2024-08-01 08:58:45'),
+(6, 'Video Shooting', 1, '2024-07-14 13:20:00', '2024-07-23 06:21:14'),
+(7, 'Event Management', 1, '2024-07-14 13:20:13', '2024-07-23 06:21:11'),
+(8, 'Interior – Luxury Living', 0, '2024-07-14 13:20:27', '2024-07-23 06:21:22'),
+(10, 'ui/ux design', 0, '2024-07-17 09:14:13', '2024-07-23 06:21:24');
 
 -- --------------------------------------------------------
 
@@ -1276,6 +1591,68 @@ INSERT INTO `role_has_permissions` (`permission_id`, `role_id`) VALUES
 (126, 1),
 (127, 1),
 (128, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `services`
+--
+
+CREATE TABLE `services` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `cover` varchar(255) DEFAULT NULL,
+  `emdlink` text DEFAULT NULL,
+  `builder` varchar(255) DEFAULT NULL,
+  `short_description` varchar(255) NOT NULL,
+  `description` text DEFAULT NULL,
+  `service_category` bigint(20) UNSIGNED DEFAULT 0,
+  `service_status` tinyint(4) DEFAULT 0,
+  `slug` varchar(255) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `services`
+--
+
+INSERT INTO `services` (`id`, `title`, `cover`, `emdlink`, `builder`, `short_description`, `description`, `service_category`, `service_status`, `slug`, `created_at`, `updated_at`) VALUES
+(14, 'Creating Reels', 'services/i65i214yg6ngi4ikf51wdGBPzGboZUO1BzD1huAG.png', NULL, NULL, 'Web design encompasses many different skills and disciplines in the production of all web.', '<p>as</p>', 3, NULL, 'Creating Reels', '2024-08-03 06:09:18', '2024-08-13 10:34:13'),
+(15, 'Creating Websites', 'services/KRuWn7dVKdwWVkrQIuTuOhN5w9zltF3EOBqBwvB2.png', NULL, NULL, 'Web design encompasses many different skills and disciplines in the production of all web.', '<p>ss</p>', 9, NULL, 'Creating Websites', '2024-08-03 06:15:37', '2024-08-13 10:37:28'),
+(16, 'Creating Short Films', 'services/ePTal3fYbMbWOwlLuQOH0jDVk7sSfZfXyz1f5iFw.png', NULL, NULL, 'Web design encompasses many different skills and disciplines in the production of all web.', '<p>sd</p>', 4, NULL, 'Creating Short Films', '2024-08-03 06:16:00', '2024-08-13 10:34:36');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `service_categories`
+--
+
+CREATE TABLE `service_categories` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `status` tinyint(1) NOT NULL,
+  `cover` text DEFAULT NULL,
+  `description` text DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `service_categories`
+--
+
+INSERT INTO `service_categories` (`id`, `name`, `status`, `cover`, `description`, `created_at`, `updated_at`) VALUES
+(3, 'Branding', 1, 'services/eyPwEhAcaGPczlKvpqE5Ac7rijvXAITNVIhwde3D.png', 'Shaping your brand’s unique identity to inspire and connect', '2024-07-19 08:51:01', '2024-08-15 17:14:24'),
+(4, 'Video Production', 1, 'services/PmyshDZsOo6vriRsQp1GGizErqJ2mWiXQMdCfRO2.png', 'Capturing your story through compelling visuals', '2024-07-19 09:38:09', '2024-08-15 17:16:24'),
+(5, 'Graphic Production', 1, 'services/N34Y6TwkPLkldMEL6cFdkh7HBXOwOevnnEWEnBCF.png', 'Designing visuals that captivate and communicate', '2024-07-19 09:38:24', '2024-08-15 17:19:36'),
+(6, 'Content Production', 1, 'services/pZk7ZpaDsjbSWQRzRKgC6Ehg05ldGNysVrp10Yof.png', 'Crafting impactful content that resonates', '2024-07-19 09:38:47', '2024-08-15 17:21:58'),
+(7, 'Digital Marketing', 1, 'services/mxdVrTU2QP9guDADrEMV6gk5TGkVMVZTh4IkROyp.png', 'Amplifying your brand’s voice across digital platforms', '2024-07-19 09:38:57', '2024-08-15 17:25:18'),
+(8, 'Social Media Management', 1, 'services/7vsONmMpxtjoWiRifSEEitCxFUj3Td3WaktBVILp.png', 'Cultivating connections and driving engagement', '2024-08-13 10:20:50', '2024-08-14 10:38:06'),
+(9, 'Web Development', 1, 'services/vRKvbXA8Z0vOT8iCidpQz2SdzViUv2vvlsHO9SHo.png', 'Building digital experiences that leave a mark', '2024-08-13 10:20:58', '2024-08-14 10:41:11'),
+(10, 'Organizing Conferences & Events', 1, 'services/mGMcFyKHmukJsIWHiVQyWZMMFvxIzIc82fjb1ane.png', 'Creating unforgettable experiences', '2024-08-13 11:01:24', '2024-08-16 12:34:54'),
+(11, 'Training individuals & institutions', 1, 'services/CU3A29dxtmGEPx6AkuWCtG0VdKrjOrepIWA8zF3k.png', 'Empowering teams with actionable skills', '2024-08-13 11:01:30', '2024-08-16 12:37:04'),
+(12, 'SEO Services', 1, 'services/L9tTPxfJ2JYeH0npg5FAXRW0f9OuZipWJ13IfsLN.png', 'Elevating your online presence organically', '2024-08-13 11:01:36', '2024-08-16 12:38:52');
 
 -- --------------------------------------------------------
 
@@ -1400,15 +1777,15 @@ INSERT INTO `settings` (`id`, `key`, `value`) VALUES
 (108, 'testimonial_name', 'Feedback from our clients.'),
 (109, 'testimonial_detail', NULL),
 (110, 'contactus_setting_enable', 'on'),
-(111, 'contact_email', 'info@dsplus-eg.com'),
+(111, 'contact_email', 'info@digitalmediafactory.org'),
 (112, 'contact_address', '141, Aly Ahmed El Gretly, District 3, East Academy 11865'),
-(113, 'contact_phone1', '+20123456789'),
-(114, 'contact_phone2', '+20123456789'),
-(115, 'contact_facebook', 'https://web.facebook.com/DSPLUSEG'),
-(116, 'contact_twitter', 'https://www.facebook.com/DSPLUSEG/'),
-(117, 'contact_instagram', 'https://www.instagram.com/dspluseg/'),
+(113, 'contact_phone1', '+971509885064'),
+(114, 'contact_phone2', '+201274614845'),
+(115, 'contact_facebook', 'https://www.facebook.com/DigitalMFonline'),
+(116, 'contact_twitter', 'https://x.com/DigitalMFonline'),
+(117, 'contact_instagram', 'https://www.instagram.com/digitalmediafactory?igsh=ZXZ1Mmw0eml1NXh0'),
 (118, 'contact_youtube', '⁠https://www.youtube.com/@DSPLUSEG'),
-(119, 'contact_linkedin', 'https://www.linkedin.com/company/dsplus-eg/'),
+(119, 'contact_linkedin', 'https://jm.linkedin.com/company/digitalmediafactory'),
 (120, 'latitude', '30.044695611218746'),
 (121, 'longitude', '31.439352222850143'),
 (122, 'slider_setting_section3_enable', 'off'),
@@ -1427,7 +1804,7 @@ INSERT INTO `settings` (`id`, `key`, `value`) VALUES
 (135, 'slider_image_section3', 'landing-page/slider/slidersection13.png'),
 (136, 'contact_city1', 'fIfth settlement'),
 (137, 'contact_city2', 'misr el gdeda'),
-(138, 'contact_address2', '141, Aly Ahmed El Gretly, District 3, East Academy 11865'),
+(138, 'contact_address2', 'UAE, Dubai, Al Nahda 1, Me Tower, Office 1101'),
 (139, 'joinus_setting_enable', 'on'),
 (140, 'feature1', NULL),
 (141, 'feature2', NULL),
@@ -1447,7 +1824,57 @@ INSERT INTO `settings` (`id`, `key`, `value`) VALUES
 (155, 'google_map_api', 'd8ad9ad9ad'),
 (156, 'joinus_feature7', 'finalizer'),
 (157, 'joinus_feature8', 'video editor'),
-(158, 'who_we_are_link', 'https://www.youtube.com/embed/0bjRD_FTUkE?si=2YDgWlJjy-kZu0tE');
+(158, 'who_we_are_link', 'https://www.youtube.com/embed/0bjRD_FTUkE?si=2YDgWlJjy-kZu0tE'),
+(159, 'privacy_setting_enable', 'on'),
+(160, 'privacy_description', 'privacy_descriptionssssssssssssssssssssssss'),
+(161, 'contact_dribble', 'https://dribbble.com/'),
+(162, 'contact_behance', 'https://www.behance.net/'),
+(163, 'landing.home.title', 'Transforming Visions into Digital Masterpieces'),
+(164, 'landing.home.description', 'At Digital Media Factory, we don\'t just provide services; we craft digital \r\nexperiences. Our holistic approach ensures that every aspect of your digital presence aligns seamlessly, \r\ncreating a powerful and unified brand narrative. Join us on a journey where creativity meets strategy,and your brand\'s digital\r\npotential is realized to the fullest.'),
+(165, 'home_setting_enable', 'on'),
+(166, 'home_setting_enable', 'on'),
+(167, 'title', 'Need help with professionalphotography? Let\'s work togetherrrrrrrrrrrrrrrrr!'),
+(168, 'description', 'In my work, I try to find the right balance between form and function. From technical drawings, all the way to the photographic renders, and the actual representations of my work as a designer, my philosophy is that of simplicity.\r\nAt the same time, my style is distinctly mine – uncluttered, with clean shapes and modern space-saving solutions.'),
+(169, 'home_about_us_setting_enable', 'on'),
+(170, 'landing.home.about-us.title', 'WE ARE'),
+(171, 'landing.home.about-us.sub-title', 'DIGITAL MEDIA'),
+(172, 'landing.home.about-us.sub-title_2', 'FACTORY'),
+(173, 'landing.home.about-us.cover', 'covers/lS9yHO0kOF0fpBOBaWGxMbji2Zy2p32E6zzxjpdg.jpg'),
+(174, 'landing.home.about-us.background', 'backgrounds/X74kE4Uv8Dcjy7fI3tbFJiJpwsGxBIdWyZzDw9Yd.jpg'),
+(175, 'landing.home.about-us.description', 'We are working on constantly exploring new technologies \r\nand trends to keep your brand ahead of the curve.'),
+(176, 'services_what-we-do-setting_enable', 'on'),
+(177, 'services.what.we.do.title', 'We provide you with\r\nthe best service in the\r\nmarket'),
+(178, 'services.what.we.do.short-description', 'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration, by injected humour. words'),
+(179, 'services.what.we.do.main-description', 'There are many variations of passages of Lorem Ipsum available, but \r\nthe majority have suffered alteration, Injected humour words web page\r\neditors now use as their.'),
+(180, 'services.what.we.do.sub-description', 'Default and a search for will uncover many web sites still in their\r\ninfancy.suffered alteration, by injected humour words web page'),
+(181, 'services.what.we.do.background_1', 'backgrounds/w5TAIeVnuTckagGVj46rIJMqoYg1madrMmQxFuOi.jpg'),
+(182, 'services.what.we.do.background_2', 'backgrounds/BdeUgj0tnghb2P7QTWwuPi4wCUHy5u9bxcrHtQFh.jpg'),
+(183, 'our-services.title', 'We are delivering beautiful\r\ndigital products for you.'),
+(184, 'our-services.description', 'If you are looking for an agency to help you create a remarkable presence\r\n online, you’ve come to the right place. We can help you take your business\r\n to the next level.'),
+(185, 'services_our-services-setting_enable', 'on'),
+(186, 'our-target.title', 'We have been doing \r\nprojects since 2008.'),
+(187, 'our-target.description', 'Founded in 2000, Dsn Grid has become one of the best Digital \r\nAgency in ThemeForest. Blue money going forward, but deploy\r\nto production.'),
+(188, 'our-target.vision-description', 'Our vision in Digital Media Factory is simple yet transformative to be the driving force behind digital evolution. We strive to empower businesses, brands, and individuals with the tools they need to thrive in the ever-evolving digital ecosystem.'),
+(189, 'our-target.goal-description', 'Our goal is to seamlessly blend creativity, technology, and strategy to deliver digital solutions that resonate and endure.'),
+(190, 'our-target.mission-description', 'Our mission is to seamlessly blend creativity, technology, and strategy to deliver digital solutions that resonate and endure.'),
+(191, 'services_our-target-setting_enable', 'on'),
+(192, 'about-us_setting_enable', 'on'),
+(193, 'about-us.title', 'Why do you need a modern media company?'),
+(194, 'about-us.description', 'We provide the diverse and innovative media \r\nservices to the institutions in Middle East.'),
+(195, 'about-us.content.title', 'Innovation at the Core'),
+(196, 'about-us.content.description', 'Our vision in Digital Media Factory is simple yet transformative to be the driving force behind digital evolution.\r\nWe strive to empower businesses, brands, and individuals with the tools they need to thrive\r\nin the ever-evolving digital ecosystem. Our mission is to seamlessly blend creativity,\r\ntechnology, and strategy to deliver digital solutions that resonate and endure.');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `slider`
+--
+
+CREATE TABLE `slider` (
+  `id` int(11) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `image` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -1489,10 +1916,104 @@ CREATE TABLE `social_logins` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `statistics`
+--
+
+CREATE TABLE `statistics` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `cover` varchar(255) DEFAULT NULL,
+  `short_description` text DEFAULT NULL,
+  `description` text DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `statistics`
+--
+
+INSERT INTO `statistics` (`id`, `title`, `cover`, `short_description`, `description`, `created_at`, `updated_at`) VALUES
+(27, 'How We Work', 'statistics/Zj2i4q658Rfckyc8buDhKhPkbcOzHUl8RjPDNQeC.png', 'Lorem ipsum dolor sit amet consectetur adipiscing', NULL, '2024-08-03 04:50:47', '2024-08-15 16:38:41'),
+(28, 'What We Do', 'statistics/bYmsXPGgT8hFL2onXNbsrFZwVTnJLkgNXjYffXPJ.png', 'Lorem ipsum dolor sit amet consectetur adipiscing', NULL, '2024-08-03 04:52:32', '2024-08-16 12:45:31'),
+(29, 'Get A Quote', 'statistics/vcUT9byqe5VefG1L7lEiIyUqgkaeXRgcuqngmzgw.png', 'Lorem ipsum dolor sit amet consectetur adipiscing', NULL, '2024-08-03 04:52:53', '2024-08-16 12:43:11'),
+(30, 'Zahrat Al Khaleej - مجلة زهرة الخليج', 'statistics/QDo6m5cS8RMawoUNJSVTFM1jvwHHTF6zHC6drryn.png', 'asdasd', NULL, '2024-08-04 06:56:04', '2024-08-13 06:29:11'),
+(31, 'المسكوبية - Moscobia', 'statistics/CpP970eC1Rrbf3NymIi42e11UBywC0Oqxz6WWk7F.png', 'asda', NULL, '2024-08-04 06:56:14', '2024-08-13 06:29:33'),
+(32, 'بوسطجي - Postaji', 'statistics/jSGpkNPgPz0iFvUuDlh1xadNu0piVsUE0Rq9aIBF.png', 'a sdasd', NULL, '2024-08-04 06:56:22', '2024-08-13 06:30:06'),
+(33, 'DT Global', 'statistics/vdveJNwYBJAhI8djMRmlHOiG3FonXcIzBAaVNgAQ.png', 'sd jk', NULL, '2024-08-04 06:56:36', '2024-08-13 06:30:51'),
+(34, 'روتانا - Rotana', 'statistics/7LSJRIsQ9uUlVN9dBGzLKRZqaNppnnL19cfgoh8K.png', 'sd', NULL, '2024-08-04 06:56:49', '2024-08-13 06:31:01'),
+(35, 'الشبكة العربية للمنظمات الأهلية - Arab Network For NGOs', 'statistics/iqlXwo65grcPe1K13eMGchLuF3EyTrdhOrSOriHO.png', 'ddghg', NULL, '2024-08-04 06:57:02', '2024-08-13 06:31:14'),
+(36, 'المنتدى العربي للمناخ - Arab Climate Forum', 'statistics/RyMn6wXDBIR91hfcz3i3rNi0AjdQ0qiDbtlqBAGP.png', 'dvhb', NULL, '2024-08-04 06:57:13', '2024-08-13 06:32:00'),
+(37, 'جرين بالعربي - Green Arabic', 'statistics/0RJGjW4j4BpYpeXopci73u7Df5WGrEoTtIHuEovB.png', 'cvbcvb', NULL, '2024-08-04 06:57:21', '2024-08-13 06:32:43'),
+(38, 'المنصة العربية للتعلم وبناء الشراكات - زي ما هما عربي', 'statistics/S7RbACnGPElKRkZJG6c0r83caPv9Nl60xdM8s1r8.png', NULL, NULL, NULL, '2024-08-13 06:32:55'),
+(39, 'مشروع مناهضة العنف ضد المرأة - زي ما هما عربي', 'statistics/0iEAKctbAmm0Df2id8dsWCRwMEIPIQKMooD9vcAl.png', NULL, NULL, NULL, '2024-08-13 06:33:07'),
+(40, 'نقابة الصحفيين السودانيين - Sudanese Journalists Syndicate', 'statistics/713gZlhNBfJ8q6uLcXQZfd6UcwjgIAtUOmLb2kmX.png', NULL, NULL, NULL, '2024-08-13 06:33:45'),
+(41, 'Mobile Space', 'statistics/v6lYg3okXbKaAmZczNKZNdbIUWu9IAXtToTXeQ1e.png', NULL, NULL, NULL, '2024-08-13 06:33:58'),
+(42, 'قناة الغد المشرق', 'statistics/5QyIw0JTJHcNkmsQctkxm6c6KOFYN83UeB6xCR7f.png', NULL, NULL, NULL, '2024-08-13 06:33:20'),
+(43, 'شبكة أبوظبي للإعلام', 'statistics/ZojHD9nGc6ClErqe2FiUZVAfL2x6aV0dtMi6qjBn.png', NULL, NULL, NULL, '2024-08-13 06:37:07'),
+(44, 'دبي للإعلام', 'statistics/3OYwCU0JLM4hWgEsVINc5gns1TSxAoCvs5RkvZmW.png', NULL, NULL, NULL, '2024-08-13 06:37:19'),
+(45, 'دبي بوست', 'statistics/uOz9jPvhxc9Nwl5lZjtXKBfOMOs56YfNHRnXOBL3.png', NULL, NULL, NULL, '2024-08-13 06:37:31'),
+(46, 'الإمارات نيوز', 'statistics/yIxShxKgUvWelkdSZbV4swPnGc1jg53DKWWpGgf5.png', NULL, NULL, NULL, '2024-08-13 06:38:01'),
+(47, 'وزارة الاتصالات وتقنية المعلومات السعودية', 'statistics/JdX6L77lM6IQoueHT7mr48zPf9B4c77banjyffCM.png', NULL, NULL, NULL, '2024-08-13 06:38:11'),
+(48, 'المركز الوطني لقياس أداء الأجهزة العامة ـ السعودية', 'statistics/nUp6CqssY8fL9uKHubWMJ1br8lUmWIiVIl8FGUKU.png', NULL, NULL, NULL, '2024-08-13 06:38:56'),
+(49, 'CNC', 'statistics/5nXMLHPPMnHp69AUJtHQtqyPSoNdXssm2OEx1Nsv.png', NULL, NULL, NULL, '2024-08-13 06:37:41'),
+(50, 'UNI', NULL, NULL, NULL, NULL, NULL),
+(51, 'مجلة رواد الأعمال', 'statistics/48ZnsLrMJzvIH6lXD9QWEu2n93LOVWmp5BTVGzia.png', NULL, NULL, NULL, '2024-08-13 06:39:24'),
+(52, 'Beyond Studios FZ-LLC - UAE', 'statistics/R9N4XpItSXOxvIPlASw0O5ungQJLW1X3xg6r11L7.png', NULL, NULL, NULL, '2024-08-13 06:39:32'),
+(53, 'TriggersAcademy - KSA', 'statistics/o5F43m3LmW8vXQS5TbRpFy1DN40ukubAaCO0WiFf.png', NULL, NULL, NULL, '2024-08-13 06:39:52'),
+(54, 'ديالكتيك', 'statistics/YsFexK6LHb5UIgQf4sHWqouIIj8ocsDDHwr8f9ed.png', NULL, NULL, NULL, '2024-08-13 06:39:11');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `statistics_details`
+--
+
+CREATE TABLE `statistics_details` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `statistic_id` bigint(20) UNSIGNED NOT NULL,
+  `category` varchar(255) NOT NULL,
+  `number` int(11) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `testimonials`
 --
 
 CREATE TABLE `testimonials` (
+  `id` bigint(20) NOT NULL,
+  `title` varchar(255) DEFAULT NULL,
+  `image` text NOT NULL,
+  `position` varchar(255) NOT NULL,
+  `description` text DEFAULT NULL,
+  `social` text DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `testimonials`
+--
+
+INSERT INTO `testimonials` (`id`, `title`, `image`, `position`, `description`, `social`, `created_at`, `updated_at`) VALUES
+(14, 'MTL Graphic', 'sliders/aDxTtYUrDXKLvZwRYSdJF1pjfUq4M2v809zQ1FYE.jpg', 'Graphic Design', 'This theme is awesome and the designer is very helpful. I had a few questions purchase. He/She helped me with all the doubts. Also, they provide quick support. Thank you so much for a beautiful theme', '{\"facebook\":\"https:\\/\\/www.facebook.com\\/profile.php?id=100006772997488\",\"instagram\":\"https:\\/\\/www.facebook.com\\/profile.php?id=100006772997488\",\"linkedin\":\"https:\\/\\/github.com\\/commando01000\"}', '2024-08-03 09:54:31', '2024-08-15 18:02:53'),
+(15, 'Jermey Smith', 'sliders/ibOuubTGkcBPDb8eMOjLvHyg3WqwSETIx6tqIBA5.jpg', 'Studio Head', 'This theme is awesome and the designer is very helpful. I had a few questions purchase. He/She helped me with all the doubts. Also, they provide quick support. Thank you so much for a beautiful theme', '{\"facebook\":\"https:\\/\\/www.facebook.com\\/profile.php?id=100006772997488\",\"instagram\":null,\"linkedin\":\"https:\\/\\/github.com\\/commando01000\"}', '2024-08-03 09:54:57', '2024-08-15 18:11:04'),
+(16, 'Mahmoud Ibrahim', 'sliders/P3LDaqKb5LK0kx449hztuhBlsr3AjlS9IULTA7Hy.jpg', 'Software Engineer', 'This theme is awesome and the designer is very helpful. I had a few questions purchase. He/She helped me with all the doubts. Also, they provide quick support. Thank you so much for a beautiful theme', '{\"facebook\":null,\"instagram\":\"https:\\/\\/www.facebook.com\\/profile.php?id=100006772997488\",\"linkedin\":\"https:\\/\\/www.facebook.com\\/profile.php?id=100006772997488\"}', '2024-08-03 09:55:23', '2024-08-15 18:11:14'),
+(17, 'Mohamed Hamad', 'sliders/wLdLtn7f2Fjs8wEiNmeQWITmANgE04BePcOwT1K4.jpg', 'Managing Director', 'This theme is awesome and the designer is very helpful. I had a few questions purchase. He/She helped me with all the doubts. Also, they provide quick support. Thank you so much for a beautiful theme', '{\"facebook\":null,\"instagram\":\"https:\\/\\/www.facebook.com\\/profile.php?id=100006772997488\",\"linkedin\":null}', '2024-08-03 09:55:41', '2024-08-15 18:09:12'),
+(18, 'Hamdan Ahmed', 'sliders/Ix8CMzgqt2XAw3EXdKtH3oQxhsLSnxOyKldx8KBa.jpg', 'Financial Officer', 'This theme is awesome and the designer is very helpful. I had a few questions purchase. He/She helped me with all the doubts. Also, they provide quick support. Thank you so much for a beautiful theme', '{\"facebook\":\"https:\\/\\/www.facebook.com\\/profile.php?id=100006772997488\",\"instagram\":null,\"linkedin\":null}', '2024-08-03 09:57:03', '2024-08-15 18:09:21'),
+(19, 'Salama Gamal', 'sliders/CmfJcKWTmk1tbYO3BTVYxa8YMiDbLwyXLEIhXMzy.jpg', 'Graduate', 'This theme is awesome and the designer is very helpful. I had a few questions purchase. He/She helped me with all the doubts. Also, they provide quick support. Thank you so much for a beautiful theme', '{\"facebook\":null,\"instagram\":null,\"linkedin\":\"https:\\/\\/github.com\\/commando01000\"}', '2024-08-03 09:57:19', '2024-08-15 18:09:27');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `testimonials_1`
+--
+
+CREATE TABLE `testimonials_1` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `name` varchar(255) NOT NULL,
   `title` varchar(255) NOT NULL,
@@ -1506,11 +2027,11 @@ CREATE TABLE `testimonials` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `testimonials`
+-- Dumping data for table `testimonials_1`
 --
 
-INSERT INTO `testimonials` (`id`, `name`, `title`, `desc`, `designation`, `image`, `rating`, `status`, `created_at`, `updated_at`) VALUES
-(5, 'Mohamed Salama', 'hello', '{\"en\":\"company\",\"ar\":\"هذه الشركة محترمة\"}', 'ss', 'testimonials/MFUXBsW4w1hg60lxEKuSR7a6iN2ieY7oiL7Uta9T.jpg', 5.0, '0', '2024-07-06 12:37:29', '2024-07-06 12:39:01');
+INSERT INTO `testimonials_1` (`id`, `name`, `title`, `desc`, `designation`, `image`, `rating`, `status`, `created_at`, `updated_at`) VALUES
+(8, 'Mohamed', 'hello', '{\"en\":\"ssssssssssssss\",\"ar\":null}', 'c', 'testimonials/HeHITUXU1BJUWTRWkboDaU7hzfyi9OcxkHHSmKwq.jpg', 5.0, '1', '2024-07-24 09:16:17', '2024-07-24 09:16:17');
 
 -- --------------------------------------------------------
 
@@ -1553,7 +2074,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `type`, `email_verified_at`, `password`, `remember_token`, `avatar`, `address`, `country`, `messenger_color`, `active_status`, `country_code`, `phone_verified_at`, `dark_layout`, `rtl_layout`, `transprent_layout`, `theme_color`, `users_grid_view`, `forms_grid_view`, `phone`, `dark_mode`, `lang`, `social_type`, `created_by`, `created_at`, `updated_at`) VALUES
-(1, 'Admin', 'admin@admin.com', 'Admin', '2024-01-22 00:14:05', '$2y$12$tWPVu0dJ1z1JuqoN4rvXGOj3tMLWXGAyPHYhLsGKRzb8rWmEXRubO', NULL, 'avatar/1706198398.png', NULL, 'India', '#2180f3', 1, NULL, '2024-01-22 00:14:05', 0, 0, 0, 'theme-1', 0, 0, NULL, 0, 'ar', NULL, NULL, '2024-01-22 00:14:05', '2024-07-04 08:55:11'),
+(1, 'Admin', 'admin@admin.com', 'Admin', '2024-01-22 00:14:05', '$2y$12$tWPVu0dJ1z1JuqoN4rvXGOj3tMLWXGAyPHYhLsGKRzb8rWmEXRubO', NULL, 'avatar/1706198398.png', NULL, 'India', '#2180f3', 1, NULL, '2024-01-22 00:14:05', 0, 0, 0, 'theme-1', 1, 0, NULL, 0, 'en', NULL, NULL, '2024-01-22 00:14:05', '2024-08-07 05:32:21'),
 (2, 'Admin', 'admin2@admin.com', 'Admin', '2024-01-21 22:14:05', '$2y$12$tWPVu0dJ1z1JuqoN4rvXGOj3tMLWXGAyPHYhLsGKRzb8rWmEXRubO', NULL, 'avatar/1706198398.png', NULL, 'India', '#2180f3', 1, NULL, '2024-01-21 22:14:05', 0, 0, 0, 'theme-1', 0, 0, NULL, 0, 'en', NULL, NULL, '2024-01-21 22:14:05', '2024-06-20 06:55:31'),
 (5, 'Mohamed Salama Mousa Mohamed', 'slamtm608@gmail.com', 'Avaweg', '2024-06-23 08:57:51', '$2y$10$QDWouIXTLUTZJ6baf7kw3.9iYJGA7sC8fTkuDcbZzMhvKVGgglbxi', NULL, 'avatar/avatar.png', NULL, 'India', '#2180f3', 1, '20', '2024-06-23 08:57:51', 0, 0, 1, 'theme-2', 0, 0, '01094182099', 0, 'en', NULL, 1, '2024-06-23 08:57:51', '2024-06-23 08:57:51'),
 (6, 'Mohamed', 'ms5261373@gmail.com', 'sub_user', '2024-06-23 09:01:29', '$2y$10$8u1/K4KUXson5TitOMHwxOhpBlIzoCbcms9IIca6ydSQ.Ane3scyu', NULL, 'avatar/avatar.png', NULL, 'India', '#2180f3', 1, '93', '2024-06-23 09:01:29', 0, 0, 1, 'theme-2', 0, 0, '01094182099', 0, 'en', NULL, 1, '2024-06-23 09:01:29', '2024-06-23 09:01:29');
@@ -1674,6 +2195,19 @@ ALTER TABLE `blog_categories`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `blog_comments`
+--
+ALTER TABLE `blog_comments`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `blog_comments_replies`
+--
+ALTER TABLE `blog_comments_replies`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `reply_comment_fk` (`comment_id`);
+
+--
 -- Indexes for table `bookings`
 --
 ALTER TABLE `bookings`
@@ -1701,6 +2235,52 @@ ALTER TABLE `ch_messages`
 -- Indexes for table `clients`
 --
 ALTER TABLE `clients`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `fk_client_category` (`client_category`);
+
+--
+-- Indexes for table `client_categories`
+--
+ALTER TABLE `client_categories`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `contact_us`
+--
+ALTER TABLE `contact_us`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `designs`
+--
+ALTER TABLE `designs`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `design_category_fk` (`design_category`);
+
+--
+-- Indexes for table `design_categories`
+--
+ALTER TABLE `design_categories`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `design_details`
+--
+ALTER TABLE `design_details`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `design_details_fk` (`design_id`);
+
+--
+-- Indexes for table `design_details_images`
+--
+ALTER TABLE `design_details_images`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `design_id_fk_2` (`design_id`);
+
+--
+-- Indexes for table `emails`
+--
+ALTER TABLE `emails`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -1738,6 +2318,12 @@ ALTER TABLE `header_settings`
 -- Indexes for table `joins`
 --
 ALTER TABLE `joins`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `leaderships`
+--
+ALTER TABLE `leaderships`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -1837,10 +2423,18 @@ ALTER TABLE `personal_access_tokens`
   ADD KEY `personal_access_tokens_tokenable_type_tokenable_id_index` (`tokenable_type`,`tokenable_id`);
 
 --
+-- Indexes for table `progress_to_leadership`
+--
+ALTER TABLE `progress_to_leadership`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `fk_progress` (`leadership_id`);
+
+--
 -- Indexes for table `projects`
 --
 ALTER TABLE `projects`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `fk_project_category` (`project_category`);
 
 --
 -- Indexes for table `projects_images`
@@ -1869,11 +2463,30 @@ ALTER TABLE `role_has_permissions`
   ADD KEY `role_has_permissions_role_id_foreign` (`role_id`);
 
 --
+-- Indexes for table `services`
+--
+ALTER TABLE `services`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `fk_sevice_ategory` (`service_category`);
+
+--
+-- Indexes for table `service_categories`
+--
+ALTER TABLE `service_categories`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `settings`
 --
 ALTER TABLE `settings`
   ADD PRIMARY KEY (`id`),
   ADD KEY `settings_key_index` (`key`);
+
+--
+-- Indexes for table `slider`
+--
+ALTER TABLE `slider`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `sms_templates`
@@ -1888,9 +2501,29 @@ ALTER TABLE `social_logins`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `statistics`
+--
+ALTER TABLE `statistics`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `unique_title` (`title`);
+
+--
+-- Indexes for table `statistics_details`
+--
+ALTER TABLE `statistics_details`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `statistics_details_ibfk_1` (`statistic_id`);
+
+--
 -- Indexes for table `testimonials`
 --
 ALTER TABLE `testimonials`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `testimonials_1`
+--
+ALTER TABLE `testimonials_1`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -1952,13 +2585,25 @@ ALTER TABLE `assign_forms_users`
 -- AUTO_INCREMENT for table `blogs`
 --
 ALTER TABLE `blogs`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT for table `blog_categories`
 --
 ALTER TABLE `blog_categories`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+
+--
+-- AUTO_INCREMENT for table `blog_comments`
+--
+ALTER TABLE `blog_comments`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `blog_comments_replies`
+--
+ALTER TABLE `blog_comments_replies`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `bookings`
@@ -1976,7 +2621,49 @@ ALTER TABLE `booking_values`
 -- AUTO_INCREMENT for table `clients`
 --
 ALTER TABLE `clients`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+
+--
+-- AUTO_INCREMENT for table `client_categories`
+--
+ALTER TABLE `client_categories`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT for table `contact_us`
+--
+ALTER TABLE `contact_us`
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
+
+--
+-- AUTO_INCREMENT for table `designs`
+--
+ALTER TABLE `designs`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+
+--
+-- AUTO_INCREMENT for table `design_categories`
+--
+ALTER TABLE `design_categories`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT for table `design_details`
+--
+ALTER TABLE `design_details`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT for table `design_details_images`
+--
+ALTER TABLE `design_details_images`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
+
+--
+-- AUTO_INCREMENT for table `emails`
+--
+ALTER TABLE `emails`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
@@ -1988,7 +2675,7 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT for table `faqs`
 --
 ALTER TABLE `faqs`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `gallerys`
@@ -2013,6 +2700,12 @@ ALTER TABLE `header_settings`
 --
 ALTER TABLE `joins`
   MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT for table `leaderships`
+--
+ALTER TABLE `leaderships`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `login_securities`
@@ -2081,22 +2774,28 @@ ALTER TABLE `personal_access_tokens`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `progress_to_leadership`
+--
+ALTER TABLE `progress_to_leadership`
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
 -- AUTO_INCREMENT for table `projects`
 --
 ALTER TABLE `projects`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
 
 --
 -- AUTO_INCREMENT for table `projects_images`
 --
 ALTER TABLE `projects_images`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=143;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=144;
 
 --
 -- AUTO_INCREMENT for table `project_categories`
 --
 ALTER TABLE `project_categories`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `roles`
@@ -2105,10 +2804,28 @@ ALTER TABLE `roles`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
+-- AUTO_INCREMENT for table `services`
+--
+ALTER TABLE `services`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+
+--
+-- AUTO_INCREMENT for table `service_categories`
+--
+ALTER TABLE `service_categories`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
+
+--
 -- AUTO_INCREMENT for table `settings`
 --
 ALTER TABLE `settings`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=159;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=197;
+
+--
+-- AUTO_INCREMENT for table `slider`
+--
+ALTER TABLE `slider`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `sms_templates`
@@ -2123,10 +2840,28 @@ ALTER TABLE `social_logins`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `statistics`
+--
+ALTER TABLE `statistics`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
+
+--
+-- AUTO_INCREMENT for table `statistics_details`
+--
+ALTER TABLE `statistics_details`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
+
+--
 -- AUTO_INCREMENT for table `testimonials`
 --
 ALTER TABLE `testimonials`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+
+--
+-- AUTO_INCREMENT for table `testimonials_1`
+--
+ALTER TABLE `testimonials_1`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `users`
@@ -2151,6 +2886,36 @@ ALTER TABLE `user_codes`
 --
 
 --
+-- Constraints for table `blog_comments_replies`
+--
+ALTER TABLE `blog_comments_replies`
+  ADD CONSTRAINT `reply_comment_fk` FOREIGN KEY (`comment_id`) REFERENCES `blog_comments` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `clients`
+--
+ALTER TABLE `clients`
+  ADD CONSTRAINT `fk_client_category` FOREIGN KEY (`client_category`) REFERENCES `client_categories` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `designs`
+--
+ALTER TABLE `designs`
+  ADD CONSTRAINT `design_category_fk` FOREIGN KEY (`design_category`) REFERENCES `design_categories` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `design_details`
+--
+ALTER TABLE `design_details`
+  ADD CONSTRAINT `design_details_fk` FOREIGN KEY (`design_id`) REFERENCES `designs` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `design_details_images`
+--
+ALTER TABLE `design_details_images`
+  ADD CONSTRAINT `design_id_fk_2` FOREIGN KEY (`design_id`) REFERENCES `designs` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
 -- Constraints for table `model_has_permissions`
 --
 ALTER TABLE `model_has_permissions`
@@ -2163,11 +2928,35 @@ ALTER TABLE `model_has_roles`
   ADD CONSTRAINT `model_has_roles_role_id_foreign` FOREIGN KEY (`role_id`) REFERENCES `roles` (`id`) ON DELETE CASCADE;
 
 --
+-- Constraints for table `progress_to_leadership`
+--
+ALTER TABLE `progress_to_leadership`
+  ADD CONSTRAINT `fk_progress` FOREIGN KEY (`leadership_id`) REFERENCES `leaderships` (`id`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `projects`
+--
+ALTER TABLE `projects`
+  ADD CONSTRAINT `fk_project_category` FOREIGN KEY (`project_category`) REFERENCES `project_categories` (`id`) ON DELETE SET NULL ON UPDATE CASCADE;
+
+--
 -- Constraints for table `role_has_permissions`
 --
 ALTER TABLE `role_has_permissions`
   ADD CONSTRAINT `role_has_permissions_permission_id_foreign` FOREIGN KEY (`permission_id`) REFERENCES `permissions` (`id`) ON DELETE CASCADE,
   ADD CONSTRAINT `role_has_permissions_role_id_foreign` FOREIGN KEY (`role_id`) REFERENCES `roles` (`id`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `services`
+--
+ALTER TABLE `services`
+  ADD CONSTRAINT `fk_sevice_ategory` FOREIGN KEY (`service_category`) REFERENCES `service_categories` (`id`) ON DELETE SET NULL ON UPDATE CASCADE;
+
+--
+-- Constraints for table `statistics_details`
+--
+ALTER TABLE `statistics_details`
+  ADD CONSTRAINT `statistics_details_ibfk_1` FOREIGN KEY (`statistic_id`) REFERENCES `statistics` (`id`) ON DELETE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

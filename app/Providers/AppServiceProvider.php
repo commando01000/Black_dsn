@@ -9,18 +9,19 @@ use Illuminate\Support\Facades\Schema;
 
 class AppServiceProvider extends ServiceProvider
 {
-    public function register()
-    {
-    }
+    public function register() {}
 
     public function boot()
     {
         if ($this->app->environment('production')) {
             \URL::forceScheme('https');
         }
-        $myDesigns = Design::all();
-        view()->share('myDesigns', $myDesigns);
-        // Schema::defaultStringLength(191);
+
+        if (Schema::hasTable('designs')) {
+            $myDesigns = Design::all();
+            view()->share('myDesigns', $myDesigns);
+        }
+
         Paginator::useBootstrapFive();
     }
 }
