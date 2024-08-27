@@ -69,7 +69,8 @@ class CustomEmailController extends Controller
      */
     public function show(string $id)
     {
-        //
+         $email = Email::findOrFail($id);
+         return view('back.emails.show', compact('email'));
     }
 
     /**

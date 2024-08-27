@@ -40,6 +40,8 @@
                         <td>{{ $email->subject }}</td>
                         <td>{{ \App\Facades\UtilityFacades::date_time_format($email->created_at) }}</td>
                         <td>
+                            {{-- view Email --}}
+                            <a href="{{ route('emails.show', $email->id) }}" class="btn btn-success">View</a>
                             <form action="{{ route('emails.destroy', $email->id) }}" method="POST"
                                 style="display:inline;">
                                 @csrf
