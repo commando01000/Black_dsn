@@ -170,7 +170,6 @@
             <p class="title-block dsn-text max-w750">
                 {{ $design->description }}
             </p>
-            <h5 class="title-block dsn-up mt-15">Richard Price</h5>
         </div>
         <!-- ========== End Paragraph  ========== -->
 

@@ -148,9 +148,11 @@ class DesignController extends Controller
                 'description'       => 'required',
             ]);
             $design = Design::find($id);
+            // $design_images = DesignDetailsImages::where('design_id', $id)->get();
+            // dd($design_images);
             if ($request->hasFile('cover')) {
                 request()->validate([
-                    'cover' => 'required|image|mimes:jpg,png,jpeg,webp',
+                    'cover' => 'nullable|image|mimes:jpg,png,jpeg,webp',
                 ]);
                 $old_cover = $design->cover;
                 $path           = $request->file('cover')->store('designs');
@@ -165,16 +167,24 @@ class DesignController extends Controller
             $design->save();
 
             if ($request->hasFile('images')) {
+                // delete all existing images first from db and storage
+                $design_images = DesignDetailsImages::where('design_id', $id)->get();
+                foreach ($design_images as $image) {
+                    Storage::delete($image->image);
+                    $image->delete();
+                }
                 foreach ($request->file('images') as $image) {
                     // Store the image and get the path
                     $path = $image->store('design_images');
 
-                    // Update the image path in the design_images table
-                    DesignDetailsImages::where('design_id', $design->id)->update([
+                    // Save each image path in the design_images table
+                    DesignDetailsImages::create([
+                        'design_id' => $design->id,
                         'image' => $path,
                     ]);
                 }
             }
+
 
             $existingDetailsIds = $design->details->pluck('id')->toArray();
             $details = $request->input('details', []);

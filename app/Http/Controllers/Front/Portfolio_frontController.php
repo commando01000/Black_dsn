@@ -11,7 +11,7 @@ class Portfolio_frontController extends Controller
     public function index()
     {
         // get last 6 designs designs
-        $designs = Design::first()->take(6)->get();
+        $designs = Design::all();
         return view('front.portfolio.index', compact('designs'));
     }
 }
