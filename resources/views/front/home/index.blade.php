@@ -33,7 +33,7 @@
                                                     {{ $design->title }}
                                                 </a>
                                             </h2>
-                                            <p class="description swiper-animate-head max-w570 mt-20">
+                                            <p class="description justified-text swiper-animate-head max-w570 mt-20">
                                                 {{ $design->description }}
                                             </p>
                                             <div class="d-flex mt-20 dsn-def-btn dsn-border-style">

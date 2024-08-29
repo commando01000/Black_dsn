@@ -34,7 +34,7 @@
 
                                                 </a>
                                             </h2>
-                                            <p class="description swiper-animate-head max-w570 mt-20">
+                                            <p class="description justified-text swiper-animate-head max-w570 mt-20">
                                                 <?php echo e($design->description); ?>
 
                                             </p>

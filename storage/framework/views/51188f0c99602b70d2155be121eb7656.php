@@ -29,9 +29,8 @@
                         <div class="main-logo">
                             <a href="https://dsngrid.com/blackdsn/" data-dsn-text="Blackdsn"
                                 class="custom-logo-link main-brand effect-ajax" rel="home">
-                                <img class="custom-logo logo-light"
-                                    src= "<?php echo e(asset('front_asset/assets/img/logo-light.png')); ?>" alt="Digital Media Factory">
-                                <img class="custom-logo logo-dark" src= "<?php echo e(asset('front_asset/assets/img/logo.png')); ?>"
+                                <img style="width:120px;" src= "<?php echo e(asset('front_asset/assets/img/DMF Logos/logo-white.png')); ?>" alt="Digital Media Factory">
+                                <img style="width:120px;" src= "<?php echo e(asset('front_asset/assets/img/DMF Logos/logo-dark.png')); ?>"
                                     alt="Digital Media Factory">
                             </a>
                         </div>
