@@ -20,7 +20,10 @@ class DesignController extends Controller
     {
 
         if (Auth::user()->can('manage-project')) {
+            $designs = Design::with('images')->get();
+            // dd($designs);
             $designs = Design::with('details')->paginate(10);
+
             return view('back/design.index', compact('designs'));
         } else {
             return redirect()->back()->with('failed', __('Permission denied.'));
@@ -72,7 +75,6 @@ class DesignController extends Controller
                 'cover'                => $path,
                 'created_by'            => Auth::user()->id,
             ]);
-
 
             if ($request->hasFile('images')) {
                 foreach ($request->file('images') as $image) {
@@ -167,9 +169,8 @@ class DesignController extends Controller
                     // Store the image and get the path
                     $path = $image->store('design_images');
 
-                    // Save the image path in the design_images table
-                    $design_details_image =  DesignDetailsImages::create([
-                        'design_id' => $design->id,
+                    // Update the image path in the design_images table
+                    DesignDetailsImages::where('design_id', $design->id)->update([
                         'image' => $path,
                     ]);
                 }
@@ -212,8 +213,13 @@ class DesignController extends Controller
     public function destroy(string $id)
     {
         if (Auth::user()->can('delete-project')) {
+            // delete the design with its design_images and design_details
             $design = Design::find($id);
             $design->delete();
+            // delete all design_images with design_id $id
+            $design_images = DesignDetailsImages::where('design_id', $id)->delete();
+            // delete all design_details with design_id $id
+            $design_details = DesignDetails::where('design_id', $id)->delete();
             return redirect()->route('designs.index')->with('success', __('Posts deleted successfully.'));
         } else {
             return redirect()->back()->with('failed', __('Permission denied.'));
