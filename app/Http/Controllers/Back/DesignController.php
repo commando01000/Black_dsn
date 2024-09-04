@@ -185,7 +185,6 @@ class DesignController extends Controller
                 }
             }
 
-
             $existingDetailsIds = $design->details->pluck('id')->toArray();
             $details = $request->input('details', []);
             $updatedDetailsIds = [];
